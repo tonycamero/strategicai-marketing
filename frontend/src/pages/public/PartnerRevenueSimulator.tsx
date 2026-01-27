@@ -93,3 +93,4 @@ export function PartnerRevenueSimulator() {
         </div>
     );
 }
+export default PartnerRevenueSimulator;
