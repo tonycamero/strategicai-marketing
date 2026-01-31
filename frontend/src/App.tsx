@@ -3,7 +3,7 @@ import HomePage from "./pages/public/HomePage";
 import AuthorityEconomics from "./pages/public/AuthorityEconomics";
 import AuthorityPartner from "./pages/public/AuthorityPartner";
 import CertifiedOperator from "./pages/public/CertifiedOperator";
-import Features from "./pages/public/Features";
+import Partners from "./pages/public/Partners";
 import SmbSales from "./pages/public/SmbSales";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
             <Route path="/economics" component={AuthorityEconomics} />
             <Route path="/partner" component={AuthorityPartner} />
             <Route path="/operator" component={CertifiedOperator} />
-            <Route path="/features" component={Features} />
+            <Route path="/partners" component={Partners} />
             <Route path="/smb" component={SmbSales} />
 
             <Route path="/" component={HomePage} />
