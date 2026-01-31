@@ -90,7 +90,7 @@ export default function Partners() {
                 {/* Section: Execution System */}
                 <section className={styles.section}>
                     <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className={`order-2 md:order-1 ${styles.imgContainer}`} onClick={() => setSelectedImage('/images/partner-execution-steps.png')}>
+                        <div className={`order-2 md:order-1 ${styles.imgContainer} max-w-[60%] mx-auto`} onClick={() => setSelectedImage('/images/partner-execution-steps.png')}>
                             <img src="/images/partner-execution-steps.png" alt="Execution Steps" className={styles.img} />
                             <div className={styles.zoomHint}><span className="bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">Click to expand</span></div>
                         </div>
