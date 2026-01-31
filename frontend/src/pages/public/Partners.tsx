@@ -55,9 +55,28 @@ export default function Partners() {
                     <div className="text-center max-w-3xl mx-auto">
                         <h1 className={styles.h1}>Leverage, Not Links.</h1>
                         <p className={styles.p}>
-                            This is for serious partners building with leverage — not link-pushers.
-                            Whether you are an Authority Brand, an Execution Agency, or a Strategic Consultant,
-                            StrategicAI is your infrastructure layer.
+                            This page is for operators, builders, and authority figures who:
+                        </p>
+                        <ul className="text-left max-w-lg mx-auto space-y-3 mb-8 bg-slate-900/40 p-6 rounded-xl border border-slate-800">
+                            <li className="flex items-start gap-3">
+                                <span className="text-blue-500 mt-1">✓</span>
+                                <span className="text-slate-300">Already have distribution, operators, or execution leverage</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-blue-500 mt-1">✓</span>
+                                <span className="text-slate-300">Want infrastructure, not affiliate links</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-blue-500 mt-1">✓</span>
+                                <span className="text-slate-300">Care about systems, standards, and scale</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-blue-500 mt-1">✓</span>
+                                <span className="text-slate-300">See strategic execution as an asset, not a tool</span>
+                            </li>
+                        </ul>
+                        <p className="text-sm text-slate-500 italic px-4 py-2 border border-slate-800 rounded-full inline-block bg-slate-900/30">
+                            StrategicAI is currently activating with a limited group of certified operators before broader partner expansion.
                         </p>
                     </div>
                 </section>
@@ -68,16 +87,11 @@ export default function Partners() {
                         {/* Authority Partners */}
                         <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col">
                             <div className="mb-6">
-                                <span className="inline-block px-3 py-1 rounded-full bg-blue-900/20 text-blue-400 text-xs font-bold border border-blue-900/50 mb-4">FOR BRANDS & LISTS</span>
+                                <span className="inline-block px-3 py-1 rounded-full bg-blue-900/20 text-blue-400 text-xs font-bold border border-blue-900/50 mb-4">LICENSE THE INFRASTRUCTURE</span>
                                 <h3 className={styles.h3}>Authority Partners</h3>
                                 <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                    You have the audience. You have the IP. Don't just sell a course—license a complete operating system branded to your methodology.
+                                    Ecosystem leaders and platform owners.
                                 </p>
-                                <ul className="text-sm text-slate-500 space-y-2 mb-6">
-                                    <li>• Infrastructure Licensing</li>
-                                    <li>• Recurring Platform Revenue</li>
-                                    <li>• Economics &gt; Commissions</li>
-                                </ul>
                             </div>
                             <div className="mt-auto space-y-3">
                                 <Link to="/authority-partner" className="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
@@ -92,16 +106,11 @@ export default function Partners() {
                         {/* Execution Partners */}
                         <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-green-500/30 transition-all flex flex-col">
                             <div className="mb-6">
-                                <span className="inline-block px-3 py-1 rounded-full bg-green-900/20 text-green-400 text-xs font-bold border border-green-900/50 mb-4">FOR AGENCIES & OPS</span>
+                                <span className="inline-block px-3 py-1 rounded-full bg-green-900/20 text-green-400 text-xs font-bold border border-green-900/50 mb-4">DELIVER WITH LEVERAGE</span>
                                 <h3 className={styles.h3}>Certified Operators</h3>
                                 <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                    You do the work. Stop building custom stacks for every client. Deploy a standardized execution environment in 48 hours.
+                                    Agencies, consultants, and execution firms.
                                 </p>
-                                <ul className="text-sm text-slate-500 space-y-2 mb-6">
-                                    <li>• Sell & Deliver Roadmaps</li>
-                                    <li>• Certified Implementation</li>
-                                    <li>• High-Margin Retainers</li>
-                                </ul>
                             </div>
                             <div className="mt-auto space-y-3">
                                 <Link to="/certified-operator" className="block text-center bg-slate-800 hover:bg-slate-700 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
@@ -116,20 +125,15 @@ export default function Partners() {
                         {/* Strategic / Exploratory */}
                         <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-all flex flex-col">
                             <div className="mb-6">
-                                <span className="inline-block px-3 py-1 rounded-full bg-purple-900/20 text-purple-400 text-xs font-bold border border-purple-900/50 mb-4">STRATEGIC & CUSTOM</span>
-                                <h3 className={styles.h3}>Strategic Advisors</h3>
+                                <span className="inline-block px-3 py-1 rounded-full bg-purple-900/20 text-purple-400 text-xs font-bold border border-purple-900/50 mb-4">UNDERSTAND THE MODEL</span>
+                                <h3 className={styles.h3}>Strategic Explorers</h3>
                                 <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                    High-signal consultants and fractional executives. Evaluate the fit for your practice or enterprise deployment.
+                                    Advisors, analysts, and system thinkers.
                                 </p>
-                                <ul className="text-sm text-slate-500 space-y-2 mb-6">
-                                    <li>• Evaluate Platform Fit</li>
-                                    <li>• Enterprise Deployments</li>
-                                    <li>• Custom Integration</li>
-                                </ul>
                             </div>
                             <div className="mt-auto space-y-3">
                                 <Link to="/authority-economics" className="block text-center border border-slate-700 hover:bg-slate-800 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
-                                    Understand the Economics
+                                    Model Your Economics
                                 </Link>
                                 <Link to="/partner-revenue-simulator" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
                                     Simulate Delivery Models →
