@@ -56,7 +56,7 @@ export default function SmbSales() {
                     <div className="text-center max-w-4xl mx-auto mb-12">
                         <h1 className={styles.h1}>Get Strategic Clarity</h1>
                         <h2 className="text-xl md:text-2xl text-slate-300 font-normal mb-8">
-                            Connect your vision to execution in weeks, not months.<br />
+                            Connect your vision to execution in days, not months.<br />
                             <strong className="text-white">Your Strategy. Executed.</strong>
                         </h2>
                         <button className={styles.ctaButton}>Get My Roadmap</button>
