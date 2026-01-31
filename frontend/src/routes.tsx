@@ -30,8 +30,8 @@ export const routes: AppRoute[] = [
   { path: "/pricing", element: <Pricing /> },
   { path: "/login", element: <Placeholder /> },
   { path: "/roadmap", element: <Placeholder /> },
-  { path: "/authority-economics", element: <AuthorityEconomics />, label: "Authority Economics" },
-  { path: "/authority-partner", element: <AuthorityPartner />, label: "Authority Partner" },
-  { path: "/certified-operator", element: <CertifiedOperator />, label: "Certified Operator" },
-  { path: "/partner-revenue-simulator", element: <PartnerRevenueSimulator />, label: "Partner Revenue Simulator" },
+  { path: "/authority-economics", element: <AuthorityEconomics /> },
+  { path: "/authority-partner", element: <AuthorityPartner /> },
+  { path: "/certified-operator", element: <CertifiedOperator /> },
+  { path: "/partner-revenue-simulator", element: <PartnerRevenueSimulator /> },
 ];

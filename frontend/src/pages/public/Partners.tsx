@@ -9,8 +9,9 @@ const styles = {
     h3: "text-xl font-bold text-white mb-4",
     p: "text-lg text-slate-400 mb-6 leading-relaxed",
     li: "text-slate-300 mb-2 flex items-start gap-2",
-    section: "max-w-4xl mx-auto px-6 py-16 border-b border-slate-800/50 last:border-0",
+    section: "max-w-5xl mx-auto px-6 py-16 border-b border-slate-800/50 last:border-0",
     ctaButton: "inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition cursor-pointer",
+    secondaryButton: "inline-flex items-center px-6 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 text-white font-medium transition cursor-pointer",
     imgContainer: "rounded-xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900/50 cursor-zoom-in hover:border-slate-600 transition-colors group relative",
     img: "w-full h-auto",
     zoomHint: "absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all opacity-0 group-hover:opacity-100 pointer-events-none"
@@ -49,102 +50,121 @@ export default function Partners() {
             </nav>
 
             <main>
-                {/* Hero */}
+                {/* Section 1: Identity Framing */}
                 <section className={styles.section}>
-                    <div className="text-center max-w-4xl mx-auto mb-12">
-                        <h1 className={styles.h1}>Deliver like a full agency — without building one.</h1>
+                    <div className="text-center max-w-3xl mx-auto">
+                        <h1 className={styles.h1}>Leverage, Not Links.</h1>
                         <p className={styles.p}>
-                            StrategicAI.app turns your 1:1 insights into repeatable, governed systems your SMB clients can trust.
-                            You bring the strategy. We handle the infrastructure.
+                            This is for serious partners building with leverage — not link-pushers.
+                            Whether you are an Authority Brand, an Execution Agency, or a Strategic Consultant,
+                            StrategicAI is your infrastructure layer.
                         </p>
-                        <blockquote className="border-l-4 border-blue-500 pl-4 py-2 bg-slate-900/50 italic text-slate-200">
-                            This isn't just a delivery tool. It's your <strong>operating layer</strong> for SMB transformation.
-                        </blockquote>
-                    </div>
-                    <div className={`${styles.imgContainer} mt-8`} onClick={() => setSelectedImage('/images/partner-dashboard-main.png')}>
-                        <img src="/images/partner-dashboard-main.png" alt="Partner Control Plane" className={styles.img} />
-                        <div className={styles.zoomHint}><span className="bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">Click to expand</span></div>
                     </div>
                 </section>
 
-                {/* Section: Control & Delivery */}
+                {/* Section 2: Three Partner Archetypes */}
                 <section className={styles.section}>
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className={styles.h2}>Control & Delivery</h2>
-                            <h3 className={styles.h3}>Briefs, roadmaps, diagnostics — one click delivery.</h3>
-                            <p className={styles.p}>StrategicAI is designed for solo consultants, fractional operators, and lean firms.</p>
-                            <ul className="space-y-3 mb-6">
-                                <li className={styles.li}>• Deploy to a new client in &lt; 48 hours</li>
-                                <li className={styles.li}>• Use your own SOPs or start with ours</li>
-                                <li className={styles.li}>• Keep the relationship, let us power the delivery</li>
-                            </ul>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* Authority Partners */}
+                        <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col">
+                            <div className="mb-6">
+                                <span className="inline-block px-3 py-1 rounded-full bg-blue-900/20 text-blue-400 text-xs font-bold border border-blue-900/50 mb-4">FOR BRANDS & LISTS</span>
+                                <h3 className={styles.h3}>Authority Partners</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                                    You have the audience. You have the IP. Don't just sell a course—license a complete operating system branded to your methodology.
+                                </p>
+                                <ul className="text-sm text-slate-500 space-y-2 mb-6">
+                                    <li>• Infrastructure Licensing</li>
+                                    <li>• Recurring Platform Revenue</li>
+                                    <li>• Economics &gt; Commissions</li>
+                                </ul>
+                            </div>
+                            <div className="mt-auto space-y-3">
+                                <Link to="/authority-partner" className="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
+                                    Explore the Authority License
+                                </Link>
+                                <Link to="/authority-economics" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
+                                    Understand the Model →
+                                </Link>
+                            </div>
                         </div>
-                        <div className={styles.imgContainer} onClick={() => setSelectedImage('/images/partner-delivery-console.png')}>
-                            <img src="/images/partner-delivery-console.png" alt="Delivery Console" className={styles.img} />
-                            <div className={styles.zoomHint}><span className="bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">Click to expand</span></div>
+
+                        {/* Execution Partners */}
+                        <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-green-500/30 transition-all flex flex-col">
+                            <div className="mb-6">
+                                <span className="inline-block px-3 py-1 rounded-full bg-green-900/20 text-green-400 text-xs font-bold border border-green-900/50 mb-4">FOR AGENCIES & OPS</span>
+                                <h3 className={styles.h3}>Certified Operators</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                                    You do the work. Stop building custom stacks for every client. Deploy a standardized execution environment in 48 hours.
+                                </p>
+                                <ul className="text-sm text-slate-500 space-y-2 mb-6">
+                                    <li>• Sell & Deliver Roadmaps</li>
+                                    <li>• Certified Implementation</li>
+                                    <li>• High-Margin Retainers</li>
+                                </ul>
+                            </div>
+                            <div className="mt-auto space-y-3">
+                                <Link to="/certified-operator" className="block text-center bg-slate-800 hover:bg-slate-700 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
+                                    View the Operator Path
+                                </Link>
+                                <Link to="/partner-revenue-simulator" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
+                                    Run Revenue Simulator →
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Strategic / Exploratory */}
+                        <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-all flex flex-col">
+                            <div className="mb-6">
+                                <span className="inline-block px-3 py-1 rounded-full bg-purple-900/20 text-purple-400 text-xs font-bold border border-purple-900/50 mb-4">STRATEGIC & CUSTOM</span>
+                                <h3 className={styles.h3}>Strategic Advisors</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                                    High-signal consultants and fractional executives. Evaluate the fit for your practice or enterprise deployment.
+                                </p>
+                                <ul className="text-sm text-slate-500 space-y-2 mb-6">
+                                    <li>• Evaluate Platform Fit</li>
+                                    <li>• Enterprise Deployments</li>
+                                    <li>• Custom Integration</li>
+                                </ul>
+                            </div>
+                            <div className="mt-auto space-y-3">
+                                <Link to="/authority-economics" className="block text-center border border-slate-700 hover:bg-slate-800 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
+                                    Understand the Economics
+                                </Link>
+                                <Link to="/partner-revenue-simulator" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
+                                    Simulate Delivery Models →
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Section: Execution System */}
+                {/* Section 3: Explicit Partnership Philosophy */}
                 <section className={styles.section}>
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className={`order-2 md:order-1 ${styles.imgContainer} max-w-[60%] mx-auto`} onClick={() => setSelectedImage('/images/partner-execution-steps.png')}>
-                            <img src="/images/partner-execution-steps.png" alt="Execution Steps" className={styles.img} />
-                            <div className={styles.zoomHint}><span className="bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">Click to expand</span></div>
+                    <div className="bg-slate-900/20 border border-slate-800 rounded-xl p-8 max-w-4xl mx-auto">
+                        <div className="text-center mb-8">
+                            <h2 className="text-2xl font-bold text-white mb-2">Our Partnership Philosophy</h2>
+                            <p className="text-lg text-slate-400 italic">"StrategicAI is not an affiliate network."</p>
                         </div>
-                        <div className="order-1 md:order-2">
-                            <h2 className={styles.h2}>Execution System</h2>
-                            <h3 className={styles.h3}>You control when, how, and who gets to build.</h3>
-                            <ul className="space-y-1 ml-4 list-disc text-slate-400">
-                                <li>SOPs trigger real workflows.</li>
-                                <li>Clients stop asking "what next?"</li>
-                                <li>Automated tracking of every step.</li>
-                            </ul>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 className="font-bold text-white mb-2">Structure & Safety</h4>
+                                <p className="text-slate-400 text-sm leading-relaxed">
+                                    Access is structured to maintain leverage, protect quality, and align incentives. We don't do "open" pricing; a governance layer is required.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white mb-2">True Ownership</h4>
+                                <p className="text-slate-400 text-sm leading-relaxed">
+                                    Revenue flows through the platform to ensure fairness, but you retain IP, audience ownership, and pricing power above the floor.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
-
-                {/* What You Get / Features List */}
-                <section className={styles.section}>
-                    <h2 className={styles.h2}>Why SMBs Love It (and You Win)</h2>
-                    <div className="space-y-8">
-                        <div>
-                            <h3 className={styles.h3}>Intake Engines</h3>
-                            <ul className="space-y-1 ml-4 list-disc text-slate-400">
-                                <li>Role-based portals collect Sales, Ops, and Executive intel.</li>
-                                <li>No more chasing docs or misaligned assumptions.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className={styles.h3}>TrustConsole™</h3>
-                            <ul className="space-y-1 ml-4 list-disc text-slate-400">
-                                <li>Clients can ask roadmap questions 24/7.</li>
-                                <li>Grounded in KPIs, ticket activity, and progress.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className={styles.h3}>ROI Dashboard</h3>
-                            <ul className="space-y-1 ml-4 list-disc text-slate-400">
-                                <li>Show time saved, margin recovered, and operational lift.</li>
-                                <li>Clients see results, not confusion.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                {/* CTA */}
-                <section className={styles.section}>
-                    <Link to="/partners">
-                        <span className={styles.ctaButton}>Join the Partner Program</span>
-                    </Link>
-                </section>
-
             </main>
 
-            <TrustAgentShell enabled={true} mode="homepage" />
-
+            <TrustAgentShell enabled={true} mode="public" />
             <ImageViewer isOpen={!!selectedImage} src={selectedImage} onClose={() => setSelectedImage(null)} />
 
             {/* Footer */}
