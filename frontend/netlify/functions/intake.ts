@@ -4,10 +4,27 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const handler: Handler = async (event) => {
+    // CORS headers
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    };
+
+    // Handle OPTIONS preflight
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 204,
+            headers,
+            body: '',
+        };
+    }
+
     // Only allow POST
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
+            headers,
             body: JSON.stringify({ error: 'Method Not Allowed' }),
         };
     }
@@ -20,6 +37,7 @@ export const handler: Handler = async (event) => {
             console.warn('Spam detected via honeypot field');
             return {
                 statusCode: 200, // Still return 200 to fool bots
+                headers,
                 body: JSON.stringify({ message: 'Success' }),
             };
         }
@@ -30,20 +48,19 @@ export const handler: Handler = async (event) => {
             if (!data[field]) {
                 return {
                     statusCode: 400,
+                    headers,
                     body: JSON.stringify({ error: `Missing required field: ${field}` }),
                 };
             }
         }
 
         // Send email via Resend
-        // NOTE: Ensure RESEND_API_KEY and FROM_EMAIL are set in Netlify environment variables.
-        // If marketing@strategicai.app is not verified, this might fail unless using a verified domain.
         const { error } = await resend.emails.send({
             from: process.env.FROM_EMAIL || 'StrategicAI <marketing@strategicai.app>',
             to: ['tony@strategicai.app'],
             subject: `New Intake: ${data.fullName} - ${data.company}`,
             html: `
-                <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; rounded-lg: 8px;">
+                <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
                     <h1 style="color: #2563eb; font-size: 24px; margin-bottom: 24px;">New Intake Submission</h1>
                     
                     <div style="margin-bottom: 16px;">
@@ -108,12 +125,14 @@ export const handler: Handler = async (event) => {
 
         return {
             statusCode: 200,
+            headers,
             body: JSON.stringify({ message: 'Intake received successfully' }),
         };
     } catch (error: any) {
         console.error('Error processing intake:', error);
         return {
             statusCode: 500,
+            headers,
             body: JSON.stringify({ error: 'Internal Server Error' }),
         };
     }

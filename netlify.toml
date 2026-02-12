@@ -8,6 +8,7 @@
   from = "/api/intake"
   to = "/.netlify/functions/intake"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"

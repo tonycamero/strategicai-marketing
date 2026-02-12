@@ -50,7 +50,7 @@ export default function Intake() {
         }
 
         try {
-            const response = await fetch('/api/intake', {
+            const response = await fetch('/.netlify/functions/intake', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
