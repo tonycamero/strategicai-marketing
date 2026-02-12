@@ -8,6 +8,8 @@ import AuthorityPartner from "./pages/public/AuthorityPartner";
 import CertifiedOperator from "./pages/public/CertifiedOperator";
 import PartnerRevenueSimulator from "./pages/public/PartnerRevenueSimulator";
 import Placeholder from "./pages/public/Placeholder";
+import Intake from "./pages/public/Intake";
+import IntakeThanks from "./pages/public/IntakeThanks";
 
 
 export type AppRoute = {
@@ -33,5 +35,7 @@ export const routes: AppRoute[] = [
   { path: "/authority-economics", element: <AuthorityEconomics /> },
   { path: "/authority-partner", element: <AuthorityPartner /> },
   { path: "/certified-operator", element: <CertifiedOperator /> },
+  { path: "/intake", element: <Intake /> },
+  { path: "/intake/thanks", element: <IntakeThanks /> },
   { path: "/partner-revenue-simulator", element: <PartnerRevenueSimulator /> },
 ];

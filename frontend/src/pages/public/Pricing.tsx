@@ -34,8 +34,8 @@ export default function Pricing() {
                             <Link to="/pricing"><span className="text-sm text-white font-medium cursor-pointer">Pricing</span></Link>
                         </div>
                         <Link to="/partners"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner Program</span></Link>
-                        <Link to="/login"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</span></Link>
-                        <Link to="/roadmap">
+                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
+                        <Link to="/intake">
                             <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
                         </Link>
                     </div>
@@ -137,7 +137,7 @@ export default function Pricing() {
                     <div className="text-center">
                         <h2 className={styles.h2}>Ready to Calculate Your ROI?</h2>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <Link to="/roadmap" className={styles.ctaButton}>Start My Roadmap</Link>
+                            <Link to="/intake" className={styles.ctaButton}>Start My Roadmap</Link>
                             <button className="inline-flex items-center px-6 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 text-white font-medium transition cursor-pointer">
                                 Talk to an Advisor
                             </button>

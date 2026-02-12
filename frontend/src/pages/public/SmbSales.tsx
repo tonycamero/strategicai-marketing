@@ -42,8 +42,8 @@ export default function SmbSales() {
                             <Link to="/pricing"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Pricing</span></Link>
                         </div>
                         <Link to="/partners"><span className="text-sm text-white font-medium cursor-pointer">Partner Program</span></Link>
-                        <Link to="/login"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</span></Link>
-                        <Link to="/roadmap">
+                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
+                        <Link to="/intake">
                             <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
                         </Link>
                     </div>
@@ -59,7 +59,7 @@ export default function SmbSales() {
                             Connect your vision to execution in days, not months.<br />
                             <strong className="text-white">Your Strategy. Executed.</strong>
                         </h2>
-                        <button className={styles.ctaButton}>Get My Roadmap</button>
+                        <Link to="/intake" className={styles.ctaButton}>Get My Roadmap</Link>
                     </div>
                     <div className={styles.imgContainer} onClick={() => setSelectedImage('/images/smb-dashboard-main.png')}>
                         <img src="/images/smb-dashboard-main.png" alt="StrategicAI Dashboard" className={styles.img} />
@@ -173,7 +173,7 @@ export default function SmbSales() {
                         <h2 className={styles.h2}>Ready to Run Your Business Like a Pro?</h2>
                         <p className={styles.p}>No need to learn new tools. No chasing contractors.<br />Just clarity, visibility, and a machine that runs your plan.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <span className={styles.ctaButton}>Start your roadmap</span>
+                            <Link to="/intake" className={styles.ctaButton}>Start your roadmap</Link>
                             <button className="inline-flex items-center px-6 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 text-white font-medium transition cursor-pointer">
                                 Talk to an advisor
                             </button>

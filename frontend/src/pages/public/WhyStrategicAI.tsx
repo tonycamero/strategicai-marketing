@@ -34,8 +34,8 @@ export default function WhyStrategicAI() {
                             <Link to="/pricing"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Pricing</span></Link>
                         </div>
                         <Link to="/partners"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner Program</span></Link>
-                        <Link to="/login"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</span></Link>
-                        <Link to="/roadmap">
+                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
+                        <Link to="/intake">
                             <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
                         </Link>
                     </div>
@@ -50,7 +50,7 @@ export default function WhyStrategicAI() {
                         <p className={styles.p}>
                             Every business hits the same wall: chaos after kickoff. StrategicAI keeps things aligned after the whiteboard is erased.
                         </p>
-                        <Link to="/roadmap" className={styles.ctaButton}>See It In Action</Link>
+                        <Link to="/intake" className={styles.ctaButton}>See It In Action</Link>
                     </div>
                 </section>
 
@@ -113,7 +113,7 @@ export default function WhyStrategicAI() {
                 <section className={styles.section}>
                     <div className="text-center">
                         <h2 className={styles.h2}>Stop the Chaos. Start the System.</h2>
-                        <Link to="/roadmap" className={styles.ctaButton}>See It In Action</Link>
+                        <Link to="/intake" className={styles.ctaButton}>See It In Action</Link>
                     </div>
                 </section>
 

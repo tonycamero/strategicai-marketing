@@ -41,8 +41,8 @@ export default function Partners() {
                             <Link to="/pricing"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Pricing</span></Link>
                         </div>
                         <Link to="/partners"><span className="text-sm text-white font-medium cursor-pointer">Partner Program</span></Link>
-                        <Link to="/login"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</span></Link>
-                        <Link to="/roadmap">
+                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
+                        <Link to="/intake">
                             <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
                         </Link>
                     </div>

@@ -40,8 +40,8 @@ export default function Product() {
                             <Link to="/pricing"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Pricing</span></Link>
                         </div>
                         <Link to="/partners"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner Program</span></Link>
-                        <Link to="/login"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</span></Link>
-                        <Link to="/roadmap">
+                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
+                        <Link to="/intake">
                             <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
                         </Link>
                     </div>
@@ -56,7 +56,7 @@ export default function Product() {
                         <p className={styles.p}>
                             No more spreadsheets, docs, or chasing your team. StrategicAI runs your business plan, so you don’t have to.
                         </p>
-                        <Link to="/roadmap" className={styles.ctaButton}>Start My Roadmap</Link>
+                        <Link to="/intake" className={styles.ctaButton}>Start My Roadmap</Link>
                     </div>
                 </section>
 
@@ -124,7 +124,7 @@ export default function Product() {
                 <section className={styles.section}>
                     <div className="text-center">
                         <h2 className={styles.h2}>Your Operational OS is Ready</h2>
-                        <Link to="/roadmap" className={styles.ctaButton}>Start My Roadmap</Link>
+                        <Link to="/intake" className={styles.ctaButton}>Start My Roadmap</Link>
                     </div>
                 </section>
             </main>
