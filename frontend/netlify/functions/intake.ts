@@ -1,14 +1,14 @@
 import { Handler } from '@netlify/functions';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const handler: Handler = async (event) => {
-    // CORS headers
+    const allowedOrigin = "https://strategicai.app";
+
     const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        "Access-Control-Allow-Origin": allowedOrigin,
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Content-Type": "application/json",
     };
 
     // Handle OPTIONS preflight
@@ -31,6 +31,24 @@ export const handler: Handler = async (event) => {
 
     try {
         const data = JSON.parse(event.body || '{}');
+
+        // Environment guard
+        const missingEnv: string[] = [];
+        if (!process.env.RESEND_API_KEY) missingEnv.push("RESEND_API_KEY");
+        if (!process.env.FROM_EMAIL) missingEnv.push("FROM_EMAIL");
+
+        if (missingEnv.length) {
+            return {
+                statusCode: 500,
+                headers,
+                body: JSON.stringify({
+                    error: `Missing env vars: ${missingEnv.join(", ")}`
+                }),
+            };
+        }
+
+        // Initialize Resend inside handler
+        const resend = new Resend(process.env.RESEND_API_KEY);
 
         // Spam protection: Honeypot field check
         if (data.b_website) {
@@ -56,7 +74,7 @@ export const handler: Handler = async (event) => {
 
         // Send email via Resend
         const { error } = await resend.emails.send({
-            from: process.env.FROM_EMAIL || 'StrategicAI <marketing@strategicai.app>',
+            from: process.env.FROM_EMAIL as string,
             to: ['tony@strategicai.app'],
             subject: `New Intake: ${data.fullName} - ${data.company}`,
             html: `
@@ -133,7 +151,10 @@ export const handler: Handler = async (event) => {
         return {
             statusCode: 500,
             headers,
-            body: JSON.stringify({ error: 'Internal Server Error' }),
+            body: JSON.stringify({
+                error: "Internal Server Error",
+                detail: error?.message || String(error),
+            }),
         };
     }
 };
