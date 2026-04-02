@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 import SmbSales from "./pages/public/SmbSales";
+import HomePage from "./pages/public/HomePage";
 import Partners from "./pages/public/Partners";
 import AuthorityEconomics from "./pages/public/AuthorityEconomics";
 import AuthorityPartner from "./pages/public/AuthorityPartner";
@@ -25,7 +26,7 @@ import WhyStrategicAI from "./pages/public/WhyStrategicAI";
 import Pricing from "./pages/public/Pricing";
 
 export const routes: AppRoute[] = [
-  { path: "/", element: <SmbSales /> },
+  { path: "/", element: <HomePage /> },
   { path: "/partners", element: <Partners />, label: "Partner Program" },
   { path: "/product", element: <Product /> },
   { path: "/why", element: <WhyStrategicAI /> },

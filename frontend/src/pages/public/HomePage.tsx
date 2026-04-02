@@ -51,17 +51,17 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-blue-500/5 blur-[120px] -z-10 rounded-full" />
                     <div className="max-w-6xl mx-auto px-6 text-center">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in">
-                            The Operating System for Strategic Execution
+                            7-Day Operational X-Ray
                         </div>
                         <h1 className={styles.h1}>
-                            Powered by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 font-extrabold text-5xl md:text-7xl">AI Intelligence</span>
+                            Find where your business is <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 font-extrabold text-5xl md:text-7xl">losing money</span> — and fix it
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                            StrategicAI.app turns intake chaos into governance-grade roadmaps, diagnostics, and tenant-isolated strategy consoles — <span className="text-white font-medium">at scale.</span>
+                            We map how your business actually runs, identify where things are breaking, and give you a clear plan to fix it <span className="text-white font-medium">in 7 days.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Link href="/operator">
-                                <span className={styles.ctaButton}>Become a Certified Operator</span>
+                            <Link href="/intake">
+                                <span className={styles.ctaButton}>Get Your 7-Day Operational X-Ray</span>
                             </Link>
                             <Link href="/features">
                                 <span className="text-slate-400 hover:text-white font-medium flex items-center gap-2 cursor-pointer transition-all">
@@ -76,89 +76,87 @@ export default function HomePage() {
                 <section className={styles.section}>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className={styles.h2}>Most transformation dies in a PDF.</h2>
+                            <h2 className={styles.h2}>You’re busy. Work is happening. But something isn’t converting the way it should.</h2>
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
                                     <div className="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mt-1">✕</div>
-                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Snapshots break:</span> Real-time reality drifts away from the plan.</p>
+                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Leads don’t always get followed up</span></p>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <div className="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mt-1">✕</div>
-                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Clients get confused:</span> High-ticket strategy feels like homework.</p>
+                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Quotes don’t always get sent</span></p>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <div className="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mt-1">✕</div>
-                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Consultants disappear:</span> Support hell begins when the "expert" leaves.</p>
+                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Jobs don’t always get scheduled</span></p>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mt-1">✕</div>
+                                    <p className="text-slate-300 text-lg"><span className="text-white font-semibold">Payments don’t always come in on time</span></p>
                                 </div>
                             </div>
+                            <p className="mt-8 text-xl text-blue-400 font-medium italic">"Most businesses feel this — but can’t see exactly where it’s happening."</p>
                         </div>
                         <div className="bg-gradient-to-br from-blue-900/20 to-slate-900 p-8 rounded-3xl border border-blue-900/30">
                             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-blue-500" />
-                                The StrategicAI Solution
+                                What You Get (In 7 Days)
                             </h3>
                             <ul className="space-y-4">
-                                <li className={styles.li}>• Captures truth from the front lines</li>
-                                <li className={styles.li}>• Synthesizes strategy automatically</li>
-                                <li className={styles.li}>• Enforces execution with governance logic</li>
-                                <li className={styles.li}>• Keeps clients aligned with a bundled 24/7 TrustConsole</li>
+                                <li className={styles.li}>• A clear map of how your business actually runs</li>
+                                <li className={styles.li}>• Exactly where things are breaking down</li>
+                                <li className={styles.li}>• The direct cost of operational leaks</li>
+                                <li className={styles.li}>• A prioritized plan of what to fix first</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                {/* The Platform Cards */}
+                {/* How It Works */}
                 <section className={styles.section}>
                     <div className="text-center mb-16">
-                        <h2 className={styles.h2}>From Friction to Flow</h2>
-                        <p className="text-xl text-slate-400">Governed by System, Not Hope.</p>
+                        <h2 className={styles.h2}>How It Works</h2>
+                        <p className="text-xl text-slate-400">Revenue recapture in four simple steps.</p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className={styles.card}>
-                            <h3 className={styles.h3}>Role-Based Intake</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">Break the CEO echo chamber. Capture insight from Sales, Ops, and Delivery with specialized portals.</p>
+                            <div className="text-blue-500 font-bold mb-4">01.</div>
+                            <h3 className={styles.h3}>Map Workflow</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed">We map your real workflow from lead generation to payment collection.</p>
                         </div>
                         <div className={styles.card}>
-                            <h3 className={styles.h3}>Automated Synthesis</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">AI drafts the roadmap before a human touches a doc. High-speed discovery with strategic precision.</p>
+                            <div className="text-blue-500 font-bold mb-4">02.</div>
+                            <h3 className={styles.h3}>Identify Slips</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed">We identify exactly where things slip through the cracks in your operation.</p>
                         </div>
                         <div className={styles.card}>
-                            <h3 className={styles.h3}>Fulfillment Engine</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">Turn strategy into repeatable execution tickets. SOP-driven workflows that eliminate "what's next?"</p>
+                            <div className="text-blue-500 font-bold mb-4">03.</div>
+                            <h3 className={styles.h3}>Quantify Impact</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed">We quantify the financial impact of those leaks on your bottom line.</p>
                         </div>
                         <div className={styles.card}>
-                            <h3 className={styles.h3}>TrustConsole™</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">Bundled AI that answers roadmap questions 24/7 using real KPIs, sprints, and ROI data. Authenticated per tenant.</p>
-                        </div>
-                        <div className={styles.card}>
-                            <h3 className={styles.h3}>ROI Dashboards</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">Prove value in time saved, leads recovered, and ops efficiency. Real-time visibility into strategy outcomes.</p>
-                        </div>
-                        <div className={styles.card}>
-                            <h3 className={styles.h3}>Governance Logic</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">Built on SOPs and role-based authority. Not just prompts—infrastructure that scales with integrity.</p>
+                            <div className="text-blue-500 font-bold mb-4">04.</div>
+                            <h3 className={styles.h3}>Fix It Plan</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed">We give you a clear, actionable plan to fix the most critical issues.</p>
                         </div>
                     </div>
                 </section>
 
-                {/* Who It's For */}
+                {/* Who This Is For */}
                 <section className={styles.section}>
-                    <h2 className={styles.h2 + " text-center mb-16"}>Who It's For</h2>
+                    <h2 className={styles.h2 + " text-center mb-16"}>Who This Is For</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="text-center p-8 border border-slate-800 rounded-2xl hover:border-blue-500/20 transition-all bg-slate-900/20">
-                            <h3 className="text-2xl font-bold text-white mb-4">Agency Owners</h3>
-                            <p className="text-slate-400 mb-6 min-h-[80px]">Upgrade from implementer to strategic operator. Productize high-ticket roadmaps with ease.</p>
-                            <Link href="/operator"><span className="text-blue-400 font-bold hover:text-blue-300 cursor-pointer">Get Certified →</span></Link>
+                            <h3 className="text-2xl font-bold text-white mb-4">5–50 Employee Businesses</h3>
+                            <p className="text-slate-400 mb-6 min-h-[80px]">Scaling businesses with established workflows that are starting to show signs of friction.</p>
                         </div>
                         <div className="text-center p-8 border border-slate-800 rounded-2xl hover:border-blue-500/20 transition-all bg-slate-900/20">
-                            <h3 className="text-2xl font-bold text-white mb-4">Authority Brands</h3>
-                            <p className="text-slate-400 mb-6 min-h-[80px]">License the platform to your tribe. White-label the portal and create recurring revenue streams.</p>
-                            <Link href="/partner"><span className="text-blue-400 font-bold hover:text-blue-300 cursor-pointer">Partner With Us →</span></Link>
+                            <h3 className="text-2xl font-bold text-white mb-4">Daily Operations Owners</h3>
+                            <p className="text-slate-400 mb-6 min-h-[80px]">Owners who are still involved in daily ops and need a clear, high-level view of reality.</p>
                         </div>
                         <div className="text-center p-8 border border-slate-800 rounded-2xl hover:border-blue-500/20 transition-all bg-slate-900/20">
-                            <h3 className="text-2xl font-bold text-white mb-4">Consultants</h3>
-                            <p className="text-slate-400 mb-6 min-h-[80px]">Run McKinsey-grade discovery solo. Let the TrustConsole handle strategic support 24/7.</p>
-                            <Link href="/features"><span className="text-blue-400 font-bold hover:text-blue-300 cursor-pointer">See Use Cases →</span></Link>
+                            <h3 className="text-2xl font-bold text-white mb-4">Busy But Not Optimized</h3>
+                            <p className="text-slate-400 mb-6 min-h-[80px]">Teams that feel like they are working flat out but aren't seeing the results they expect.</p>
                         </div>
                     </div>
                 </section>
@@ -166,12 +164,25 @@ export default function HomePage() {
                 {/* Final CTA */}
                 <section className="bg-blue-600/5 py-24 border-t border-slate-800/50">
                     <div className="max-w-4xl mx-auto px-6 text-center">
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 italic">"You deliver clarity. You own the plan. The platform runs the machine."</h2>
-                        <p className="text-xl text-slate-400 mb-12">StrategicAI isn't software. It's your new infrastructure.</p>
-                        <Link href="/operator">
-                            <span className={styles.ctaButton}>Apply to become a Certified Operator</span>
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 italic">"Get Your 7-Day Operational X-Ray"</h2>
+                        <p className="text-xl text-slate-400 mb-12 font-medium">Limited to 5 companies this month</p>
+                        <Link href="/intake">
+                            <span className={styles.ctaButton}>Start My X-Ray</span>
                         </Link>
-                        <p className="text-sm text-slate-500 mt-10">Launch App | Join Live Demo | See a Sample Roadmap</p>
+                        <div className="grid md:grid-cols-3 gap-8 mt-16 text-sm text-slate-500">
+                            <div className="flex flex-col items-center gap-2">
+                                <span className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 font-bold">✓</span>
+                                No software required
+                            </div>
+                            <div className="flex flex-col items-center gap-2">
+                                <span className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 font-bold">✓</span>
+                                No system overhaul
+                            </div>
+                            <div className="flex flex-col items-center gap-2">
+                                <span className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 font-bold">✓</span>
+                                No disruption to your team
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
@@ -192,7 +203,7 @@ export default function HomePage() {
                             <Link href="/smb"><span className="hover:text-white transition cursor-pointer">SMBs</span></Link>
                             <Link href="/features"><span className="hover:text-white transition cursor-pointer">Features</span></Link>
                         </div>
-                        <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} Strategic AI Infrastructure. All rights reserved.</p>
+                        <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} Strategic AI app. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
