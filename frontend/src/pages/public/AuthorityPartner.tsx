@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'wouter';
+import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
 
 const styles = {
@@ -22,13 +22,13 @@ export default function AuthorityPartner() {
             {/* Nav */}
             <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
                 <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link href="/" onClick={scrollToTop}>
+                    <Link to="/" onClick={scrollToTop}>
                         <span className="text-xl font-medium tracking-tight text-slate-100 hover:text-blue-400 transition-colors cursor-pointer">
                             <span className="text-blue-500">Strategic</span>AI.app
                         </span>
                     </Link>
                     <div className="flex gap-6">
-                        <Link href="/operator"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Get Certified</span></Link>
+                        <Link to="/operator"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Get Certified</span></Link>
                     </div>
                 </div>
             </nav>
@@ -131,8 +131,8 @@ export default function AuthorityPartner() {
                     <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 gap-4">
                         <p>© {new Date().getFullYear()} Strategic AI Infrastructure. All rights reserved.</p>
                         <div className="flex gap-6">
-                            <Link href="/"><span className="hover:text-slate-400 cursor-pointer">Home</span></Link>
-                            <Link href="/economics"><span className="hover:text-slate-400 cursor-pointer">Economics</span></Link>
+                            <Link to="/"><span className="hover:text-slate-400 cursor-pointer">Home</span></Link>
+                            <Link to="/economics"><span className="hover:text-slate-400 cursor-pointer">Economics</span></Link>
                         </div>
                     </div>
                 </div>

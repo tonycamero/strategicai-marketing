@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'wouter';
+import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
 import { PartnerRevenueSimulator } from './PartnerRevenueSimulator';
 
@@ -23,13 +23,13 @@ export default function AuthorityEconomics() {
             {/* Nav */}
             <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
                 <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link href="/" onClick={scrollToTop}>
+                    <Link to="/" onClick={scrollToTop}>
                         <span className="text-xl font-medium tracking-tight text-slate-100 hover:text-blue-400 transition-colors cursor-pointer">
                             <span className="text-blue-500">Strategic</span>AI.app
                         </span>
                     </Link>
                     <div className="flex gap-6">
-                        <Link href="/partner"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner</span></Link>
+                        <Link to="/partner"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner</span></Link>
                     </div>
                 </div>
             </nav>

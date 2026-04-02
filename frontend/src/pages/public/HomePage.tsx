@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'wouter';
+import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
 
 const styles = {
@@ -25,7 +25,7 @@ export default function HomePage() {
             {/* Navigation */}
             <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link href="/" onClick={scrollToTop}>
+                    <Link to="/" onClick={scrollToTop}>
                         <div className="flex items-center gap-2 cursor-pointer group">
                             <span className="text-2xl font-bold tracking-tighter text-white">
                                 <span className="text-blue-500 group-hover:text-blue-400 transition-colors">Strategic</span>AI.app
@@ -33,10 +33,10 @@ export default function HomePage() {
                         </div>
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
-                        <Link href="/features"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Features</span></Link>
-                        <Link href="/partner"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Partner</span></Link>
-                        <Link href="/operator"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Certification</span></Link>
-                        <Link href="/smb">
+                        <Link to="/features"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Features</span></Link>
+                        <Link to="/partner"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Partner</span></Link>
+                        <Link to="/operator"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Certification</span></Link>
+                        <Link to="/smb">
                             <span className="px-4 py-2 rounded-full bg-slate-800 text-sm font-semibold text-white hover:bg-slate-700 transition cursor-pointer">
                                 SMB Solutions
                             </span>
@@ -60,10 +60,10 @@ export default function HomePage() {
                             We map how your business actually runs, identify where things are breaking, and give you a clear plan to fix it <span className="text-white font-medium">in 7 days.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Link href="/intake">
+                            <Link to="/intake">
                                 <span className={styles.ctaButton}>Get Your 7-Day Operational X-Ray</span>
                             </Link>
-                            <Link href="/features">
+                            <Link to="/features">
                                 <span className="text-slate-400 hover:text-white font-medium flex items-center gap-2 cursor-pointer transition-all">
                                     See how it works <span className="text-xl">→</span>
                                 </span>
@@ -166,7 +166,7 @@ export default function HomePage() {
                     <div className="max-w-4xl mx-auto px-6 text-center">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 italic">"Get Your 7-Day Operational X-Ray"</h2>
                         <p className="text-xl text-slate-400 mb-12 font-medium">Limited to 5 companies this month</p>
-                        <Link href="/intake">
+                        <Link to="/intake">
                             <span className={styles.ctaButton}>Start My X-Ray</span>
                         </Link>
                         <div className="grid md:grid-cols-3 gap-8 mt-16 text-sm text-slate-500">
@@ -199,9 +199,9 @@ export default function HomePage() {
                             </span>
                         </div>
                         <div className="flex gap-8 text-sm font-medium text-slate-500">
-                            <Link href="/economics"><span className="hover:text-white transition cursor-pointer">Economics</span></Link>
-                            <Link href="/smb"><span className="hover:text-white transition cursor-pointer">SMBs</span></Link>
-                            <Link href="/features"><span className="hover:text-white transition cursor-pointer">Features</span></Link>
+                            <Link to="/economics"><span className="hover:text-white transition cursor-pointer">Economics</span></Link>
+                            <Link to="/smb"><span className="hover:text-white transition cursor-pointer">SMBs</span></Link>
+                            <Link to="/features"><span className="hover:text-white transition cursor-pointer">Features</span></Link>
                         </div>
                         <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} Strategic AI app. All rights reserved.</p>
                     </div>

@@ -11,7 +11,9 @@ import PartnerRevenueSimulator from "./pages/public/PartnerRevenueSimulator";
 import Placeholder from "./pages/public/Placeholder";
 import Intake from "./pages/public/Intake";
 import IntakeThanks from "./pages/public/IntakeThanks";
-
+import Product from "./pages/public/Product";
+import WhyStrategicAI from "./pages/public/WhyStrategicAI";
+import Pricing from "./pages/public/Pricing";
 
 export type AppRoute = {
   path: string;
@@ -19,24 +21,35 @@ export type AppRoute = {
   label?: string;
 };
 
-
-
-import Product from "./pages/public/Product";
-import WhyStrategicAI from "./pages/public/WhyStrategicAI";
-import Pricing from "./pages/public/Pricing";
-
 export const routes: AppRoute[] = [
   { path: "/", element: <HomePage /> },
-  { path: "/partners", element: <Partners />, label: "Partner Program" },
+  
+  /* Navigation Links */
   { path: "/product", element: <Product /> },
+  { path: "/features", element: <Product />, label: "Features" }, // Alias for convenience
   { path: "/why", element: <WhyStrategicAI /> },
   { path: "/pricing", element: <Pricing /> },
-  { path: "/login", element: <Placeholder /> },
-  { path: "/roadmap", element: <Placeholder /> },
+  
+  /* Solutions */
+  { path: "/smb", element: <SmbSales /> },
+  
+  /* Partners & Certification */
+  { path: "/partners", element: <Partners />, label: "Partner Program" },
+  { path: "/partner", element: <AuthorityPartner /> },
+  { path: "/authority-partner", element: <AuthorityPartner />, label: "Partner" },
+  { path: "/operator", element: <CertifiedOperator /> },
+  { path: "/certified-operator", element: <CertifiedOperator />, label: "Certification" },
+  
+  /* Strategic/Economics */
+  { path: "/economics", element: <AuthorityEconomics /> },
   { path: "/authority-economics", element: <AuthorityEconomics /> },
-  { path: "/authority-partner", element: <AuthorityPartner /> },
-  { path: "/certified-operator", element: <CertifiedOperator /> },
+  { path: "/partner-revenue-simulator", element: <PartnerRevenueSimulator /> },
+  
+  /* Intake Flow */
   { path: "/intake", element: <Intake /> },
   { path: "/intake/thanks", element: <IntakeThanks /> },
-  { path: "/partner-revenue-simulator", element: <PartnerRevenueSimulator /> },
+  
+  /* Auth/Roadmap Placeholders */
+  { path: "/login", element: <Placeholder /> },
+  { path: "/roadmap", element: <Placeholder /> },
 ];
