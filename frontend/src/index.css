@@ -29,4 +29,15 @@ body {
   .animate-led-slow {
     animation: led-slow 4s ease-in-out infinite;
   }
+  @keyframes glow-blue {
+    0%, 100% { 
+        text-shadow: 0 0 15px rgba(59, 130, 246, 0.2); 
+    }
+    50% { 
+        text-shadow: 0 0 35px rgba(59, 130, 246, 0.6), 0 0 15px rgba(59, 130, 246, 0.4); 
+    }
+  }
+  .animate-glow-blue {
+    animation: glow-blue 5s ease-in-out infinite;
+  }
 }

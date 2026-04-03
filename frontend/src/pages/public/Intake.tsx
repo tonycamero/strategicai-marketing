@@ -76,7 +76,7 @@ export default function Intake() {
         <div className="min-h-screen bg-slate-950 text-white pb-20">
             <main className="max-w-3xl mx-auto px-6 pt-16">
                 <div className="text-center mb-12">
-                    <h1 className={styles.h1}>Build My AI Brain</h1>
+                    <h1 className={`${styles.h1} animate-glow-blue`}>Build My AI Brain</h1>
                     <p className={styles.p}>
                         Your Operational Intelligence for Powerful Strategic Advantage
                     </p>
