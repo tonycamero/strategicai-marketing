@@ -206,7 +206,7 @@ export default function Intake() {
                                 <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                 Submitting...
                             </span>
-                        ) : "Submit Intake"}
+                        ) : "Get Started"}
                     </button>
 
                     <p className="text-center text-xs text-slate-500">
