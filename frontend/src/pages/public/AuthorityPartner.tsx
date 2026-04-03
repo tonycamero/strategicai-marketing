@@ -19,19 +19,6 @@ export default function AuthorityPartner() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-white">
-            {/* Nav */}
-            <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" onClick={scrollToTop}>
-                        <span className="text-xl font-medium tracking-tight text-slate-100 hover:text-blue-400 transition-colors cursor-pointer">
-                            <span className="text-blue-500">Strategic</span>AI.app
-                        </span>
-                    </Link>
-                    <div className="flex gap-6">
-                        <Link to="/operator"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Get Certified</span></Link>
-                    </div>
-                </div>
-            </nav>
 
             <main>
                 {/* Hero */}
@@ -125,18 +112,6 @@ export default function AuthorityPartner() {
 
             <TrustAgentShell enabled={true} mode="homepage" />
 
-            {/* Footer */}
-            <footer className="border-t border-slate-800 mt-16 bg-slate-950">
-                <div className="max-w-6xl mx-auto px-6 py-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 gap-4">
-                        <p>© {new Date().getFullYear()} Strategic AI Infrastructure. All rights reserved.</p>
-                        <div className="flex gap-6">
-                            <Link to="/"><span className="hover:text-slate-400 cursor-pointer">Home</span></Link>
-                            <Link to="/economics"><span className="hover:text-slate-400 cursor-pointer">Economics</span></Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }

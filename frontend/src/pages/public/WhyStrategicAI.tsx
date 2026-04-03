@@ -19,28 +19,6 @@ export default function WhyStrategicAI() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-white">
-            {/* Nav */}
-            <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" onClick={scrollToTop}>
-                        <span className="text-xl font-medium tracking-tight text-slate-100 hover:text-blue-400 transition-colors cursor-pointer">
-                            <span className="text-blue-500">Strategic</span>AI.app
-                        </span>
-                    </Link>
-                    <div className="flex gap-6 items-center">
-                        <div className="hidden md:flex gap-6 mr-4 border-r border-slate-800 pr-6">
-                            <Link to="/product"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Product</span></Link>
-                            <Link to="/why"><span className="text-sm text-white font-medium cursor-pointer">Why StrategicAI</span></Link>
-                            <Link to="/pricing"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Pricing</span></Link>
-                        </div>
-                        <Link to="/partners"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner Program</span></Link>
-                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
-                        <Link to="/intake">
-                            <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
-                        </Link>
-                    </div>
-                </div>
-            </nav>
 
             <main>
                 {/* Hero */}
@@ -50,7 +28,7 @@ export default function WhyStrategicAI() {
                         <p className={styles.p}>
                             Every business hits the same wall: chaos after kickoff. StrategicAI keeps things aligned after the whiteboard is erased.
                         </p>
-                        <Link to="/intake" className={styles.ctaButton}>See It In Action</Link>
+                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                 </section>
 
@@ -113,7 +91,7 @@ export default function WhyStrategicAI() {
                 <section className={styles.section}>
                     <div className="text-center">
                         <h2 className={styles.h2}>Stop the Chaos. Start the System.</h2>
-                        <Link to="/intake" className={styles.ctaButton}>See It In Action</Link>
+                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                 </section>
 
@@ -121,18 +99,6 @@ export default function WhyStrategicAI() {
 
             <TrustAgentShell enabled={true} mode="public" />
 
-            {/* Footer */}
-            <footer className="border-t border-slate-800 mt-16 bg-slate-950">
-                <div className="max-w-6xl mx-auto px-6 py-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 gap-4">
-                        <p>© {new Date().getFullYear()} Strategic AI Infrastructure. All rights reserved.</p>
-                        <div className="flex gap-6">
-                            <Link to="/"><span className="hover:text-slate-400 cursor-pointer">Home</span></Link>
-                            <Link to="/partners"><span className="hover:text-slate-400 cursor-pointer">Partners</span></Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }

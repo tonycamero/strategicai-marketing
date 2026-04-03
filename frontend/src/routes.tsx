@@ -14,6 +14,7 @@ import IntakeThanks from "./pages/public/IntakeThanks";
 import Product from "./pages/public/Product";
 import WhyStrategicAI from "./pages/public/WhyStrategicAI";
 import Pricing from "./pages/public/Pricing";
+import StrategicAiBrain from "./pages/public/StrategicAiBrain";
 
 export type AppRoute = {
   path: string;
@@ -22,10 +23,12 @@ export type AppRoute = {
 };
 
 export const routes: AppRoute[] = [
-  { path: "/", element: <HomePage /> },
+  { path: "/", element: <StrategicAiBrain /> },
+  { path: "/legacy-home", element: <HomePage /> },
   
   /* Navigation Links */
   { path: "/product", element: <Product /> },
+  { path: "/strategic-ai-brain", element: <StrategicAiBrain /> },
   { path: "/features", element: <Product />, label: "Features" }, // Alias for convenience
   { path: "/why", element: <WhyStrategicAI /> },
   { path: "/pricing", element: <Pricing /> },

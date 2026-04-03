@@ -22,29 +22,6 @@ export default function HomePage() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-white selection:bg-blue-500/30">
-            {/* Navigation */}
-            <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" onClick={scrollToTop}>
-                        <div className="flex items-center gap-2 cursor-pointer group">
-                            <span className="text-2xl font-bold tracking-tighter text-white">
-                                <span className="text-blue-500 group-hover:text-blue-400 transition-colors">Strategic</span>AI.app
-                            </span>
-                        </div>
-                    </Link>
-                    <div className="hidden md:flex items-center gap-8">
-                        <Link to="/features"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Features</span></Link>
-                        <Link to="/partner"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Partner</span></Link>
-                        <Link to="/operator"><span className="text-sm font-medium text-slate-400 hover:text-white transition cursor-pointer">Certification</span></Link>
-                        <Link to="/smb">
-                            <span className="px-4 py-2 rounded-full bg-slate-800 text-sm font-semibold text-white hover:bg-slate-700 transition cursor-pointer">
-                                SMB Solutions
-                            </span>
-                        </Link>
-                    </div>
-                </div>
-            </nav>
-
             <main>
                 {/* Hero Section */}
                 <section className="relative overflow-hidden pt-32 pb-24 border-b border-slate-800/50">
@@ -61,7 +38,7 @@ export default function HomePage() {
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <Link to="/intake">
-                                <span className={styles.ctaButton}>Get Your 7-Day Operational X-Ray</span>
+                                <span className={styles.ctaButton}>Build My AI Brain</span>
                             </Link>
                             <Link to="/features">
                                 <span className="text-slate-400 hover:text-white font-medium flex items-center gap-2 cursor-pointer transition-all">
@@ -167,7 +144,7 @@ export default function HomePage() {
                         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 italic">"Get Your 7-Day Operational X-Ray"</h2>
                         <p className="text-xl text-slate-400 mb-12 font-medium">Limited to 5 companies this month</p>
                         <Link to="/intake">
-                            <span className={styles.ctaButton}>Start My X-Ray</span>
+                            <span className={styles.ctaButton}>Build My AI Brain</span>
                         </Link>
                         <div className="grid md:grid-cols-3 gap-8 mt-16 text-sm text-slate-500">
                             <div className="flex flex-col items-center gap-2">
@@ -188,25 +165,6 @@ export default function HomePage() {
             </main>
 
             <TrustAgentShell enabled={true} mode="homepage" />
-
-            {/* Footer */}
-            <footer className="border-t border-slate-800 bg-slate-950 py-12">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                        <div className="flex items-center gap-2">
-                            <span className="text-xl font-bold tracking-tighter text-white">
-                                <span className="text-blue-500">Strategic</span>AI.app
-                            </span>
-                        </div>
-                        <div className="flex gap-8 text-sm font-medium text-slate-500">
-                            <Link to="/economics"><span className="hover:text-white transition cursor-pointer">Economics</span></Link>
-                            <Link to="/smb"><span className="hover:text-white transition cursor-pointer">SMBs</span></Link>
-                            <Link to="/features"><span className="hover:text-white transition cursor-pointer">Features</span></Link>
-                        </div>
-                        <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} Strategic AI app. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }

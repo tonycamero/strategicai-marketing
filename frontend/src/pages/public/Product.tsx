@@ -25,38 +25,16 @@ export default function Product() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-white">
-            {/* Nav */}
-            <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" onClick={scrollToTop}>
-                        <span className="text-xl font-medium tracking-tight text-slate-100 hover:text-blue-400 transition-colors cursor-pointer">
-                            <span className="text-blue-500">Strategic</span>AI.app
-                        </span>
-                    </Link>
-                    <div className="flex gap-6 items-center">
-                        <div className="hidden md:flex gap-6 mr-4 border-r border-slate-800 pr-6">
-                            <Link to="/product"><span className="text-sm text-white font-medium cursor-pointer">Product</span></Link>
-                            <Link to="/why"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Why StrategicAI</span></Link>
-                            <Link to="/pricing"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Pricing</span></Link>
-                        </div>
-                        <Link to="/partners"><span className="text-sm text-slate-400 hover:text-white cursor-pointer">Partner Program</span></Link>
-                        <a href="https://portal.strategicai.app/login" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white cursor-pointer">Login</a>
-                        <Link to="/intake">
-                            <span className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition cursor-pointer">Get Strategic Clarity</span>
-                        </Link>
-                    </div>
-                </div>
-            </nav>
 
             <main>
                 {/* Hero */}
                 <section className={styles.section}>
                     <div className="text-center max-w-4xl mx-auto mb-12">
-                        <h1 className={styles.h1}>Everything You Need to Execute Strategy — Built In</h1>
+                        <h1 className={styles.h1}>Everything You Need to Execute Your Strategy — in Just 7 Days</h1>
                         <p className={styles.p}>
                             No more spreadsheets, docs, or chasing your team. StrategicAI runs your business plan, so you don’t have to.
                         </p>
-                        <Link to="/intake" className={styles.ctaButton}>Start My Roadmap</Link>
+                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                 </section>
 
@@ -91,10 +69,10 @@ export default function Product() {
                             </div>
                         </div>
                         <div>
-                            <h2 className={styles.h2}>TrustConsole™</h2>
+                            <h2 className={styles.h2}>Strategic AI Brain™</h2>
                             <p className={styles.p}>Your 24/7 AI COO. Ask questions, check status, and get guidance trained on your specific context.</p>
                             <div className={styles.imgContainer} onClick={() => setSelectedImage('/images/smb-trust-console.png')}>
-                                <img src="/images/smb-trust-console.png" alt="TrustConsole" className={styles.img} />
+                                <img src="/images/smb-trust-console.png" alt="Strategic AI Brain" className={styles.img} />
                                 <div className={styles.zoomHint}><span className="bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">Click to expand</span></div>
                             </div>
                         </div>
@@ -103,7 +81,7 @@ export default function Product() {
 
                 {/* What Makes It Different */}
                 <section className={styles.section}>
-                    <h2 className={styles.h2}>Not Just Another Dashboard</h2>
+                    <h2 className={styles.h2}>Way Beyond Dashboards</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
                             <h3 className={styles.h3}>Built for Operations</h3>
@@ -123,8 +101,8 @@ export default function Product() {
                 {/* CTA */}
                 <section className={styles.section}>
                     <div className="text-center">
-                        <h2 className={styles.h2}>Your Operational OS is Ready</h2>
-                        <Link to="/intake" className={styles.ctaButton}>Start My Roadmap</Link>
+                        <h2 className={styles.h2}>Superior Operational Intelligence in Just 7 Days</h2>
+                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                 </section>
             </main>
@@ -132,18 +110,6 @@ export default function Product() {
             <TrustAgentShell enabled={true} mode="public" />
             <ImageViewer isOpen={!!selectedImage} src={selectedImage} onClose={() => setSelectedImage(null)} />
 
-            {/* Footer */}
-            <footer className="border-t border-slate-800 mt-16 bg-slate-950">
-                <div className="max-w-6xl mx-auto px-6 py-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 gap-4">
-                        <p>© {new Date().getFullYear()} Strategic AI Infrastructure. All rights reserved.</p>
-                        <div className="flex gap-6">
-                            <Link to="/"><span className="hover:text-slate-400 cursor-pointer">Home</span></Link>
-                            <Link to="/partners"><span className="hover:text-slate-400 cursor-pointer">Partners</span></Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }

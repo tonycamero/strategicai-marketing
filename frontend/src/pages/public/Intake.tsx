@@ -74,22 +74,11 @@ export default function Intake() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-white pb-20">
-            {/* Nav */}
-            <nav className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" onClick={scrollToTop}>
-                        <span className="text-xl font-medium tracking-tight text-slate-100 hover:text-blue-400 transition-colors cursor-pointer">
-                            <span className="text-blue-500">Strategic</span>AI.app
-                        </span>
-                    </Link>
-                </div>
-            </nav>
-
             <main className="max-w-3xl mx-auto px-6 pt-16">
                 <div className="text-center mb-12">
-                    <h1 className={styles.h1}>Quick Intake</h1>
+                    <h1 className={styles.h1}>Build My AI Brain</h1>
                     <p className={styles.p}>
-                        Answer a few questions so we can point you to the right next step.
+                        Your Operational Intelligence for Powerful Strategic Advantage
                     </p>
                 </div>
 
