@@ -31,7 +31,7 @@ export default function StrategicAiBrain() {
                     Not based on prompts. Not based on guesses.
                 </p>
                 <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
-                    Built on your <span className="font-bold italic underline text-white">real operational reality</span>: goals, friction, constraints, and execution.
+                    Built on your <span className="font-bold italic underline animate-glow-blue">real operational reality</span>: goals, friction, constraints, and execution.
                 </p>
                 <p className="text-lg text-slate-500 mb-12 italic">
                     It shows you what’s slowing your business down — and what to fix next.
