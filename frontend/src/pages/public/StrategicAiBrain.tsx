@@ -31,7 +31,7 @@ export default function StrategicAiBrain() {
                     Not based on prompts. Not based on guesses.
                 </p>
                 <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
-                    Built on your <span className="font-bold italic underline animate-glow-blue">real operational reality</span>: goals, friction, constraints, and execution.
+                    Built on your <span className="font-bold italic underline animate-glow-blue">true operational reality</span>: goals, friction, constraints, and execution.
                 </p>
                 <p className="text-lg text-slate-500 mb-12 italic">
                     It shows you what’s slowing your business down — and what to fix next.
@@ -250,10 +250,18 @@ export default function StrategicAiBrain() {
                 <div className="max-w-3xl mx-auto p-12 bg-slate-900 border border-slate-800 rounded-3xl">
                     <h2 className="text-xl font-bold text-slate-500 uppercase tracking-widest text-center mb-12">LEGACY SYSTEMS REPLACED</h2>
                     <ul className="space-y-6 text-center">
-                        <li className="text-2xl text-slate-300 line-through decoration-red-600 decoration-4">Dashboards</li>
-                        <li className="text-2xl text-slate-300 line-through decoration-red-600 decoration-4">Reporting Cycles</li>
-                        <li className="text-2xl text-slate-300 line-through decoration-red-600 decoration-4">Guess-based prioritization</li>
-                        <li className="text-2xl text-slate-300 line-through decoration-red-600 decoration-4">Reactive management</li>
+                        <li className="text-2xl text-slate-300 flex items-center justify-center gap-4">
+                            Dashboards <span className="text-red-600 font-bold">✕</span>
+                        </li>
+                        <li className="text-2xl text-slate-300 flex items-center justify-center gap-4">
+                            Reporting Cycles <span className="text-red-600 font-bold">✕</span>
+                        </li>
+                        <li className="text-2xl text-slate-300 flex items-center justify-center gap-4">
+                            Guess-based prioritization <span className="text-red-600 font-bold">✕</span>
+                        </li>
+                        <li className="text-2xl text-slate-300 flex items-center justify-center gap-4">
+                            Reactive management <span className="text-red-600 font-bold">✕</span>
+                        </li>
                     </ul>
                 </div>
             </section>
