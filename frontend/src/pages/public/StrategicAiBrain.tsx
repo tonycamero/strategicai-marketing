@@ -107,7 +107,7 @@ export default function StrategicAiBrain() {
                             <div className="grid grid-cols-4 gap-4 w-full h-full p-4 relative z-10">
                                 {[...Array(16)].map((_, i) => (
                                     <div key={i} className={`rounded-lg border border-slate-800 bg-slate-950/50 flex items-center justify-center opacity-${20 + (i % 5) * 20}`}>
-                                        <div className={`w-2 h-2 rounded-full ${i === 10 ? 'bg-blue-500' : 'bg-slate-700'}`}></div>
+                                        <div className={`w-2 h-2 rounded-full ${i === 10 ? 'bg-blue-500 animate-led-slow' : 'bg-slate-700'}`}></div>
                                     </div>
                                 ))}
                             </div>
