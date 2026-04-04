@@ -40,4 +40,11 @@ body {
   .animate-glow-blue {
     animation: glow-blue 4s ease-in-out infinite;
   }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.05; transform: scale(1.5); }
+    50% { opacity: 0.15; transform: scale(1.6); }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+  }
 }

@@ -25,22 +25,38 @@ export default function StrategicAiBrain() {
     return (
         <div className="min-h-screen bg-slate-950 text-white selection:bg-blue-500/30">
             {/* 1. HERO */}
-            <section className={`${styles.section} pt-32 pb-24 text-center`}>
-                <h1 className={styles.h1}>An AI that actually understands how your business works</h1>
-                <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto">
-                    Not based on prompts. Not based on guesses.
-                </p>
-                <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
-                    Built on your <span className="font-bold italic underline animate-glow-blue">true operational reality</span>: goals, friction, constraints, and execution.
-                </p>
-                <p className="text-lg text-slate-500 mb-12 italic">
-                    It shows you what’s slowing your business down — and what to fix next.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                    <Link to="/intake" className={styles.ctaPrimary}>Build My AI Brain</Link>
-                    <button className={styles.ctaSecondary} onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}>
-                        See How It Works
-                    </button>
+            {/* 1. HERO */}
+            <section className="relative overflow-hidden pt-32 pb-24 text-center border-b border-slate-800/50 min-h-[60vh] flex items-center justify-center">
+                {/* AI Brain Background */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <img 
+                        src="/images/brain-bg.png" 
+                        className="w-full h-full object-cover opacity-20 transform transition-all duration-[20s] animate-pulse-slow" 
+                        alt=""
+                    />
+                    {/* Dark gradient overlays for edge blending */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950 opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950 opacity-40" />
+                </div>
+                <div className="absolute inset-0 bg-blue-500/5 blur-[120px] z-0 rounded-full" />
+                
+                <div className="max-w-5xl mx-auto px-6 relative z-10 w-full">
+                    <h1 className={styles.h1}>An AI that actually understands how your business works</h1>
+                    <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto font-light">
+                        Not based on prompts. Not based on guesses.
+                    </p>
+                    <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto font-medium">
+                        Built on your <span className="font-bold italic underline animate-glow-blue">true operational reality</span>: goals, friction, constraints, and execution.
+                    </p>
+                    <p className="text-lg text-slate-500 mb-12 italic opacity-80">
+                        It shows you what’s slowing your business down — and what to fix next.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link to="/intake" className={styles.ctaPrimary}>Build My AI Brain</Link>
+                        <button className={styles.ctaSecondary} onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}>
+                            See How It Works
+                        </button>
+                    </div>
                 </div>
             </section>
 

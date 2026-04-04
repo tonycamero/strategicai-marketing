@@ -25,6 +25,14 @@ export default function HomePage() {
             <main>
                 {/* Hero Section */}
                 <section className="relative overflow-hidden pt-32 pb-24 border-b border-slate-800/50">
+                    {/* AI Brain Background */}
+                    <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden flex items-center justify-center">
+                        <img 
+                            src="/images/brain-bg.png" 
+                            className="w-full h-full object-cover scale-150 transform opacity-10 blur-[2px] transition-all duration-[20s] animate-pulse-slow" 
+                            alt=""
+                        />
+                    </div>
                     <div className="absolute inset-0 bg-blue-500/5 blur-[120px] -z-10 rounded-full" />
                     <div className="max-w-6xl mx-auto px-6 text-center">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in">
