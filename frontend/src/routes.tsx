@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import SmbSales from "./pages/public/SmbSales";
 import HomePage from "./pages/public/HomePage";
+import AlternateHomePage from "./pages/public/AlternateHomePage";
 import Partners from "./pages/public/Partners";
 import AuthorityEconomics from "./pages/public/AuthorityEconomics";
 import AuthorityPartner from "./pages/public/AuthorityPartner";
@@ -23,8 +24,10 @@ export type AppRoute = {
 };
 
 export const routes: AppRoute[] = [
-  { path: "/", element: <StrategicAiBrain /> },
+  { path: "/", element: <AlternateHomePage /> },
   { path: "/legacy-home", element: <HomePage /> },
+  { path: "/brain", element: <StrategicAiBrain /> },
+  { path: "/alt-home", element: <AlternateHomePage /> },
   
   /* Navigation Links */
   { path: "/product", element: <Product /> },

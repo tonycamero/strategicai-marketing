@@ -25,13 +25,14 @@ export default function StrategicAiBrain() {
     return (
         <div className="min-h-screen bg-slate-950 text-white selection:bg-blue-500/30">
             {/* 1. HERO */}
-            {/* 1. HERO */}
             <section className="relative overflow-hidden pt-32 pb-24 text-center border-b border-slate-800/50 min-h-[60vh] flex items-center justify-center">
                 {/* AI Brain Background */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <img 
                         src="/images/brain-bg.png" 
-                        className="w-full h-full object-cover opacity-20 transform transition-all duration-[20s] animate-pulse-slow" 
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover opacity-15 transform transition-all duration-[20s] animate-pulse-slow" 
                         alt=""
                     />
                     {/* Dark gradient overlays for edge blending */}

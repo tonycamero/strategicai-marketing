@@ -1,5 +1,7 @@
 import { Route, Switch, Redirect } from "wouter";
 import HomePage from "./pages/public/HomePage";
+import AlternateHomePage from "./pages/public/AlternateHomePage";
+import StrategicAiBrain from "./pages/public/StrategicAiBrain";
 import AuthorityEconomics from "./pages/public/AuthorityEconomics";
 import AuthorityPartner from "./pages/public/AuthorityPartner";
 import CertifiedOperator from "./pages/public/CertifiedOperator";
@@ -16,7 +18,10 @@ import Placeholder from "./pages/public/Placeholder";
 function App() {
     return (
         <Switch>
-            <Route path="/" component={HomePage} />
+            <Route path="/" component={AlternateHomePage} />
+            <Route path="/legacy-home" component={HomePage} />
+            <Route path="/brain" component={StrategicAiBrain} />
+            <Route path="/alt-home" component={AlternateHomePage} />
             
             {/* Main Links */}
             <Route path="/product" component={Product} />
