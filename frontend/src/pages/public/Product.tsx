@@ -124,8 +124,8 @@ export default function Product() {
                 <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Progress produces evidence</span></li>
               </ul>
             </div>
-            <button type="button" onClick={() => openImage("/images/smb-dashboard-main.png", "mission-control")} className={imageCard}>
-              <img src="/images/smb-dashboard-main.png" alt="Mission Control view" className="w-full" />
+            <button type="button" onClick={() => openImage("/images/mission-control-real.png", "mission-control")} className={imageCard}>
+              <img src="/images/mission-control-real.png" alt="Mission Control view" className="w-full" />
             </button>
           </div>
         </section>
@@ -133,7 +133,7 @@ export default function Product() {
         <section className={sectionClass}>
           <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-10 text-center">
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Start with the reflection before you buy the explanation.
+              Don&apos;t buy the explanation before you&apos;ve seen the reflection.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
               The Executive Brief is the first artifact. If the reflection rings true, StrategicAI

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
 import { usePageMeta } from "../../hooks/usePageMeta";
@@ -12,10 +12,6 @@ export default function Pricing() {
     description:
       "Understand where the free Executive Brief ends and where paid Diagnostic, Roadmap, and ongoing execution support begin.",
   });
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   const engagements = [
     {
@@ -55,7 +51,7 @@ export default function Pricing() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <main>
-        <section className={sectionClass}>
+        <section id="engagements" className={`${sectionClass} scroll-mt-28`}>
           <div className="max-w-4xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Engagements</p>
             <h1 className="text-4xl font-semibold leading-tight text-white md:text-6xl">
@@ -69,7 +65,7 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section id="engagements" className={`${sectionClass} pt-0`}>
+        <section className={`${sectionClass} pt-0`}>
           <div className="grid gap-6 lg:grid-cols-2">
             {engagements.map((item) => (
               <div key={item.title} className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
