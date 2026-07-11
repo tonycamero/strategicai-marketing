@@ -1,131 +1,138 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
+import { usePageMeta } from "../../hooks/usePageMeta";
+import { trackEvent } from "../../lib/analytics";
 
-const styles = {
-    h1: "text-4xl md:text-5xl font-bold text-white mb-6 leading-tight",
-    h2: "text-2xl md:text-3xl font-bold text-white mb-6",
-    h3: "text-xl font-bold text-white mb-4",
-    p: "text-lg text-slate-400 mb-6 leading-relaxed",
-    li: "text-slate-300 mb-2 flex items-start gap-2",
-    section: "max-w-4xl mx-auto px-6 py-16 border-b border-slate-800/50 last:border-0",
-    ctaButton: "inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition cursor-pointer"
-};
-
-const scrollToTop = () => window.scrollTo(0, 0);
+const sectionClass = "mx-auto max-w-6xl px-6 py-20";
 
 export default function Pricing() {
-    useEffect(scrollToTop, []);
+  usePageMeta({
+    title: "StrategicAI Engagements | Executive Brief, Diagnostic, Roadmap, Execution",
+    description:
+      "Understand where the free Executive Brief ends and where paid Diagnostic, Roadmap, and ongoing execution support begin.",
+  });
 
-    return (
-        <div className="min-h-screen bg-slate-950 text-white">
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-            <main>
-                {/* Hero */}
-                <section className={styles.section}>
-                    <div className="text-center max-w-4xl mx-auto mb-12">
-                        <h1 className={styles.h1}>What’s the Cost of Staying Stuck?</h1>
-                        <p className={styles.p}>
-                            StrategicAI replaces months of consulting, endless docs, and fractured execution. It's not just software; it's leverage.
-                        </p>
-                    </div>
-                </section>
+  const engagements = [
+    {
+      step: "01",
+      title: "Executive Brief",
+      cost: "Free",
+      description:
+        "A reflection of leadership context, team evidence, and the visible operating pattern already inside the business.",
+      boundary: "No Diagnostic purchase required.",
+    },
+    {
+      step: "02",
+      title: "Diagnostic",
+      cost: "Paid after Discovery Call",
+      description:
+        "StrategicAI identifies the governing constraint, tests assumptions, and explains what is actually causing the friction.",
+      boundary: "This is where explanation begins.",
+    },
+    {
+      step: "03",
+      title: "Roadmap",
+      cost: "Paid planning engagement",
+      description:
+        "Intervention order, ownership, sequencing, milestones, and a 90-day plan grounded in the operating model.",
+      boundary: "This is the plan, not yet the execution environment.",
+    },
+    {
+      step: "04",
+      title: "Execution",
+      cost: "Ongoing engagement",
+      description:
+        "Mission Control turns the roadmap into a shared working environment for priorities, pressure, blockers, and progress.",
+      boundary: "The document becomes operational here.",
+    },
+  ];
 
-                {/* Analog Equivalent Breakdown */}
-                <section className={styles.section}>
-                    <h2 className={styles.h2}>The "Business as Usual" Tax</h2>
-                    <p className={styles.p}>What you're already paying for chaos:</p>
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <main>
+        <section className={sectionClass}>
+          <div className="max-w-4xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Engagements</p>
+            <h1 className="text-4xl font-semibold leading-tight text-white md:text-6xl">
+              The paid ladder is visible before onboarding begins.
+            </h1>
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
+              StrategicAI is not a mystery funnel. Start with the free Executive Brief, then move
+              into Diagnostic, Roadmap, and ongoing execution support only if the reflection earns
+              the right to continue.
+            </p>
+          </div>
+        </section>
 
-                    <div className="overflow-x-auto rounded-lg border border-slate-800 mt-8 mb-12">
-                        <table className="w-full text-left">
-                            <thead className="bg-slate-900 text-slate-300">
-                                <tr>
-                                    <th className="p-4 border-b border-slate-800">Analog System</th>
-                                    <th className="p-4 border-b border-slate-800">Real-World Cost</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-800 bg-slate-900/20">
-                                <tr>
-                                    <td className="p-4 text-white font-medium">Strategy Consultant</td>
-                                    <td className="p-4 text-slate-400">$15,000 – $40,000</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-4 text-white font-medium">Roadmap Decks + Rewrites</td>
-                                    <td className="p-4 text-slate-400">$5,000 – $10,000</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-4 text-white font-medium">Alignment Meetings</td>
-                                    <td className="p-4 text-slate-400">6–8 weeks lost time</td>
-                                </tr>
-                                <tr>
-                                    <td className="p-4 text-white font-medium">Missed ROI</td>
-                                    <td className="p-4 text-slate-400">Compounded daily</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+        <section id="engagements" className={`${sectionClass} pt-0`}>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {engagements.map((item) => (
+              <div key={item.title} className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">
+                  {item.step} — {item.cost}
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold text-white">{item.title}</h2>
+                <p className="mt-4 text-base leading-7 text-slate-300">{item.description}</p>
+                <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-400">
+                  {item.boundary}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-                {/* StrategicAI Includes */}
-                <section className={styles.section}>
-                    <h2 className={styles.h2}>What StrategicAI Includes</h2>
-                    <p className={styles.p}>One platform. No hidden fees. Certified delivery.</p>
-                    <div className="grid md:grid-cols-2 gap-8 mt-8">
-                        <ul className="space-y-4 text-lg">
-                            <li className="flex items-center gap-2 text-white">✅ Role-Based Intake</li>
-                            <li className="flex items-center gap-2 text-white">✅ Executive Brief</li>
-                            <li className="flex items-center gap-2 text-white">✅ Diagnostic Report</li>
-                        </ul>
-                        <ul className="space-y-4 text-lg">
-                            <li className="flex items-center gap-2 text-white">✅ ROI Dashboard</li>
-                            <li className="flex items-center gap-2 text-white">✅ TrustConsole™ 24/7 Advisor</li>
-                            <li className="flex items-center gap-2 text-white">✅ Constant Evolution</li>
-                        </ul>
-                    </div>
-                </section>
+        <section className={sectionClass}>
+          <div className="grid gap-10 lg:grid-cols-2">
+            <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
+              <h2 className="text-3xl font-semibold text-white">What you should expect</h2>
+              <ul className="mt-8 space-y-4 text-slate-300">
+                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>The Executive Brief is reflection, not diagnosis.</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>The Diagnostic explains the governing constraint.</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>The Roadmap sets intervention order and ownership.</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Execution support keeps the plan alive after the document is delivered.</span></li>
+              </ul>
+            </div>
+            <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
+              <h2 className="text-3xl font-semibold text-white">Why prices are not flattened into a SaaS grid</h2>
+              <p className="mt-6 text-base leading-7 text-slate-300">
+                StrategicAI is not selling isolated seats or generic software access. The commercial
+                boundary depends on how much explanation, intervention design, and operational
+                support the organization actually needs.
+              </p>
+              <p className="mt-6 text-base leading-7 text-slate-400">
+                The free Executive Brief exists so that the first decision is grounded in evidence,
+                not guesswork.
+              </p>
+            </div>
+          </div>
+        </section>
 
-                {/* Delivery Model Framing */}
-                <section className={styles.section}>
-                    <div className="bg-blue-900/20 border border-blue-900 rounded-xl p-8 text-center">
-                        <h2 className={styles.h2}>Delivery Model</h2>
-                        <p className="text-xl text-blue-200 font-medium mb-4">
-                            Delivered by certified operators or directly via the platform.
-                        </p>
-                        <p className={styles.p}> No seat-based fees for your core team. No AI gimmick pricing.</p>
-                    </div>
-                </section>
+        <section className={sectionClass}>
+          <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-10 text-center">
+            <h2 className="text-3xl font-semibold text-white md:text-5xl">
+              Begin with the free reflection.
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              If the Executive Brief reflects the truth of your operating pattern, StrategicAI can
+              then help you decide whether Diagnostic, Roadmap, or Execution support should follow.
+            </p>
+            <Link
+              to="/intake"
+              onClick={() => trackEvent("executive_brief_cta_click", { source: "pricing" })}
+              className="mt-10 inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+            >
+              Build My Executive Brief
+            </Link>
+          </div>
+        </section>
+      </main>
 
-                {/* FAQ */}
-                <section className={styles.section}>
-                    <h2 className={styles.h2}>Common Questions</h2>
-                    <div className="space-y-8 mt-8">
-                        <div>
-                            <h3 className={styles.h3}>Why not list the price?</h3>
-                            <p className="text-slate-400">Every roadmap is different. What matters is ROI. You’ll know the value on day one.</p>
-                        </div>
-                        <div>
-                            <h3 className={styles.h3}>Is this a monthly subscription?</h3>
-                            <p className="text-slate-400">StrategicAI is an infrastructure license. It includes ongoing access to the TrustConsole and roadmap evolution.</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* CTA */}
-                <section className={styles.section}>
-                    <div className="text-center">
-                        <h2 className={styles.h2}>Ready to Calculate Your ROI?</h2>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
-                            <button className="inline-flex items-center px-6 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 text-white font-medium transition cursor-pointer">
-                                Talk to an Advisor
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <TrustAgentShell enabled={true} mode="public" />
-
-        </div>
-    );
+      <TrustAgentShell enabled={true} mode="public" />
+    </div>
+  );
 }

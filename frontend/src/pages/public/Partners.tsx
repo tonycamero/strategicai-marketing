@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
 import { ImageViewer } from '../../components/ImageViewer';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const styles = {
     h1: "text-4xl md:text-5xl font-bold text-white mb-6 leading-tight",
@@ -21,6 +22,11 @@ const scrollToTop = () => window.scrollTo(0, 0);
 
 export default function Partners() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    usePageMeta({
+        title: "StrategicAI Partners | Limited Partner Motion",
+        description:
+            "StrategicAI partner access remains limited while the primary public motion centers on the Executive Brief, Diagnostic, and Roadmap journey.",
+    });
 
     useEffect(scrollToTop, []);
 
