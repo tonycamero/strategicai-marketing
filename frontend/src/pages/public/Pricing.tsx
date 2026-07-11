@@ -118,7 +118,7 @@ export default function Pricing() {
               then help you decide whether Diagnostic, Roadmap, or Execution support should follow.
             </p>
             <Link
-              to="/intake"
+              to="/intake?source=pricing_engagement_intake"
               onClick={() => trackEvent("executive_brief_cta_click", { source: "pricing" })}
               className="mt-10 inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >

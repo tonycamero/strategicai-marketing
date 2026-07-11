@@ -28,7 +28,7 @@ export default function WhyStrategicAI() {
                         <p className={styles.p}>
                             Every business hits the same wall: chaos after kickoff. StrategicAI keeps things aligned after the whiteboard is erased.
                         </p>
-                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
+                        <Link to="/intake?source=why_strategic_ai_hero" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                 </section>
 
@@ -91,7 +91,7 @@ export default function WhyStrategicAI() {
                 <section className={styles.section}>
                     <div className="text-center">
                         <h2 className={styles.h2}>Stop the Chaos. Start the System.</h2>
-                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
+                        <Link to="/intake?source=why_strategic_ai_final" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                 </section>
 

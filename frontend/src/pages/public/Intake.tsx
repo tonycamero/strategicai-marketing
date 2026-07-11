@@ -26,6 +26,7 @@ export default function Intake() {
 
   const stage = searchParams.get("stage");
   const isLeadershipStage = stage === "leadership";
+  const intakeSource = searchParams.get("source") || "executive_brief_intake";
 
   usePageMeta({
     title: isLeadershipStage
@@ -37,10 +38,11 @@ export default function Intake() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    trackEvent("intake_started", {
+      trackEvent("intake_started", {
       stage: isLeadershipStage ? "leadership" : "organization-context",
+      source: intakeSource,
     });
-  }, [isLeadershipStage]);
+  }, [intakeSource, isLeadershipStage]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -73,7 +75,7 @@ export default function Intake() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...data, pains }),
+        body: JSON.stringify({ ...data, pains, source: intakeSource }),
       });
 
       if (!response.ok) {
@@ -83,6 +85,7 @@ export default function Intake() {
 
       trackEvent("organization_context_completed", {
         stage: isLeadershipStage ? "leadership" : "organization-context",
+        source: intakeSource,
       });
       navigate("/intake/thanks");
     } catch (error: any) {

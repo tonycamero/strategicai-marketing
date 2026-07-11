@@ -37,7 +37,7 @@ export default function SmbSales() {
                             Connect your vision to execution in days, not months.<br />
                             <strong className="text-white">Your Strategy. Executed.</strong>
                         </h2>
-                        <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
+                        <Link to="/intake?source=smb_sales_hero" className={styles.ctaButton}>Build My AI Brain</Link>
                     </div>
                     <div className={styles.imgContainer} onClick={() => setSelectedImage('/images/smb-dashboard-main.png')}>
                         <img src="/images/smb-dashboard-main.png" alt="StrategicAI Dashboard" className={styles.img} />
@@ -151,7 +151,7 @@ export default function SmbSales() {
                         <h2 className={styles.h2}>Ready to Run Your Business Like a Pro?</h2>
                         <p className={styles.p}>No need to learn new tools. No chasing contractors.<br />Just clarity, visibility, and a machine that runs your plan.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <Link to="/intake" className={styles.ctaButton}>Build My AI Brain</Link>
+                            <Link to="/intake?source=smb_sales_final" className={styles.ctaButton}>Build My AI Brain</Link>
                             <button className="inline-flex items-center px-6 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 text-white font-medium transition cursor-pointer">
                                 Talk to an advisor
                             </button>

@@ -24,7 +24,7 @@ export function Footer() {
               <li><Link to="/#how-it-works" className="text-slate-500 hover:text-white transition text-sm">How It Works</Link></li>
               <li><Link to="/product" className="text-slate-500 hover:text-white transition text-sm">Product</Link></li>
               <li><Link to="/pricing#engagements" className="text-slate-500 hover:text-white transition text-sm">Engagements</Link></li>
-              <li><Link to="/intake" className="text-slate-500 hover:text-white transition text-sm">Build My Executive Brief</Link></li>
+              <li><Link to="/intake?source=footer_executive_brief" className="text-slate-500 hover:text-white transition text-sm">Build My Executive Brief</Link></li>
             </ul>
           </div>
         </div>

@@ -41,7 +41,7 @@ export default function Product() {
               priorities, ownership, blockers, and progress.
             </p>
             <Link
-              to="/intake"
+              to="/intake?source=product_hero_executive_brief"
               onClick={() => trackEvent("executive_brief_cta_click", { source: "product-hero" })}
               className="mt-10 inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
@@ -141,7 +141,7 @@ export default function Product() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                to="/intake"
+                to="/intake?source=product_final_executive_brief"
                 onClick={() => trackEvent("executive_brief_cta_click", { source: "product-final" })}
                 className="inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >

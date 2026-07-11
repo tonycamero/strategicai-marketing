@@ -108,7 +108,7 @@ export default function AlternateHomePage() {
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
-                  to="/intake"
+                  to="/intake?source=homepage_hero_executive_brief"
                   onClick={() => handleExecutiveBriefClick("hero")}
                   className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
                 >
@@ -404,7 +404,7 @@ export default function AlternateHomePage() {
               whether to continue.
             </p>
             <Link
-              to="/intake"
+              to="/intake?source=homepage_final_executive_brief"
               onClick={() => handleExecutiveBriefClick("final-cta")}
               className="mt-10 inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
