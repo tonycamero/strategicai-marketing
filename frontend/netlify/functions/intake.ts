@@ -32,24 +32,6 @@ export const handler: Handler = async (event) => {
     try {
         const data = JSON.parse(event.body || '{}');
 
-        // Environment guard
-        const missingEnv: string[] = [];
-        if (!process.env.RESEND_API_KEY) missingEnv.push("RESEND_API_KEY");
-        if (!process.env.FROM_EMAIL) missingEnv.push("FROM_EMAIL");
-
-        if (missingEnv.length) {
-            return {
-                statusCode: 500,
-                headers,
-                body: JSON.stringify({
-                    error: `Missing env vars: ${missingEnv.join(", ")}`
-                }),
-            };
-        }
-
-        // Initialize Resend inside handler
-        const resend = new Resend(process.env.RESEND_API_KEY);
-
         // Spam protection: Honeypot field check
         if (data.b_website) {
             console.warn('Spam detected via honeypot field');
@@ -61,7 +43,7 @@ export const handler: Handler = async (event) => {
         }
 
         // Server-side validation
-        const requiredFields = ['fullName', 'email', 'phone', 'company', 'priorityBottleneck'];
+        const requiredFields = ['fullName', 'email', 'phone', 'company', 'role', 'teamSize', 'priorityBottleneck'];
         for (const field of requiredFields) {
             if (!data[field]) {
                 return {
@@ -72,12 +54,65 @@ export const handler: Handler = async (event) => {
             }
         }
 
-        // Send email via Resend
-        const { error } = await resend.emails.send({
-            from: process.env.FROM_EMAIL as string,
-            to: ['tony@strategicai.app'],
-            subject: `New Intake: ${data.fullName} - ${data.company}`,
-            html: `
+        const source = 'strategicai-marketing';
+        const offer = 'executive_brief';
+        const marketingSurface = typeof data.source === 'string' && data.source.trim().length > 0
+            ? data.source.trim()
+            : 'executive_brief_intake';
+        const platformBaseUrl = process.env.STRATEGICAI_PLATFORM_API_BASE_URL || 'https://go.strategicai.app';
+        const prospectPayload = {
+            source,
+            offer,
+            fullName: data.fullName,
+            email: data.email,
+            phone: data.phone,
+            company: data.company,
+            role: data.role,
+            teamSize: data.teamSize,
+            website: data.website || null,
+            pains: Array.isArray(data.pains) ? data.pains : [],
+            otherPainText: data.otherPainText || null,
+            priorityBottleneck: data.priorityBottleneck,
+            notes: data.notes || null,
+            submittedAt: new Date().toISOString(),
+            metadata: {
+                marketingSurface,
+                stage: data.stage || null,
+                origin: event.headers.origin || null,
+                referer: event.headers.referer || null,
+            },
+        };
+
+        const prospectResponse = await fetch(`${platformBaseUrl.replace(/\/$/, '')}/api/public/prospect-intake`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(prospectPayload),
+        });
+
+        if (!prospectResponse.ok) {
+            const platformError = await prospectResponse.json().catch(() => null);
+            console.error('Prospect intake write failed:', platformError || prospectResponse.statusText);
+            return {
+                statusCode: 502,
+                headers,
+                body: JSON.stringify({
+                    error: 'Pipeline write failed',
+                    detail: platformError?.error || platformError?.message || prospectResponse.statusText,
+                }),
+            };
+        }
+
+        const prospectResult = await prospectResponse.json().catch(() => null);
+
+        if (process.env.RESEND_API_KEY && process.env.FROM_EMAIL) {
+            const resend = new Resend(process.env.RESEND_API_KEY);
+            const { error } = await resend.emails.send({
+                from: process.env.FROM_EMAIL as string,
+                to: ['tony@strategicai.app'],
+                subject: `New Intake: ${data.fullName} - ${data.company}`,
+                html: `
                 <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
                     <h1 style="color: #2563eb; font-size: 24px; margin-bottom: 24px;">New Intake Submission</h1>
                     
@@ -134,17 +169,22 @@ export const handler: Handler = async (event) => {
                     </div>
                 </div>
             `,
-        });
+            });
 
-        if (error) {
-            console.error('Resend error:', error);
-            throw error;
+            if (error) {
+                console.error('Resend error:', error);
+            }
+        } else {
+            console.warn('Skipping intake email notification because RESEND_API_KEY or FROM_EMAIL is missing.');
         }
 
         return {
             statusCode: 200,
             headers,
-            body: JSON.stringify({ message: 'Intake received successfully' }),
+            body: JSON.stringify({
+                message: 'Workspace provisioned successfully',
+                ...(prospectResult || {}),
+            }),
         };
     } catch (error: any) {
         console.error('Error processing intake:', error);
