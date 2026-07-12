@@ -182,8 +182,8 @@ export const handler: Handler = async (event) => {
             statusCode: 200,
             headers,
             body: JSON.stringify({
-                message: 'Intake received successfully',
-                prospect: prospectResult?.prospect || null,
+                message: 'Workspace provisioned successfully',
+                ...(prospectResult || {}),
             }),
         };
     } catch (error: any) {

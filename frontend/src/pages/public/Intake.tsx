@@ -83,6 +83,14 @@ export default function Intake() {
         throw new Error(errorData.error || "Submission failed");
       }
 
+      const result = await response.json().catch(() => null);
+      if (typeof window !== "undefined") {
+        window.sessionStorage.setItem(
+          "strategicai-intake-submission",
+          JSON.stringify(result || {}),
+        );
+      }
+
       trackEvent("organization_context_completed", {
         stage: isLeadershipStage ? "leadership" : "organization-context",
         source: intakeSource,
