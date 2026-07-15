@@ -4,6 +4,7 @@ import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
 import { ImageViewer } from "../../components/ImageViewer";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { trackEvent } from "../../lib/analytics";
+import { buildSignupUrl } from "../../lib/signup";
 
 const sectionClass = "mx-auto max-w-6xl px-6 py-20";
 const imageCard = "overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/60 transition hover:border-slate-600";
@@ -40,13 +41,15 @@ export default function Product() {
               building shared context, then turns that context into a living environment for
               priorities, ownership, blockers, and progress.
             </p>
-            <Link
-              to="/intake?source=product_hero_executive_brief"
+            <a
+              href={buildSignupUrl("product_hero_executive_brief")}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => trackEvent("executive_brief_cta_click", { source: "product-hero" })}
               className="mt-10 inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
               Build My Executive Brief
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -140,13 +143,15 @@ export default function Product() {
               can then move into Diagnostic, Roadmap, and ongoing execution support.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                to="/intake?source=product_final_executive_brief"
+              <a
+                href={buildSignupUrl("product_final_executive_brief")}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => trackEvent("executive_brief_cta_click", { source: "product-final" })}
                 className="inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
                 Build My Executive Brief
-              </Link>
+              </a>
               <Link
                 to="/pricing#engagements"
                 className="inline-flex items-center rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900"

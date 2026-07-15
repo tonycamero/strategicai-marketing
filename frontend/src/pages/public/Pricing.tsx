@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { trackEvent } from "../../lib/analytics";
+import { buildSignupUrl } from "../../lib/signup";
 
 const sectionClass = "mx-auto max-w-6xl px-6 py-20";
 
@@ -117,13 +118,15 @@ export default function Pricing() {
               If the Executive Brief reflects the truth of your operating pattern, StrategicAI can
               then help you decide whether Diagnostic, Roadmap, or Execution support should follow.
             </p>
-            <Link
-              to="/intake?source=pricing_engagement_intake"
+            <a
+              href={buildSignupUrl("pricing_engagement_intake")}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => trackEvent("executive_brief_cta_click", { source: "pricing" })}
               className="mt-10 inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
               Build My Executive Brief
-            </Link>
+            </a>
           </div>
         </section>
       </main>

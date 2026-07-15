@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { trackEvent } from "../lib/analytics";
+import { buildSignupUrl } from "../lib/signup";
 
 const navLinkClass = "text-sm font-medium text-slate-400 hover:text-white transition";
 
@@ -30,13 +31,15 @@ export function Navbar() {
           <Link to="/partners" className={navLinkClass}>
             Partners
           </Link>
-          <Link
-            to="/intake?source=navbar_executive_brief"
+          <a
+            href={buildSignupUrl("navbar_executive_brief")}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => trackEvent("executive_brief_cta_click", { source: "navbar" })}
             className="inline-flex items-center rounded-full bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
           >
             Build My Executive Brief
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

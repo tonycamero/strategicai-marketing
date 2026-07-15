@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
+import { buildSignupUrl } from '../../lib/signup';
 
 const styles = {
     h1: "text-4xl md:text-5xl font-bold text-white mb-6 leading-tight",
@@ -28,7 +29,7 @@ export default function WhyStrategicAI() {
                         <p className={styles.p}>
                             Every business hits the same wall: chaos after kickoff. StrategicAI keeps things aligned after the whiteboard is erased.
                         </p>
-                        <Link to="/intake?source=why_strategic_ai_hero" className={styles.ctaButton}>Build My AI Brain</Link>
+                        <a href={buildSignupUrl("why_strategic_ai_hero")} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Build My AI Brain</a>
                     </div>
                 </section>
 
@@ -91,7 +92,7 @@ export default function WhyStrategicAI() {
                 <section className={styles.section}>
                     <div className="text-center">
                         <h2 className={styles.h2}>Stop the Chaos. Start the System.</h2>
-                        <Link to="/intake?source=why_strategic_ai_final" className={styles.ctaButton}>Build My AI Brain</Link>
+                        <a href={buildSignupUrl("why_strategic_ai_final")} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>Build My AI Brain</a>
                     </div>
                 </section>
 

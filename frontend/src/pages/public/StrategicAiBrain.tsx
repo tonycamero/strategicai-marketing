@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
+import { buildSignupUrl } from '../../lib/signup';
 
 const styles = {
     h1: "text-4xl md:text-6xl font-bold text-white mb-6 leading-tight",
@@ -53,7 +54,7 @@ export default function StrategicAiBrain() {
                         It shows you what’s slowing your business down — and what to fix next.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link to="/intake?source=strategic_ai_brain_hero" className={styles.ctaPrimary}>Build My AI Brain</Link>
+                        <a href={buildSignupUrl("strategic_ai_brain_hero")} target="_blank" rel="noopener noreferrer" className={styles.ctaPrimary}>Build My AI Brain</a>
                         <button className={styles.ctaSecondary} onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}>
                             See How It Works
                         </button>
@@ -329,7 +330,7 @@ export default function StrategicAiBrain() {
                     <div className="p-12 bg-blue-600 rounded-3xl text-white shadow-2xl shadow-blue-500/20">
                         <h3 className="text-3xl font-bold mb-6">Reality is your competitive advantage.</h3>
                         <p className="text-blue-100 mb-8">When everyone else is operating based on dashboards and spreadsheets, having a direct line to your business reality isn't just an upgrade — it's an unfair advantage.</p>
-                        <Link to="/intake?source=strategic_ai_brain_mid" className="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg">Build My AI Brain</Link>
+                        <a href={buildSignupUrl("strategic_ai_brain_mid")} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg">Build My AI Brain</a>
                     </div>
                 </div>
             </section>
@@ -355,7 +356,7 @@ export default function StrategicAiBrain() {
                     Stop guessing. Get a deterministic constraint analysis that reveals the reality of your execution.
                 </p>
                 <div className="flex justify-center">
-                    <Link to="/intake?source=strategic_ai_brain_final" className={styles.ctaPrimary}>Build My AI Brain</Link>
+                    <a href={buildSignupUrl("strategic_ai_brain_final")} target="_blank" rel="noopener noreferrer" className={styles.ctaPrimary}>Build My AI Brain</a>
                 </div>
             </section>
 

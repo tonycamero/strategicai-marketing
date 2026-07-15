@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
+import { buildSignupUrl } from '../../lib/signup';
 
 const styles = {
     h1: "text-4xl md:text-6xl font-bold text-white mb-6 leading-tight",
@@ -45,9 +46,9 @@ export default function HomePage() {
                             We map how your business actually runs, identify where things are breaking, and give you a clear plan to fix it <span className="text-white font-medium">in 7 days.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Link to="/intake?source=legacy_homepage_hero_executive_brief">
+                            <a href={buildSignupUrl("legacy_homepage_hero_executive_brief")} target="_blank" rel="noopener noreferrer">
                                 <span className={styles.ctaButton}>Build My AI Brain</span>
-                            </Link>
+                            </a>
                             <Link to="/features">
                                 <span className="text-slate-400 hover:text-white font-medium flex items-center gap-2 cursor-pointer transition-all">
                                     See how it works <span className="text-xl">→</span>
@@ -151,9 +152,9 @@ export default function HomePage() {
                     <div className="max-w-4xl mx-auto px-6 text-center">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 italic">"Get Your 7-Day Operational X-Ray"</h2>
                         <p className="text-xl text-slate-400 mb-12 font-medium">Limited to 5 companies this month</p>
-                        <Link to="/intake?source=legacy_homepage_final_executive_brief">
+                        <a href={buildSignupUrl("legacy_homepage_final_executive_brief")} target="_blank" rel="noopener noreferrer">
                             <span className={styles.ctaButton}>Build My AI Brain</span>
-                        </Link>
+                        </a>
                         <div className="grid md:grid-cols-3 gap-8 mt-16 text-sm text-slate-500">
                             <div className="flex flex-col items-center gap-2">
                                 <span className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 font-bold">✓</span>

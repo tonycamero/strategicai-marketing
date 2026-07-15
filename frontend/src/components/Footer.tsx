@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { buildSignupUrl } from "../lib/signup";
 
 export function Footer() {
   return (
@@ -24,7 +25,7 @@ export function Footer() {
               <li><Link to="/#how-it-works" className="text-slate-500 hover:text-white transition text-sm">How It Works</Link></li>
               <li><Link to="/product" className="text-slate-500 hover:text-white transition text-sm">Product</Link></li>
               <li><Link to="/pricing#engagements" className="text-slate-500 hover:text-white transition text-sm">Engagements</Link></li>
-              <li><Link to="/intake?source=footer_executive_brief" className="text-slate-500 hover:text-white transition text-sm">Build My Executive Brief</Link></li>
+              <li><a href={buildSignupUrl("footer_executive_brief")} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition text-sm">Build My Executive Brief</a></li>
             </ul>
           </div>
         </div>

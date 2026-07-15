@@ -4,6 +4,7 @@ import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
 import { ImageViewer } from "../../components/ImageViewer";
 import { trackEvent } from "../../lib/analytics";
 import { usePageMeta } from "../../hooks/usePageMeta";
+import { buildSignupUrl } from "../../lib/signup";
 
 const sectionClass = "mx-auto max-w-6xl px-6 py-20";
 const cardClass = "rounded-3xl border border-slate-800 bg-slate-900/55 p-8 shadow-[0_0_0_1px_rgba(34,211,238,0.03)]";
@@ -107,13 +108,15 @@ export default function AlternateHomePage() {
                 recommending what should change.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Link
-                  to="/intake?source=homepage_hero_executive_brief"
+                <a
+                  href={buildSignupUrl("homepage_hero_executive_brief")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => handleExecutiveBriefClick("hero")}
                   className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
                 >
                   Build My Executive Brief
-                </Link>
+                </a>
                 <button
                   type="button"
                   onClick={() => openBriefSample("hero")}
@@ -403,13 +406,15 @@ export default function AlternateHomePage() {
               Build the Executive Brief. See the visible operating pattern. Decide from evidence
               whether to continue.
             </p>
-            <Link
-              to="/intake?source=homepage_final_executive_brief"
+            <a
+              href={buildSignupUrl("homepage_final_executive_brief")}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => handleExecutiveBriefClick("final-cta")}
               className="mt-10 inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
               Build My Executive Brief
-            </Link>
+            </a>
             <p className="mt-4 text-sm text-slate-400">Free. No Diagnostic purchase required.</p>
           </div>
         </section>
