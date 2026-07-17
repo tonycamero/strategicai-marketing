@@ -100,9 +100,6 @@ export default function AlternateHomePage() {
               <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">
                 StrategicAI helps leaders form a credible shared picture of how their organization is operating, decide what should change, and carry that change forward with clear authority and evidence.
               </p>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
-                AI is accelerating what organizations can change - and raising the cost of changing the wrong thing. StrategicAI gives accountable leaders a governed path forward.
-              </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href={buildSignupUrl("homepage_hero_executive_brief")}
@@ -137,6 +134,10 @@ export default function AlternateHomePage() {
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
               Change gets risky when the organization no longer shares the same picture.
             </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-400">
+              AI is accelerating what organizations can change - and raising the cost of changing
+              the wrong thing. StrategicAI gives accountable leaders a governed path forward.
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {[
