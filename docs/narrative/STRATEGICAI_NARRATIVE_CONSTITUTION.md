@@ -126,19 +126,23 @@ Claims involving routed execution, operational receipts, outcome verification, p
 
 | Class | Meaning | Public-copy rule |
 | --- | --- | --- |
-| Available now | A current product path exists in the platform and has a concrete runtime seam. | May be stated directly without implying universal completion or production deployment beyond the evidence. |
-| Delivered through a StrategicAI engagement | StrategicAI can deliver the capability through a bounded paid engagement, configuration, or implementation. | Must identify or preserve the engagement boundary. |
-| Pilot capability | The capability exists in a bounded pilot, tenant, surface, or evidence program. | Must use conditional or pilot-bounded language; it cannot represent the default customer experience. |
+| Available now | A customer-accessible capability that has been successfully exercised end to end in the current production environment under its stated conditions. | May be stated directly without implying universal completion or availability beyond the verified conditions. |
+| Delivered through a StrategicAI engagement | A capability the current delivery team can repeatably provide under a defined commercial scope, with a verified delivery path - not merely an architectural possibility. | Must identify or preserve the engagement boundary. |
+| Pilot capability | A bounded capability that has passed its stated pilot acceptance path for a specific tenant, environment, or use case. Pilot readiness does not imply generalized availability. | Must use conditional or pilot-bounded language; it cannot represent the default customer experience. |
 | Planned capability | The architecture or commercial model anticipates the capability, but generalized delivery has not earned current-product status. | May appear only as future direction when clearly labeled; omit from core conversion copy. |
 | Prohibited until evidenced | The claim is not supported, is inherently misleading, or exceeds StrategicAI's authority. | Must not appear publicly. |
+
+Source code, a rendered surface, or an isolated service path is not sufficient by itself. Each `Available now` claim requires a current verification receipt or documented production acceptance path.
+
+Until that evidence is attached, the claim must be classified as `Pending Available-now verification` and cannot authorize public copy for release.
 
 ### Current Claim Matrix
 
 | Material claim | Maturity | Evidence authority | Strongest permitted public wording |
 | --- | --- | --- | --- |
-| A leader can begin from the marketing site and continue in the production platform. | Available now | Marketing `buildSignupUrl`; platform signup, prospect intake, tenant provisioning, and Magic authentication seams. | "Build My Executive Brief" may link directly to production signup. |
-| StrategicAI collects organization context, leadership input, and team evidence. | Available now | Platform owner onboarding, intake vectors, invite-team flow, and team intake routes. | "Built from organization context, leadership input, and team evidence." |
-| StrategicAI produces and delivers an Executive Brief. | Available now | Executive Brief synthesis, immutable PDF artifact persistence, and email delivery services. | "Receive an Executive Brief that reflects visible operating pain and patterns." |
+| A leader can begin from the marketing site and continue in the production platform. | Pending Available-now verification | Marketing `buildSignupUrl`; platform signup, prospect intake, tenant provisioning, and Magic authentication seams. Required receipt: current production signup through authenticated workspace continuation. | "Build My Executive Brief" may link directly to production signup only after the receipt is attached. |
+| StrategicAI collects organization context, leadership input, and team evidence. | Pending Available-now verification | Platform owner onboarding, intake vectors, invite-team flow, and team intake routes. Required receipt: current production owner intake, team invitation, and team submission acceptance path. | "Built from organization context, leadership input, and team evidence" may be released only after the receipt is attached. |
+| StrategicAI produces and delivers an Executive Brief. | Pending Available-now verification | Executive Brief synthesis, immutable PDF artifact persistence, and email delivery services. Required receipt: current production artifact generation, persistence, and customer-accessible delivery. | "Receive an Executive Brief that reflects visible operating pain and patterns" may be released only after the receipt is attached. |
 | The Executive Brief identifies root cause or prescribes what to do. | Prohibited until evidenced at this stage | Funnel Constitution and Artifact Boundaries explicitly reserve diagnosis and prescription for paid stages. | No permitted Executive Brief wording. Use "reflection" or "Mirror," not "diagnosis." |
 | The Diagnostic explains the governing constraint. | Delivered through a StrategicAI engagement | Paid Diagnostic boundary, Discovery Call gate, and platform Diagnostic workflow. | "The paid Diagnostic develops the explanatory layer and identifies the governing constraint." |
 | The Roadmap sequences interventions, priorities, and ownership. | Delivered through a StrategicAI engagement | Roadmap artifact boundary and final Roadmap assembly services. | "The Roadmap establishes intervention order, priorities, ownership implications, and an execution structure." |
@@ -148,7 +152,7 @@ Claims involving routed execution, operational receipts, outcome verification, p
 | StrategicAI records action receipts and outcome evidence. | Pilot capability / implementation-scoped | Mission Control receipt projections, outcome services, and Ninkasi pilot evidence requirements. | "Configured execution surfaces can preserve action and outcome evidence." |
 | StrategicAI continuously monitors the organization. | Planned or pilot capability depending on tenant | Connector and pilot-runtime contracts; generalized continuity is not established for every customer. | Omit from general copy. Use only a specifically bounded pilot or implementation statement. |
 | StrategicAI creates institutional memory. | Planned outcome supported by bounded evidence paths | Artifact persistence, receipts, snapshots, and outcomes exist, but generalized continuity is not universal. | "Evidence can remain connected to the operating context when continuity is implemented." |
-| Nova can explain the Brief and process before upgrade. | Available now within bounded platform entitlement | Funnel Constitution's pre-upgrade Nova boundary. | "Nova can help users understand the Brief and the next stage." |
+| Nova can explain the Brief and process before upgrade. | Pending Available-now verification within bounded entitlement | Funnel Constitution's pre-upgrade Nova boundary. Required receipt: current production pre-upgrade session that stays inside the approved explanatory boundary. | "Nova can help users understand the Brief and the next stage" may be released only after the receipt is attached. |
 | Nova autonomously diagnoses and directs interventions. | Prohibited until evidenced and authorized | Pre-upgrade boundary forbids diagnosis and Roadmap-grade prescription. | No permitted wording. |
 | StrategicAI guarantees successful change. | Prohibited until evidenced | No product or engagement can guarantee organizational outcomes. | No permitted wording. |
 

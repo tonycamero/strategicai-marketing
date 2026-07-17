@@ -119,10 +119,10 @@ Images are supporting artifacts, not claim evidence by themselves.
 
 | Capability area | Evidence source | Maturity used by narrative | Release implication |
 | --- | --- | --- | --- |
-| Production signup and owner authentication | Platform `Signup`, Magic client, prospect intake route/service, tenant provisioning response | Available now | Direct signup language is permitted; do not promise environment configuration beyond successful provisioning. |
-| Owner and team intake | Onboarding routes, invite-team controller/page, intake vectors, team review surfaces | Available now | Team-evidence language is permitted. Avoid claiming frictionless completion until pilot metrics prove it. |
-| Executive Brief synthesis and delivery | Executive Brief contracts, synthesis services, immutable PDF artifact persistence, email delivery | Available now | Artifact delivery language is permitted. Preserve Mirror boundary. |
-| Pre-upgrade Nova | Funnel Constitution and bounded platform environment | Available now within entitlement bounds | May say Nova explains the Brief and process; may not claim diagnosis or prescription. |
+| Production signup and owner authentication | Platform `Signup`, Magic client, prospect intake route/service, tenant provisioning response | Pending Available-now verification | Require a current production receipt from signup through authenticated workspace continuation before release. |
+| Owner and team intake | Onboarding routes, invite-team controller/page, intake vectors, team review surfaces | Pending Available-now verification | Require a current production acceptance path covering owner intake, team invitation, and team submission; do not claim frictionless completion. |
+| Executive Brief synthesis and delivery | Executive Brief contracts, synthesis services, immutable PDF artifact persistence, email delivery | Pending Available-now verification | Require a current production receipt for artifact generation, persistence, and customer-accessible delivery. Preserve the Mirror boundary. |
+| Pre-upgrade Nova | Funnel Constitution and bounded platform environment | Pending Available-now verification within entitlement bounds | Require a current production session receipt demonstrating explanation without diagnosis or prescription. |
 | Diagnostic | Artifact Boundaries, Discovery Call scheduler/payment gate, Diagnostic workflow | Engagement-delivered | Always identify paid engagement and Discovery Call boundary. |
 | Roadmap | Artifact Boundaries, final Roadmap service/controller and UI | Engagement-delivered | May state sequencing and ownership implications; may not imply implementation is complete. |
 | Connectors and execution surfaces | Funnel Constitution implementation layer and platform surface architecture | Engagement-delivered | Use "when included" and "implementation-scoped." |
@@ -231,8 +231,8 @@ Required checks after implementation:
 For every implemented public claim:
 
 1. Identify the exact constitution claim-matrix row.
-2. Confirm the referenced runtime, contract, engagement, or pilot evidence still exists.
-3. Confirm the maturity class has not changed.
+2. Locate the current production verification receipt, documented engagement delivery path, or pilot acceptance record required by the maturity class.
+3. Confirm that the evidence is current and that the maturity class has not changed.
 4. Confirm the public wording does not exceed the strongest permitted wording.
 5. Confirm conditional language remains adjacent to the claim on mobile and desktop.
 6. Reject screenshots, demos, or code presence as proof of universal availability.

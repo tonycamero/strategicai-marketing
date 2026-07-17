@@ -126,7 +126,7 @@ Change with clarity, control, and proof.
 Primary body:
 
 ```text
-StrategicAI helps leaders understand how their organization is really operating, decide what should change, and carry that change forward with clear authority and evidence.
+StrategicAI helps leaders form a credible shared picture of how their organization is operating, decide what should change, and carry that change forward with clear authority and evidence.
 ```
 
 AI support:
@@ -172,7 +172,7 @@ Change gets risky when the organization no longer shares the same picture.
 Introduction:
 
 ```text
-The knowledge needed to move forward already exists across your organization. The problem is that it is distributed, differently weighted, and disconnected from the decisions it should inform.
+Much of the knowledge needed to move forward already exists across your organization. The problem is that it is distributed, differently weighted, and disconnected from the decisions it should inform.
 ```
 
 Recognition statements:
@@ -192,7 +192,7 @@ Outcomes are reported without showing what actually caused them.
 Closing line:
 
 ```text
-The risk is not change itself. It is moving without a reliable picture, a clear authority path, or evidence that the intervention worked.
+The risk is not change itself. It is moving without a reliable picture, a clear authority path, or evidence of what changed.
 ```
 
 ### Section 3 - Executive Brief
@@ -747,7 +747,7 @@ Preserve action and outcome evidence where the implementation supports it.
 Headline:
 
 ```text
-Don't buy the explanation before you've seen the reflection.
+Let the reflection earn the next step.
 ```
 
 Body:
@@ -807,7 +807,7 @@ Engagements
 Headline:
 
 ```text
-Choose the depth of change your organization actually needs.
+Go only as deep as the evidence requires.
 ```
 
 Body:
@@ -1018,13 +1018,13 @@ Accountable leadership remains accountable.
 Headline:
 
 ```text
-Start with the organization you are responsible for.
+Experience the model before you carry it to others.
 ```
 
 Body:
 
 ```text
-The most credible way to understand the StrategicAI model is to begin with the Executive Brief and experience the same artifact boundaries your clients or ecosystem would encounter.
+Begin with the Executive Brief and experience the same evidence, participation, and artifact boundaries your clients or ecosystem would encounter.
 ```
 
 CTA:
@@ -1080,7 +1080,7 @@ StrategicAI uses organization context, leadership input, and team evidence to cr
 Boundary:
 
 ```text
-This is not a diagnosis. It is the first shared view of the problem.
+This is not a diagnosis. It is the first shared view of the visible operating pattern.
 ```
 
 What happens next:
@@ -1218,7 +1218,7 @@ Change with clarity, control, and proof.
 Paragraph 1:
 
 ```text
-StrategicAI helps accountable leaders understand how their organization is really operating, decide what should change, and carry that change forward through a governed path.
+StrategicAI helps accountable leaders form a credible shared picture of how their organization is operating, decide what should change, and carry that change forward through a governed path.
 ```
 
 Paragraph 2:
