@@ -3,7 +3,7 @@ id: STRATEGICAI-PRODUCTION-ACCEPTANCE-RECEIPTS
 title: StrategicAI Marketing Claim Production Acceptance Receipts
 status: ACTIVE_EVIDENCE_REGISTER
 created: 2026-07-17
-release_gate: BLOCKED
+release_gate: CLEARED_FOR_APPROVED_PUBLIC_COPY
 ---
 
 # StrategicAI Marketing Claim Production Acceptance Receipts
@@ -171,3 +171,31 @@ Allowed paths:
 - Approve a separately revised public narrative that removes or explicitly gates the unavailable paths.
 
 No path may treat code presence, CORS success, or a reachable signup shell as equivalent to customer availability.
+
+## Receipt 2026-07-17-C - Owner and Team Evidence
+
+Status: **PASSED**
+
+Tony Camero confirmed on 2026-07-17 that the production acceptance workspace contains team evidence associated with the provisioned tenant. This completes the tested organization-context, leadership-input, team-participation, and tenant-association path required by the claim matrix.
+
+Claim unlocked under the tested production conditions:
+
+```text
+StrategicAI collects organization context, leadership input, and team evidence.
+```
+
+## Receipt 2026-07-17-D - Executive Brief Delivery
+
+Status: **PASSED**
+
+Tony Camero confirmed on 2026-07-17 that the production acceptance workspace completed Executive Brief delivery after team evidence was present. The accepted public wording remains bounded to reflection and visible operating patterns; it does not authorize root-cause diagnosis, intervention prescription, or Roadmap sequencing claims for the Brief.
+
+Claim unlocked under the tested production conditions:
+
+```text
+StrategicAI produces and delivers an Executive Brief.
+```
+
+## Remaining Gate
+
+Receipt E for bounded pre-upgrade Nova remains pending. The approved public copy does not rely on that claim. Pilot, automated routing, persistent monitoring, universal continuity, and autonomous intervention claims remain gated by the Narrative Constitution.
