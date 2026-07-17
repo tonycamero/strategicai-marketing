@@ -25,6 +25,7 @@ export function Footer() {
               <li><Link to="/#how-it-works" className="text-slate-500 hover:text-white transition text-sm">How It Works</Link></li>
               <li><Link to="/product" className="text-slate-500 hover:text-white transition text-sm">Product</Link></li>
               <li><Link to="/pricing#engagements" className="text-slate-500 hover:text-white transition text-sm">Engagements</Link></li>
+              <li><Link to="/partners" className="text-slate-500 hover:text-white transition text-sm">Partners</Link></li>
               <li><a href={buildSignupUrl("footer_executive_brief")} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition text-sm">Build My Executive Brief</a></li>
             </ul>
           </div>
@@ -32,7 +33,7 @@ export function Footer() {
 
         <div className="pt-8 mt-12 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs text-slate-600">
-            Free reflection first. Diagnostic, roadmap, and execution only after the evidence is clear.
+            Change with clarity, control, and proof.
           </p>
           <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} StrategicAI. All rights reserved.</p>
         </div>

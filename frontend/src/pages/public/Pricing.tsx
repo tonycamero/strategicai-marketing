@@ -9,9 +9,9 @@ const sectionClass = "mx-auto max-w-6xl px-6 py-20";
 
 export default function Pricing() {
   usePageMeta({
-    title: "StrategicAI Engagements | Executive Brief, Diagnostic, Roadmap, Execution",
+    title: "StrategicAI Engagements | Reflection, Diagnosis, Roadmap, and Implementation",
     description:
-      "Understand where the free Executive Brief ends and where paid Diagnostic, Roadmap, and ongoing execution support begin.",
+      "Understand the boundary between the free Executive Brief, paid Diagnostic and Roadmap engagements, and scoped implementation support.",
   });
 
   const engagements = [
@@ -41,11 +41,11 @@ export default function Pricing() {
     },
     {
       step: "04",
-      title: "Execution",
-      cost: "Ongoing engagement",
+      title: "Implementation and Execution",
+      cost: "Scoped implementation",
       description:
-        "Mission Control turns the roadmap into a shared working environment for priorities, pressure, blockers, and progress.",
-      boundary: "The document becomes operational here.",
+        "When included, StrategicAI builds the governed workflows, connectors, and execution surfaces required by the Roadmap.",
+      boundary: "Scope and continuity depend on the implementation agreement.",
     },
   ];
 
@@ -56,12 +56,10 @@ export default function Pricing() {
           <div className="max-w-4xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Engagements</p>
             <h1 className="text-4xl font-semibold leading-tight text-white md:text-6xl">
-              The paid ladder is visible before onboarding begins.
+              Start with reflection. Add depth only when the evidence earns it.
             </h1>
             <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-              StrategicAI is not a mystery funnel. Start with the free Executive Brief, then move
-              into Diagnostic, Roadmap, and ongoing execution support only if the reflection earns
-              the right to continue.
+              Each stage has a distinct purpose, authority, and commercial boundary. No stage borrows the promise of the next.
             </p>
           </div>
         </section>
@@ -91,7 +89,7 @@ export default function Pricing() {
                 <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>The Executive Brief is reflection, not diagnosis.</span></li>
                 <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>The Diagnostic explains the governing constraint.</span></li>
                 <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>The Roadmap sets intervention order and ownership.</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Execution support keeps the plan alive after the document is delivered.</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Implementation and Execution support keeps the plan alive after the document is delivered.</span></li>
               </ul>
             </div>
             <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
@@ -112,11 +110,11 @@ export default function Pricing() {
         <section className={sectionClass}>
           <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-10 text-center">
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Begin with the free reflection.
+              Begin with a shared place to start.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
               If the Executive Brief reflects the truth of your operating pattern, StrategicAI can
-              then help you decide whether Diagnostic, Roadmap, or Execution support should follow.
+              then help you decide whether Diagnostic, Roadmap, or Implementation and Execution support should follow.
             </p>
             <a
               href={buildSignupUrl("pricing_engagement_intake")}

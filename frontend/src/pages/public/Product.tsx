@@ -13,9 +13,9 @@ export default function Product() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   usePageMeta({
-    title: "StrategicAI Product | From Operating Model to Mission Control",
+    title: "StrategicAI Product | A Governed Path From Context to Execution",
     description:
-      "See how StrategicAI turns organization context, leadership input, and team evidence into a living execution environment.",
+      "See how StrategicAI structures operating context, stages consequential decisions, and supports implementation within explicit authority boundaries.",
   });
 
   useEffect(() => {
@@ -34,12 +34,10 @@ export default function Product() {
           <div className="max-w-4xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Product</p>
             <h1 className="text-4xl font-semibold leading-tight text-white md:text-6xl">
-              How the operating model becomes an execution environment.
+              A governed path from operating context to coordinated change.
             </h1>
             <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-              StrategicAI does not start by flooding the team with dashboards. It starts by
-              building shared context, then turns that context into a living environment for
-              priorities, ownership, blockers, and progress.
+              StrategicAI connects shared reality, decision readiness, intervention design, and implementation without asking leaders to surrender accountable judgment.
             </p>
             <a
               href={buildSignupUrl("product_hero_executive_brief")}
@@ -56,7 +54,7 @@ export default function Product() {
         <section className={`${sectionClass} pt-0`}>
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">1. Reflection</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Build the Operating Picture</p>
               <h2 className="mt-4 text-3xl font-semibold text-white">Executive Brief</h2>
               <p className="mt-4 text-base leading-7 text-slate-400">
                 Leadership context and team evidence are synthesized into one operating reflection.
@@ -67,7 +65,7 @@ export default function Product() {
               </button>
             </div>
             <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">2. Explanation</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Stage the Decision</p>
               <h2 className="mt-4 text-3xl font-semibold text-white">Diagnostic and Roadmap</h2>
               <p className="mt-4 text-base leading-7 text-slate-400">
                 Once the pattern is visible, StrategicAI identifies governing constraints,
@@ -85,7 +83,7 @@ export default function Product() {
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Digital Twin</p>
               <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                A structured model, not a generic prompt loop.
+                AI supports interpretation inside a governed boundary.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 StrategicAI builds a Digital Twin from organization context, leadership intent, and
@@ -114,11 +112,10 @@ export default function Product() {
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Mission Control</p>
               <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                The roadmap becomes operational here.
+                When implementation is included, the Roadmap becomes operational here.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                Mission Control is where the plan stops being a document and becomes a shared
-                environment for ownership, pressure, blockers, and progress.
+                Where implemented, Mission Control provides a shared execution view for operating conditions, priorities, ownership, pressure, blockers, and progress.
               </p>
               <ul className="mt-8 space-y-4 text-slate-300">
                 <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Priorities stay visible</span></li>
@@ -136,7 +133,7 @@ export default function Product() {
         <section className={sectionClass}>
           <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-10 text-center">
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Don&apos;t buy the explanation before you&apos;ve seen the reflection.
+              Begin with a shared reality before choosing the intervention.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
               The Executive Brief is the first artifact. If the reflection rings true, StrategicAI

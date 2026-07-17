@@ -41,10 +41,10 @@ const journeyStages = [
     id: "execution",
     step: "04",
     title: "Execution",
-    label: "Operate inside the new structure.",
+    label: "Put the approved intervention to work.",
     body:
       "Put the roadmap to work through a shared environment for ownership, pressure, blockers, and measurable progress.",
-    boundary: "Ongoing execution environment, not a one-time document handoff.",
+    boundary: "Scope and continuity depend on the implementation agreement.",
   },
 ];
 
@@ -53,9 +53,9 @@ export default function AlternateHomePage() {
   const [activeStage, setActiveStage] = useState(journeyStages[0].id);
 
   usePageMeta({
-    title: "StrategicAI | Free Executive Brief for Operational Clarity",
+    title: "StrategicAI | Change With Clarity, Control, and Proof",
     description:
-      "Build a free Executive Brief that reflects leadership context and team evidence before deciding whether Diagnostic, Roadmap, or Execution support is needed.",
+      "StrategicAI gives accountable leaders a governed path through consequential change, beginning with a free Executive Brief built from leadership and team evidence.",
   });
 
   useEffect(() => {
@@ -92,20 +92,16 @@ export default function AlternateHomePage() {
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
             <div className="max-w-4xl">
               <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300/80">
-                Free Executive Brief
+                Governed Organizational Change
               </p>
               <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] text-white md:text-7xl">
-                You don&apos;t have an execution problem.
-                <br />
-                <span className="text-cyan-300">You have an understanding problem.</span>
+                Change with clarity, control, and proof.
               </h1>
               <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">
-                Work is moving. People are busy. But priorities blur, ownership fragments, and the
-                same friction keeps returning.
+                StrategicAI helps leaders form a credible shared picture of how their organization is operating, decide what should change, and carry that change forward with clear authority and evidence.
               </p>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
-                StrategicAI helps you see how your organization is actually operating before
-                recommending what should change.
+                AI is accelerating what organizations can change - and raising the cost of changing the wrong thing. StrategicAI gives accountable leaders a governed path forward.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
@@ -117,16 +113,15 @@ export default function AlternateHomePage() {
                 >
                   Build My Executive Brief
                 </a>
-                <button
-                  type="button"
-                  onClick={() => openBriefSample("hero")}
+                <a
+                  href="#how-it-works"
                   className="inline-flex items-center justify-center rounded-full border border-slate-700 px-7 py-4 text-base font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900"
                 >
-                  View Sample Executive Brief
-                </button>
+                  See How It Works
+                </a>
               </div>
               <div className="mt-6 space-y-2 text-sm text-slate-400">
-                <p className="font-medium text-slate-300">Free operating reflection. No purchase required.</p>
+                <p className="font-medium text-slate-300">Start with a free operating reflection built from leadership and team input. No purchase required.</p>
                 <p>
                   Free operating reflection. Built from leadership and team input. See the patterns
                   creating friction before deciding whether to continue.
@@ -138,19 +133,19 @@ export default function AlternateHomePage() {
 
         <section className={sectionClass}>
           <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Recognition</p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The Risk Beneath Change</p>
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Something feels off, but the symptoms do not explain the system.
+              Change gets risky when the organization no longer shares the same picture.
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {[
-              "Everyone is busy, but important work still stalls.",
-              "Meetings circulate context without resolving ownership.",
-              "Priorities multiply faster than capacity.",
-              "Departments see their part, but leadership lacks the whole picture.",
-              "The same issues return under different names.",
-              "The problem is not invisible. It is fragmented.",
+              "Leadership sees the destination, but teams experience the constraints.",
+              "Priorities change faster than ownership and capacity can adjust.",
+              "Systems hold evidence, but not a shared explanation.",
+              "Decisions lose context as they move into execution.",
+              "Outcomes are reported without showing what actually caused them.",
+              "The risk is not change itself. It is moving without a reliable picture, a clear authority path, or evidence of what changed.",
             ].map((item) => (
               <div key={item} className={cardClass}>
                 <p className="text-lg leading-8 text-slate-300">{item}</p>
@@ -162,9 +157,9 @@ export default function AlternateHomePage() {
         <section className={`${sectionClass} pt-0`}>
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Executive Brief Preview</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Start With the Mirror</p>
               <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                See what your organization has been trying to say.
+                Begin with what your organization has already been trying to say.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 Your Executive Brief combines leadership context and team evidence into one clear
@@ -177,7 +172,7 @@ export default function AlternateHomePage() {
                 <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Visible operating pressure</span></li>
               </ul>
               <p className="mt-8 max-w-2xl text-base leading-7 text-slate-400">
-                It does not diagnose root cause. It gives you a credible place to begin.
+                The Executive Brief is not a diagnosis and does not prescribe what to change. It gives leadership a credible shared place to begin.
               </p>
               <button
                 type="button"
@@ -200,9 +195,9 @@ export default function AlternateHomePage() {
         <section className={sectionClass}>
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Why This Keeps Happening</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Why Change Breaks Down</p>
               <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                Your tools track work. They do not explain how the organization operates.
+                Change fails when reality, decisions, authority, work, and outcomes become disconnected.
               </h2>
             </div>
             <div className="space-y-5 text-lg leading-8 text-slate-300">
@@ -211,7 +206,7 @@ export default function AlternateHomePage() {
               <p>Documents store context.</p>
               <p>Meetings exchange updates.</p>
               <p className="text-slate-400">
-                None of them create a shared explanation for why execution keeps slowing down.
+                StrategicAI exists to keep that path connected.
               </p>
             </div>
           </div>
@@ -222,14 +217,14 @@ export default function AlternateHomePage() {
             <div className={cardClass}>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Operating Model</p>
               <h2 className="text-3xl font-semibold text-white md:text-4xl">
-                StrategicAI does not begin with recommendations.
+                A shared operating picture comes before a prescribed intervention.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 Most AI tools respond to a prompt. StrategicAI first builds a structured model of
                 your organization from business context, leadership intent, and team evidence.
               </p>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                We call this your <span className="font-semibold text-white">Digital Twin</span>.
+                We call this structured operating model the <span className="font-semibold text-white">Digital Twin</span>.
               </p>
               <p className="mt-6 text-base leading-7 text-slate-400">
                 It becomes the operating context behind your Executive Brief, Diagnostic, Roadmap,
@@ -268,7 +263,7 @@ export default function AlternateHomePage() {
           <div className="mb-10 max-w-3xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Journey</p>
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Start with reflection. Continue only when it earns your trust.
+              Start with reflection. Add depth only when the evidence earns it.
             </h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">

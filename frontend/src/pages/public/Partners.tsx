@@ -1,158 +1,68 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { TrustAgentShell } from '../../trustagent/TrustAgentShell';
-import { ImageViewer } from '../../components/ImageViewer';
-import { usePageMeta } from '../../hooks/usePageMeta';
+import React, { useEffect } from "react";
+import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
+import { usePageMeta } from "../../hooks/usePageMeta";
+import { trackEvent } from "../../lib/analytics";
+import { buildSignupUrl } from "../../lib/signup";
 
-const styles = {
-    h1: "text-4xl md:text-5xl font-bold text-white mb-6 leading-tight",
-    h2: "text-2xl md:text-3xl font-bold text-white mb-6",
-    h3: "text-xl font-bold text-white mb-4",
-    p: "text-lg text-slate-400 mb-6 leading-relaxed",
-    li: "text-slate-300 mb-2 flex items-start gap-2",
-    section: "max-w-5xl mx-auto px-6 py-16 border-b border-slate-800/50 last:border-0",
-    ctaButton: "inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition cursor-pointer",
-    secondaryButton: "inline-flex items-center px-6 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 text-white font-medium transition cursor-pointer",
-    imgContainer: "rounded-xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900/50 cursor-zoom-in hover:border-slate-600 transition-colors group relative",
-    img: "w-full h-auto",
-    zoomHint: "absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all opacity-0 group-hover:opacity-100 pointer-events-none"
-};
-
-const scrollToTop = () => window.scrollTo(0, 0);
+const sectionClass = "mx-auto max-w-6xl px-6 py-20";
+const cardClass = "rounded-[2rem] border border-slate-800 bg-slate-900/55 p-8";
 
 export default function Partners() {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-    usePageMeta({
-        title: "StrategicAI Partners | Limited Partner Motion",
-        description:
-            "StrategicAI partner access remains limited while the primary public motion centers on the Executive Brief, Diagnostic, and Roadmap journey.",
-    });
+  usePageMeta({
+    title: "StrategicAI Partners | Deliver Governed Organizational Change",
+    description:
+      "StrategicAI works with a limited group of operators, advisors, and ecosystem leaders who help organizations move consequential change with clear boundaries and evidence.",
+  });
 
-    useEffect(scrollToTop, []);
+  useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), []);
 
-    return (
-        <div className="min-h-screen bg-slate-950 text-white">
-            <main>
-                {/* Section 1: Identity Framing */}
-                <section className={styles.section}>
-                    <div className="text-center max-w-3xl mx-auto">
-                        <h1 className={styles.h1}>Leverage, Not Links.</h1>
-                        <p className={styles.p}>
-                            This page is for operators, builders, and authority figures who:
-                        </p>
-                        <ul className="text-left max-w-lg mx-auto space-y-3 mb-8 bg-slate-900/40 p-6 rounded-xl border border-slate-800">
-                            <li className="flex items-start gap-3">
-                                <span className="text-blue-500 mt-1">✓</span>
-                                <span className="text-slate-300">Already have distribution, operators, or execution leverage</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-blue-500 mt-1">✓</span>
-                                <span className="text-slate-300">Want infrastructure, not affiliate links</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-blue-500 mt-1">✓</span>
-                                <span className="text-slate-300">Care about systems, standards, and scale</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-blue-500 mt-1">✓</span>
-                                <span className="text-slate-300">See strategic execution as an asset, not a tool</span>
-                            </li>
-                        </ul>
-                        <p className="text-sm text-slate-500 italic px-4 py-2 border border-slate-800 rounded-full inline-block bg-slate-900/30">
-                            StrategicAI is currently activating with a limited group of certified operators before broader partner expansion.
-                        </p>
-                    </div>
-                </section>
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <main>
+        <section className={sectionClass}>
+          <div className="max-w-4xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Partners</p>
+            <h1 className="text-4xl font-semibold leading-tight md:text-6xl">Help leaders change without asking them to gamble the organization.</h1>
+            <p className="mt-8 text-lg leading-8 text-slate-300">StrategicAI works with a limited group of operators, advisors, and ecosystem leaders who can preserve evidence, authority, and accountability while consequential change moves into practice.</p>
+            <p className="mt-6 text-sm text-slate-400">Partner access remains limited while the operating model and delivery standards are proven across active engagements.</p>
+          </div>
+        </section>
 
-                {/* Section 2: Three Partner Archetypes */}
-                <section className={styles.section}>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Authority Partners */}
-                        <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col">
-                            <div className="mb-6">
-                                <span className="inline-block px-3 py-1 rounded-full bg-blue-900/20 text-blue-400 text-xs font-bold border border-blue-900/50 mb-4">LICENSE THE INFRASTRUCTURE</span>
-                                <h3 className={styles.h3}>Authority Partners</h3>
-                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                    Ecosystem leaders and platform owners.
-                                </p>
-                            </div>
-                            <div className="mt-auto space-y-3">
-                                <Link to="/authority-partner" className="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
-                                    Explore the Authority License
-                                </Link>
-                                <Link to="/authority-economics" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
-                                    Understand the Model →
-                                </Link>
-                            </div>
-                        </div>
+        <section className={`${sectionClass} pt-0`}>
+          <h2 className="max-w-3xl text-3xl font-semibold md:text-5xl">Partnership begins with responsibility for the result.</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {["You already advise, operate, or support organizations through consequential decisions.", "You want a governed delivery system, not an affiliate link.", "You respect the boundary between evidence, interpretation, recommendation, and implementation.", "You can preserve leadership authority while bringing specialist capability into the work."].map((item) => <div key={item} className={cardClass}><p className="leading-7 text-slate-300">{item}</p></div>)}
+          </div>
+        </section>
 
-                        {/* Execution Partners */}
-                        <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-green-500/30 transition-all flex flex-col">
-                            <div className="mb-6">
-                                <span className="inline-block px-3 py-1 rounded-full bg-green-900/20 text-green-400 text-xs font-bold border border-green-900/50 mb-4">DELIVER WITH LEVERAGE</span>
-                                <h3 className={styles.h3}>Certified Operators</h3>
-                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                    Agencies, consultants, and execution firms.
-                                </p>
-                            </div>
-                            <div className="mt-auto space-y-3">
-                                <Link to="/certified-operator" className="block text-center bg-slate-800 hover:bg-slate-700 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
-                                    View the Operator Path
-                                </Link>
-                                <Link to="/partner-revenue-simulator" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
-                                    Run Revenue Simulator →
-                                </Link>
-                            </div>
-                        </div>
+        <section className={sectionClass}>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              ["Ecosystem Partners", "Leaders and platforms that bring StrategicAI into a defined organizational context while preserving clear commercial and governance boundaries."],
+              ["Delivery Partners", "Operators, consultants, and implementation teams capable of carrying an approved intervention into practice under StrategicAI delivery standards."],
+              ["Specialist Partners", "Domain experts, technology providers, and system builders who contribute bounded capability without claiming authority over the whole organization."],
+            ].map(([title, body]) => <div key={title} className={cardClass}><h2 className="text-2xl font-semibold">{title}</h2><p className="mt-5 leading-7 text-slate-400">{body}</p></div>)}
+          </div>
+        </section>
 
-                        {/* Strategic / Exploratory */}
-                        <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-all flex flex-col">
-                            <div className="mb-6">
-                                <span className="inline-block px-3 py-1 rounded-full bg-purple-900/20 text-purple-400 text-xs font-bold border border-purple-900/50 mb-4">UNDERSTAND THE MODEL</span>
-                                <h3 className={styles.h3}>Strategic Explorers</h3>
-                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                    Advisors, analysts, and system thinkers.
-                                </p>
-                            </div>
-                            <div className="mt-auto space-y-3">
-                                <Link to="/authority-economics" className="block text-center border border-slate-700 hover:bg-slate-800 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer">
-                                    Model Your Economics
-                                </Link>
-                                <Link to="/partner-revenue-simulator" className="block text-center text-slate-400 hover:text-white py-2 text-sm transition cursor-pointer">
-                                    Simulate Delivery Models →
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <section className={sectionClass}>
+          <div className={cardClass}>
+            <h2 className="text-3xl font-semibold md:text-5xl">Leverage requires boundaries.</h2>
+            <div className="mt-8 grid gap-4 text-lg text-slate-300 md:grid-cols-2">
+              {["Evidence before prescription.", "Authority before action.", "Scope before automation.", "Receipts before outcome claims.", "Accountable leadership remains accountable."].map((item) => <p key={item}>{item}</p>)}
+            </div>
+          </div>
+        </section>
 
-                {/* Section 3: Explicit Partnership Philosophy */}
-                <section className={styles.section}>
-                    <div className="bg-slate-900/20 border border-slate-800 rounded-xl p-8 max-w-4xl mx-auto">
-                        <div className="text-center mb-8">
-                            <h2 className="text-2xl font-bold text-white mb-2">Our Partnership Philosophy</h2>
-                            <p className="text-lg text-slate-400 italic">"StrategicAI is not an affiliate network."</p>
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 className="font-bold text-white mb-2">Structure & Safety</h4>
-                                <p className="text-slate-400 text-sm leading-relaxed">
-                                    Access is structured to maintain leverage, protect quality, and align incentives. We don't do "open" pricing; a governance layer is required.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">True Ownership</h4>
-                                <p className="text-slate-400 text-sm leading-relaxed">
-                                    Revenue flows through the platform to ensure fairness, but you retain IP, audience ownership, and pricing power above the floor.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <TrustAgentShell enabled={true} mode="public" />
-            <ImageViewer isOpen={!!selectedImage} src={selectedImage} onClose={() => setSelectedImage(null)} />
-        </div>
-    );
+        <section className={sectionClass}>
+          <div className={`${cardClass} text-center`}>
+            <h2 className="text-3xl font-semibold md:text-5xl">Experience the model before you carry it to others.</h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">Begin with the Executive Brief and experience the same evidence, participation, and artifact boundaries your clients or ecosystem would encounter.</p>
+            <a href={buildSignupUrl("partners_executive_brief")} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("executive_brief_cta_click", { source: "partners" })} className="mt-10 inline-flex rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">Build My Executive Brief</a>
+          </div>
+        </section>
+      </main>
+      <TrustAgentShell enabled={true} mode="public" />
+    </div>
+  );
 }
