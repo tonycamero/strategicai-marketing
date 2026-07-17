@@ -50,6 +50,34 @@ Decision:
 - No prospect or tenant smoke record was created while the database authority was unhealthy.
 - Signup, owner/team intake, Executive Brief delivery, and pre-upgrade Nova remain `Pending Available-now verification`.
 
+## Receipt 2026-07-17-B1 - Production Runtime Recovery and Signup Continuation
+
+Status: **PASSED**
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Custom-domain API health | `200` | `https://api.strategicai.app/api/health` reported database `ready`, zero consecutive failures, and no error code. |
+| Production deployment | `SUCCESS` | Railway deployment `95f9f4b8-facf-412f-9b92-c06f252faca5` promoted `main` commit `5870c84359349608a6036cae8bd2d8f92d7f67b3`. |
+| Runtime role | Verified | Production uses `sar_app_runtime`, the pooled Neon production endpoint, `strategicai_core`, and `sslmode=verify-full`. |
+| Branch topology | Verified | Production tracks `main`; staging tracks `staging`; `api.strategicai.app` belongs to the production service on port 8080. |
+| Public provisioning | Passed | Prospect, owner, boot-certified tenant, and organism were created through `POST /api/public/prospect-intake`. |
+| Magic continuation | Passed | The dispatched Magic email opened the provisioned owner workspace. Confirmed by Tony Camero on 2026-07-17. |
+
+Acceptance identifiers:
+
+```text
+Prospect: cd6f7880-bc3b-4a42-9717-128e2c2f5fcf
+Tenant: 17d4b496-5c06-4908-814d-5c09b04700bf
+Tenant slug: strategicai-acceptance-test-20260716
+Organism: a13a22d7-8197-4b95-b8e1-661554af85e9
+Owner: a1be66b1-5166-4b2f-9723-034dfb1aab36
+```
+
+Decision:
+
+- Receipt B is complete. The marketing-to-production signup and authenticated workspace continuation claim is `Available now` under the tested conditions.
+- Receipts C through E remain pending and do not authorize owner/team evidence, Executive Brief delivery, or bounded Nova as `Available now` claims.
+- The acceptance tenant is test data and must not be represented as a customer account.
 ## Required Remediation
 
 The platform authority must complete the credential cutover described in its database-rotation runbook:

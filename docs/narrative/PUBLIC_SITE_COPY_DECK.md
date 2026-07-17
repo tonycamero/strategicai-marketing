@@ -1,10 +1,15 @@
 ---
 id: STRATEGICAI-PUBLIC-SITE-COPY-DECK
 title: StrategicAI Public Site Exact Copy Deck
-status: DRAFT_FOR_REVIEW
+status: APPROVED
 created: 2026-07-17
 depends_on: STRATEGICAI-NARRATIVE-CONSTITUTION
-implementation_gate: BLOCKED_PENDING_APPROVAL
+approved_on: 2026-07-17
+approved_by: Tony Camero
+implementation_gate: OPEN
+supersedes:
+  - docs/meta-tickets/META-STRATEGY-PIVOT.md
+  - docs/meta-tickets/SITE-REBUILD-2026Q1.md
 ---
 
 # StrategicAI Public Site Exact Copy Deck
