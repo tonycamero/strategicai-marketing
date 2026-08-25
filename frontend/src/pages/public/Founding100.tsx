@@ -1,0 +1,253 @@
+import { useEffect } from "react";
+import { ArrowDown, Check, CheckCircle2, Mail, Sparkles } from "lucide-react";
+import { usePageMeta } from "../../hooks/usePageMeta";
+import { trackEvent } from "../../lib/analytics";
+import "./founding100.css";
+
+const SUPPORT_EMAIL = "tony@strategicai.app";
+
+const buildingBlocks = [
+  { label: "Your people", copy: "Who does what." },
+  { label: "Your work", copy: "How things move." },
+  { label: "Your systems", copy: "Where information lives." },
+  { label: "Your pressure points", copy: "Where work waits, breaks, or keeps coming back to the owner." },
+];
+
+const businessViews = [
+  "How work moves",
+  "Who owns what",
+  "Where information lives",
+  "Where handoffs break",
+  "Where work slows down",
+  "What still needs to be understood",
+];
+
+const stages = [
+  {
+    number: "01",
+    name: "See it",
+    copy: "Build the first real picture. Find gaps. Correct what StrategicAI gets wrong.",
+  },
+  {
+    number: "02",
+    name: "Challenge it",
+    copy: "Pick problems and pull on them. Follow the trail until the pressure makes sense.",
+  },
+  {
+    number: "03",
+    name: "Change it",
+    copy: "Decide what deserves action, a clearer owner, or a deeper look.",
+  },
+];
+
+const questions = [
+  "What still depends too much on me?",
+  "Where can a customer get stuck?",
+  "What would break if we grew 30%?",
+  "Who needs to know when something changes?",
+  "Which problems do we keep fixing instead of solving?",
+  "What am I not seeing?",
+];
+
+export default function Founding100() {
+  usePageMeta({
+    title: "StrategicAI Founding 100 | Welcome",
+    description:
+      "Welcome to StrategicAI Founding 100. Learn what happens next as StrategicAI builds a picture of how your business actually works.",
+    path: "/founding100",
+  });
+
+  useEffect(() => {
+    trackEvent("founding100_payment_arrival", {
+      page: "/founding100",
+      verification: "not-yet-authorized",
+    });
+    trackEvent("founding100_formation_status_view", {
+      page: "/founding100",
+      state: "fallback",
+    });
+  }, []);
+
+  function handleSupportClick() {
+    trackEvent("founding100_support_clicked", { source: "founding100" });
+  }
+
+  return (
+    <div className="founding100-page" data-payment-verification="not-yet-authorized">
+      <header className="founding100-topbar">
+        <a className="founding100-wordmark" href="/" aria-label="StrategicAI home">
+          <span>Strategic</span>AI
+        </a>
+        <p>Founding 100 <span aria-hidden="true">/</span> post-payment handoff</p>
+      </header>
+
+      <main>
+        <section className="founding100-hero" aria-labelledby="founding100-title">
+          <div className="founding100-hero-copy">
+            <div className="founding100-eyebrow founding100-eyebrow-success">
+              <CheckCircle2 size={16} aria-hidden="true" />
+              <span>Founding 100 <span aria-hidden="true">·</span> $299 one-time</span>
+            </div>
+            <p className="founding100-kicker">A clear start to a better picture</p>
+            <h1 id="founding100-title">You’re in.</h1>
+            <p className="founding100-hero-lede">Welcome to the StrategicAI Founding 100.</p>
+            <p className="founding100-hero-body">
+              You’ve taken the first step toward building an AI that knows your business. Now we begin teaching StrategicAI how your company actually works.
+            </p>
+            <div className="founding100-principle">
+              <span className="founding100-principle-line" aria-hidden="true" />
+              <p><strong>StrategicAI builds the understanding.</strong> Nemo helps you work with it.</p>
+            </div>
+          </div>
+
+          <div className="founding100-hero-visual" aria-hidden="true">
+            <div className="founding100-visual-label">A picture takes shape</div>
+            <div className="founding100-map">
+              <svg viewBox="0 0 420 300" role="presentation">
+                <path d="M82 78C142 42 164 93 209 112S294 115 336 72" />
+                <path d="M77 218C131 180 166 192 209 156S284 147 337 204" />
+                <path d="M115 72C118 133 155 140 209 147S302 178 325 214" />
+                <path d="M84 214C137 238 164 196 207 154S274 93 338 79" />
+              </svg>
+              <span className="founding100-node founding100-node-a"><i>People</i></span>
+              <span className="founding100-node founding100-node-b"><i>Work</i></span>
+              <span className="founding100-node founding100-node-c"><i>Systems</i></span>
+              <span className="founding100-node founding100-node-d"><i>Decisions</i></span>
+              <span className="founding100-node founding100-node-center"><span>StrategicAI</span></span>
+            </div>
+            <div className="founding100-visual-foot">The business we discover together</div>
+          </div>
+        </section>
+
+        <section className="founding100-next" aria-labelledby="next-title">
+          <div className="founding100-section-heading">
+            <p className="founding100-kicker">What happens now</p>
+            <h2 id="next-title">The handoff is simple.</h2>
+          </div>
+          <div className="founding100-next-grid">
+            <ol className="founding100-steps">
+              <li>
+                <span className="founding100-step-number">01</span>
+                <div><h3>We learn the business.</h3><p>StrategicAI begins building its first picture of your company.</p></div>
+              </li>
+              <li>
+                <span className="founding100-step-number">02</span>
+                <div><h3>You correct the picture.</h3><p>You tell us what is right, what is wrong, and what is missing.</p></div>
+              </li>
+              <li>
+                <span className="founding100-step-number">03</span>
+                <div><h3>Nemo helps you explore it.</h3><p>Over the next 90 days, you use Nemo to inspect, challenge, and understand how the business actually works.</p></div>
+              </li>
+            </ol>
+
+            <div className="founding100-status-card" aria-live="polite">
+              <div className="founding100-status-topline"><span className="founding100-status-dot" /> Next step</div>
+              <h3>Your next step is almost ready.</h3>
+              <p>We’ll email you as soon as your StrategicAI onboarding is ready to begin.</p>
+              <div className="founding100-status-note"><Mail size={16} aria-hidden="true" /> Keep an eye on your inbox.</div>
+            </div>
+          </div>
+          <div className="founding100-scroll-cue" aria-hidden="true"><ArrowDown size={16} /> See what you’re building</div>
+        </section>
+
+        <section className="founding100-section founding100-building" aria-labelledby="building-title">
+          <div className="founding100-section-heading founding100-narrow-heading">
+            <p className="founding100-kicker">The point of the work</p>
+            <h2 id="building-title">What you’re building</h2>
+            <p>You are not setting up another chatbot. You are building a working picture of your company that Nemo can use with you.</p>
+          </div>
+          <div className="founding100-building-grid">
+            {buildingBlocks.map((block, index) => (
+              <article className="founding100-building-card" key={block.label}>
+                <span className="founding100-card-index">0{index + 1}</span>
+                <div className="founding100-card-mark" aria-hidden="true"><span /></div>
+                <h3>{block.label}</h3>
+                <p>{block.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="founding100-section founding100-views" aria-labelledby="views-title">
+          <div className="founding100-views-copy">
+            <p className="founding100-kicker">Business Views</p>
+            <h2 id="views-title">We’ll show the business back to you.</h2>
+            <p>As StrategicAI learns your company, it can turn that understanding into useful Business Views.</p>
+            <p className="founding100-muted">The views depend on what we discover about your business.</p>
+          </div>
+          <div className="founding100-view-list">
+            {businessViews.map((view, index) => (
+              <div className="founding100-view-item" key={view}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{view}</p>
+                <Check size={15} aria-hidden="true" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="founding100-section founding100-days" aria-labelledby="days-title">
+          <div className="founding100-section-heading">
+            <p className="founding100-kicker">The 90-day experience</p>
+            <h2 id="days-title">See it. Challenge it. Change it.</h2>
+            <p>Use Nemo like a flashlight inside your company.</p>
+          </div>
+          <div className="founding100-stage-grid">
+            {stages.map((stage, index) => (
+              <article className={`founding100-stage founding100-stage-${index + 1}`} key={stage.name}>
+                <div className="founding100-stage-number">{stage.number}</div>
+                <div className="founding100-stage-rule" aria-hidden="true" />
+                <h3>{stage.name}</h3>
+                <p>{stage.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className="founding100-questions" aria-label="Example questions to explore with Nemo">
+            {questions.map((question) => <span key={question}>“{question}”</span>)}
+          </div>
+        </section>
+
+        <section className="founding100-correction" aria-labelledby="correction-title">
+          <div className="founding100-correction-mark" aria-hidden="true"><Sparkles size={20} /></div>
+          <div>
+            <p className="founding100-kicker">A useful part of the process</p>
+            <h2 id="correction-title">You are supposed to challenge it.</h2>
+            <p>StrategicAI will not understand everything perfectly on day one.</p>
+            <p>If you see something wrong, say so. <strong>“No, that’s not how it works” is useful information.</strong> Every correction helps build a better picture of the company.</p>
+          </div>
+        </section>
+
+        <section className="founding100-section founding100-boundary" aria-labelledby="boundary-title">
+          <div className="founding100-boundary-copy">
+            <p className="founding100-kicker">One important thing</p>
+            <h2 id="boundary-title">Understand first. Decide second.</h2>
+            <p>StrategicAI is here to help you understand the business before deciding what should be automated, changed, or built.</p>
+          </div>
+          <div className="founding100-boundary-note">
+            <p>Your Founding 100 purchase does not automatically include:</p>
+            <ul>
+              <li>Custom integrations</li>
+              <li>Custom software</li>
+              <li>Implementation work</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="founding100-support" aria-labelledby="support-title">
+          <p className="founding100-kicker">Need a hand?</p>
+          <h2 id="support-title">Questions before you start?</h2>
+          <a href={`mailto:${SUPPORT_EMAIL}?subject=Founding%20100%20question`} onClick={handleSupportClick}>
+            <Mail size={17} aria-hidden="true" />
+            Contact StrategicAI support
+          </a>
+        </section>
+      </main>
+
+      <footer className="founding100-footer">
+        <a className="founding100-wordmark" href="/" aria-label="StrategicAI home"><span>Strategic</span>AI</a>
+        <p>Founding 100 · Build an AI that knows your business.</p>
+        <a href={`mailto:${SUPPORT_EMAIL}`} onClick={handleSupportClick}>Support</a>
+      </footer>
+    </div>
+  );
+}

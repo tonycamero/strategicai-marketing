@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/render-static-routes.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:founding100": "node scripts/test-founding100.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.0",

@@ -18,6 +18,9 @@ export const strategicFunnelEvents = [
   "leadership_intake_completed",
   "team_invite_started",
   "executive_brief_ready",
+  "founding100_payment_arrival",
+  "founding100_formation_status_view",
+  "founding100_support_clicked",
 ] as const;
 
 export function trackEvent(event: string, payload: AnalyticsPayload = {}) {

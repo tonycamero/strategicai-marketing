@@ -8,11 +8,13 @@ import Intake from "./pages/public/Intake";
 import IntakeThanks from "./pages/public/IntakeThanks";
 import Product from "./pages/public/Product";
 import Pricing from "./pages/public/Pricing";
+import Founding100 from "./pages/public/Founding100";
 
 export type AppRoute = {
   path: string;
   element: React.ReactElement;
   label?: string;
+  shell?: boolean;
 };
 
 export const routes: AppRoute[] = [
@@ -20,7 +22,7 @@ export const routes: AppRoute[] = [
   { path: "/legacy-home", element: <Navigate to="/" replace /> },
   { path: "/brain", element: <Navigate to="/" replace /> },
   { path: "/alt-home", element: <Navigate to="/" replace /> },
-  
+
   /* Navigation Links */
   { path: "/product", element: <Product /> },
   { path: "/strategic-ai-brain", element: <Navigate to="/" replace /> },
@@ -46,7 +48,10 @@ export const routes: AppRoute[] = [
   /* Intake Flow */
   { path: "/intake", element: <Intake /> },
   { path: "/intake/thanks", element: <IntakeThanks /> },
-  
+
+  /* Customer handoff */
+  { path: "/founding100", element: <Founding100 />, shell: false },
+
   /* Auth/Roadmap Placeholders */
   { path: "/login", element: <Placeholder /> },
   { path: "/roadmap", element: <Placeholder /> },
