@@ -19,7 +19,9 @@ const businessViews = [
   "Where information lives",
   "Where handoffs break",
   "Where work slows down",
+  "What depends too heavily on the owner",
   "What still needs to be understood",
+  "What deserves attention next",
 ];
 
 const stages = [
@@ -53,7 +55,7 @@ export default function Founding100() {
   usePageMeta({
     title: "StrategicAI Founding 100 | Welcome",
     description:
-      "Welcome to StrategicAI Founding 100. Learn what happens next as StrategicAI builds a picture of how your business actually works.",
+      "Welcome to StrategicAI Founding 100. Build a serious body of intelligence about your company and learn what happens next.",
     path: "/founding100",
   });
 
@@ -88,11 +90,11 @@ export default function Founding100() {
               <CheckCircle2 size={16} aria-hidden="true" />
               <span>Founding 100 <span aria-hidden="true">·</span> $299 one-time</span>
             </div>
-            <p className="founding100-kicker">A clear start to a better picture</p>
+            <p className="founding100-kicker">Your Business Intelligence Portfolio</p>
             <h1 id="founding100-title">You’re in.</h1>
-            <p className="founding100-hero-lede">Welcome to the StrategicAI Founding 100.</p>
+            <p className="founding100-hero-lede">You’re about to build a serious body of intelligence about your company.</p>
             <p className="founding100-hero-body">
-              You’ve taken the first step toward building an AI that knows your business. Now we begin teaching StrategicAI how your company actually works.
+              StrategicAI will turn what it learns into useful Business Views—so you can see how work, people, systems, dependencies, bottlenecks, unknowns, and priorities fit together.
             </p>
             <div className="founding100-principle">
               <span className="founding100-principle-line" aria-hidden="true" />
@@ -101,7 +103,7 @@ export default function Founding100() {
           </div>
 
           <div className="founding100-hero-visual" aria-hidden="true">
-            <div className="founding100-visual-label">A picture takes shape</div>
+            <div className="founding100-visual-label">A portfolio takes shape</div>
             <div className="founding100-map">
               <svg viewBox="0 0 420 300" role="presentation">
                 <path d="M82 78C142 42 164 93 209 112S294 115 336 72" />
@@ -115,7 +117,7 @@ export default function Founding100() {
               <span className="founding100-node founding100-node-d"><i>Decisions</i></span>
               <span className="founding100-node founding100-node-center"><span>StrategicAI</span></span>
             </div>
-            <div className="founding100-visual-foot">The business we discover together</div>
+            <div className="founding100-visual-foot">Built from your company</div>
           </div>
         </section>
 
@@ -152,9 +154,9 @@ export default function Founding100() {
 
         <section className="founding100-section founding100-building" aria-labelledby="building-title">
           <div className="founding100-section-heading founding100-narrow-heading">
-            <p className="founding100-kicker">The point of the work</p>
-            <h2 id="building-title">What you’re building</h2>
-            <p>You are not setting up another chatbot. You are building a working picture of your company that Nemo can use with you.</p>
+            <p className="founding100-kicker">Layer 1 · standalone value</p>
+            <h2 id="building-title">Your Business Intelligence Portfolio</h2>
+            <p>You are not setting up another chatbot. You are building a useful body of work about your company—something you can inspect, correct, and use before you bring a single question to Nemo.</p>
           </div>
           <div className="founding100-building-grid">
             {buildingBlocks.map((block, index) => (
@@ -166,14 +168,26 @@ export default function Founding100() {
               </article>
             ))}
           </div>
+          <div className="founding100-portfolio-bridge">
+            <div className="founding100-portfolio-layer">
+              <span className="founding100-layer-label">Layer 1</span>
+              <h3>The portfolio</h3>
+              <p>StrategicAI shows the business back to you: how it works, where it is under pressure, what is unclear, and what appears worth attention.</p>
+            </div>
+            <div className="founding100-portfolio-layer founding100-portfolio-layer-accent">
+              <span className="founding100-layer-label">Layer 2</span>
+              <h3>90 days with Nemo</h3>
+              <p>Bring Nemo the real questions you are facing as an owner—hiring, growth, bottlenecks, customers, systems, priorities, and decisions.</p>
+            </div>
+          </div>
         </section>
 
         <section className="founding100-section founding100-views" aria-labelledby="views-title">
           <div className="founding100-views-copy">
             <p className="founding100-kicker">Business Views</p>
             <h2 id="views-title">We’ll show the business back to you.</h2>
-            <p>As StrategicAI learns your company, it can turn that understanding into useful Business Views.</p>
-            <p className="founding100-muted">The views depend on what we discover about your business.</p>
+            <p>As StrategicAI learns your company, it can turn that understanding into useful Business Views. The portfolio is built from your business—not a generic template.</p>
+            <p className="founding100-muted">The starting questions stay consistent. The exact views depend on what we discover.</p>
           </div>
           <div className="founding100-view-list">
             {businessViews.map((view, index) => (
@@ -245,7 +259,7 @@ export default function Founding100() {
 
       <footer className="founding100-footer">
         <a className="founding100-wordmark" href="/" aria-label="StrategicAI home"><span>Strategic</span>AI</a>
-        <p>Founding 100 · Build an AI that knows your business.</p>
+        <p>Founding 100 · Operational Intelligence built from Operational Reality.</p>
         <a href={`mailto:${SUPPORT_EMAIL}`} onClick={handleSupportClick}>Support</a>
       </footer>
     </div>

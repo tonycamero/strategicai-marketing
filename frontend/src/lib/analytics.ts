@@ -21,6 +21,20 @@ export const strategicFunnelEvents = [
   "founding100_payment_arrival",
   "founding100_formation_status_view",
   "founding100_support_clicked",
+  "see_short",
+  "see_deep",
+  "short_video_start",
+  "short_video_progress",
+  "short_video_complete",
+  "deep_video_start",
+  "deep_video_progress",
+  "deep_video_complete",
+  "see_reason_selected",
+  "short_to_deep",
+  "content_to_offer",
+  "offer_view",
+  "checkout_click",
+  "founding100_offer_faq_opened",
 ] as const;
 
 export function trackEvent(event: string, payload: AnalyticsPayload = {}) {

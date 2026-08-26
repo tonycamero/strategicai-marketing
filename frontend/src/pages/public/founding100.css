@@ -258,6 +258,13 @@
 .founding100-card-mark span { width: 7px; height: 7px; margin-left: 4px; border: 1px solid var(--f100-aqua); border-radius: 50%; }
 .founding100-building-card h3 { margin: 0; color: var(--f100-text); font-size: 1.05rem; font-weight: 600; }
 .founding100-building-card p { margin: 9px 0 0; color: var(--f100-muted); font-size: 0.87rem; line-height: 1.55; }
+.founding100-portfolio-bridge { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; margin-top: 13px; }
+.founding100-portfolio-layer { padding: 25px; border: 1px solid rgba(158, 231, 221, 0.28); border-radius: 18px; background: linear-gradient(145deg, rgba(19, 48, 53, 0.74), rgba(12, 29, 35, 0.72)); }
+.founding100-portfolio-layer-accent { border-color: rgba(230, 197, 142, 0.34); background: linear-gradient(145deg, rgba(53, 47, 35, 0.62), rgba(18, 31, 35, 0.76)); }
+.founding100-layer-label { display: block; color: var(--f100-aqua-deep); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.founding100-portfolio-layer-accent .founding100-layer-label { color: var(--f100-warm); }
+.founding100-portfolio-layer h3 { margin: 19px 0 0; color: var(--f100-text); font-size: 1.22rem; font-weight: 600; letter-spacing: -0.03em; }
+.founding100-portfolio-layer p { max-width: 500px; margin: 10px 0 0; color: var(--f100-muted); font-size: 0.88rem; line-height: 1.65; }
 
 .founding100-views { display: grid; grid-template-columns: 0.88fr 1.12fr; gap: 95px; align-items: center; }
 .founding100-views-copy > p:not(.founding100-kicker) { max-width: 470px; }
@@ -310,6 +317,7 @@
   .founding100-next-grid { grid-template-columns: 1fr; gap: 45px; }
   .founding100-status-card { max-width: 520px; }
   .founding100-building-grid { grid-template-columns: repeat(2, 1fr); }
+  .founding100-portfolio-bridge { grid-template-columns: 1fr; }
   .founding100-views { grid-template-columns: 1fr; gap: 50px; }
   .founding100-boundary { grid-template-columns: 1fr; gap: 40px; }
 }
@@ -356,6 +364,7 @@
   .founding100-stage-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 37px; }
   .founding100-building-card { min-height: 0; padding: 20px; }
   .founding100-card-mark { margin: 18px 0; }
+  .founding100-portfolio-layer { padding: 20px; }
   .founding100-stage { padding: 21px; }
   .founding100-stage-rule { margin: 27px 0 16px; }
   .founding100-stage h3 { font-size: 1.75rem; }

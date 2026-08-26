@@ -1,0 +1,1 @@
+event_id,event_timestamp,event_name,semantic_event,source_observer,session_id,route,content_path,message_card_id,originating_clip_id,track,hook_family,exact_hook_resolved,conflict_intensity,source,platform,post_instance_id,utm_source,utm_medium,utm_campaign,utm_content,progress_percent,see_reason,transport_status,payment_verification_status,analytics_status,notes

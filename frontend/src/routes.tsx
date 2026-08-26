@@ -9,6 +9,8 @@ import IntakeThanks from "./pages/public/IntakeThanks";
 import Product from "./pages/public/Product";
 import Pricing from "./pages/public/Pricing";
 import Founding100 from "./pages/public/Founding100";
+import Founding100Content from "./pages/public/Founding100Content";
+import Founding100Offer from "./pages/public/Founding100Offer";
 
 export type AppRoute = {
   path: string;
@@ -49,7 +51,10 @@ export const routes: AppRoute[] = [
   { path: "/intake", element: <Intake /> },
   { path: "/intake/thanks", element: <IntakeThanks /> },
 
-  /* Customer handoff */
+  /* Founding 100 funnel and customer handoff */
+  { path: "/founding100/quick", element: <Founding100Content kind="short" />, shell: false },
+  { path: "/founding100/webinar", element: <Founding100Content kind="deep" />, shell: false },
+  { path: "/founding100/offer", element: <Founding100Offer />, shell: false },
   { path: "/founding100", element: <Founding100 />, shell: false },
 
   /* Auth/Roadmap Placeholders */
