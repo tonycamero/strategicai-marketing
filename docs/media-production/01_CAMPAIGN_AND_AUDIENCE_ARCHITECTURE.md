@@ -51,6 +51,14 @@ must survive comment/DM transport and both content routes. Offer and checkout
 attribution remain dormant instrumentation until the commercial branch is
 authorized.
 
+The downstream conversion architecture is governed by
+`15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md`. In that architecture,
+the quick route creates the first belief shift and an open loop, the deep route
+does the primary belief-conversion and future purchase-readiness work, and the
+offer route completes a decision only after commercial authority. This ladder
+does not change the current SEE gate, activate an offer, or make the proposed
+Portfolio and Nemo experience runtime proof.
+
 ### Relationship to founder-led outbound
 
 Media is credibility and warming infrastructure for:

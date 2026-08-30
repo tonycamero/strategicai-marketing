@@ -132,6 +132,20 @@ below” CTAs in source material are not approved production copy. They must use
 the canonical `Comment SEE and I’ll send you the video.` CTA unless a declared
 CTA test is separately approved.
 
+## Conversion architecture boundary
+
+`15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md` owns Founding 100
+sales sequencing, belief progression, objection handling, proof architecture,
+value framing, and conversion measurement. It is a sequencing authority only;
+it does not authorize product/runtime claims, Portfolio delivery, Formation,
+checkout, payment verification, legal terms, or commercial activation.
+
+The architecture may be used to improve market-learning assets while G-01 and
+G-09 remain open. The deep content is the primary belief-conversion and future
+purchase-readiness engine; the offer is decision completion only after the
+commercial branch is authorized. SEE, the no-email/identity gate, and the
+qualified-conversation fallback remain unchanged.
+
 ## Primary category contrast
 
 The primary market contrast is:
@@ -255,15 +269,15 @@ Every customer-facing asset must preserve these rules:
 
 | Gate | Decision required | Why it matters | Owner | Evidence to record | Status |
 | --- | --- | --- | --- | --- | --- |
-| G-01 Commercial authority | Approve the `$299`, first-100, 90-day offer; define refund, tax, capacity, start date, eligibility, and what the buyer receives. | Product doctrine does not authorize a commercial commitment. | Founder + commercial owner | Signed offer sheet or approved terms | OPEN / NOT REQUIRED FOR NON-COMMERCIAL MARKET LEARNING |
+| G-01 Commercial authority | Approve the `$299`, first-100, 90-day offer; define refund, tax, capacity, start date, eligibility, why-now rationale, and what the buyer receives. | Product doctrine and a conversion architecture do not authorize a commercial commitment. | Founder + commercial owner | Signed offer sheet or approved terms | OPEN / NOT REQUIRED FOR NON-COMMERCIAL MARKET LEARNING |
 | G-02 Funnel authority | Approve the Comment `SEE` content path separately from the offer, payment, and post-payment path. | A content CTA needs truthful destinations; commercial continuation needs additional authority. | Founder + funnel owner | Content-path receipt; separate offer-to-activation receipt | CONTENT ROUTES IMPLEMENTED / ASSETS AND COMMERCIAL PATH OPEN |
 | G-03 Product naming | Preserve `Nemo` as the ratified interaction-layer name and document its runtime relationship to existing `Nova` boundaries. | Product role is ratified; context availability and runtime continuity are not. | Founder + product authority | Product authority record plus runtime naming/boundary decision | CLOSED FOR DOCTRINE / OPEN FOR RUNTIME |
-| G-04 Claim review | Approve each Wave 1 and Category Contrast script against the canonical Operational Reality → Operational Intelligence hierarchy, explanatory-only role of “An AI that knows your business,” actual Founding 100 delivery path, Business View scope, automation-claim boundaries, and declared conflict intensity. C3 and C4 require explicit truth, defensibility, target-relevance, allegation, and brand-risk review. | The prompt introduces claims not yet present in the approved claim matrix, and maximum-conflict hooks can create material claim and brand risk. | Narrative + delivery owner | Script approval initials/date plus C3/C4 conflict review | OPEN |
+| G-04 Claim review | Approve each Wave 1 and Category Contrast script against the canonical Operational Reality → Operational Intelligence hierarchy, explanatory-only role of “An AI that knows your business,” actual Founding 100 delivery path, Business View scope, automation-claim boundaries, declared conflict intensity, and the applicable conversion-stage proof burden. C3 and C4 require explicit truth, defensibility, target-relevance, allegation, and brand-risk review. | The prompt introduces claims not yet present in the approved claim matrix, and maximum-conflict hooks can create material claim and brand risk. Conversion performance does not substitute for claim or proof review. | Narrative + delivery owner | Script approval initials/date plus C3/C4 conflict review | OPEN |
 | G-05 Tracking and privacy | Approve analytics, pixels, UTMs, consent language, CRM fields, and platform-account access. | Attribution and retargeting require lawful, functioning data capture. | Marketing ops + privacy owner | Tracking QA checklist | OPEN |
 | G-06 Channel readiness | Verify account names, comment permissions, canonical keyword handling, authorized DM transport, delivery receipts, ad accounts, and platform-specific CTA behavior. | `SEE` is not operational until the comment-to-DM path works on each release channel. | Channel owner | Account-by-account `SEE` comment and two-choice DM receipt | OPEN |
 | G-07 Delivery capacity | Confirm intake and delivery capacity for 10, then 100 tenants without borrowing unverified automation claims. | Demand must not outrun the actual experience. | Founder + delivery owner | Capacity plan and stop/go thresholds | OPEN |
 | G-08 Advisor narrative authority | Review business-aware advisor and Nemo language by truth layer across scripts, content, offer, and post-payment experience. | Controlled intended-experience language may be tested; commercial/current-runtime use requires evidence. | Narrative + product + delivery owner | Experiment record or runtime/commercial claim approval, according to use | MARKET TEST AUTHORIZED / RUNTIME AND COMMERCIAL USE OPEN |
-| G-09 Purchase and post-payment readiness | Resolve the production Formation destination, Stripe Checkout Session/payment verification, Terms route, Privacy route, support route, and post-payment handoff copy. | Media must not imply that the purchase and 90-day experience are operationally ready when known blockers remain. | Commercial + product + legal/ops owner | End-to-end purchase/activation receipt and approved customer copy | OPEN |
+| G-09 Purchase and post-payment readiness | Resolve the production Formation destination, Stripe Checkout Session/payment verification, Terms route, Privacy route, support route, post-payment handoff copy, and the risk/uncertainty boundary for the delivered experience. | Media must not imply that the purchase and 90-day experience are operationally ready when known blockers remain. | Commercial + product + legal/ops owner | End-to-end purchase/activation receipt and approved customer copy | OPEN |
 
 ## Gate applicability by truth layer
 

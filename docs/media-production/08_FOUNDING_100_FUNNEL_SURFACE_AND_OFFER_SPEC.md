@@ -479,8 +479,14 @@ Never emit `payment_completed` from a button click alone.
 
 ### Relationship to webinar and post-payment
 
-- The webinar earns belief: company context and a visible picture are more useful than starting from zero.
-- The offer page earns the purchase decision: the customer understands the portfolio plus the 90-day Nemo layer.
+- The deep webinar content is the primary belief-conversion and future
+  purchase-readiness engine: company context and a visible picture are more
+  useful than starting from zero, subject to the evidence and runtime boundary.
+- The offer page completes the purchase decision after that belief work: the
+  prospect can evaluate the proposed Portfolio plus the proposed 90-day Nemo
+  layer against an authorized scope, terms, and risk boundary.
+- The offer page is not expected to perform the entire sale from a cold start,
+  and its decision CTA remains inactive while commercial authority is open.
 - Stripe owns payment completion.
 - `/founding100` confirms the handoff experience but does not establish payment authority until server-side verification exists.
 - Formation creates or refines the underlying business understanding.

@@ -141,6 +141,13 @@ step until Commercial Commitment authority closes.
 The 35-minute walkthrough continues the originating hook instead of restarting
 with a generic company welcome.
 
+The deep content is the primary belief-conversion and future purchase-readiness
+engine for any later commercial branch. It must make the Operational Reality →
+Operational Intelligence explanation, mechanism, proof boundary, and major
+objection reversals understandable before an offer transition is attempted.
+This role does not authorize an offer, prove runtime, or change the commercial
+gate.
+
 ```text
 OPERATOR WTF MOMENT
     -> THESE ARE SIGNALS
@@ -149,8 +156,9 @@ OPERATOR WTF MOMENT
     -> OPERATIONAL INTELLIGENCE
     -> BUSINESS VIEWS
     -> NEMO
+    -> PRIMARY BELIEF CONVERSION / PURCHASE READINESS
     -> TRUTHFUL NEXT STEP
-       -> OPTIONAL FOUNDING 100 BRANCH ONLY WHEN COMMERCIALLY AUTHORIZED
+       -> OFFER DECISION COMPLETION ONLY WHEN COMMERCIALLY AUTHORIZED
 ```
 
 Final narration remains a separate content artifact and is not invented here.

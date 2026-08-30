@@ -114,6 +114,7 @@ hero product by themselves.
 | `05_PUBLISHING_EXPERIMENT_MEASUREMENT.md` | Channel plan, owner-versus-competitor signal separation, funnel measurement, attribution, and market-feedback loop. |
 | `06_30_DAY_PRODUCTION_CALENDAR.md` | Dated 30-day execution schedule with the matched C1–C4 test accelerated into Week 2/B02. |
 | `14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md` | Governing `SEE` front door, Message Card, route, attribution, analytics, abandonment, and implementation contract. |
+| `15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md` | Draft-for-ratification belief, objection, proof, value, sequencing, and conversion-measurement architecture; owns sales sequencing only. |
 | `PERFORMANCE_DASHBOARD_TEMPLATE.csv` | One row per clip/platform/edit version for funnel measurement. |
 | `MARKET_SIGNAL_LOG_TEMPLATE.csv` | Structured comments, DMs, objections, questions, and sales-call signals. |
 | `MESSAGE_CARD_MANIFEST_TEMPLATE.csv` | One governed row per Message Card and its exact hook/source mapping. |
@@ -137,6 +138,12 @@ The original controlling brief is preserved as `FOUNDING_100_TOFU_MEDIA_SYSTEM_P
 8. Feed market language back into scripts, 5-minute content, the 35-minute
    walkthrough, and product discovery. Feed it into an offer only under separate
    Commercial Commitment review.
+
+The current handoff is therefore: quick creates recognition and an open loop;
+deep performs the primary belief-conversion and future purchase-readiness work;
+offer completes a decision only when authorized; and `/founding100` handles
+post-payment certainty, momentum, expectation setting, and activation. This
+does not activate the commercial branch or alter the SEE contract.
 
 ## Definition of done for Wave 1
 
