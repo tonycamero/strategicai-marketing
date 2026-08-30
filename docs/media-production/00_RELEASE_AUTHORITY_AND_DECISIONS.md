@@ -3,7 +3,7 @@ id: F100-MEDIA-RELEASE-CONTROL
 title: Founding 100 Media Release Authority and Decisions
 status: MARKET_LEARNING_ACTIVE_COMMERCIAL_DELIVERY_GATED
 created: 2026-08-22
-updated: 2026-08-25
+updated: 2026-08-30
 publication_state: PRODUCT_DOCTRINE_RATIFIED_MARKET_LEARNING_ACTIVE
 depends_on:
   - STRATEGICAI-PRODUCT-SHIFT-AUTHORITY-2026-08-25
@@ -43,8 +43,81 @@ COMMERCIAL_DELIVERY = GATED
   remain market hypotheses.
 - Business View generation and Nemo context behavior remain intended-product
   and runtime claims whose current wording must match evidence.
-- The `$299` offer, included portfolio, 90-day delivery, checkout, and
-  activation remain commercial commitments requiring separate authority.
+- The founder has approved `$299` one-time as the early-cohort acquisition and
+  learning price for the first 100 businesses. Exact entitlement, guaranteed
+  Portfolio core, 90-day delivery, checkout, activation, terms, and capacity
+  remain separate commercial/runtime commitments requiring authority.
+
+## Founder-approved commercial direction
+
+Recorded from the founder’s commercial-strategy amendment on 2026-08-30:
+
+```text
+FOUNDING_100_PRICE = 299_USD_ONE_TIME
+PRICE_STATUS = FOUNDER_APPROVED_DIRECTION
+FOUNDING_100_PRICE_ROLE = EARLY_COHORT_ACQUISITION_AND_LEARNING_PRICE
+FOUNDING_100_COHORT = FIRST_100_BUSINESSES
+```
+
+The price intentionally favors real-company participation, correction,
+feedback, product learning, operating diversity, edge cases, objections,
+usage evidence, and future permissioned customer evidence over mature
+per-customer economics. This is a founder strategy and does not define the
+mature value of StrategicAI.
+
+StrategicAI’s internal future commercial direction is presently expected in
+an approximate `$1,500–$3,000` range. This is internal direction only. It is
+not a current list price, reference price, discount anchor, guaranteed future
+price, customer-facing comparison, or savings claim.
+
+The first-100 limit is a real cohort strategy. It does not authorize remaining-
+seat counts, countdowns, expiration dates, unsupported delivery scarcity, or a
+future exact price increase. StrategicAI may receive participation, correction,
+product feedback, market language, operating edge cases, and usage evidence.
+Any public testimonial, named case study, identifiable artifact, or customer
+quote requires separate consent. The customer receives the separately
+authorized Founding 100 scope, Founding 100 pricing, and participation in the
+early cohort; no additional founding-member benefit is implied.
+
+The economic exchange is explicit:
+
+```text
+FOUNDING 100
+    = PROOF-GENERATION + PRODUCT-HARDENING + MARKET-LEARNING COHORT
+
+MATURE HIGH-TICKET FUNNEL
+    = PROOF-LEVERAGING ACQUISITION SYSTEM
+```
+
+The cohort trades away margin at `$299` to acquire real-company volume and
+learning. The intended evidence yield includes customer outcomes where
+measurable, testimonials, before/after stories, product usage patterns,
+objection data, correction patterns, edge cases, successful Business View
+examples, Nemo question/use cases, delivery learnings, time-to-value evidence,
+clearer qualification criteria, stronger case studies, and sharper offer
+language. These are acquisition objectives, not guaranteed outputs or present
+customer-facing proof.
+
+The later internal `$1,500–$3,000` direction may eventually leverage that
+evidence to say what happened with businesses like the buyer, how long useful
+understanding took, which owner dependencies were surfaced, what changed after
+correction, what value customers reported, and which questions Nemo helped
+investigate. Those claims require actual evidence, scope, consent where
+applicable, and separate approval. The mature range remains internal only and
+must not be used as a current anchor or comparison.
+
+Participation and feedback may be part of the commercial exchange; public
+proof may not be assumed. The eventual customer permission posture must
+separate these choices:
+
+| Evidence or permission | Direction |
+| --- | --- |
+| Product feedback | Required/expected within the authorized participation terms |
+| Anonymized aggregate learning | Allowed only under approved terms and privacy review |
+| Named testimonial | Separate opt-in |
+| Named case study | Separate opt-in |
+| Public artifact, screenshot, or identifiable view | Separate opt-in |
+| Quantified ROI or customer outcome claim | Separately evidenced, scoped, consented where required, and approved |
 
 ## Locked strategy from the controlling brief
 
@@ -145,6 +218,15 @@ G-09 remain open. The deep content is the primary belief-conversion and future
 purchase-readiness engine; the offer is decision completion only after the
 commercial branch is authorized. SEE, the no-email/identity gate, and the
 qualified-conversation fallback remain unchanged.
+
+## Founder ratification record
+
+On 2026-08-30, the founder ratified
+`15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md` for sales sequencing
+only. This ratifies the belief progression, objection architecture, proof
+deployment logic, value framing, and conversion measurement described there.
+It does not ratify runtime capability, Portfolio implementation or guaranteed
+core, Nemo continuity, checkout, delivery, legal terms, or activation.
 
 ## Primary category contrast
 
@@ -269,7 +351,7 @@ Every customer-facing asset must preserve these rules:
 
 | Gate | Decision required | Why it matters | Owner | Evidence to record | Status |
 | --- | --- | --- | --- | --- | --- |
-| G-01 Commercial authority | Approve the `$299`, first-100, 90-day offer; define refund, tax, capacity, start date, eligibility, why-now rationale, and what the buyer receives. | Product doctrine and a conversion architecture do not authorize a commercial commitment. | Founder + commercial owner | Signed offer sheet or approved terms | OPEN / NOT REQUIRED FOR NON-COMMERCIAL MARKET LEARNING |
+| G-01 Commercial authority | Convert the founder-approved `$299` and first-100 direction into an exact 90-day offer; define refund, tax, capacity, start date, eligibility, why-now rationale, and what the buyer receives. | Founder strategy does not by itself authorize entitlement, delivery, or a commercial commitment. | Founder + commercial owner | Signed offer sheet or approved terms | FOUNDER DIRECTION RECORDED / OFFER AUTHORITY OPEN |
 | G-02 Funnel authority | Approve the Comment `SEE` content path separately from the offer, payment, and post-payment path. | A content CTA needs truthful destinations; commercial continuation needs additional authority. | Founder + funnel owner | Content-path receipt; separate offer-to-activation receipt | CONTENT ROUTES IMPLEMENTED / ASSETS AND COMMERCIAL PATH OPEN |
 | G-03 Product naming | Preserve `Nemo` as the ratified interaction-layer name and document its runtime relationship to existing `Nova` boundaries. | Product role is ratified; context availability and runtime continuity are not. | Founder + product authority | Product authority record plus runtime naming/boundary decision | CLOSED FOR DOCTRINE / OPEN FOR RUNTIME |
 | G-04 Claim review | Approve each Wave 1 and Category Contrast script against the canonical Operational Reality → Operational Intelligence hierarchy, explanatory-only role of “An AI that knows your business,” actual Founding 100 delivery path, Business View scope, automation-claim boundaries, declared conflict intensity, and the applicable conversion-stage proof burden. C3 and C4 require explicit truth, defensibility, target-relevance, allegation, and brand-risk review. | The prompt introduces claims not yet present in the approved claim matrix, and maximum-conflict hooks can create material claim and brand risk. Conversion performance does not substitute for claim or proof review. | Narrative + delivery owner | Script approval initials/date plus C3/C4 conflict review | OPEN |

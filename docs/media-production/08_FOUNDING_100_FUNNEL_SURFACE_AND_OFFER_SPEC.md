@@ -13,9 +13,11 @@ commercial_commitment_status: GATED
 
 This document separates what is live from what is only described in the Founding 100 marketing substrate. Its offer and post-payment sections remain implementation substrate. Its gated webinar-registration section is historical and is superseded by `14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md`.
 
-The product doctrine used by the page is ratified. The `$299` purchase, exact
-portfolio, 90-day Nemo delivery, and activation path remain commercial
-commitments and are not ratified by product doctrine.
+The product doctrine used by the page is ratified. The founder has approved
+`$299` one-time as the early-cohort acquisition-and-learning price for the
+first 100 businesses. Exact purchase entitlement, Portfolio scope, 90-day
+Nemo delivery, and activation remain commercial/runtime commitments and are
+not ratified by product doctrine.
 
 The current pre-purchase surfaces are:
 
@@ -314,6 +316,42 @@ Convert a webinar attendee or qualified referral into a clear `$299` one-time pu
 StrategicAI Founding 100
 $299 one-time
 ```
+
+Founder-approved price direction:
+
+```text
+PRICE_STATUS = FOUNDER_APPROVED_DIRECTION
+PRICE_ROLE = EARLY_COHORT_ACQUISITION_AND_LEARNING_PRICE
+FOUNDING_100_COHORT = FIRST_100_BUSINESSES
+```
+
+The price favors participation, correction, feedback, product learning,
+operating diversity, edge cases, usage evidence, and future permissioned
+customer evidence during the first-100 stage. It is not a mature StrategicAI
+value definition, discount anchor, savings claim, or permanent price. The
+first-100 cohort is a real founder strategy, but remaining seats, countdowns,
+expiration, unsupported scarcity, and a future exact price increase remain
+unauthorized.
+
+The commercial exchange is:
+
+```text
+FOUNDING 100 = PROOF-GENERATION + PRODUCT-HARDENING + MARKET-LEARNING COHORT
+MATURE HIGH-TICKET FUNNEL = PROOF-LEVERAGING ACQUISITION SYSTEM
+```
+
+At `$299`, StrategicAI is intentionally trading away mature margin to obtain
+real-company volume, participation, correction, feedback, edge cases, usage
+patterns, objection data, delivery learning, and permissioned evidence that
+may later support a higher-ticket offering. Outcomes, testimonials,
+before/after stories, ROI, screenshots, and case studies are not implied by
+joining and may be used publicly only with separate evidence and permission.
+
+Participation and product feedback may be required or expected under the
+authorized terms. Anonymized aggregate learning, named testimonials, named
+case studies, public artifacts/screenshots, and quantified outcome or ROI
+claims require their own approved permission/evidence posture. No additional
+founding-member benefit is invented here.
 
 Canonical proposition:
 

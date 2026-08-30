@@ -1,10 +1,12 @@
 ---
 id: F100-HIGH-CONVERSION-FUNNEL-ARCHITECTURE
 title: Founding 100 High-Conversion Funnel Architecture
-status: DRAFT_FOR_FOUNDER_RATIFICATION
+status: RATIFIED_BY_FOUNDER
 version: 1.0
 created: 2026-08-30
+ratified_on: 2026-08-30
 authority: Sales-sequencing architecture only
+ratification_scope: SALES_SEQUENCING_ONLY
 depends_on:
   - 00_RELEASE_AUTHORITY_AND_DECISIONS.md
   - 01_CAMPAIGN_AND_AUDIENCE_ARCHITECTURE.md
@@ -33,6 +35,7 @@ SEE_ROUTE_OWNER = 14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md
 COMMERCIAL_AUTHORITY = G-01 / G-07 / G-09
 APPLICATION_SOURCE_CHANGES = 0
 FINAL_NARRATION_AUTHORIZED = NO
+SALES_SEQUENCING_STATUS = RATIFIED_BY_FOUNDER
 ```
 
 The architecture is a controlled market-learning and future commercial design
@@ -407,28 +410,63 @@ invented evidence or guarantees.
 
 ## K. Price and Founding 100 rationale
 
-`$299` is present in the existing offer substrate, but price and offer scope
-remain commercially gated. The following are decisions to ratify, not claims to
-publish as settled fact.
+The founder has approved `$299` one-time as the early-cohort acquisition and
+learning price for the first 100 businesses. The price and cohort rationale are
+now founder-approved direction. Exact entitlement, delivery, terms, capacity,
+and activation remain commercially gated. The following table separates what
+is directionally approved from what still must be converted into an executable
+contract.
 
 | Decision | Required answer before active offer | Current status |
 | --- | --- | --- |
 | What `$299` buys | Exact entitlement, guaranteed core, adaptive views, term, support, and exclusions | OPEN |
-| Why this price | An authorized economic rationale tied to actual delivery and capacity | OPEN |
-| Why the price is deliberately low, if that is the rationale | A truthful explanation of founder-stage learning, capacity, or cohort economics | OPEN |
-| Why Founding 100 | A real cohort, learning, capacity, or enrollment rationale | OPEN |
+| Why this price | Favor real-company participation and learning during the first-100 stage rather than maximize mature per-customer economics | FOUNDER_APPROVED_DIRECTION |
+| Why the price is deliberately low, if that is the rationale | Founder-stage participation, correction, feedback, product learning, edge cases, usage evidence, and future permissioned evidence | FOUNDER_APPROVED_DIRECTION |
+| Why Founding 100 | A bounded first cohort of 100 real businesses whose use, correction, questions, edge cases, objections, and feedback help harden the product and future delivery model | FOUNDER_APPROVED_DIRECTION |
 | Why now | A truthful date, start, capacity, or decision boundary | OPEN |
 | Actual capacity limit | A measurable delivery ceiling and stop/go threshold | OPEN |
 | Whether price or terms expire or change | An authorized effective date, transition rule, or statement that they do not | OPEN |
 | Who qualifies | Eligibility, fit, geography/segment if applicable, and disqualifiers | OPEN |
-| What StrategicAI receives from the cohort | Authorized learning, feedback, evidence, or participation terms | OPEN |
-| What the early customer receives for joining | Authorized access, participation, support, artifacts, or other entitlement | OPEN |
+| What StrategicAI receives from the cohort | Participation, correction, product feedback, market language, operating edge cases, and usage evidence | FOUNDER_APPROVED_DIRECTION / TERMS OPEN |
+| What the early customer receives for joining | Separately authorized Founding 100 scope, Founding 100 pricing, and participation in the early cohort | FOUNDER_APPROVED_DIRECTION / ENTITLEMENT OPEN |
 | What happens after 90 days | Continuation, export, support, renewal, or end state | OPEN |
 | What protects the buyer | Refund, cancellation, terms, privacy, payment verification, support, and correction path | OPEN |
 | What protects delivery | Capacity ceiling, stop/go threshold, intake acceptance, and owner responsibilities | OPEN |
 
-No price anchor, discount implication, guarantee, scarcity, countdown, or
-“first 100” urgency claim is authorized by this architecture.
+The commercial logic is a two-stage system:
+
+```text
+FOUNDING 100
+    = PROOF-GENERATION + PRODUCT-HARDENING + MARKET-LEARNING COHORT
+
+MATURE HIGH-TICKET FUNNEL
+    = PROOF-LEVERAGING ACQUISITION SYSTEM
+```
+
+The first cohort trades margin for real-company volume and the learning needed
+to establish later evidence: outcomes where measurable, testimonials,
+before/after stories, usage patterns, objection data, correction patterns,
+edge cases, successful Business View examples, Nemo question/use cases,
+delivery learnings, time-to-value, qualification criteria, case studies, and
+sharper offer language. None of those evidence assets may be assumed to exist
+for a customer-facing claim merely because the cohort is purchased.
+
+Participation and product feedback may be part of the authorized exchange.
+Public proof requires a separate permission and evidence decision:
+
+| Evidence or permission | Required posture |
+| --- | --- |
+| Product feedback | Required/expected only under the authorized participation terms |
+| Anonymized aggregate learning | Approved terms and privacy review |
+| Named testimonial | Separate opt-in |
+| Named case study | Separate opt-in |
+| Public artifact, screenshot, or identifiable view | Separate opt-in |
+| Quantified ROI or outcome claim | Separately evidenced, scoped, consented where required, and approved |
+
+No mature-value comparison, price anchor, savings claim, guarantee, countdown,
+remaining-seat count, expiration claim, unsupported delivery scarcity, or exact
+future price increase is authorized by this architecture. The first-100 cohort
+limit itself is a real founder strategy.
 
 ## L. Risk and uncertainty reversal
 
