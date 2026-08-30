@@ -68,6 +68,32 @@ a customer result, or a process diagram as proof that the runtime already did
 the work. Process proof is used to orient the viewer; accepted product proof
 does the demonstration work.
 
+## Golden proof thread
+
+The product demonstration is one continuous story, not a feature tour:
+
+```text
+GOLDEN_PROOF_THREAD = REQUIRED
+BEATS = 08–11
+SAME_BUSINESS_CONTEXT = YES
+SAME_OPERATING_PROBLEM = YES
+SAME_EVIDENCE_LINEAGE = YES
+
+one messy operating situation
+    -> Formation discovers people, systems, and dependencies
+    -> two people disagree about one important relationship
+    -> an unknown remains unknown
+    -> the owner corrects something
+    -> the accepted picture changes
+    -> the same issue appears in a Business View
+    -> the owner asks Nemo one consequential question
+    -> Nemo follows the same relationships
+```
+
+Every proof beat must callback to the same business, problem, and evidence
+lineage. If the accepted launch capture cannot preserve that continuity, the
+story needs release review rather than being replaced with a feature tour.
+
 ## Commercial branch rule
 
 The final six minutes are designed for the founder-approved Founding 100
@@ -131,8 +157,8 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | OBJECTIONS_PREHANDLED | O01, O03, O09, source-specific objection from opening variant |
 | EMOTIONAL_START | Recognition, skepticism, urgency, or curiosity inherited from the source. |
 | EMOTIONAL_END | “This is happening in my business.” |
-| CORE_JOB | Continue the hook that earned attention and promise a discovery, not a company welcome. |
-| CONTENT / IDEA | Use the modular PS, CC, MC, founder-outbound, or referral opening. State that the presentation will inspect what sits underneath the visible problem. |
+| CORE_JOB | Continue the hook that earned attention, make 35 minutes worth staying for, and promise an inspectable discovery rather than a company welcome. |
+| CONTENT / IDEA | Use the modular PS, CC, MC, founder-outbound, or referral opening. Establish the two-part promise: by the end, the owner will know whether recurring problems are separate or signs that nobody, including software, can see how the business actually works; then the presentation will show what that looks like inside StrategicAI, including what happens when part of the picture is wrong. |
 | KEY_REFRAME | The first question is not “what can AI automate?” but “what is actually happening here?” |
 | PROOF_ID | P03, P02 |
 | PROOF_STATUS | PROCESS_PROOF |
@@ -140,7 +166,8 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | CLAIM_TRUTH_CLASS | MARKET_HYPOTHESIS + PROCESS / MECHANISM PROOF |
 | WHAT_MUST_NOT_BE_SAID | No company history, founder biography, generic AI-market lecture, product promise, or claim that the viewer has been diagnosed. |
 | TRANSITION_LOGIC | If the viewer recognizes the moment, ask whether the same moment keeps appearing in different forms. |
-| SUCCESS_STATE | The viewer stays because the argument feels like a continuation of their concern. |
+| SUCCESS_STATE | The viewer stays because the argument feels like a continuation of their concern and the payoff is concrete. |
+| MENTAL_YES | “Is this worth 35 minutes because it will help me inspect my own recurring problems?” |
 
 ### BEAT-02 — Separate problems may be signals
 
@@ -156,15 +183,16 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | EMOTIONAL_START | Recognition with mild defensiveness or resignation. |
 | EMOTIONAL_END | Curiosity: “Maybe these incidents are related.” |
 | CORE_JOB | Connect recurring operator moments without diagnosing the company. |
-| CONTENT / IDEA | Show several ordinary fragments: the same question returning, a handoff stalling, an exception living in one person’s memory, and a decision waiting for context. |
+| CONTENT / IDEA | Show several ordinary fragments: the same question returning, a handoff stalling, an exception living in one person’s memory, and a decision waiting for context. Around minute 2–3, flash a 20–30 second, unexplained payoff tease: messy fragments → formed picture → owner correction → changed picture → Nemo question. Then say the rest of the presentation will show exactly how it got there. |
 | KEY_REFRAME | The symptom may be a signal about relationships among people, work, systems, decisions, and dependencies. |
-| PROOF_ID | P02, P03 |
-| PROOF_STATUS | PROCESS_PROOF |
-| VISUAL_PROOF_REQUIREMENT | A clean sequence of four owner-observable fragments connected by a tentative line; label it as an illustrative pattern. |
-| CLAIM_TRUTH_CLASS | MARKET_HYPOTHESIS + PROCESS / MECHANISM PROOF |
+| PROOF_ID | P02, P03, P05, P08, P11 |
+| PROOF_STATUS | AVAILABLE |
+| VISUAL_PROOF_REQUIREMENT | A clean sequence of four owner-observable fragments followed by a 20–30 second real launch-state proof tease from the same Golden Proof Thread; do not explain the product during the flash. |
+| CLAIM_TRUTH_CLASS | MARKET_HYPOTHESIS + RUNTIME_CAPABILITY |
 | WHAT_MUST_NOT_BE_SAID | No fabricated prevalence, root-cause diagnosis, customer story, or claim that every recurring issue has one hidden cause. |
 | TRANSITION_LOGIC | Once separate moments appear connected, make the cost of leaving the connection unseen visible. |
-| SUCCESS_STATE | The viewer names a second or third recurring symptom from their own company. |
+| SUCCESS_STATE | The viewer names a second or third recurring symptom from their own company and wants to see how the teased picture was formed. |
+| MENTAL_YES | “Do more than one of these keep happening here?” |
 
 ### BEAT-03 — The status quo has a cost
 
@@ -189,6 +217,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No average-company statistic, dollar loss, hours saved, catastrophe, or guaranteed business improvement. |
 | TRANSITION_LOGIC | If the current condition matters, ask why the usual fixes have not necessarily produced durable understanding. |
 | SUCCESS_STATE | The viewer can name one non-dollar consequence they are tired of carrying. |
+| MENTAL_YES | “What is this costing me in attention, rework, delay, or dependence?” |
 
 ### BEAT-04 — The usual fixes may be incomplete
 
@@ -213,6 +242,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No named-company allegation, universal agency attack, consultant replacement, dashboard dismissal, or claim that automation never works. |
 | TRANSITION_LOGIC | If local fixes do not inherently create the missing picture, name the object that must be understood. |
 | SUCCESS_STATE | The viewer can acknowledge that an existing tool may be useful and still see the unresolved operating-picture problem. |
+| MENTAL_YES | “Have I been fixing pieces without seeing the whole?” |
 
 ### BEAT-05 — The object is how the business actually works
 
@@ -237,6 +267,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | Do not imply that StrategicAI already has a complete, static, or omniscient picture of the viewer’s company. |
 | TRANSITION_LOGIC | Once the object is concrete, give it the product name that will organize the rest of the argument. |
 | SUCCESS_STATE | The viewer says or thinks, “I want to understand how my business actually works.” |
+| MENTAL_YES | “Could anyone here actually explain how this business works?” |
 
 ### BEAT-06 — Operational Reality
 
@@ -261,6 +292,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No current complete-understanding claim, surveillance claim, guaranteed accuracy, or claim that every unknown will be found. |
 | TRANSITION_LOGIC | The viewer now wants to know how a bounded picture becomes useful intelligence; demonstrate the mechanism. |
 | SUCCESS_STATE | The viewer understands Operational Reality as a named, bounded object rather than a slogan. |
+| MENTAL_YES | “Could this be a useful, bounded picture rather than a claim of omniscience?” |
 
 ### BEAT-07 — From reality to intelligence
 
@@ -285,6 +317,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No automatic root-cause diagnosis, recommendation guarantee, autonomous management, or promise that automation follows every analysis. |
 | TRANSITION_LOGIC | After the viewer understands the intended chain, show it happening in the accepted product runtime. |
 | SUCCESS_STATE | The viewer wants to see how real evidence becomes a bounded company picture. |
+| MENTAL_YES | “Would understanding the condition change what I decide to automate or change?” |
 
 ### BEAT-08 — Formation forms the bounded picture
 
@@ -299,16 +332,17 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | OBJECTIONS_PREHANDLED | O01, O03, O04, O05, O10, O11 |
 | EMOTIONAL_START | Desire mixed with concern that the demo is a generic data import. |
 | EMOTIONAL_END | Trust and interest in the correction path. |
-| CORE_JOB | Demonstrate Formation forming a bounded picture from real organizational evidence. |
-| CONTENT / IDEA | Show a real accepted runtime capture: selected people, work, systems, evidence, and an operating question become a bounded picture with sources and uncertainty visible. Narration should point to what the owner can inspect, not claim everything is known. |
+| CORE_JOB | Begin the Golden Proof Thread by demonstrating Formation forming a bounded picture from real organizational evidence. |
+| CONTENT / IDEA | Show the first chapter of one real accepted runtime story: the same messy operating situation teased earlier, with selected people, work, systems, evidence, and an operating question becoming a bounded picture with sources and uncertainty visible. Narration should point to what the owner can inspect, not claim everything is known. |
 | KEY_REFRAME | The system is not merely collecting documents; it is forming an inspectable understanding from evidence and participation. |
 | PROOF_ID | P04, P05 |
 | PROOF_STATUS | AVAILABLE |
-| VISUAL_PROOF_REQUIREMENT | Real accepted screen capture from the launch runtime, with tenant/fixture scope, source boundary, version, and date recorded internally. Show the actual Formation state and not a mock. |
+| VISUAL_PROOF_REQUIREMENT | Real accepted screen capture from the launch runtime using the Golden Proof Thread’s business, operating problem, and evidence lineage, with tenant/fixture scope, source boundary, version, and date recorded internally. Show the actual Formation state and not a mock. |
 | CLAIM_TRUTH_CLASS | RUNTIME_CAPABILITY |
 | WHAT_MUST_NOT_BE_SAID | No claim of complete company understanding, universal ingestion, zero owner effort, or guaranteed correctness. |
-| TRANSITION_LOGIC | The first picture is useful only if the viewer can see what it does with disagreement, gaps, and correction. |
+| TRANSITION_LOGIC | Stay with the same business and evidence line: the first picture is useful only if the viewer can see what it does with disagreement, gaps, and correction. |
 | SUCCESS_STATE | The viewer can explain what Formation did in this bounded example and what it did not claim. |
+| MENTAL_YES | “Can I see how this picture was formed from evidence about a real business?” |
 
 ### BEAT-09 — Disagreement, unknowns, and correction
 
@@ -323,16 +357,17 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | OBJECTIONS_PREHANDLED | O04, O05, O12 |
 | EMOTIONAL_START | Trust with a live concern about wrongness. |
 | EMOTIONAL_END | Relief and confidence that correction is possible. |
-| CORE_JOB | Make the unusual trust mechanism visible: preserve disagreement, leave an unknown unknown, and let the owner correct the picture. |
-| CONTENT / IDEA | In one real accepted capture, show two perspectives that differ, one explicit unknown that remains unknown, and the owner saying in substance “No, that is not how it works.” Show the accepted picture changing after correction. |
+| CORE_JOB | Continue the same Golden Proof Thread and make the unusual trust mechanism visible: preserve disagreement, leave an unknown unknown, and let the owner correct the picture. |
+| CONTENT / IDEA | In the same real accepted business context and operating problem, show two perspectives that differ about one important relationship, one explicit unknown that remains unknown, and the owner saying in substance “No, that is not how it works.” Show the accepted picture changing after correction. |
 | KEY_REFRAME | Disagreement is information, uncertainty is honest state, and correction improves the picture rather than being hidden as failure. |
 | PROOF_ID | P06, P07, P08 |
 | PROOF_STATUS | AVAILABLE |
-| VISUAL_PROOF_REQUIREMENT | Real accepted sequence with source labels, disagreement visible, unknown explicitly marked, owner correction recorded, and before/after accepted state. No staged customer story. |
+| VISUAL_PROOF_REQUIREMENT | Real accepted sequence from the same evidence lineage with source labels, disagreement visible, unknown explicitly marked, owner correction recorded, and before/after accepted state. No staged customer story. |
 | CLAIM_TRUTH_CLASS | RUNTIME_CAPABILITY + PRODUCT_DOCTRINE |
 | WHAT_MUST_NOT_BE_SAID | No automatic consensus, conflict resolution, perfect accuracy, or claim that one correction makes the whole picture correct. |
-| TRANSITION_LOGIC | Once correction is trusted, show what the accepted understanding becomes useful for the owner to inspect. |
+| TRANSITION_LOGIC | Once correction is trusted, follow the same changed understanding into the Business View rather than switching to a feature tour. |
 | SUCCESS_STATE | The viewer says, “I would rather see the wrong part and correct it than receive a confident fiction.” |
+| MENTAL_YES | “Would I rather see disagreement and correct it than receive a confident fiction?” |
 
 ### BEAT-10 — Business Views make bounded intelligence visible
 
@@ -347,16 +382,17 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | OBJECTIONS_PREHANDLED | O07, O12, O13 |
 | EMOTIONAL_START | Trust and desire to see practical value. |
 | EMOTIONAL_END | Useful anticipation with a clear boundary. |
-| CORE_JOB | Demonstrate at least one useful bounded Business View as a projection of accepted intelligence. |
-| CONTENT / IDEA | Show one real accepted view answering a consequential owner question, with its sources, scope, uncertainty, correction state, and relationship to the broader picture. |
+| CORE_JOB | Continue the same Golden Proof Thread by demonstrating one useful bounded Business View as a projection of the corrected accepted intelligence. |
+| CONTENT / IDEA | Show the same operating problem as it appears in one real accepted view, with its sources, scope, uncertainty, correction state, and relationship to the broader picture. Make clear which part changed after the owner correction. |
 | KEY_REFRAME | A Business View is not a generic dashboard or a fixed report bundle; it is a bounded projection that makes a part of the company picture inspectable. |
 | PROOF_ID | P10 |
 | PROOF_STATUS | AVAILABLE |
-| VISUAL_PROOF_REQUIREMENT | Real accepted Business View with source trace, scope label, correction state, and the owner question it supports. Do not show an unaccepted concept as delivered output. |
+| VISUAL_PROOF_REQUIREMENT | Real accepted Business View from the same business context and evidence lineage, with source trace, scope label, correction state, and the owner question it supports. Do not show an unaccepted concept as delivered output. |
 | CLAIM_TRUTH_CLASS | RUNTIME_CAPABILITY + INTENDED_PRODUCT_BEHAVIOR |
 | WHAT_MUST_NOT_BE_SAID | No promise that every listed view is delivered, that every customer gets the same Portfolio, or that a view decides what the owner should do. |
-| TRANSITION_LOGIC | A visible view creates the desire for a way to work with the company context through real owner questions. |
+| TRANSITION_LOGIC | The same bounded view creates the desire to ask Nemo a real question about the same operating problem and relationships. |
 | SUCCESS_STATE | The viewer can distinguish a bounded view from a dashboard and can name a view they would want to inspect. |
+| MENTAL_YES | “What would I want to see about my company?” |
 
 ### BEAT-11 — Nemo starts from company context
 
@@ -371,16 +407,17 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | OBJECTIONS_PREHANDLED | O06, O17, O18 |
 | EMOTIONAL_START | Familiarity with generic AI plus prompt anxiety. |
 | EMOTIONAL_END | Serious-question intent. |
-| CORE_JOB | Demonstrate Nemo reasoning from accepted company context rather than a blank prompt alone. |
-| CONTENT / IDEA | Show a real accepted Nemo interaction using the same company context and bounded view. The interaction should answer or refine one consequential owner question and reveal a relationship or dependency. |
+| CORE_JOB | Complete the same Golden Proof Thread by demonstrating Nemo reasoning from the accepted company context rather than a blank prompt alone. |
+| CONTENT / IDEA | Show a real accepted Nemo interaction using the same company context, corrected understanding, and bounded view. The interaction should answer or refine one consequential owner question about the same operating problem and reveal a relationship or dependency. |
 | KEY_REFRAME | “Nemo doesn’t start with a blank prompt. It starts with your organization” means context changes the starting point; it does not mean omniscience or automatic advice. |
 | PROOF_ID | P09, P11 |
 | PROOF_STATUS | AVAILABLE |
-| VISUAL_PROOF_REQUIREMENT | Real accepted screen capture showing context boundary, the owner’s question, the relationship/dependency trace, and the scope of the response. |
+| VISUAL_PROOF_REQUIREMENT | Real accepted screen capture from the same business context showing the context boundary, the owner’s question, the relationship/dependency trace, and the scope of the response. |
 | CLAIM_TRUTH_CLASS | RUNTIME_CAPABILITY + PRODUCT_DOCTRINE |
 | WHAT_MUST_NOT_BE_SAID | No guaranteed 90-day continuity, universal memory, professional advice, automatic diagnosis, or claim that Nemo is superior at every task. |
-| TRANSITION_LOGIC | A context-aware question experience should make the viewer imagine the questions they would bring to it. |
+| TRANSITION_LOGIC | The completed story should make the viewer imagine the questions they would bring to a context-aware Nemo experience. |
 | SUCCESS_STATE | The viewer says, “I already know what I would ask Nemo.” |
+| MENTAL_YES | “What would I ask Nemo first?” |
 
 ### BEAT-12 — Objections are decision information
 
@@ -392,19 +429,20 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | DURATION | 2:30 |
 | STAGE | S09 OBJECTION REVERSAL |
 | BELIEFS_ADVANCED | B08, B11, B12 |
-| OBJECTIONS_PREHANDLED | O01, O03, O04, O06, O07, O08, O09, O10, O11, O12, O18 |
+| OBJECTIONS_PREHANDLED | O01, O02, O10, O11 |
 | EMOTIONAL_START | Desire mixed with effort, alternative, and trust concerns. |
 | EMOTIONAL_END | Relief, fit curiosity, and willingness to continue. |
-| CORE_JOB | Weave the major reversals into the argument rather than saving them for a defensive FAQ dump. |
-| CONTENT / IDEA | Rapidly revisit: messy is evidence; documents are one source; disagreement is information; correction changes the picture; existing software holds fragments; ChatGPT/Claude access differs from organizational context; automation may still be right; better context can reveal better questions. |
-| KEY_REFRAME | The objections describe the exact conditions the mechanism is designed to inspect, while fit, effort, and scope remain honest questions. |
-| PROOF_ID | P02, P06, P07, P08, P09, P11 |
+| CORE_JOB | Mop up only the residual fit and effort concerns that the Golden Proof Thread has not already answered naturally. |
+| CONTENT / IDEA | Ask directly: “Is our business too messy?” “Would this fit a company like mine?” “Is this another huge implementation project?” “Do I have time to feed it everything?” Answer with the demonstrated evidence path, actual owner participation requirement, and explicit fit boundary. Do not enumerate the objections already answered by the proof. |
+| KEY_REFRAME | The proof has already shown how documentation, disagreement, wrongness, dashboards, context, and warranted action are handled; the remaining question is whether this owner’s company and available effort fit the authorized path. |
+| PROOF_ID | P02, P04, P05, P06, P07, P08, P10, P11 |
 | PROOF_STATUS | AVAILABLE |
-| VISUAL_PROOF_REQUIREMENT | Return to the real proof moments with short callouts; do not add a new feature stack or unsupported case study. |
+| VISUAL_PROOF_REQUIREMENT | Return briefly to the real Golden Proof Thread moments with four callouts: mess, participation, fit, and owner effort; do not add a new feature stack or unsupported case study. |
 | CLAIM_TRUTH_CLASS | PRODUCT_DOCTRINE + RUNTIME_CAPABILITY + INTENDED_PRODUCT_BEHAVIOR |
-| WHAT_MUST_NOT_BE_SAID | No “everyone qualifies,” no zero-effort promise, no consultant replacement, no anti-automation rhetoric, and no answer presented as resolving a concern without evidence. |
+| WHAT_MUST_NOT_BE_SAID | No “everyone qualifies,” zero-effort promise, consultant replacement, anti-automation rhetoric, or claim that the proof resolved a concern outside its scope. |
 | TRANSITION_LOGIC | Once the main objections are reduced, stop defending and let the owner imagine the questions and state they want. |
-| SUCCESS_STATE | The viewer can articulate why their mess, disagreement, or existing tools do not automatically disqualify the approach. |
+| SUCCESS_STATE | The viewer can articulate whether their mess and available owner effort fit the approach, without needing a separate FAQ dump to understand the demonstrated mechanism. |
+| MENTAL_YES | “Could this fit my business without becoming another huge project?” |
 
 ### BEAT-13 — The owner’s question queue
 
@@ -429,6 +467,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No guaranteed answer queue, business transformation, decision quality, or outcome. |
 | TRANSITION_LOGIC | After the owner wants the underlying asset, ask whether they want to build it around their own company. |
 | SUCCESS_STATE | The viewer can name one consequential question they would want to investigate. |
+| MENTAL_YES | “What question would I want to investigate if the picture were available?” |
 
 ### BEAT-14 — The Founding 100 application
 
@@ -453,6 +492,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No guaranteed Portfolio, exact view list, guaranteed Nemo continuity, active checkout, automatic activation, or claim that the cohort is objectively better than waiting. |
 | TRANSITION_LOGIC | Once the prospect accepts the application, build value from the actual authorized exchange before revealing price. |
 | SUCCESS_STATE | The viewer understands why the offer follows the argument and wants to inspect the exact boundary. |
+| MENTAL_YES | “Is Founding 100 the logical way to apply this to my company?” |
 
 ### BEAT-15 — Build value through the exchange
 
@@ -477,6 +517,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No arbitrary bonuses, guaranteed business result, consultant replacement, custom integration promise, or mature-value claim. |
 | TRANSITION_LOGIC | After value is legible, make the founder-approved acquisition-and-learning price explicit. |
 | SUCCESS_STATE | The viewer can explain what value the cohort is intended to create for both the company and StrategicAI. |
+| MENTAL_YES | “What am I actually receiving, and why is that valuable to me and to the cohort?” |
 
 ### BEAT-16 — `$299` as the early-cohort price
 
@@ -501,6 +542,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No “normally $3,000,” $3,000 value, savings amount, steal/bargain language, hidden upsell, guarantee, or price-performance claim. |
 | TRANSITION_LOGIC | Explain why the first-100 cohort exists before asking the viewer to decide whether early participation fits. |
 | SUCCESS_STATE | The viewer knows what `$299` means and what it does not mean. |
+| MENTAL_YES | “Do I understand what $299 means without comparing it to an invented mature price?” |
 
 ### BEAT-17 — Why the first 100 exists
 
@@ -516,7 +558,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | EMOTIONAL_START | Caution and timing uncertainty. |
 | EMOTIONAL_END | Informed choice, not pressure. |
 | CORE_JOB | State the real first-100 proof-generation exchange and present waiting as a legitimate option. |
-| CONTENT / IDEA | StrategicAI is intentionally using the first 100 real businesses to harden the product, learn from use and correction, collect edge cases and objections, improve delivery, and establish permissioned evidence. Joining may provide Founding 100 economics and a chance to shape the experience; waiting may provide greater maturity and accumulated proof. |
+| CONTENT / IDEA | Buyer-facing formulation: “We’re deliberately keeping the first 100 inexpensive because we want real businesses using this—not just watching demos. We want you challenging the picture, correcting it, asking hard questions, and telling us where the experience works and where it doesn’t.” Then state the tradeoff plainly: joining may provide Founding 100 economics and a chance to shape the experience; waiting may provide greater maturity and accumulated proof. |
 | KEY_REFRAME | Early participation is a tradeoff, not an objectively superior decision and not artificial scarcity. |
 | PROOF_ID | P14 |
 | PROOF_STATUS | COMMERCIAL_INPUT_REQUIRED |
@@ -525,6 +567,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No countdown, expiration, remaining seats, unsupported capacity scarcity, “act before it is gone,” or exact future price increase. |
 | TRANSITION_LOGIC | A calm decision still requires the owner to understand early-stage risk, correction, and support boundaries. |
 | SUCCESS_STATE | The viewer can choose between waiting and joining based on a stated tradeoff rather than pressure. |
+| MENTAL_YES | “Would I rather participate early at Founding 100 economics—or wait for maturity?” |
 
 ### BEAT-18 — Inspectable and correctable risk
 
@@ -549,6 +592,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No accuracy guarantee, outcome guarantee, automatic continuation, hidden retention promise, or legal/privacy claim before approval. |
 | TRANSITION_LOGIC | Once risk is bounded, make the decision action and the non-commercial fallback unmistakable. |
 | SUCCESS_STATE | The viewer knows what they would be trusting, what they could correct, and which questions remain contractually open. |
+| MENTAL_YES | “Do I understand the risks and correction boundary well enough to decide?” |
 
 ### BEAT-19 — Calm decision close
 
@@ -573,6 +617,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | WHAT_MUST_NOT_BE_SAID | No “you have to decide now,” guarantee, testimonial, ROI, remaining-seat claim, or promise that saying yes ensures an outcome. |
 | TRANSITION_LOGIC | Active: route to the authorized offer/payment path. Inactive: route to the truthful qualified conversation/content path defined by SEE. |
 | SUCCESS_STATE | The viewer can make a calm yes/no decision and knows exactly what happens next. |
+| MENTAL_YES | “Do I want to participate, wait, or take the qualified next step?” |
 
 ## Proof-slot appendix
 
