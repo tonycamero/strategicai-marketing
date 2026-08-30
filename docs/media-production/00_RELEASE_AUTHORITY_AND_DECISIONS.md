@@ -228,6 +228,25 @@ deployment logic, value framing, and conversion measurement described there.
 It does not ratify runtime capability, Portfolio implementation or guaranteed
 core, Nemo continuity, checkout, delivery, legal terms, or activation.
 
+## Narration drafting and publication boundary
+
+The launch-state design posture for the Founding 100 conversion presentation is
+now explicit:
+
+```text
+FINAL_NARRATION = AUTHORIZED_FOR_DRAFT
+ASSUME_LAUNCH_STATE_PROOF = TRUE
+P0_PROOF_RECEIPTS = REQUIRED_BEFORE_PUBLICATION / NOT_REQUIRED_BEFORE_NARRATION
+FINAL_PUBLICATION = BLOCKED_UNTIL_PROOF_AND_COMMERCIAL_ACCEPTANCE
+```
+
+Draft narration may therefore be written against the assumed launch-state
+product demonstrations named in the approved beat sheet. This authorization is
+not a proof receipt, customer-outcome claim, commercial acceptance, or release
+permission. G-04, G-07, G-08, G-09, applicable legal review, and the named
+pre-publication proof receipts remain required before the presentation or its
+commercial claims are published.
+
 ## Primary category contrast
 
 The primary market contrast is:

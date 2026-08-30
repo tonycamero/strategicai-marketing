@@ -7,7 +7,7 @@ created: 2026-08-30
 accepted_on: 2026-08-30
 authority: Execution-level conversion crosswalk only
 subordinate_to: 15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md
-launch_proof_posture: ASSUME_LAUNCH_STATE_PROOF_TRUE_FOR_PLANNING
+launch_proof_posture: ASSUME_LAUNCH_STATE_PROOF_TRUE
 depends_on:
   - 15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md
   - 14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md
@@ -28,16 +28,20 @@ activation, page implementation, or final narration.
 
 ```text
 PRODUCT_DOCTRINE != MARKET_LANGUAGE != RUNTIME_CAPABILITY != COMMERCIAL_COMMITMENT
-FINAL_NARRATION = NOT_AUTHORIZED
-35_MINUTE_BEAT_SHEET = AUTHORIZED_AS_SEPARATE_DRAFT
+FINAL_NARRATION = AUTHORIZED_FOR_DRAFT
+35_MINUTE_BEAT_SHEET = AUTHORIZED_AS_DRAFT
 APPLICATION_SOURCE_CHANGES = 0
-ASSUME_LAUNCH_STATE_PROOF = TRUE_FOR_PLANNING_ONLY
+ASSUME_LAUNCH_STATE_PROOF = TRUE
+P0_PROOF_RECEIPTS = REQUIRED_BEFORE_PUBLICATION / NOT_REQUIRED_BEFORE_NARRATION
+FINAL_PUBLICATION = BLOCKED_UNTIL_PROOF_AND_COMMERCIAL_ACCEPTANCE
 ```
 
 The crosswalk asks: **what has to happen for one belief to become strong enough
 to support the next?** A belief threshold is not proof that a capability exists.
 Conversion behavior can promote, retest, demote, or retire market language; it
-cannot promote it into runtime or commercial truth.
+cannot promote it into runtime or commercial truth. Narration drafting is now
+authorized against the launch-state proof assumption; publication still
+requires accepted proof receipts and commercial acceptance.
 
 ## Stage key
 
@@ -1118,4 +1122,6 @@ The next authorized review should decide:
 5. Whether `17` is ready for founder review after launch-proof verification and
    commercial-input review.
 
-Only after that review should the 35-minute conversion beat sheet be authorized.
+The final narration may now be drafted against the launch-state proof
+assumption. Publication remains blocked until the named P0 proof receipts and
+commercial acceptance are complete.

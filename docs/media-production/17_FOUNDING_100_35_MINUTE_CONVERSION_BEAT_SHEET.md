@@ -4,7 +4,7 @@ title: Founding 100 35-Minute Conversion Beat Sheet
 status: DRAFT_FOR_FOUNDER_REVIEW
 version: 1.0
 created: 2026-08-30
-authority: Beat-sheet design only; final narration not authorized
+authority: Beat-sheet design only; final narration draft authorized
 depends_on:
   - 15_FOUNDING_100_HIGH_CONVERSION_FUNNEL_ARCHITECTURE.md
   - 16_FOUNDING_100_BELIEF_OBJECTION_PROOF_MATRIX.md
@@ -24,8 +24,10 @@ commercial contract.
 ```text
 TARGET_TOTAL = 35:00
 HARD_MAXIMUM = 35:00
-ASSUME_LAUNCH_STATE_PROOF = TRUE_FOR_PLANNING
-FINAL_NARRATION = NOT_AUTHORIZED
+ASSUME_LAUNCH_STATE_PROOF = TRUE
+FINAL_NARRATION = AUTHORIZED_FOR_DRAFT
+P0_PROOF_RECEIPTS = REQUIRED_BEFORE_PUBLICATION / NOT_REQUIRED_BEFORE_NARRATION
+FINAL_PUBLICATION = BLOCKED_UNTIL_PROOF_AND_COMMERCIAL_ACCEPTANCE
 APPLICATION_SOURCE_CHANGES = 0
 ```
 
@@ -622,15 +624,18 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 ## Proof-slot appendix
 
 The main presentation is designed as if launch-state proof is available. These
-slots preserve a release checklist if a named asset is still absent at final
-verification. The fallback is for internal planning and rehearsal; it is not a
-reason to publish a weaker customer-facing claim as if it were demonstrated.
+slots preserve the pre-publication release checklist if a named asset is still
+absent at final verification. P0 proof receipts are required before
+publication, not before drafting final narration. If a receipt is absent at
+release review, the related runtime claim remains blocked from publication until
+the real capture is accepted; the draft may retain the intended launch-state
+demonstration.
 
-| PROOF_SLOT | BEAT_ID | MISSING_PROOF | WHY_IT_MATTERS | CURRENT_FALLBACK | UPGRADE_WHEN_AVAILABLE | OWNER_REPO | CAPTURE_REQUIRED | BLOCKS_FINAL_NARRATION |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| P0-01 | BEAT-08 | Formation forming a bounded picture from real evidence and owner participation | It carries the central mechanism from evidence to Operational Reality. | Keep the beat structure and use a clearly labeled mechanism explanation for internal review; do not publish the runtime claim until the real capture is accepted. | Replace the internal fallback with the accepted Formation demonstration and receipt metadata. | Product/runtime owner; acceptance receipt linked from media-production authority | Real accepted Formation capture with environment, source boundary, version, date, and exclusions | YES |
-| P0-02 | BEAT-09 | Disagreement/unknown preservation and owner correction changing the accepted picture | It makes the trust mechanism materially more credible than assertion. | Keep the objection/reversal logic; hold the public demonstration claim until the actual before/after correction sequence is accepted. | Insert the accepted multi-perspective, unknown, correction, and changed-state capture. | Product/runtime owner; correction receipt linked from media-production authority | Real accepted multi-perspective, unknown, correction, and changed-state capture | YES |
-| P0-03 | BEAT-10 / BEAT-11 | Useful bounded Business View plus Nemo reasoning from accepted company context | It connects the Portfolio proposition to the owner’s question experience. | Keep the desired-future architecture; do not substitute a mock view or blank-chat explanation for the launch demonstrations. | Insert the accepted Business View, context-aware Nemo interaction, and dependency-traced question capture. | Product/runtime owner; Business View and Nemo receipts linked from media-production authority | Real accepted Business View and scoped context-aware Nemo interaction with one dependency-traced question | YES |
+| PROOF_SLOT | BEAT_ID | MISSING_PROOF | WHY_IT_MATTERS | CURRENT_FALLBACK | UPGRADE_WHEN_AVAILABLE | OWNER_REPO | CAPTURE_REQUIRED | BLOCKS_FINAL_NARRATION | BLOCKS_FINAL_PUBLICATION |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| P0-01 | BEAT-08 | Formation forming a bounded picture from real evidence and owner participation | It carries the central mechanism from evidence to Operational Reality. | Keep the beat structure and use a clearly labeled mechanism explanation for internal review; do not publish the runtime claim until the real capture is accepted. | Replace the internal fallback with the accepted Formation demonstration and receipt metadata. | Product/runtime owner; acceptance receipt linked from media-production authority | Real accepted Formation capture with environment, source boundary, version, date, and exclusions | NO | YES |
+| P0-02 | BEAT-09 | Disagreement/unknown preservation and owner correction changing the accepted picture | It makes the trust mechanism materially more credible than assertion. | Keep the objection/reversal logic; hold the public demonstration claim until the actual before/after correction sequence is accepted. | Insert the accepted multi-perspective, unknown, correction, and changed-state capture. | Product/runtime owner; correction receipt linked from media-production authority | Real accepted multi-perspective, unknown, correction, and changed-state capture | NO | YES |
+| P0-03 | BEAT-10 / BEAT-11 | Useful bounded Business View plus Nemo reasoning from accepted company context | It connects the Portfolio proposition to the owner’s question experience. | Keep the desired-future architecture; do not substitute a mock view or blank-chat explanation for the launch demonstrations. | Insert the accepted Business View, context-aware Nemo interaction, and dependency-traced question capture. | Product/runtime owner; Business View and Nemo receipts linked from media-production authority | Real accepted Business View and scoped context-aware Nemo interaction with one dependency-traced question | NO | YES |
 
 ## Commercial input slots
 
@@ -665,5 +670,7 @@ must not appear in the webinar.
 
 Founder review should confirm the 35-minute structure, the modular opening
 variants, the launch-state proof sequence, the commercial branch boundary, and
-the P0 proof slots. Final narration remains unauthorized until `15`, `16`,
-`17`, and the named product/runtime proof receipts are reviewed.
+the P0 proof slots. Final narration is authorized for draft against the
+launch-state proof assumption. Final publication remains blocked until `15`,
+`16`, `17`, the named product/runtime proof receipts, and commercial acceptance
+are reviewed.

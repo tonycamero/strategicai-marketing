@@ -34,14 +34,19 @@ CLAIM_TRUTH_OWNER = CLAIM_TRUTH_CLASS_MATRIX + MARKET_LEARNING_CHARTER
 SEE_ROUTE_OWNER = 14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md
 COMMERCIAL_AUTHORITY = G-01 / G-07 / G-09
 APPLICATION_SOURCE_CHANGES = 0
-FINAL_NARRATION_AUTHORIZED = NO
+FINAL_NARRATION_AUTHORIZED = AUTHORIZED_FOR_DRAFT
+ASSUME_LAUNCH_STATE_PROOF = TRUE
+P0_PROOF_RECEIPTS = REQUIRED_BEFORE_PUBLICATION / NOT_REQUIRED_BEFORE_NARRATION
+FINAL_PUBLICATION = BLOCKED_UNTIL_PROOF_AND_COMMERCIAL_ACCEPTANCE
 SALES_SEQUENCING_STATUS = RATIFIED_BY_FOUNDER
 ```
 
 The architecture is a controlled market-learning and future commercial design
 artifact. A high-conversion sequence is not permission to imply that an
 unaccepted capability exists, that a proposed deliverable is guaranteed, or
-that a commercial branch is live.
+that a commercial branch is live. Founder ratification authorizes downstream
+draft narration against the launch-state proof assumption; it does not
+authorize public release.
 
 ## Constitutional hierarchy
 
@@ -563,10 +568,13 @@ Founder/product/commercial/delivery review must resolve:
 
 ### Change-control rule
 
-No final narration, script rewrite, homepage rewrite, missing funnel-page
-implementation, Formation build, checkout activation, or product-runtime
-change is authorized by this document. Those are separate tasks requiring the
-relevant authority and release gates.
+This document does not itself create final narration, a script rewrite,
+homepage rewrite, missing funnel-page implementation, Formation build, checkout
+activation, or product-runtime change. Final narration drafting is authorized by
+the launch-state posture above; those other changes remain separate tasks
+requiring the relevant authority and release gates. Public narration and
+commercial claims remain blocked until proof receipts and commercial acceptance
+are complete.
 
 ## Acceptance checklist
 
@@ -587,11 +595,12 @@ relevant authority and release gates.
       invented.
 - [ ] No webinar-registration step is implied; checkout, Formation, Portfolio,
       and 90-day Nemo work remain explicit.
-- [ ] The next exact action is the Belief / Objection / Proof Matrix followed by
-      the 35-minute conversion beat sheet; final narration waits for review.
+- [ ] Final narration may now be drafted against the launch-state proof
+      assumption; publication waits for named proof receipts and commercial
+      acceptance.
 
 ## Next exact action
 
-> **Create the Founding 100 Belief / Objection / Proof Matrix and then the
-> 35-minute conversion beat sheet. Do not draft final narration until those
-> artifacts are reviewed.**
+> **Draft the final Founding 100 narration against the launch-state proof
+> assumption. Keep final publication blocked until the named P0 proof receipts
+> and commercial acceptance are complete.**
