@@ -106,20 +106,20 @@ the implementation status that this architecture assumes.
 | --- | --- | --- | --- | --- |
 | TOFU media / founder outbound | EXISTS | YES | Exact asset review, channel readiness, attribution, and owner-quality evidence remain release-gated | Run controlled PS, CC, and MC tests and separate owner conversion from competitor reaction |
 | `/founding100/quick` pattern-interrupt content | EXISTS | YES | YouTube asset/configuration and content measurement remain external or release-gated | Publish an approved 5-minute asset and measure first belief shift plus open-loop behavior |
-| Webinar registration page | MISSING | NO | No dedicated page, registration integration, or approved registration promise exists | Build as a separately authorized page from the specification in this document |
-| `/founding100/webinar` 35-minute content route | PARTIAL | YES | Route exists; approved video/media asset and any future commercial CTA remain unresolved | Produce and approve the 35-minute asset; keep next step truthful until commercial authority closes |
-| `/founding100/offer` sales / offer page | PARTIAL | YES | Checkout is blocked; scope, terms, delivery, and commercial authority are unresolved | Ratify the offer contract and release dependencies before enabling purchase |
+| `/founding100/webinar` direct ungated 35-minute playback | EXISTS | YES | Media is blocked; approved video asset and any future commercial CTA remain unresolved | Produce and approve the 35-minute asset; keep next step truthful until commercial authority closes |
+| `/founding100/offer` sales / offer page | EXISTS | YES | Checkout is blocked; scope, terms, delivery, and commercial authority are unresolved | Ratify the offer contract and release dependencies before enabling purchase |
 | Stripe payment | PARTIAL | NO | No authorized Checkout destination, server-side verification, entitlement boundary, or approved terms | Authorize and implement the payment contract as a separate task |
 | `/founding100` post-payment handoff | EXISTS | YES | Payment verification, Formation destination, Terms, Privacy, and support handoff remain unresolved | Keep certainty and expectation-setting copy truthful; connect only to an authorized activation receipt |
-| Formation / onboarding | PARTIAL | NO | Production-ready destination and runtime handoff are not available | Product and delivery owners must accept the Formation path and evidence boundary |
+| Formation / onboarding production destination | MISSING | NO | Formation concept/runtime work exists in authority records, but the production destination and runtime handoff are not production-ready | Product and delivery owners must accept the Formation path and evidence boundary |
 | Business Intelligence Portfolio | PARTIAL | NO | Portfolio architecture is draft/proposed; guaranteed core and first vertical are not ratified or runtime-accepted | Ratify the guaranteed core, vertical, delivery process, and acceptance evidence |
 | 90 days with Nemo | PARTIAL | NO | Context continuity, support, entitlement, capacity, and delivery are not commercially/runtime accepted | Define and accept the 90-day experience before using it as a promise |
 
 ## A. Prospect starting state
 
 The prospect can enter from pain-state media, category contrast, a Message Card,
-founder outbound, referral, or a future webinar registration surface. We should
-not assume they begin with the product vocabulary.
+founder outbound, referral, or direct ungated content. There is no webinar-
+registration step in this architecture. We should not assume the prospect
+begins with the product vocabulary.
 
 | Starting condition | What the owner may believe | What they are trying to protect or obtain | Conversion implication |
 | --- | --- | --- | --- |
@@ -159,7 +159,7 @@ and action follows understanding when warranted.
 
 This is the primary engine for a future commercial branch. That role does not
 authorize an offer, prove runtime, or turn the current route into a
-registration page.
+registration step.
 
 Desired terminal state when a commercial branch is active:
 
@@ -499,8 +499,9 @@ PS / CC / MC
 ```
 
 The handoff preserves the no-email/identity gate and the existing social
-transport boundary. The future webinar-registration page is a separate
-surface, not a silent repurposing of the current content route.
+transport boundary. The current webinar route is direct ungated content; no
+webinar-registration page or registration step is authorized in this
+architecture.
 
 ## Ratification and release decisions
 
@@ -546,8 +547,8 @@ relevant authority and release gates.
 - [ ] No runtime capability, Portfolio delivery, 90-day Nemo promise, outcome,
       urgency, scarcity, price anchor, guarantee, testimonial, or case study is
       invented.
-- [ ] Missing webinar registration, checkout, Formation, Portfolio, and 90-day
-      Nemo work remain explicit.
+- [ ] No webinar-registration step is implied; checkout, Formation, Portfolio,
+      and 90-day Nemo work remain explicit.
 - [ ] The next exact action is the Belief / Objection / Proof Matrix followed by
       the 35-minute conversion beat sheet; final narration waits for review.
 

@@ -339,7 +339,9 @@ These are intentionally not treated as facts:
 These remain intentionally recorded here as unresolved dependencies:
 
 - comment-to-DM transport is unresolved;
-- `/founding100/quick`, `/founding100/webinar`, and `/founding100/offer` are specified but not built;
+- `/founding100/quick` exists with media blocked;
+- `/founding100/webinar` exists with media blocked and remains the direct ungated 35-minute playback route;
+- `/founding100/offer` exists with checkout blocked;
 - 5-minute and 35-minute assets are missing;
 - the live `/founding100` post-payment page now carries the Business Intelligence Portfolio proposition, but its onboarding fallback remains active;
 - production Formation destination;
