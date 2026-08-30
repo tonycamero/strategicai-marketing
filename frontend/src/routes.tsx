@@ -34,7 +34,7 @@ export const routes: AppRoute[] = [
   /* Navigation Links */
   { path: "/how-it-works", element: <HowItWorks /> },
   { path: "/product", element: <Product /> },
-  { path: "/strategic-ai-brain", element: <Navigate to="/" replace /> },
+  { path: "/strategic-ai-brain", element: <Navigate to="/product" replace /> },
   { path: "/features", element: <Navigate to="/product" replace />, label: "Features" },
   { path: "/why", element: <Navigate to="/" replace /> },
   { path: "/pricing", element: <Pricing /> },
@@ -67,8 +67,8 @@ export const routes: AppRoute[] = [
   { path: "/founding100/offer", element: <Founding100Offer />, shell: false },
   { path: "/founding100", element: <Founding100 />, shell: false },
 
-  /* Auth/Roadmap Placeholders */
+  /* Authorized activation placeholder and historical product aliases */
   { path: "/login", element: <Placeholder /> },
-  { path: "/roadmap", element: <Placeholder /> },
+  { path: "/roadmap", element: <Navigate to="/product" replace />, shell: false },
   { path: "*", element: <NotFound /> },
 ];

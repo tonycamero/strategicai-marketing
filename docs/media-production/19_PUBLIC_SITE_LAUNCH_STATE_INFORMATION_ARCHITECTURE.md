@@ -114,7 +114,7 @@ Primary navigation requirements:
 | `/brain` | `REDIRECT` | Historical homepage alias | Redirect to `/` |
 | `/alt-home` | `REDIRECT` | Historical homepage alias | Redirect to `/` |
 | `/login` | `COMPATIBILITY_SURFACE` | Authorized activation placeholder | Keep out of acquisition navigation until activation authority is ready |
-| `/roadmap` | `UNREACHABLE_LEGACY` | Historical placeholder | Keep out of public navigation; do not present as current product |
+| `/roadmap` | `REDIRECT` | Historical product alias | Redirect to `/product`; do not expose the old placeholder |
 | `*` | `CURRENT` | Branded 404 behavior | Render a current-site 404 surface with home and Founding 100 recovery paths |
 
 No redirect may land on the post-payment `/founding100` route. Legacy
