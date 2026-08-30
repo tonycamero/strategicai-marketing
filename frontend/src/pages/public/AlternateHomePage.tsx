@@ -1,4 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import {
+  ArrowRight,
+  Check,
+  CheckCircle2,
+  Eye,
+  Pause,
+  Play,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { TrustAgentShell } from "../../trustagent/TrustAgentShell";
 import { ImageViewer } from "../../components/ImageViewer";
@@ -7,79 +15,228 @@ import { usePageMeta } from "../../hooks/usePageMeta";
 import { buildSignupUrl } from "../../lib/signup";
 
 const sectionClass = "mx-auto max-w-6xl px-6 py-20";
-const cardClass = "rounded-3xl border border-slate-800 bg-slate-900/55 p-8 shadow-[0_0_0_1px_rgba(34,211,238,0.03)]";
+const cardClass =
+  "rounded-3xl border border-slate-800 bg-slate-900/55 p-8 shadow-[0_0_0_1px_rgba(34,211,238,0.03)]";
 
-const journeyStages = [
+const proofSteps = [
   {
-    id: "executive-brief",
-    step: "01",
-    title: "Executive Brief",
-    label: "See the visible pattern.",
-    body:
-      "A free reflection of the pain, friction, and operating symptoms already present inside your organization.",
-    boundary: "Free. No Diagnostic purchase required.",
+    id: "evidence",
+    label: "Evidence",
+    title: "Different people hold different parts of the picture.",
+    body: "Leadership context and team evidence show what each role sees around the same operating pressure.",
+    image: "/images/homepage-proof-evidence-placeholder.svg",
+    alt: "Placeholder for accepted Golden Proof Thread evidence capture",
   },
   {
-    id: "diagnostic",
-    step: "02",
-    title: "Diagnostic",
-    label: "Understand the governing constraint.",
-    body:
-      "After payment and a live Discovery Call, StrategicAI delivers the explanatory layer: what is causing the friction and what must change.",
-    boundary: "Paid engagement after the Executive Brief earns trust.",
+    id: "picture",
+    label: "Picture",
+    title: "The evidence becomes a bounded operating picture.",
+    body: "Relationships, pressure, and missing context become inspectable without pretending the unknown is known.",
+    image: "/images/homepage-proof-picture-placeholder.svg",
+    alt: "Placeholder for accepted Golden Proof Thread operating picture capture",
   },
   {
-    id: "roadmap",
-    step: "03",
-    title: "Roadmap",
-    label: "Determine the intervention order.",
-    body:
-      "Sequencing, priorities, ownership, milestones, and a 90-day execution plan grounded in the operating model.",
-    boundary: "Intervention plan with explicit ownership and milestones.",
+    id: "correction",
+    label: "Correction",
+    title: "The owner can say: “No. That’s not how it works.”",
+    body: "The accepted picture changes when the owner corrects a relationship, boundary, or assumption.",
+    kind: "image" as const,
+    image: "/images/homepage-proof-correction-placeholder.svg",
+    alt: "Placeholder for accepted Golden Proof Thread owner correction capture",
   },
   {
-    id: "execution",
-    step: "04",
-    title: "Execution",
-    label: "Put the approved intervention to work.",
-    body:
-      "Put the roadmap to work through a shared environment for ownership, pressure, blockers, and measurable progress.",
-    boundary: "Scope and continuity depend on the implementation agreement.",
+    id: "question",
+    label: "Question",
+    title: "The next question follows the relationship.",
+    body: "Nemo is intended to help the owner reason from available company context rather than start from a blank prompt.",
+    kind: "image" as const,
+    image: "/images/homepage-proof-question-placeholder.svg",
+    alt: "Placeholder for accepted Golden Proof Thread context-aware Nemo capture",
   },
-];
+] as const;
+
+const businessViews = [
+  {
+    id: "work",
+    label: "How work moves",
+    detail: "See the path work takes across people, systems, handoffs, and decisions.",
+  },
+  {
+    id: "ownership",
+    label: "Who owns what",
+    detail: "Make visible where responsibility is clear, assumed, or concentrated in one person.",
+  },
+  {
+    id: "handoffs",
+    label: "Where handoffs break",
+    detail: "Inspect the relationships where information, authority, or timing is being lost.",
+  },
+  {
+    id: "unknowns",
+    label: "What is still unknown",
+    detail: "Keep evidence gaps, disagreement, and unresolved questions visible instead of filling them with certainty.",
+  },
+  {
+    id: "priorities",
+    label: "What deserves attention next",
+    detail: "Use the picture to decide what needs action, ownership, investigation, or no change.",
+  },
+] as const;
+
+const nemoQuestions = [
+  {
+    id: "owner-dependence",
+    question: "What still depends too much on me?",
+    response: "Trace the work, authority, and handoffs that make the owner the default point of return.",
+  },
+  {
+    id: "customer-handoff",
+    question: "Where does this customer handoff become fragile?",
+    response: "Follow the relationship between the customer moment, the responsible role, the system, and the next decision.",
+  },
+  {
+    id: "automation-readiness",
+    question: "Which relationship should I inspect before I automate this?",
+    response: "Start with the dependency and the evidence boundary, then decide whether automation is actually warranted.",
+  },
+] as const;
+
+type ProofStep = (typeof proofSteps)[number];
+
+function ProofFrame({ step, onOpenImage }: { step: ProofStep; onOpenImage: (src: string) => void }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onOpenImage(step.image)}
+      className="group block w-full overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950/70 text-left transition hover:border-cyan-400/40"
+      aria-label={`Open larger ${step.label.toLowerCase()} proof frame`}
+    >
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <img
+          src={step.image}
+          alt={step.alt}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+        />
+        <span className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-slate-950/80 px-3 py-2 text-xs font-semibold text-white backdrop-blur">
+          <Eye size={14} aria-hidden="true" /> View frame
+        </span>
+      </div>
+    </button>
+  );
+}
 
 export default function AlternateHomePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [activeStage, setActiveStage] = useState(journeyStages[0].id);
+  const [activeProofStep, setActiveProofStep] = useState(0);
+  const [proofPlaying, setProofPlaying] = useState(false);
+  const [selectedView, setSelectedView] = useState(businessViews[0].id);
+  const [selectedQuestion, setSelectedQuestion] = useState(nemoQuestions[0].id);
 
   usePageMeta({
-    title: "StrategicAI | Change With Clarity, Control, and Proof",
+    title: "StrategicAI | Understand How Your Business Actually Works",
     description:
-      "StrategicAI gives accountable leaders a governed path through consequential change, beginning with a free Executive Brief built from leadership and team evidence.",
+      "StrategicAI turns organizational evidence into Operational Intelligence, Business Views, and a more grounded way to reason about what should happen next.",
   });
 
   useEffect(() => {
-    trackEvent("homepage_view", { page: "/" });
+    trackEvent("homepage_view", { page: "/", surface_version: "homepage-launch-state-v1" });
   }, []);
 
-  const activeStageData = useMemo(
-    () => journeyStages.find((stage) => stage.id === activeStage) ?? journeyStages[0],
-    [activeStage],
+  useEffect(() => {
+    if (!proofPlaying) return;
+
+    const timer = window.setTimeout(() => {
+      if (activeProofStep >= proofSteps.length - 1) {
+        setProofPlaying(false);
+        trackEvent("homepage_proof_complete", {
+          proof_thread: "golden-proof-thread",
+          completed_steps: proofSteps.length,
+        });
+        return;
+      }
+
+      const nextStep = activeProofStep + 1;
+      setActiveProofStep(nextStep);
+      trackEvent("homepage_proof_step", {
+        proof_step: proofSteps[nextStep].id,
+        step_index: nextStep,
+        auto_advanced: true,
+      });
+    }, 11000);
+
+    return () => window.clearTimeout(timer);
+  }, [activeProofStep, proofPlaying]);
+
+  const activeProof = proofSteps[activeProofStep];
+  const activeView = useMemo(
+    () => businessViews.find((view) => view.id === selectedView) ?? businessViews[0],
+    [selectedView],
+  );
+  const activeQuestion = useMemo(
+    () => nemoQuestions.find((item) => item.id === selectedQuestion) ?? nemoQuestions[0],
+    [selectedQuestion],
   );
 
-  const openBriefSample = (source: string) => {
-    trackEvent("sample_brief_open", { source });
-    setSelectedImage("/images/smb-executive-brief.png");
-  };
+  function startProof() {
+    setActiveProofStep(0);
+    setProofPlaying(true);
+    trackEvent("homepage_proof_start", {
+      proof_thread: "golden-proof-thread",
+      surface_version: "homepage-launch-state-v1",
+    });
+  }
 
-  const handleExecutiveBriefClick = (source: string) => {
+  function toggleProof() {
+    if (proofPlaying) {
+      setProofPlaying(false);
+      trackEvent("homepage_proof_pause", {
+        proof_step: activeProof.id,
+        elapsed_step_count: activeProofStep + 1,
+      });
+      return;
+    }
+
+    if (activeProofStep >= proofSteps.length - 1) {
+      setActiveProofStep(0);
+    }
+    setProofPlaying(true);
+    trackEvent("homepage_proof_start", {
+      proof_thread: "golden-proof-thread",
+      resumed_from: activeProof.id,
+    });
+  }
+
+  function selectProofStep(index: number) {
+    setActiveProofStep(index);
+    setProofPlaying(false);
+    trackEvent("homepage_proof_step", {
+      proof_step: proofSteps[index].id,
+      step_index: index,
+      auto_advanced: false,
+    });
+  }
+
+  function selectBusinessView(viewId: string) {
+    setSelectedView(viewId);
+    trackEvent("homepage_business_view_select", { view_id: viewId });
+  }
+
+  function selectNemoQuestion(questionId: string) {
+    setSelectedQuestion(questionId);
+    trackEvent("homepage_nemo_question_select", { question_id: questionId });
+  }
+
+  function handleExecutiveBriefClick(source: string) {
     trackEvent("executive_brief_cta_click", { source });
-  };
+  }
 
-  const handleJourneyStage = (stageId: string) => {
-    setActiveStage(stageId);
-    trackEvent("journey_stage_expand", { stage: stageId });
-  };
+  function handleFounding100Click(source: string) {
+    trackEvent("founding100_cta_click", {
+      source,
+      destination: "/founding100/offer",
+      commercial_branch_state: "offer_surface_controls_checkout_state",
+    });
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-400/20">
@@ -91,328 +248,106 @@ export default function AlternateHomePage() {
           </div>
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
             <div className="max-w-4xl">
-              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300/80">
-                Governed Organizational Change
-              </p>
-              <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] text-white md:text-7xl">
-                Change with clarity, control, and proof.
-              </h1>
-              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">
-                StrategicAI helps leaders form a credible shared picture of how their organization is operating, decide what should change, and carry that change forward with clear authority and evidence.
-              </p>
+              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300/80">How the business actually works</p>
+              <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] text-white md:text-7xl">See how your business actually works.</h1>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">StrategicAI helps you form a credible, inspectable picture of the people, work, systems, decisions, dependencies, and pressure shaping the business—then turn that picture into Operational Intelligence.</p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a
-                  href={buildSignupUrl("homepage_hero_executive_brief")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleExecutiveBriefClick("hero")}
-                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
-                >
-                  Build My Executive Brief
-                </a>
-                <a
-                  href="#how-it-works"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-700 px-7 py-4 text-base font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900"
-                >
-                  See How It Works
-                </a>
+                <a href="#proof-thread" className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300">See the proof <ArrowRight size={17} className="ml-2" aria-hidden="true" /></a>
+                <a href={buildSignupUrl("homepage_hero_executive_brief")} target="_blank" rel="noopener noreferrer" onClick={() => handleExecutiveBriefClick("hero")} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-7 py-4 text-base font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">Build My Executive Brief</a>
               </div>
-              <div className="mt-6 space-y-2 text-sm text-slate-400">
-                <p className="font-medium text-slate-300">Start with a free operating reflection built from leadership and team input. No purchase required.</p>
-                <p>
-                  Free operating reflection. Built from leadership and team input. See the patterns
-                  creating friction before deciding whether to continue.
-                </p>
-              </div>
+              <p className="mt-6 text-sm font-medium text-slate-400">Start with the evidence already inside your organization. No purchase is required to begin the Executive Brief.</p>
             </div>
           </div>
         </section>
 
-        <section className={sectionClass}>
+        <section className={sectionClass} aria-labelledby="operating-problem-title">
           <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The Risk Beneath Change</p>
-            <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Change gets risky when the organization no longer shares the same picture.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-400">
-              AI is accelerating what organizations can change - and raising the cost of changing
-              the wrong thing. StrategicAI gives accountable leaders a governed path forward.
-            </p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The Operating Problem</p>
+            <h2 id="operating-problem-title" className="text-3xl font-semibold text-white md:text-5xl">The work is moving. The explanation is missing.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-400">The same problems keep returning in different forms. One person sees the handoff; another sees the delay. The system holds a fragment. The owner gets the escalation. By the time the pattern is visible, the business is already working around it.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {[
-              "Leadership sees the destination, but teams experience the constraints.",
-              "Priorities change faster than ownership and capacity can adjust.",
-              "Systems hold evidence, but not a shared explanation.",
-              "Decisions lose context as they move into execution.",
-              "Outcomes are reported without showing what actually caused them.",
-              "The risk is not change itself. It is moving without a reliable picture, a clear authority path, or evidence of what changed.",
+              "Everything keeps coming back to the owner.",
+              "Handoffs break between people, tools, or decisions.",
+              "Priorities change before ownership and capacity catch up.",
+              "Important context is spread across systems, files, conversations, and memory.",
             ].map((item) => (
-              <div key={item} className={cardClass}>
-                <p className="text-lg leading-8 text-slate-300">{item}</p>
-              </div>
+              <div key={item} className={`${cardClass} flex items-start gap-4`}><CheckCircle2 size={21} className="mt-1 shrink-0 text-cyan-300" aria-hidden="true" /><p className="text-lg leading-8 text-slate-300">{item}</p></div>
             ))}
           </div>
+          <p className="mt-8 text-xl font-medium text-cyan-200">This is not a request for more activity. It is a request for a better picture.</p>
         </section>
 
-        <section className={`${sectionClass} pt-0`}>
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Start With the Mirror</p>
-              <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                Begin with what your organization has already been trying to say.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Your Executive Brief combines leadership context and team evidence into one clear
-                operating reflection.
-              </p>
-              <ul className="mt-8 space-y-4 text-slate-300">
-                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Recurring friction</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Conflicting perspectives</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Execution patterns</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-cyan-300">•</span><span>Visible operating pressure</span></li>
-              </ul>
-              <p className="mt-8 max-w-2xl text-base leading-7 text-slate-400">
-                The Executive Brief is not a diagnosis and does not prescribe what to change. It gives leadership a credible shared place to begin.
-              </p>
-              <button
-                type="button"
-                onClick={() => openBriefSample("brief-preview")}
-                className="mt-8 inline-flex items-center rounded-full border border-cyan-400/35 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-400/10"
-              >
-                View Sample Executive Brief
-              </button>
-            </div>
-            <button
-              type="button"
-              onClick={() => openBriefSample("brief-image")}
-              className="overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/60 text-left transition hover:border-slate-600"
-            >
-              <img src="/images/smb-executive-brief.png" alt="Executive Brief sample" className="w-full object-cover" />
-            </button>
-          </div>
-        </section>
-
-        <section className={sectionClass}>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Why Change Breaks Down</p>
-              <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                Change fails when reality, decisions, authority, work, and outcomes become disconnected.
-              </h2>
-            </div>
-            <div className="space-y-5 text-lg leading-8 text-slate-300">
-              <p>CRMs track relationships.</p>
-              <p>Project systems track tasks.</p>
-              <p>Documents store context.</p>
-              <p>Meetings exchange updates.</p>
-              <p className="text-slate-400">
-                StrategicAI exists to keep that path connected.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="how-it-works" className={sectionClass}>
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr]">
+        <section className={`${sectionClass} pt-0`} aria-labelledby="reframe-title">
+          <div className="grid items-stretch gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div className={cardClass}>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Operating Model</p>
-              <h2 className="text-3xl font-semibold text-white md:text-4xl">
-                A shared operating picture comes before a prescribed intervention.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Most AI tools respond to a prompt. StrategicAI first builds a structured model of
-                your organization from business context, leadership intent, and team evidence.
-              </p>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                We call this structured operating model the <span className="font-semibold text-white">Digital Twin</span>.
-              </p>
-              <p className="mt-6 text-base leading-7 text-slate-400">
-                It becomes the operating context behind your Executive Brief, Diagnostic, Roadmap,
-                and execution environment.
-              </p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The Reframe</p>
+              <h2 id="reframe-title" className="text-3xl font-semibold text-white md:text-5xl">Before you automate the work, understand the system producing it.</h2>
+              <p className="mt-6 text-lg leading-8 text-slate-300">If an AI automation system does not understand how your company actually works, it is automating a guess. Automation may still be the right move—but only after the evidence shows what the work is, where it depends on something else, and what the intervention is supposed to change.</p>
             </div>
-            <div className="grid gap-5 md:grid-cols-2">
-              {[
-                {
-                  title: "Business Context",
-                  body: "How the organization is supposed to work, what leadership is trying to achieve, and where capacity is under pressure.",
-                },
-                {
-                  title: "Leadership Intent",
-                  body: "What leaders believe matters most, where they see friction, and what assumptions are currently steering decisions.",
-                },
-                {
-                  title: "Team Evidence",
-                  body: "The lived operating reality from the people closest to handoffs, blockers, and recurring execution strain.",
-                },
-                {
-                  title: "Shared Operating Picture",
-                  body: "One model that makes the pattern visible before any paid intervention begins.",
-                },
-              ].map((item) => (
-                <div key={item.title} className={cardClass}>
-                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-400">{item.body}</p>
-                </div>
-              ))}
+            <div className="flex flex-col justify-center rounded-3xl border border-amber-200/25 bg-[linear-gradient(145deg,rgba(70,55,30,0.4),rgba(15,23,42,0.86))] p-8 md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-200/80">Automation Without Understanding</p>
+              <p className="mt-6 text-3xl font-semibold leading-tight text-white md:text-4xl">Start with the picture. Choose the intervention after.</p>
+              <div className="mt-8 flex items-center gap-3 text-sm text-slate-300"><span className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-2">understand</span><ArrowRight size={15} className="text-cyan-200" aria-hidden="true" /><span className="rounded-full border border-amber-200/25 bg-amber-200/10 px-3 py-2 text-amber-100">intervene when warranted</span></div>
             </div>
           </div>
         </section>
 
-        <section className={sectionClass}>
+        <section id="proof-thread" className={`${sectionClass} scroll-mt-20`} aria-labelledby="proof-thread-title">
           <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Journey</p>
-            <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Start with reflection. Add depth only when the evidence earns it.
-            </h2>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">See the Move</p>
+            <h2 id="proof-thread-title" className="text-3xl font-semibold text-white md:text-5xl">A short proof of what changes when the picture becomes inspectable.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-400">Follow one operating problem through the same evidence lineage. The point is not a feature tour. It is the picture forming, being corrected, becoming visible, and supporting a better question.</p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
             <div className="space-y-4">
-              {journeyStages.map((stage) => {
-                const active = stage.id === activeStage;
-                return (
-                  <button
-                    key={stage.id}
-                    type="button"
-                    onClick={() => handleJourneyStage(stage.id)}
-                    className={`w-full rounded-3xl border p-6 text-left transition ${
-                      active
-                        ? "border-cyan-400/40 bg-cyan-400/10"
-                        : "border-slate-800 bg-slate-900/40 hover:border-slate-700"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/80">
-                        {stage.step}
-                      </span>
-                      <span className="text-xl font-semibold text-white">{stage.title}</span>
-                    </div>
-                    <p className="mt-3 text-sm text-slate-400">{stage.label}</p>
-                  </button>
-                );
+              <div className="flex items-center justify-between border-b border-slate-800 pb-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500"><span>Golden Proof Thread</span><span>45 seconds</span></div>
+              <div className="flex flex-wrap gap-2 text-xs text-slate-400"><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">same business</span><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">same problem</span><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">same evidence lineage</span></div>
+              {proofSteps.map((step, index) => {
+                const active = index === activeProofStep;
+                return <button type="button" key={step.id} onClick={() => selectProofStep(index)} aria-pressed={active} className={`w-full rounded-2xl border p-5 text-left transition ${active ? "border-cyan-400/40 bg-cyan-400/10" : "border-slate-800 bg-slate-900/35 hover:border-slate-700"}`}><div className="flex items-center gap-4"><span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">0{index + 1}</span><span className="text-lg font-semibold text-white">{step.label}</span></div><p className="mt-3 text-sm leading-6 text-slate-400">{step.title}</p></button>;
               })}
-            </div>
-            <div className={`${cardClass} min-h-[320px]`}>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">
-                {activeStageData.step} — {activeStageData.title}
-              </p>
-              <h3 className="mt-4 text-3xl font-semibold text-white">{activeStageData.label}</h3>
-              <p className="mt-6 text-lg leading-8 text-slate-300">{activeStageData.body}</p>
-              <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Boundary</p>
-                <p className="mt-3 text-base leading-7 text-slate-300">{activeStageData.boundary}</p>
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+                <button type="button" onClick={startProof} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"><Play size={15} className="mr-2" aria-hidden="true" /> Start the 45-second proof</button>
+                <button type="button" onClick={toggleProof} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">{proofPlaying ? <Pause size={15} className="mr-2" aria-hidden="true" /> : <Play size={15} className="mr-2" aria-hidden="true" />}{proofPlaying ? "Pause proof" : "Play from here"}</button>
               </div>
             </div>
+            <div aria-live="polite">
+              <ProofFrame step={activeProof} onOpenImage={(src) => { setSelectedImage(src); trackEvent("homepage_proof_open", { proof_step: activeProof.id, asset: src }); }} />
+              <div className="mt-6"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">{activeProof.label}</p><h3 className="mt-3 text-2xl font-semibold text-white md:text-3xl">{activeProof.title}</h3><p className="mt-4 text-base leading-7 text-slate-400">{activeProof.body}</p></div>
+            </div>
           </div>
+          <p className="mt-10 border-l-2 border-cyan-300/50 pl-5 text-lg font-medium leading-8 text-slate-300">The value is not a prettier dashboard. It is a more useful place to begin.</p>
         </section>
 
-        <section className={sectionClass}>
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div className={cardClass}>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Before StrategicAI</p>
-              <ul className="space-y-4 text-lg leading-8 text-slate-300">
-                <li>Context lives across people and systems.</li>
-                <li>Leadership coordinates manually.</li>
-                <li>Priorities compete without intervention logic.</li>
-                <li>Ownership is assumed.</li>
-                <li>Progress depends on follow-up.</li>
-              </ul>
-            </div>
-            <div className={cardClass}>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">With StrategicAI</p>
-              <ul className="space-y-4 text-lg leading-8 text-slate-300">
-                <li>Leadership shares one operating picture.</li>
-                <li>Constraints are named.</li>
-                <li>Intervention order is explicit.</li>
-                <li>Ownership is visible.</li>
-                <li>Execution produces evidence.</li>
-              </ul>
+        <section className={sectionClass} aria-labelledby="category-title">
+          <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+            <div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The Category</p><h2 id="category-title" className="text-3xl font-semibold text-white md:text-5xl">StrategicAI is Operational Intelligence built from Operational Reality.</h2><p className="mt-6 text-lg leading-8 text-slate-300">Operational Reality is how the organization actually works across people, systems, work, decisions, authority, dependencies, constraints, exceptions, competing perspectives, and unknowns.</p></div>
+            <div className="space-y-3">
+              {[
+                ["01", "Operational Reality", "The connected reality already present in the company."],
+                ["02", "Operational Intelligence", "Useful understanding formed from that reality."],
+                ["03", "Business Views", "Bounded ways to inspect selected relationships and conditions."],
+                ["04", "Nemo", "The intended interaction layer for reasoning from available company context."],
+                ["05", "Capabilities", "Automation, change, ownership, alerts, investigation, or no change when warranted."],
+              ].map(([number, title, body]) => <div key={number} className="grid grid-cols-[48px_1fr] gap-4 border-b border-slate-800 py-5 first:border-t"><span className="text-sm font-semibold tracking-[0.18em] text-cyan-300/70">{number}</span><div><h3 className="text-lg font-semibold text-white">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{body}</p></div></div>)}
             </div>
           </div>
+          <p className="mt-10 text-xl font-medium text-cyan-200">The order matters: evidence before prescription, scope before automation.</p>
         </section>
 
-        <section className={sectionClass}>
-          <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">How The Brief Is Built</p>
-              <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                You provide the context. Your team provides the operating evidence.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-400">
-                StrategicAI synthesizes both into one clear reflection before any diagnostic or
-                roadmap work begins.
-              </p>
-            </div>
-            <div className="rounded-[2rem] border border-slate-800 bg-slate-900/55 p-10">
-              <div className="space-y-6 text-center text-lg font-medium text-slate-200">
-                <div>Organization Context</div>
-                <div className="text-cyan-300">↓</div>
-                <div>Leadership Intake</div>
-                <div className="text-cyan-300">↓</div>
-                <div>Team Evidence</div>
-                <div className="text-cyan-300">↓</div>
-                <div className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-6 py-5 text-white">
-                  Executive Brief
-                </div>
-              </div>
-            </div>
-          </div>
+        <section className={`${sectionClass} pt-0`} aria-labelledby="business-views-title">
+          <div className="mb-10 max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Business Views</p><h2 id="business-views-title" className="text-3xl font-semibold text-white md:text-5xl">See the part of the business you need to understand next.</h2><p className="mt-6 text-lg leading-8 text-slate-400">Business Views are bounded, inspectable projections of the company picture. They make selected relationships, dependencies, bottlenecks, unknowns, or priorities visible without pretending to own the whole truth.</p></div>
+          <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]"><div className="space-y-3">{businessViews.map((view) => { const active = view.id === selectedView; return <button type="button" key={view.id} onClick={() => selectBusinessView(view.id)} aria-pressed={active} className={`flex w-full items-center justify-between rounded-2xl border px-5 py-4 text-left transition ${active ? "border-cyan-400/40 bg-cyan-400/10" : "border-slate-800 bg-slate-900/35 hover:border-slate-700"}`}><span className="text-base font-semibold text-white">{view.label}</span><ArrowRight size={16} className={active ? "text-cyan-200" : "text-slate-600"} aria-hidden="true" /></button>; })}</div><div className={`${cardClass} min-h-[280px]`}><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">Selected Business View</p><h3 className="mt-5 text-3xl font-semibold text-white">{activeView.label}</h3><p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">{activeView.detail}</p><div className="mt-10 flex items-center gap-3 text-sm text-slate-400"><Check size={16} className="text-cyan-300" aria-hidden="true" /> The starting questions stay consistent. The exact views depend on what the evidence supports.</div></div></div>
         </section>
 
-        <section className={sectionClass}>
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Mission Control</p>
-              <h2 className="text-3xl font-semibold text-white md:text-5xl">
-                The Roadmap does not end as a document.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Mission Control is where priorities, ownership, execution pressure, blockers, and
-                progress become operational.
-              </p>
-              <p className="mt-6 text-base leading-7 text-slate-400">
-                One shared environment keeps the roadmap alive after the reflection, diagnostic, and
-                planning work are complete.
-              </p>
-              <Link
-                to="/product"
-                className="mt-8 inline-flex items-center rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900"
-              >
-                See the Product Surface
-              </Link>
-            </div>
-            <button
-              type="button"
-              onClick={() => setSelectedImage("/images/smb-dashboard-main.png")}
-              className="overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/60 transition hover:border-slate-600"
-            >
-              <img src="/images/smb-dashboard-main.png" alt="Mission Control dashboard" className="w-full object-cover" />
-            </button>
-          </div>
+        <section className={sectionClass} aria-labelledby="nemo-title">
+          <div className="grid items-stretch gap-8 lg:grid-cols-[1.02fr_0.98fr]"><div className={cardClass}><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Nemo</p><h2 id="nemo-title" className="text-3xl font-semibold text-white md:text-5xl">Nemo gives the owner somewhere real to start.</h2><p className="mt-6 text-lg leading-8 text-slate-300">Once the company picture is available, Nemo is intended to help you inspect the questions that matter: where work is waiting, what depends on one person, which handoff is fragile, what remains unknown, and what should be looked at next.</p><p className="mt-6 text-base leading-7 text-slate-400">Nemo is not omniscient, automatically authoritative, professionally licensed, or a replacement for accountable leadership. It reasons from the company context that is actually available in the named experience.</p></div><div className="rounded-3xl border border-cyan-400/20 bg-[linear-gradient(145deg,rgba(9,42,49,0.7),rgba(15,23,42,0.9))] p-8"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">Example owner questions</p><div className="mt-5 space-y-3">{nemoQuestions.map((item) => { const active = selectedQuestion === item.id; return <button type="button" key={item.id} onClick={() => selectNemoQuestion(item.id)} aria-pressed={active} className={`w-full rounded-2xl border px-4 py-4 text-left text-sm transition ${active ? "border-cyan-300/35 bg-cyan-300/10 text-white" : "border-slate-700/70 bg-slate-950/30 text-slate-300 hover:border-slate-600"}`}>“{item.question}”</button>; })}</div><div className="mt-6 border-t border-slate-700/70 pt-6"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">What the context lets you inspect</p><p className="mt-3 text-base leading-7 text-slate-200">{activeQuestion.response}</p></div></div></div>
         </section>
 
-        <section className="border-t border-slate-800/70 bg-slate-900/35">
-          <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Final Call To Action</p>
-            <h2 className="text-4xl font-semibold text-white md:text-6xl">
-              Start with the truth already inside your organization.
-            </h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Build the Executive Brief. See the visible operating pattern. Decide from evidence
-              whether to continue.
-            </p>
-            <a
-              href={buildSignupUrl("homepage_final_executive_brief")}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => handleExecutiveBriefClick("final-cta")}
-              className="mt-10 inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300"
-            >
-              Build My Executive Brief
-            </a>
-            <p className="mt-4 text-sm text-slate-400">Free. No Diagnostic purchase required.</p>
-          </div>
+        <section className="border-t border-slate-800/70 bg-slate-900/35" aria-labelledby="founding100-title">
+          <div className="mx-auto max-w-6xl px-6 py-24"><div className="grid items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]"><div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Founding 100</p><h2 id="founding100-title" className="text-4xl font-semibold text-white md:text-6xl">Build the intelligence before you decide what to automate.</h2><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">The Founding 100 are the first businesses helping us build and harden this experience with real use. You bring your company, your evidence, your corrections, and your hard questions. We build a serious body of intelligence about how the business actually works, make useful parts visible through Business Views, and give the authorized cohort experience a real context to work from.</p><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">This is not access to another AI tool. It is participation in building the evidence base, delivery learning, correction patterns, and usage understanding that a mature StrategicAI offering will eventually need.</p></div><div className="rounded-3xl border border-cyan-300/25 bg-slate-950/60 p-7"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">The exchange</p><ul className="mt-6 space-y-4 text-base leading-7 text-slate-300"><li className="flex gap-3"><Check size={18} className="mt-1 shrink-0 text-cyan-300" aria-hidden="true" /> Real company context</li><li className="flex gap-3"><Check size={18} className="mt-1 shrink-0 text-cyan-300" aria-hidden="true" /> Honest correction and feedback</li><li className="flex gap-3"><Check size={18} className="mt-1 shrink-0 text-cyan-300" aria-hidden="true" /> Hard operating questions</li><li className="flex gap-3"><Check size={18} className="mt-1 shrink-0 text-cyan-300" aria-hidden="true" /> A serious body of intelligence to inspect</li></ul><div className="mt-8 flex flex-col gap-3"><Link to="/founding100/offer" onClick={() => handleFounding100Click("homepage_founding100")} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">Review the Founding 100 <ArrowRight size={16} className="ml-2" aria-hidden="true" /></Link><a href={buildSignupUrl("homepage_founding100_executive_brief")} target="_blank" rel="noopener noreferrer" onClick={() => handleExecutiveBriefClick("founding100")} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">Start with My Executive Brief</a></div><p className="mt-5 text-xs leading-5 text-slate-500">Review the current offer surface for scope and checkout state. The homepage does not promise a fixed view bundle, verified 90-day continuity, or an outcome.</p></div></div></div>
         </section>
       </main>
 

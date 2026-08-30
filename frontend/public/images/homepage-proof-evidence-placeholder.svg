@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Golden Proof Thread evidence placeholder</title>
+  <desc id="desc">Placeholder image for an accepted evidence capture.</desc>
+  <rect width="1600" height="1000" fill="#020617"/>
+  <rect x="34" y="34" width="1532" height="932" rx="28" fill="#0f172a" stroke="#334155" stroke-width="3"/>
+  <text x="82" y="116" fill="#67e8f9" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">GOLDEN PROOF THREAD / 01</text>
+  <text x="82" y="178" fill="#f8fafc" font-family="Arial, sans-serif" font-size="52" font-weight="700">EVIDENCE</text>
+  <text x="82" y="222" fill="#94a3b8" font-family="Arial, sans-serif" font-size="24">Insert accepted Formation evidence capture here</text>
+  <g fill="#111c35" stroke="#475569" stroke-width="2">
+    <rect x="82" y="310" width="410" height="210" rx="20"/>
+    <rect x="595" y="310" width="410" height="210" rx="20"/>
+    <rect x="1108" y="310" width="410" height="210" rx="20"/>
+  </g>
+  <g fill="#cbd5e1" font-family="Arial, sans-serif" font-size="25" font-weight="700">
+    <text x="120" y="372">LEADERSHIP CONTEXT</text>
+    <text x="633" y="372">TEAM EVIDENCE</text>
+    <text x="1146" y="372">SYSTEM SIGNALS</text>
+  </g>
+  <g fill="#64748b" font-family="Arial, sans-serif" font-size="21">
+    <text x="120" y="428">Intent, priorities, pressure</text>
+    <text x="633" y="428">Lived handoffs and blockers</text>
+    <text x="1146" y="428">Where information moves</text>
+  </g>
+  <g stroke="#22d3ee" stroke-width="4" fill="none" opacity=".85">
+    <path d="M492 414h103"/><path d="M1005 414h103"/>
+  </g>
+  <g fill="#67e8f9"><circle cx="545" cy="414" r="8"/><circle cx="1057" cy="414" r="8"/></g>
+  <rect x="82" y="660" width="1436" height="170" rx="20" fill="#0b2934" stroke="#155e75" stroke-width="2"/>
+  <text x="122" y="733" fill="#a5f3fc" font-family="Arial, sans-serif" font-size="27" font-weight="700">PLACEHOLDER IMAGE</text>
+  <text x="122" y="785" fill="#94a3b8" font-family="Arial, sans-serif" font-size="22">Replace with the real accepted launch-state capture before publication.</text>
+</svg>

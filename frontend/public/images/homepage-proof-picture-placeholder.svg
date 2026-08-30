@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Golden Proof Thread picture placeholder</title>
+  <desc id="desc">Placeholder image for an accepted bounded operating picture capture.</desc>
+  <rect width="1600" height="1000" fill="#020617"/>
+  <rect x="34" y="34" width="1532" height="932" rx="28" fill="#0f172a" stroke="#334155" stroke-width="3"/>
+  <text x="82" y="116" fill="#67e8f9" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">GOLDEN PROOF THREAD / 02</text>
+  <text x="82" y="178" fill="#f8fafc" font-family="Arial, sans-serif" font-size="52" font-weight="700">PICTURE</text>
+  <text x="82" y="222" fill="#94a3b8" font-family="Arial, sans-serif" font-size="24">Insert accepted bounded operating picture capture here</text>
+  <g stroke="#22d3ee" stroke-width="4" fill="none" opacity=".8">
+    <path d="M284 490C420 360 496 570 630 472S850 370 958 486 1175 590 1322 420"/>
+    <path d="M278 672C424 592 526 704 652 584S854 628 966 566 1172 720 1324 602"/>
+  </g>
+  <g fill="#0b2934" stroke="#67e8f9" stroke-width="3">
+    <circle cx="220" cy="490" r="72"/><circle cx="630" cy="472" r="72"/><circle cx="958" cy="486" r="72"/><circle cx="1370" cy="420" r="72"/>
+    <circle cx="278" cy="672" r="52"/><circle cx="652" cy="584" r="52"/><circle cx="966" cy="566" r="52"/><circle cx="1324" cy="602" r="52"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="220" y="483" font-size="24" font-weight="700">PEOPLE</text><text x="220" y="515" font-size="18" fill="#94a3b8">evidence</text>
+    <text x="630" y="465" font-size="24" font-weight="700">WORK</text><text x="630" y="497" font-size="18" fill="#94a3b8">handoff</text>
+    <text x="958" y="479" font-size="24" font-weight="700">SYSTEMS</text><text x="958" y="511" font-size="18" fill="#94a3b8">context</text>
+    <text x="1370" y="413" font-size="24" font-weight="700">VIEW</text><text x="1370" y="445" font-size="18" fill="#94a3b8">bounded</text>
+  </g>
+  <rect x="82" y="820" width="1436" height="72" rx="16" fill="#0b2934" stroke="#155e75" stroke-width="2"/>
+  <text x="122" y="866" fill="#a5f3fc" font-family="Arial, sans-serif" font-size="22">PLACEHOLDER — show relationships, pressure, and one visible unknown in the accepted capture.</text>
+</svg>
