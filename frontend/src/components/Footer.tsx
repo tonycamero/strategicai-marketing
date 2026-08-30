@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { buildSignupUrl } from "../lib/signup";
 
 export function Footer() {
   return (
@@ -22,18 +21,17 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Navigate</h4>
             <ul className="space-y-4">
-              <li><Link to="/#how-it-works" className="text-slate-500 hover:text-white transition text-sm">How It Works</Link></li>
+              <li><Link to="/how-it-works" className="text-slate-500 hover:text-white transition text-sm">How It Works</Link></li>
               <li><Link to="/product" className="text-slate-500 hover:text-white transition text-sm">Product</Link></li>
-              <li><Link to="/pricing#engagements" className="text-slate-500 hover:text-white transition text-sm">Engagements</Link></li>
               <li><Link to="/partners" className="text-slate-500 hover:text-white transition text-sm">Partners</Link></li>
-              <li><a href={buildSignupUrl("footer_executive_brief")} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition text-sm">Build My Executive Brief</a></li>
+              <li><Link to="/founding100/offer" className="text-slate-500 hover:text-white transition text-sm">Founding 100</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 mt-12 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs text-slate-600">
-            Change with clarity, control, and proof.
+            Operational Intelligence built from Operational Reality.
           </p>
           <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} StrategicAI. All rights reserved.</p>
         </div>

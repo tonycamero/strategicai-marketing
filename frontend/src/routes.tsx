@@ -1,16 +1,16 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 import AlternateHomePage from "./pages/public/AlternateHomePage";
+import HowItWorks from "./pages/public/HowItWorks";
 import Partners from "./pages/public/Partners";
 import Placeholder from "./pages/public/Placeholder";
-import Intake from "./pages/public/Intake";
-import IntakeThanks from "./pages/public/IntakeThanks";
 import Product from "./pages/public/Product";
 import Pricing from "./pages/public/Pricing";
 import Founding100 from "./pages/public/Founding100";
 import Founding100Content from "./pages/public/Founding100Content";
 import Founding100Offer from "./pages/public/Founding100Offer";
+import NotFound from "./pages/public/NotFound";
 
 export type AppRoute = {
   path: string;
@@ -19,6 +19,12 @@ export type AppRoute = {
   shell?: boolean;
 };
 
+function LegacyRedirect({ to }: { to: string }) {
+  const location = useLocation();
+
+  return <Navigate to={{ pathname: to, search: location.search, hash: location.hash }} replace />;
+}
+
 export const routes: AppRoute[] = [
   { path: "/", element: <AlternateHomePage /> },
   { path: "/legacy-home", element: <Navigate to="/" replace /> },
@@ -26,6 +32,7 @@ export const routes: AppRoute[] = [
   { path: "/alt-home", element: <Navigate to="/" replace /> },
 
   /* Navigation Links */
+  { path: "/how-it-works", element: <HowItWorks /> },
   { path: "/product", element: <Product /> },
   { path: "/strategic-ai-brain", element: <Navigate to="/" replace /> },
   { path: "/features", element: <Navigate to="/product" replace />, label: "Features" },
@@ -48,8 +55,11 @@ export const routes: AppRoute[] = [
   { path: "/partner-revenue-simulator", element: <Navigate to="/partners" replace /> },
   
   /* Intake Flow */
-  { path: "/intake", element: <Intake /> },
-  { path: "/intake/thanks", element: <IntakeThanks /> },
+  { path: "/intake", element: <LegacyRedirect to="/founding100/offer" />, shell: false },
+  { path: "/intake/thanks", element: <LegacyRedirect to="/founding100/offer" />, shell: false },
+
+  /* Compatibility surface for the retired engagements label */
+  { path: "/engagements", element: <LegacyRedirect to="/pricing" />, shell: false },
 
   /* Founding 100 funnel and customer handoff */
   { path: "/founding100/quick", element: <Founding100Content kind="short" />, shell: false },
@@ -60,4 +70,5 @@ export const routes: AppRoute[] = [
   /* Auth/Roadmap Placeholders */
   { path: "/login", element: <Placeholder /> },
   { path: "/roadmap", element: <Placeholder /> },
+  { path: "*", element: <NotFound /> },
 ];

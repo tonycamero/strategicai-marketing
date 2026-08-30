@@ -19,6 +19,7 @@ export const strategicFunnelEvents = [
   "homepage_business_view_select",
   "homepage_nemo_question_select",
   "founding100_cta_click",
+  "partner_inquiry_click",
   "sample_brief_open",
   "journey_stage_expand",
   "intake_started",
