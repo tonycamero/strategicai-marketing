@@ -24,7 +24,7 @@ const partnerClasses = [
 
 const commitments = [
   "The information behind the picture stays visible.",
-  "Accountable people keep decision authority.",
+  "Accountable people keep the final say.",
   "Scope is clear before implementation begins.",
   "What happens after the work can become new information.",
 ] as const;

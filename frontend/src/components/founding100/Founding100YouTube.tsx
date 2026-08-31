@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState } from "react";
-import { AlertCircle } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import { trackEvent } from "../../lib/analytics";
 import type { Founding100Attribution } from "../../lib/founding100Funnel";
 
@@ -77,9 +77,9 @@ function UnconfiguredMedia({ kind }: { kind: PlayerKind }) {
     <div className="f100-media-unavailable" data-media-state="not-configured">
       <div className="f100-media-watermark" aria-hidden="true" />
       <div className="f100-media-unavailable-copy">
-        <AlertCircle size={24} aria-hidden="true" />
-        <h2>The {label} is not configured yet.</h2>
-        <p>This viewing surface is ready. The YouTube asset has not been supplied.</p>
+        <PlayCircle size={24} aria-hidden="true" />
+        <h2>The {label} will play here.</h2>
+        <p>This viewing surface is ready for the launch film.</p>
       </div>
     </div>
   );
@@ -191,8 +191,8 @@ export function Founding100YouTube({ kind, videoId, attribution }: Founding100Yo
     return (
       <div className="f100-media-unavailable" data-media-state="load-failed" role="status">
         <div className="f100-media-unavailable-copy">
-          <AlertCircle size={24} aria-hidden="true" />
-          <h2>The YouTube player could not load.</h2>
+          <PlayCircle size={24} aria-hidden="true" />
+          <h2>The viewing surface is temporarily unavailable.</h2>
           <p>Refresh the page or try again later. No playback event has been recorded.</p>
         </div>
       </div>
