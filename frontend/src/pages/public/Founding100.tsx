@@ -42,8 +42,8 @@ const stages = [
   },
   {
     number: "04",
-    name: "Start asking better questions",
-    copy: "As the picture becomes useful, Business Views and Nemo give you ways to inspect and follow what matters.",
+    name: "Ask Nemo better questions",
+    copy: "As the picture becomes useful, Business Views and Ask Nemo give you ways to inspect and follow what matters.",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function Founding100() {
             </p>
             <div className="founding100-principle">
               <span className="founding100-principle-line" aria-hidden="true" />
-              <p><strong>StrategicAI builds the understanding.</strong> Nemo helps you work with it.</p>
+              <p><strong>StrategicAI builds the understanding.</strong> Ask Nemo is how you work with it.</p>
             </div>
           </div>
 
@@ -146,7 +146,7 @@ export default function Founding100() {
               </li>
               <li>
                 <span className="founding100-step-number">04</span>
-                <div><h3>Start asking better questions.</h3><p>As the picture becomes useful, Business Views and Nemo give you ways to inspect and follow what matters.</p></div>
+                <div><h3>Ask Nemo better questions.</h3><p>As the picture becomes useful, Business Views and Ask Nemo give you ways to inspect and follow what matters.</p></div>
               </li>
             </ol>
 
@@ -184,8 +184,8 @@ export default function Founding100() {
             </div>
             <div className="founding100-portfolio-layer founding100-portfolio-layer-accent">
               <span className="founding100-layer-label">Layer 2</span>
-              <h3>90 days with Nemo</h3>
-              <p>Bring Nemo the real questions you are facing as an owner—hiring, growth, bottlenecks, customers, systems, priorities, and decisions.</p>
+              <h3>90 days to Ask Nemo</h3>
+              <p>Ask Nemo the real questions you are facing as an owner—hiring, growth, bottlenecks, customers, systems, priorities, and decisions.</p>
             </div>
           </div>
         </section>
@@ -212,7 +212,7 @@ export default function Founding100() {
           <div className="founding100-section-heading">
             <p className="founding100-kicker">The 90-day experience</p>
             <h2 id="days-title">See it. Challenge it. Change it.</h2>
-            <p>Use Nemo like a flashlight inside your company.</p>
+            <p>Ask Nemo like a flashlight inside your company.</p>
           </div>
           <div className="founding100-stage-grid">
             {stages.map((stage, index) => (
@@ -224,7 +224,7 @@ export default function Founding100() {
               </article>
             ))}
           </div>
-          <div className="founding100-questions" aria-label="Example questions to explore with Nemo">
+          <div className="founding100-questions" aria-label="Example questions to Ask Nemo">
             {questions.map((question) => <span key={question}>“{question}”</span>)}
           </div>
         </section>

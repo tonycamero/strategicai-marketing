@@ -12,7 +12,7 @@ const boundaries = [
   "Founding 100 is the current way to start.",
   "The picture is built from real company context and correction.",
   "Business Views adapt to what the business actually contains.",
-  "Nemo works from the company context available in the experience.",
+  "The Ask Nemo experience works from the company context available in the experience.",
   "Implementation or specialist work is separately scoped.",
 ] as const;
 
@@ -55,7 +55,7 @@ export default function Pricing() {
             <div className={`${cardClass} border-cyan-400/20 bg-[linear-gradient(145deg,rgba(9,42,49,0.7),rgba(15,23,42,0.9))]`}>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The current way to start</p>
               <h2 id="current-entry-title" className="text-3xl font-semibold text-white md:text-5xl">Founding 100</h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">Bring the business you actually have. Build a working picture of the people, work, systems, dependencies, and unknowns around it. Make useful parts visible through Business Views, then work with Nemo from that context during the authorized experience.</p>
+              <p className="mt-6 text-lg leading-8 text-slate-300">Bring the business you actually have. Build a working picture of the people, work, systems, dependencies, and unknowns around it. Make useful parts visible through Business Views, then Ask Nemo questions from that context during the authorized experience.</p>
               <p className="mt-6 text-base leading-7 text-slate-400">The offer page carries the current price, scope, checkout state, and release boundaries. This compatibility surface does not duplicate the sales argument.</p>
               <Link to="/founding100/offer" onClick={handleFounding100Click} className="mt-8 inline-flex items-center text-sm font-semibold text-cyan-200 transition hover:text-cyan-100">Review the offer <ArrowRight size={16} className="ml-2" aria-hidden="true" /></Link>
             </div>
@@ -76,7 +76,7 @@ export default function Pricing() {
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 ["See", "Form and correct the picture of the business."],
-                ["Follow", "Use Business Views and Nemo to trace what matters."],
+                ["Follow", "Use Business Views and Ask Nemo to trace what matters."],
                 ["Choose", "Select the next step with the context in view."],
               ].map(([title, body]) => <div key={title} className="rounded-2xl border border-slate-700/80 bg-slate-950/35 p-5"><h3 className="text-xl font-semibold text-white">{title}</h3><p className="mt-3 text-sm leading-6 text-slate-400">{body}</p></div>)}
             </div>

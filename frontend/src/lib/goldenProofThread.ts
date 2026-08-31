@@ -101,10 +101,10 @@ export const goldenProofThread: GoldenProofThread = {
     },
     {
       id: "question",
-      navLabel: "Question",
+      navLabel: "Ask Nemo",
       eyebrow: "What you can ask next",
-      headline: "Follow a question through the context.",
-      body: "Once the relationships are visible, Nemo can help you reason from company context instead of starting from a blank prompt.",
+      headline: "Ask Nemo the question you’ve been carrying.",
+      body: "Once the relationships are visible, Ask Nemo can help you reason from company context instead of starting from a blank prompt.",
       durationSeconds: 11,
       media: neutralFrameMedia(
         "/images/homepage-proof-question-placeholder.svg",
@@ -113,4 +113,3 @@ export const goldenProofThread: GoldenProofThread = {
     },
   ],
 };
-
