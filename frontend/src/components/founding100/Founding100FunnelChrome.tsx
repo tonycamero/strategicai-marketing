@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Navbar } from "../Navbar";
 
 type Founding100FunnelChromeProps = {
   context: string;
@@ -8,14 +9,12 @@ type Founding100FunnelChromeProps = {
 export function Founding100FunnelChrome({ context, children }: Founding100FunnelChromeProps) {
   return (
     <div className="f100-funnel-page">
-      <header className="f100-funnel-topbar">
-        <a className="f100-funnel-wordmark" href="/" aria-label="StrategicAI home">
-          <span>Strategic</span>AI
-        </a>
-        <p>
-          Founding 100 <span aria-hidden="true">/</span> {context}
-        </p>
-      </header>
+      <Navbar />
+      <div className="f100-funnel-contextbar" aria-label="Founding 100 context">
+        <span>Founding 100</span>
+        <span aria-hidden="true">/</span>
+        <span>{context}</span>
+      </div>
       {children}
       <footer className="f100-funnel-footer">
         <a className="f100-funnel-wordmark" href="/" aria-label="StrategicAI home">

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ArrowDown, Check, CheckCircle2, Mail, Sparkles } from "lucide-react";
+import { Navbar } from "../../components/Navbar";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { trackEvent } from "../../lib/analytics";
 import "./founding100.css";
@@ -81,12 +82,12 @@ export default function Founding100() {
 
   return (
     <div className="founding100-page" data-payment-verification="not-yet-authorized">
-      <header className="founding100-topbar">
-        <a className="founding100-wordmark" href="/" aria-label="StrategicAI home">
-          <span>Strategic</span>AI
-        </a>
-        <p>Founding 100 <span aria-hidden="true">/</span> post-payment handoff</p>
-      </header>
+      <Navbar />
+      <div className="founding100-contextbar" aria-label="Founding 100 context">
+        <span>Founding 100</span>
+        <span aria-hidden="true">/</span>
+        <span>post-payment handoff</span>
+      </div>
 
       <main>
         <section className="founding100-hero" aria-labelledby="founding100-title">
