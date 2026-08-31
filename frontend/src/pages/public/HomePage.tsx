@@ -29,7 +29,7 @@ export default function HomePage() {
                     {/* AI Brain Background */}
                     <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden flex items-center justify-center">
                         <img 
-                            src="/images/brain-bg.png" 
+                            src="/images/brain-bg.jpg"
                             className="w-full h-full object-cover scale-150 transform opacity-10 blur-[2px] transition-all duration-[20s] animate-pulse-slow" 
                             alt=""
                         />

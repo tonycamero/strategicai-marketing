@@ -17,7 +17,7 @@ const partnerClasses = [
 ] as const;
 
 const commitments = [
-  "Evidence before prescription.",
+  "Evidence before recommendations.",
   "Authority before action.",
   "Scope before automation.",
   "Accountable leadership remains accountable.",
@@ -45,14 +45,14 @@ export default function Partners() {
       <main>
         <section className="relative overflow-hidden border-b border-slate-800/70">
           <div className="absolute inset-0">
-            <img src="/images/brain-bg.png" alt="" className="h-full w-full object-cover opacity-[0.08]" />
+            <img src="/images/brain-bg.jpg" alt="" className="h-full w-full object-cover opacity-[0.08]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_42%),linear-gradient(180deg,rgba(2,6,23,0.4),#020617_82%)]" />
           </div>
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
             <div className="max-w-4xl">
               <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300/80">Partners</p>
               <h1 className="text-5xl font-semibold leading-[1.05] text-white md:text-7xl">Understand before you implement.</h1>
-              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">StrategicAI helps establish an inspectable operating picture before a downstream intervention is scoped. That makes room for the right advisor, automation partner, systems specialist, or domain expert to act with better context.</p>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">StrategicAI helps establish an inspectable operating picture before downstream work is scoped. That makes room for the right advisor, automation partner, systems specialist, or domain expert to act with better context.</p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a href="mailto:tony@strategicai.app?subject=StrategicAI%20partner%20inquiry" onClick={handlePartnerInquiry} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300">Start a partner conversation <Mail size={17} className="ml-2" aria-hidden="true" /></a>
                 <Link to="/founding100/offer" onClick={handleFounding100Click} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-7 py-4 text-base font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">See the current entry</Link>
@@ -70,9 +70,9 @@ export default function Partners() {
             </div>
             <div className="rounded-3xl border border-cyan-400/20 bg-[linear-gradient(145deg,rgba(9,42,49,0.7),rgba(15,23,42,0.9))] p-8">
               <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
-                {['Operational Reality', 'Operational Intelligence', 'Better-scoped intervention', 'Partner delivery'].map((item, index) => <span key={item} className="inline-flex items-center gap-3"><span className="rounded-full border border-slate-700 bg-slate-950/40 px-4 py-2">{item}</span>{index < 3 ? <ArrowRight size={15} className="text-cyan-200" aria-hidden="true" /> : null}</span>)}
+                {['Operational Reality', 'Operational Intelligence', 'Better-scoped next step', 'Partner delivery'].map((item, index) => <span key={item} className="inline-flex items-center gap-3"><span className="rounded-full border border-slate-700 bg-slate-950/40 px-4 py-2">{item}</span>{index < 3 ? <ArrowRight size={15} className="text-cyan-200" aria-hidden="true" /> : null}</span>)}
               </div>
-              <p className="mt-8 text-base leading-7 text-slate-300">Strong downstream automation and implementation partners are not competitors by definition. They become more useful when the work is understood and the authority boundary is explicit.</p>
+              <p className="mt-8 text-base leading-7 text-slate-300">Strong downstream automation and implementation partners are not competitors by definition. They become more useful when the work is understood and roles and boundaries are explicit.</p>
             </div>
           </div>
         </section>

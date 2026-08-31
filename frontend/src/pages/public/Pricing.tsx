@@ -12,7 +12,7 @@ const boundaries = [
   "Founding 100 is the current commercial entry.",
   "The portfolio is built from real company context and correction.",
   "Business Views adapt to what the evidence supports.",
-  "Nemo works from available company context in the authorized experience.",
+  "Nemo works from the company context available in the experience.",
   "Further implementation or specialist work is separately scoped.",
 ] as const;
 
@@ -37,7 +37,7 @@ export default function Pricing() {
       <main>
         <section id="ways-to-work" className="relative overflow-hidden border-b border-slate-800/70">
           <div className="absolute inset-0">
-            <img src="/images/brain-bg.png" alt="" className="h-full w-full object-cover opacity-[0.08]" />
+            <img src="/images/brain-bg.jpg" alt="" className="h-full w-full object-cover opacity-[0.08]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_42%),linear-gradient(180deg,rgba(2,6,23,0.4),#020617_82%)]" />
           </div>
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
@@ -55,7 +55,7 @@ export default function Pricing() {
             <div className={`${cardClass} border-cyan-400/20 bg-[linear-gradient(145deg,rgba(9,42,49,0.7),rgba(15,23,42,0.9))]`}>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Current commercial entry</p>
               <h2 id="current-entry-title" className="text-3xl font-semibold text-white md:text-5xl">Founding 100</h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">Build a serious body of intelligence about your company, make useful parts visible through Business Views, and work with Nemo from that context for the authorized experience.</p>
+              <p className="mt-6 text-lg leading-8 text-slate-300">Build a serious body of intelligence about your company, make useful parts visible through Business Views, and work with Nemo from that context through the Founding 100 experience.</p>
               <p className="mt-6 text-base leading-7 text-slate-400">The offer page carries the current price, scope, checkout state, and release boundaries. This compatibility surface does not duplicate the sales argument.</p>
               <Link to="/founding100/offer" onClick={handleFounding100Click} className="mt-8 inline-flex items-center text-sm font-semibold text-cyan-200 transition hover:text-cyan-100">Review the offer <ArrowRight size={16} className="ml-2" aria-hidden="true" /></Link>
             </div>
@@ -77,7 +77,7 @@ export default function Pricing() {
               {[
                 ["Understand", "Form and correct the company picture."],
                 ["Inspect", "Use Business Views and Nemo to reason from it."],
-                ["Act when warranted", "Authorize the next intervention with clear scope."],
+                ["Choose what follows", "Select the next step with clear scope."],
               ].map(([title, body]) => <div key={title} className="rounded-2xl border border-slate-700/80 bg-slate-950/35 p-5"><h3 className="text-xl font-semibold text-white">{title}</h3><p className="mt-3 text-sm leading-6 text-slate-400">{body}</p></div>)}
             </div>
           </div>

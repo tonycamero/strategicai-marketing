@@ -30,7 +30,7 @@ export default function StrategicAiBrain() {
                 {/* AI Brain Background */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <img 
-                        src="/images/brain-bg.png" 
+                        src="/images/brain-bg.jpg"
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover opacity-15 transform transition-all duration-[20s] animate-pulse-slow" 

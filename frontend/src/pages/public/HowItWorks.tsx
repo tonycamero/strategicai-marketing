@@ -49,7 +49,7 @@ export default function HowItWorks() {
       <main>
         <section className="relative overflow-hidden border-b border-slate-800/70">
           <div className="absolute inset-0">
-            <img src="/images/brain-bg.png" alt="" className="h-full w-full object-cover opacity-[0.08]" />
+            <img src="/images/brain-bg.jpg" alt="" className="h-full w-full object-cover opacity-[0.08]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_42%),linear-gradient(180deg,rgba(2,6,23,0.4),#020617_82%)]" />
           </div>
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
@@ -68,8 +68,8 @@ export default function HowItWorks() {
         <section className={sectionClass} aria-labelledby="mechanism-title">
           <div className="mb-10 max-w-3xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The mechanism</p>
-            <h2 id="mechanism-title" className="text-3xl font-semibold text-white md:text-5xl">The picture comes before the prescription.</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-400">A useful intervention depends on knowing what is actually happening. StrategicAI keeps evidence, perspective, correction, and uncertainty visible as the company picture takes shape.</p>
+            <h2 id="mechanism-title" className="text-3xl font-semibold text-white md:text-5xl">The picture comes before the recommendation.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-400">A useful next step depends on knowing what is actually happening. StrategicAI keeps evidence, perspective, correction, and uncertainty visible as the company picture takes shape.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {mechanismSteps.map(([number, title, body]) => (
@@ -106,8 +106,8 @@ export default function HowItWorks() {
         <section className={sectionClass} aria-labelledby="action-title">
           <div className="rounded-3xl border border-amber-200/20 bg-[linear-gradient(145deg,rgba(70,55,30,0.32),rgba(15,23,42,0.82))] p-8 md:p-12">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-200/80">The operating order</p>
-            <h2 id="action-title" className="max-w-3xl text-3xl font-semibold text-white md:text-5xl">Evidence before prescription. Scope before automation.</h2>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">Business Views make the relevant part of the picture visible. Nemo helps an owner ask better questions from that context. A capability, automation, investigation, or decision follows only when the evidence and authority warrant it.</p>
+            <h2 id="action-title" className="max-w-3xl text-3xl font-semibold text-white md:text-5xl">Evidence before recommendation. Scope before automation.</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">Business Views make the relevant part of the picture visible. Nemo helps an owner ask better questions from that context. A capability, automation, investigation, or decision follows only when the picture supports it and the owner decides.</p>
             <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-slate-300">
               {['Operational Reality', 'Operational Intelligence', 'Business Views', 'Nemo', 'Warranted action'].map((item, index) => (
                 <span key={item} className="inline-flex items-center gap-3"><span className="rounded-full border border-slate-700 bg-slate-950/40 px-4 py-2">{item}</span>{index < 4 ? <ArrowRight size={15} className="text-cyan-200" aria-hidden="true" /> : null}</span>
@@ -126,7 +126,7 @@ export default function HowItWorks() {
             <div className={`${cardClass} flex flex-col justify-between`}>
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">Founding 100</p>
-                <p className="mt-5 text-lg leading-8 text-slate-300">A serious body of intelligence about your company, useful Business Views, and the authorized cohort experience with Nemo.</p>
+                <p className="mt-5 text-lg leading-8 text-slate-300">A serious body of intelligence about your company, useful Business Views, and the Founding 100 experience with Nemo.</p>
               </div>
               <Link to="/founding100/offer" onClick={handleFounding100Click} className="mt-8 inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">Explore Founding 100 <ArrowRight size={16} className="ml-2" aria-hidden="true" /></Link>
             </div>

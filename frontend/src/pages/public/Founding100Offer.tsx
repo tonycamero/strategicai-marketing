@@ -37,7 +37,7 @@ const adaptiveViews = [
 ];
 
 const forOwners = [
-  "Want a clearer picture before choosing an intervention",
+  "Want a clearer picture before choosing a next step",
   "Have knowledge spread across people, systems, and files",
   "Are willing to correct what StrategicAI gets wrong",
   "Have real operating questions to bring during the 90 days",
@@ -122,9 +122,10 @@ export default function Founding100Offer() {
             </p>
             <div className="f100-price"><strong>$299</strong><span>one time</span></div>
             <CheckoutAction attribution={attribution} checkoutUrl={checkoutUrl} />
+            <p className="f100-cohort-rationale">The first 100 businesses are intentionally joining at this price because we want real companies using this—not just watching demos. Bring your context, challenge the picture, correct it, ask hard questions, and tell us where the experience works and where it does not.</p>
           </div>
           <div className="f100-offer-brain" aria-hidden="true">
-            <img src="/images/brain-bg.png" alt="" />
+            <img src="/images/brain-bg.jpg" alt="" />
           </div>
         </section>
 
@@ -184,7 +185,7 @@ export default function Founding100Offer() {
 
         <section className="f100-fit" aria-label="Offer fit">
           <div>
-            <h2>For owners who want understanding before intervention.</h2>
+            <h2>For owners who want understanding before choosing a next step.</h2>
             <ul>{forOwners.map((item) => <li key={item}><Check size={16} aria-hidden="true" />{item}</li>)}</ul>
           </div>
           <div>

@@ -13,8 +13,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="max-w-lg text-sm leading-relaxed text-slate-400">
-              StrategicAI helps leadership see how the organization is actually operating before
-              deciding what should change.
+              StrategicAI helps you understand how the business actually works, then make that understanding useful.
             </p>
           </div>
 

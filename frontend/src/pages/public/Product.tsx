@@ -46,7 +46,7 @@ export default function Product() {
       <main>
         <section className="relative overflow-hidden border-b border-slate-800/70">
           <div className="absolute inset-0">
-            <img src="/images/brain-bg.png" alt="" className="h-full w-full object-cover opacity-[0.08]" />
+            <img src="/images/brain-bg.jpg" alt="" className="h-full w-full object-cover opacity-[0.08]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_42%),linear-gradient(180deg,rgba(2,6,23,0.4),#020617_82%)]" />
           </div>
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
@@ -86,7 +86,7 @@ export default function Product() {
               <div>
                 <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">02 · Operational Intelligence</p>
                 <h2 id="intelligence-title" className="text-3xl font-semibold text-white md:text-5xl">Useful understanding formed from the picture.</h2>
-                <p className="mt-6 text-lg leading-8 text-slate-300">When the organization can inspect and correct the operating picture, it becomes more than collected context. It becomes intelligence that can support a better question, a clearer decision, or a warranted intervention.</p>
+                <p className="mt-6 text-lg leading-8 text-slate-300">When the organization can inspect and correct the operating picture, it becomes more than collected context. It becomes intelligence that can support a better question, a clearer decision, or a more appropriate next step.</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-3">
                 {[
@@ -120,7 +120,7 @@ export default function Product() {
               </article>
             ))}
           </div>
-          <p className="mt-8 text-base leading-7 text-slate-400">A named artifact such as an Executive Brief may exist as one bounded Business View when explicitly authorized. It is not StrategicAI’s product identity, required acquisition step, or commercial front door.</p>
+          <p className="mt-8 text-base leading-7 text-slate-400">Business Views adapt to the questions and operating reality of the company. They are not a fixed report bundle.</p>
         </section>
 
         <section className={`${sectionClass} pt-0`} aria-labelledby="nemo-title">

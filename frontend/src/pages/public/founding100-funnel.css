@@ -142,7 +142,7 @@
   inset: 0;
   z-index: -1;
   opacity: 0.14;
-  background: url("/images/brain-bg.png") center / min(58%, 500px) no-repeat;
+  background: url("/images/brain-bg.jpg") center / min(58%, 500px) no-repeat;
   mask-image: radial-gradient(circle, black 15%, transparent 72%);
 }
 
@@ -282,17 +282,25 @@
 .f100-offer-main { padding-top: 58px; }
 
 .f100-offer-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(400px, 1.1fr);
-  gap: 58px;
-  align-items: center;
-  min-height: 570px;
-  padding-bottom: 76px;
+  position: relative;
+  display: block;
+  min-height: 650px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--f100-line);
 }
 
-.f100-offer-hero-copy { position: relative; z-index: 2; }
+.f100-offer-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(740px, 72%);
+  padding: 92px 0 112px;
+}
 
-.f100-offer-hero h1 { max-width: 680px; font-size: clamp(3.2rem, 6vw, 6rem); }
+.f100-offer-hero h1 {
+  max-width: 680px;
+  font-size: clamp(3.2rem, 6vw, 6rem);
+  overflow-wrap: anywhere;
+}
 
 .f100-offer-hero-copy > p {
   max-width: 600px;
@@ -310,13 +318,48 @@
 .f100-checkout .f100-button { width: 100%; box-sizing: border-box; }
 .f100-checkout p { margin: 10px 0 0; color: var(--f100-soft); font-size: 0.76rem; text-align: center; }
 
+.f100-cohort-rationale {
+  max-width: 600px;
+  margin: 28px 0 0;
+  padding-left: 17px;
+  border-left: 1px solid var(--f100-aqua-deep);
+  color: var(--f100-soft);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
 .f100-button-purchase { color: var(--f100-bg); background: var(--f100-warm); }
 .f100-button-purchase:hover { background: #f2d5a5; }
 .f100-button-purchase:disabled { color: #869095; border-color: var(--f100-line); background: rgba(126, 143, 148, 0.12); cursor: not-allowed; transform: none; }
 
-.f100-offer-brain { position: relative; min-height: 480px; }
-.f100-offer-brain::after { position: absolute; inset: 0; content: ""; background: radial-gradient(circle, transparent 28%, var(--f100-bg) 73%); }
-.f100-offer-brain img { width: 100%; height: 100%; min-height: 480px; object-fit: cover; opacity: 0.94; }
+.f100-offer-brain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  min-height: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.f100-offer-brain::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 68% 44%, rgba(34, 211, 238, 0.19), transparent 42%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.35), var(--f100-bg) 90%);
+}
+
+.f100-offer-brain img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.22);
+  opacity: 0.1;
+  filter: saturate(1.15);
+}
 
 .f100-hierarchy,
 .f100-offer-section,
@@ -430,9 +473,7 @@
 }
 
 @media (max-width: 1024px) {
-  .f100-offer-hero { grid-template-columns: 1fr 0.85fr; gap: 30px; }
-  .f100-offer-brain,
-  .f100-offer-brain img { min-height: 390px; }
+  .f100-offer-hero-copy { width: min(740px, 82%); }
   .f100-hierarchy ol { grid-template-columns: repeat(3, 1fr); row-gap: 38px; }
   .f100-hierarchy li:nth-child(4) { padding-left: 0; border-left: 0; }
   .f100-offer-value { gap: 38px; }
@@ -458,11 +499,10 @@
   .f100-button { width: 100%; box-sizing: border-box; }
 
   .f100-offer-main { padding-top: 46px; }
-  .f100-offer-hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: 65px; }
+  .f100-offer-hero { min-height: auto; }
+  .f100-offer-hero-copy { width: 100%; padding: 64px 0 82px; }
   .f100-offer-hero h1 { font-size: clamp(3rem, 12vw, 4.6rem); }
-  .f100-offer-brain { grid-row: 1; min-height: 250px; margin-bottom: -30px; }
-  .f100-offer-brain img { min-height: 250px; max-height: 330px; }
-  .f100-offer-brain::after { background: radial-gradient(circle, transparent 18%, var(--f100-bg) 72%); }
+  .f100-offer-brain img { transform: scale(1.42); }
   .f100-price strong { font-size: 2.7rem; }
   .f100-hierarchy ol { grid-template-columns: 1fr; gap: 0; margin-top: 26px; }
   .f100-hierarchy li,
@@ -500,9 +540,8 @@
   .f100-see-reason-heading h2 { font-size: 0.93rem; }
   .f100-see-reason-options button { min-height: 47px; padding: 10px 12px; font-size: 0.82rem; }
   .f100-content-principle { font-size: 0.76rem; }
-  .f100-offer-hero h1 { font-size: 3rem; }
-  .f100-offer-brain { min-height: 220px; }
-  .f100-offer-brain img { min-height: 220px; }
+  .f100-offer-hero h1 { font-size: 2.8rem; }
+  .f100-offer-hero-copy { padding-top: 54px; }
   .f100-offer-section h2,
   .f100-offer-section-heading > h2 { font-size: 2.55rem; }
   .f100-fit h2,
