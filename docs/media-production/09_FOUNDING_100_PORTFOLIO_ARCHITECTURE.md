@@ -66,6 +66,40 @@ Only create these when a named business question warrants them:
 The core questions stay consistent. The exact views depend on what we discover about your business.
 ```
 
+## Context-rich AI and Ask Nemo value arc
+
+The portfolio creates two linked forms of value. They must remain connected
+without being collapsed into one another:
+
+```text
+VALUE ARC A — SEE THE BUSINESS
+Operational Reality → Operational Intelligence → Business Views
+
+VALUE ARC B — REASON FROM THE BUSINESS
+available company context → consequential human question → Ask Nemo
+```
+
+The first arc answers: **What will I learn about how my business actually
+works?** The second asks: **What would I ask if the AI already had the business
+behind the question in the room?**
+
+`Ask Nemo` is market and interaction language for using the Nemo layer from
+the understanding the company has already built. It does not make Nemo the
+product, grant it authority, imply omniscience, or promise an answer. The
+underlying distinction remains:
+
+```text
+Operational Intelligence ≠ Nemo
+Business Views let the owner see from the understanding.
+Ask Nemo lets the owner think from the understanding.
+```
+
+The customer should be able to bring a consequential question without first
+reconstructing the entire company in every conversation. The context remains
+durable, inspectable, correctable, and incomplete where the evidence is
+incomplete. The value claim is not that the model knows everything; it is that
+the AI does not have to start from nothing.
+
 # 2. Artifact specifications
 
 Each artifact is a projection of the shared company understanding. It is not a standalone prompt chain.

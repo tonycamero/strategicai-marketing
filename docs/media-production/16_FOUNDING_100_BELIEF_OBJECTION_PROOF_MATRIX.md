@@ -484,6 +484,37 @@ evidence.
 | FAILURE_SIGNAL | “This feels manufactured,” delay without a stated unresolved question, or distrust of the cohort rationale. |
 | NEXT_BELIEF | Decision under S16, only if commercial authority is active. |
 
+## Context-rich AI and Ask Nemo expansion
+
+This is an experiential overlay on the existing belief inventory, not a new
+category or a new product claim. B06, B10, and B13 should be read as one
+progression:
+
+```text
+Useful AI reasoning is shaped by the context behind the question.
+    → business context is fragmented across people, systems, history, and work
+    → repeatedly explaining fragments is not durable Operational Intelligence
+    → relevant company context lets Nemo begin closer to the consequential question
+    → the owner can see more clearly and can Ask Nemo better questions
+    → the first 100 help discover the real value through use and correction
+```
+
+The behavioral phrase is **Ask Nemo**. It means “ask from the understanding the
+company has already built,” not “ask an omniscient assistant.” It does not add
+authority to Nemo or guarantee that the answer is complete, correct, or
+actionable.
+
+### SEE → ASK acceptance test
+
+The deep experience passes this overlay when a prospect can say both:
+
+- “I understand what I might see about how my business actually works.”
+- “I already know what I would Ask Nemo first.”
+
+The offer passes when the buyer understands that the value is not generic AI
+access. It is a company-specific understanding plus the authorized experience
+of bringing real questions to Nemo from that context.
+
 ## Objection destruction crosswalk
 
 The objections below reuse `O01–O18` from `15`. Each answer is a resolution
@@ -602,11 +633,11 @@ sentence appears in a presentation.
 | PREHANDLE_STAGE | S06 and S08. |
 | EXPLICIT_HANDLE_STAGE | S09, then S13 if authorized. |
 | BLOCKED_BELIEFS | B03, B06, B10, B13. |
-| REQUIRED_REVERSAL | The distinction is accepted company context and continuity, not generic chat access or model tribalism. |
+| REQUIRED_REVERSAL | The distinction is durable, inspectable, correctable company context—not generic chat access or model tribalism. Ask Nemo names the behavior of bringing a consequential question from that context. |
 | PROOF_REQUIRED | Scoped context-aware interaction and fair alternative comparison. |
 | AVAILABLE_PROOF | P01 Nemo role; P02 intended mechanism; no accepted continuity receipt. |
 | MISSING_PROOF | Actual runtime context boundary and supported comparative scope. |
-| SAFE_LANGUAGE_BOUNDARY | “A blank chat and an accepted organizational context are different intended experiences.” |
+| SAFE_LANGUAGE_BOUNDARY | “A blank chat and an accepted organizational context are different intended experiences. Ask Nemo means asking from the context the company has already built.” |
 | DANGEROUS_OVERCLAIM | “Nemo is better at everything” or disparaging other models. |
 | RESOLUTION_STANDARD | Prospect can explain the context distinction and identify a question the proposed experience would address. |
 
@@ -842,11 +873,11 @@ sentence appears in a presentation.
 | PREHANDLE_STAGE | S07, S08, S10. |
 | EXPLICIT_HANDLE_STAGE | S09. |
 | BLOCKED_BELIEFS | B06, B10, B13. |
-| REQUIRED_REVERSAL | Company context and discovered unknowns are intended to help surface better questions; the owner need not arrive with a perfect prompt list. |
+| REQUIRED_REVERSAL | Company context and discovered unknowns are intended to help surface better questions; the owner need not arrive with a perfect prompt list. The natural behavior is to Ask Nemo what matters next. |
 | PROOF_REQUIRED | Accepted context-aware interaction and example question trail. |
 | AVAILABLE_PROOF | P01 Nemo role and P02 intended mechanism; no current 90-day receipt. |
 | MISSING_PROOF | Business Questions Queue/discovered-unknowns behavior and scoped Nemo capture. |
-| SAFE_LANGUAGE_BOUNDARY | “The intended experience may help reveal the next question; it does not promise automatic diagnosis or advice.” |
+| SAFE_LANGUAGE_BOUNDARY | “The intended experience may help reveal the next question. Ask Nemo does not promise automatic diagnosis, advice, or a guaranteed answer.” |
 | DANGEROUS_OVERCLAIM | “Nemo tells you what to do” or guaranteed discovery of the right question. |
 | RESOLUTION_STANDARD | Prospect can name one company question or unknown they want to investigate and understands the context boundary. |
 

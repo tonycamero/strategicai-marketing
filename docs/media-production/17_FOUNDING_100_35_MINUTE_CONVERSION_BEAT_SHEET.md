@@ -51,7 +51,7 @@ EVIDENCE / PEOPLE / SYSTEMS / WORK
     -> OPERATIONAL REALITY
     -> OPERATIONAL INTELLIGENCE
     -> BUSINESS VIEWS
-    -> NEMO QUESTIONS
+    -> ASK NEMO QUESTIONS
     -> WARRANTED ACTION
 ```
 
@@ -396,7 +396,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | SUCCESS_STATE | The viewer can distinguish a bounded view from a dashboard and can name a view they would want to inspect. |
 | MENTAL_YES | “What would I want to see about my company?” |
 
-### BEAT-11 — Nemo starts from company context
+### BEAT-11 — Ask Nemo starts from company context
 
 | Field | Beat specification |
 | --- | --- |
@@ -409,17 +409,17 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | OBJECTIONS_PREHANDLED | O06, O17, O18 |
 | EMOTIONAL_START | Familiarity with generic AI plus prompt anxiety. |
 | EMOTIONAL_END | Serious-question intent. |
-| CORE_JOB | Complete the same Golden Proof Thread by demonstrating Nemo reasoning from the accepted company context rather than a blank prompt alone. |
-| CONTENT / IDEA | Show a real accepted Nemo interaction using the same company context, corrected understanding, and bounded view. The interaction should answer or refine one consequential owner question about the same operating problem and reveal a relationship or dependency. |
-| KEY_REFRAME | “Nemo doesn’t start with a blank prompt. It starts with your organization” means context changes the starting point; it does not mean omniscience or automatic advice. |
+| CORE_JOB | Complete the same Golden Proof Thread by creating an Ask Nemo moment: demonstrate Nemo reasoning from accepted company context rather than a blank prompt alone. |
+| CONTENT / IDEA | Show the corrected company context and bounded view, then pause and ask the viewer: “What would you want to know?” After the pause, say “Ask Nemo,” and show a real accepted interaction that follows one consequential owner question through the same relationship or dependency. |
+| KEY_REFRAME | “Ask Nemo” means the business is already in the room when the question begins. Context changes the starting point; it does not mean omniscience, automatic advice, or action without authorization. |
 | PROOF_ID | P09, P11 |
 | PROOF_STATUS | AVAILABLE |
 | VISUAL_PROOF_REQUIREMENT | Real accepted screen capture from the same business context showing the context boundary, the owner’s question, the relationship/dependency trace, and the scope of the response. |
 | CLAIM_TRUTH_CLASS | RUNTIME_CAPABILITY + PRODUCT_DOCTRINE |
 | WHAT_MUST_NOT_BE_SAID | No guaranteed 90-day continuity, universal memory, professional advice, automatic diagnosis, or claim that Nemo is superior at every task. |
 | TRANSITION_LOGIC | The completed story should make the viewer imagine the questions they would bring to a context-aware Nemo experience. |
-| SUCCESS_STATE | The viewer says, “I already know what I would ask Nemo.” |
-| MENTAL_YES | “What would I ask Nemo first?” |
+| SUCCESS_STATE | The viewer says, “I already know what I would Ask Nemo.” |
+| MENTAL_YES | “What would I Ask Nemo first?” |
 
 ### BEAT-12 — Objections are decision information
 
@@ -461,7 +461,7 @@ converges at BEAT-02. These are opening variants, not five separate webinars.
 | EMOTIONAL_END | Desire and personal relevance. |
 | CORE_JOB | Invite the prospect to imagine an owner state before naming the offer. |
 | CONTENT / IDEA | Let the owner consider: What still depends on me? Where does work stop? Where do people disagree? What do our systems know that nobody connects? Why does the problem return? What should we understand before automating? What would break if we grew? What are we still not seeing? |
-| KEY_REFRAME | The value is not a prettier report; it is the ability to start serious questions from company context. |
+| KEY_REFRAME | The value is not a prettier report or generic AI access; it is the ability to see the business and Ask Nemo serious questions from company context. |
 | PROOF_ID | P09, P10, P11 |
 | PROOF_STATUS | AVAILABLE |
 | VISUAL_PROOF_REQUIREMENT | Show the accepted view/question trail from Beats 10–11 and a neutral list of example questions; do not imply guaranteed answers. |

@@ -11,7 +11,7 @@ commercial_commitment_status: GATED
 
 # Purpose
 
-This document separates what is live from what is only described in the Founding 100 marketing substrate. Its offer and post-payment sections remain implementation substrate. Its gated webinar-registration section is historical and is superseded by `14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md`.
+This document separates what is live from what is only described in the Founding 100 marketing substrate. Its offer and post-payment sections remain implementation substrate. The former registration-gated webinar model is retained only as a compact historical note and is superseded by `14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md`.
 
 The product doctrine used by the page is ratified. The founder has approved
 `$299` one-time as the early-cohort acquisition-and-learning price for the
@@ -47,6 +47,18 @@ Verified Stripe payment
 Authorized activation / Formation / delivery
 ```
 
+The converged funnel model is:
+
+```text
+TOFU / SEE
+    → QUICK OR DEEP
+    → DEEP BELIEF CONVERSION
+    → OFFER
+    → PAYMENT WHEN AUTHORIZED
+    → POST-PAYMENT
+    → PLATFORM / FORMATION HANDOFF
+```
+
 The website-owned pre-purchase and post-payment routes now exist. The external
 DM transport, media assets, Stripe destination/verification, legal routes, and
 Formation/product handoff remain separate dependencies.
@@ -67,9 +79,9 @@ value. Neither layer is an active Commercial Commitment:
 
 The customer is about to build a serious body of intelligence about the company. StrategicAI turns what it learns into useful Business Views covering work, people, systems, dependencies, bottlenecks, unknowns, and priorities.
 
-### Layer 2 — 90 days with Nemo
+### Layer 2 — 90 days to Ask Nemo
 
-The customer brings Nemo real owner questions about hiring, growth, bottlenecks, customers, systems, priorities, and decisions. Nemo is presented as working from the company context built through the portfolio.
+The customer uses Ask Nemo to bring real owner questions about hiring, growth, bottlenecks, customers, systems, priorities, and decisions. Nemo is presented as working from the company context built through the portfolio. The value is the repeated behavior of asking from accumulated context, not access to a generic chatbot.
 
 The page keeps the following boundaries visible:
 
@@ -96,7 +108,7 @@ Supporting proposition:
 
 Layer bridge:
 
-> The portfolio gives you a useful body of work about the company. Then, for 90 days, bring Nemo the real questions you are facing as an owner.
+> The portfolio gives you a useful body of work about the company. Then, for 90 days, Ask Nemo the real questions you are facing as an owner—from the context you have built.
 
 The page must not claim that the portfolio already exists for a customer who has only reached the public route, and it must not claim that onboarding is available while the current fallback remains active.
 
@@ -113,188 +125,33 @@ The page must not claim that the portfolio already exists for a customer who has
 | `/founding100` post-payment page | `EXISTS` | `YES` | Payment verification, Formation destination, Terms, Privacy remain unresolved | Keep the fallback until the production handoff is accepted |
 | Formation / onboarding | `MISSING` / not production-ready; `/login` and `/roadmap` are placeholders | `NO` | Production destination, auth, entitlement, intake, delivery capacity | Define and accept the Formation path before exposing a CTA |
 | Business Intelligence Portfolio | `PARTIAL`; proposition and architecture are specified, but portfolio generation/delivery runtime is not verified in this repo | `NO` | Shared source model, evidence access, projections, persistence, export, correction/versioning | Build the governed portfolio substrate and progressive projections |
-| 90 days with Nemo | `PARTIAL`; customer-facing narrative exists, but the exact context/retention boundary is unresolved | `NO` | Nemo availability, context scope, retention, support, question/correction workflow | Ratify the 90-day product contract and acceptance evidence |
+| 90 days to Ask Nemo | `PARTIAL`; customer-facing narrative exists, but the exact context/retention boundary is unresolved | `NO` | Nemo availability, context scope, retention, support, question/correction workflow | Ratify the 90-day product contract and acceptance evidence |
 
-# C. Historical webinar registration page specification — superseded
+# C. Current webinar role and compact historical record
 
-> **DO NOT IMPLEMENT THIS SECTION AS A REGISTRATION OR IDENTITY GATE.** The
-> governing `SEE` contract assigns `/founding100/webinar` to direct, ungated
-> 35-minute playback. This section is retained only as narrative substrate;
-> useful promise, qualification, portfolio, and Nemo language may be adapted
-> into that content route after approval.
-
-## Page contract
-
-Historical route recommendation: `/founding100/webinar`. Its current canonical
-meaning is the implemented ungated deep-content route defined in the governing
-`SEE` contract. It is not a registration page.
-
-### Objective
-
-Move a qualified owner from recognition of a painful operating moment to registration for a 35-minute webinar. The page should make the owner want to see what StrategicAI would discover in the company and imagine what they would ask Nemo if it already had company context.
-
-The page is not the sales page and should not attempt to explain every artifact or close payment.
-
-### Primary audience
-
-Owners and accountable operators of small or growing businesses who recognize one or more of these moments:
-
-- the owner is the place work goes to get unstuck;
-- work repeatedly comes back for missing information;
-- multiple systems contain pieces of the answer;
-- a customer experiences internal handoff failure;
-- the owner is the last person to learn about a problem;
-- growth or hiring pressure is exposing hidden dependencies.
-
-### Narrative hierarchy
-
-1. **Recognition:** Name one familiar business moment. Do not open with an AI feature list.
-2. **Reframe:** The problem may be that the business is not visible as a connected whole.
-3. **Promise:** In 35 minutes, show how to build a useful, correctable picture of how the company actually works.
-4. **Portfolio preview:** Show four plain-language families of Business Views.
-5. **Nemo bridge:** Explain that the portfolio is the context Nemo can work from; it is not a blank chatbot conversation.
-6. **Registration:** Ask for one action: reserve a webinar seat or register for the scheduled event.
-7. **Qualification:** State who the session is for and what it does not promise.
-
-### Recommended hero copy
-
-Eyebrow:
+The active role of `/founding100/webinar` is:
 
 ```text
-FOUNDING 100 WEBINAR · 35 MINUTES
+DIRECT UNGATED 35-MINUTE PLAYBACK
 ```
 
-Headline:
+It is a deep belief-conversion surface, not a registration page. It has no
+email gate, identity gate, registration form, or scheduled-event dependency.
+The accepted 35-minute beat sheet, Ask Nemo curiosity, Golden Thread
+continuity, and launch-state proof posture govern the route. Publication remains
+blocked until the proof and commercial gates close.
 
-```text
-What would you ask if an advisor already knew your business?
-```
-
-Supporting copy:
-
-```text
-Most AI conversations start with you explaining the company again. This short webinar shows how StrategicAI builds a working picture of the business first—so you can see what is happening, correct what is wrong, and bring Nemo better questions.
-```
-
-Primary CTA:
-
-```text
-Reserve My Seat
-```
-
-If the event is evergreen, use `Watch the Webinar` only after the delivery mode and access path are approved. Do not imply a live event when no live schedule exists.
-
-### Pain / reframe structure
-
-Use one primary pain moment per acquisition source. The registration page may show three recognition examples below the hero, but each must be concrete:
-
-- **The owner is the handoff:** Work waits for one person because the context is not visible elsewhere.
-- **The answer is everywhere:** The company has information in systems and people, but no shared picture connects it.
-- **The same problem returns:** A fix closes an incident without clarifying the dependency underneath.
-
-Reframe:
-
-> The first question is not “Which AI tool should we buy?” It is “What does the business actually depend on, and can we see it clearly enough to decide what should change?”
-
-### Webinar promise
-
-The page may promise that the webinar will show:
-
-- why an AI that starts from company context can be more useful than a blank conversation;
-- what a Business Intelligence Portfolio is for;
-- how to see work, people, systems, handoffs, pressure, unknowns, and opportunities;
-- why correction is part of building a useful picture;
-- how Nemo fits after the picture exists;
-- what the Founding 100 offer is designed to include.
-
-The page must not promise a diagnosis, guaranteed automation, guaranteed savings, professional advice, or a finished implementation.
-
-### Portfolio-value preview
-
-Show four families, not a 15-item artifact dump:
-
-1. **Understand the business** — Executive Brief and Current-State Business Profile.
-2. **See how it works** — Operating Model, People + Responsibility, Systems + Information, and relevant handoffs.
-3. **Find pressure** — Bottlenecks, owner dependence, fragility, contradictions, and unknowns.
-4. **Decide what deserves action** — Opportunities, Business Questions, priorities, and a 90-day improvement agenda.
-
-Use language such as:
-
-> The exact views depend on what we discover about your business.
-
-### Advisor-value preview
-
-Use one short section:
-
-```text
-Then comes Nemo.
-
-For 90 days, bring Nemo the real questions you are facing as an owner: hiring, growth, customers, bottlenecks, systems, priorities, and decisions. Nemo works from the company context you build with StrategicAI.
-```
-
-Boundary line:
-
-> Nemo is a business-aware thinking partner inside the approved experience—not a replacement for accountable leadership or professional advice.
-
-### Qualification language
-
-The session is for owners and operators who want to understand how the business actually works before deciding what to automate, change, or build.
-
-It is not a promise of:
-
-- custom software;
-- custom integrations;
-- implementation;
-- a fixed set of views for every company;
-- guaranteed diagnosis or business outcomes.
-
-### Required analytics
-
-Use the existing analytics helper after the event names are approved:
-
-- `founding100_webinar_page_view`;
-- `founding100_webinar_registration_started`;
-- `founding100_webinar_registration_completed`;
-- `founding100_webinar_cta_clicked`;
-- `founding100_webinar_qualification_rejected`;
-- `founding100_webinar_source_attributed`.
-
-Required payloads: source, medium, campaign, content, clip ID where applicable, webinar mode, scheduled event ID where applicable, and consent state. Do not persist customer data in a new parallel store.
-
-### Required routes and integrations
-
-Before implementation, resolve:
-
-- the canonical route and canonical URL;
-- live versus evergreen webinar mode;
-- registration provider and form schema;
-- confirmation page or confirmation email;
-- reminder and attendance sequence;
-- CRM or approved lead destination;
-- UTM and clip-level attribution;
-- consent and privacy language;
-- webinar platform and join/access URL;
-- failure state if registration delivery fails.
-
-### Mobile behavior
-
-- Put headline, webinar duration, promise, and registration CTA in the first viewport.
-- Keep the form short; request only approved fields.
-- Use one-column sections and no dense artifact tables.
-- Keep the four portfolio families readable without hover.
-- Make the CTA at least 44px tall with visible focus.
-- Preserve qualification language adjacent to the CTA on mobile.
-
-### Release dependencies
-
-- G-01 commercial authority;
-- G-02 funnel authority;
-- G-03 Nemo naming authority;
-- G-04 claim review;
-- G-05 tracking/privacy;
-- G-06 channel readiness;
-- G-08 advisor narrative authority;
-- webinar production and acceptance receipt.
+Historical note: a registration-gated webinar architecture was previously
+considered. It is superseded by
+`14_COMMENT_SEE_FUNNEL_AND_MESSAGE_CARD_CONTRACT.md`. Its former “Reserve My Seat”
+CTA, registration provider/form, confirmation and reminder sequence,
+webinar access URL, consent state, scheduled event ID, and registration
+analytics are historical record only—not current implementation instructions.
+Useful historical promise or qualification language may be retained only when
+compatible with the direct-playback route. The former “What would you ask if an
+advisor already knew your business?” framing is not the current dominant Nemo
+metaphor; translate it to the accepted Ask Nemo/context-rich AI language where
+useful.
 
 # D. Sales / offer page specification
 
@@ -308,7 +165,7 @@ commercial/legal release inputs exist.
 
 ### Objective
 
-Convert a webinar attendee or qualified referral into a clear `$299` one-time purchase decision. The page must explain the independent value of the portfolio and the additional value of 90 days with Nemo without implying that every adaptive view, integration, or implementation is included.
+Convert a webinar attendee or qualified referral into a clear `$299` one-time purchase decision. The page must explain the independent value of the portfolio and the additional value of 90 days to Ask Nemo without implying that every adaptive view, integration, or implementation is included.
 
 ### Offer name and price
 
@@ -374,7 +231,7 @@ Build a serious body of intelligence about your company.
 Supporting copy:
 
 ```text
-StrategicAI builds a working understanding of your business and turns it into a Business Intelligence Portfolio you can inspect, correct, and use. Then you get 90 days with Nemo working from that company context.
+StrategicAI builds a working understanding of your business and turns it into a Business Intelligence Portfolio you can inspect, correct, and use. Then you get the authorized 90-day experience to Ask Nemo the questions you actually care about, from the company context you have built.
 ```
 
 Primary CTA:
@@ -400,9 +257,9 @@ Position as a substantial, inspectable body of work built from the customer’s 
 - what do we still not know;
 - what deserves attention next.
 
-#### Layer 2 — 90 Days with Nemo
+#### Layer 2 — 90 Days to Ask Nemo
 
-Position as a bounded period in which the owner brings real business questions to Nemo against the company context created through Formation and portfolio refinement.
+Position as a bounded period in which the owner can Ask Nemo real business questions against the company context created through Formation and portfolio refinement.
 
 Examples: hiring, growth, customers, bottlenecks, systems, priorities, decisions, and unknowns.
 
@@ -438,12 +295,19 @@ Customer-facing boundary:
 
 > The core questions stay consistent. The exact views depend on what we discover about your business.
 
+#### Executive Brief classification
+
+Executive Brief remains a proposed portfolio artifact within the guaranteed-core
+discussion. It is not StrategicAI’s public category, the current homepage
+front door, or the primary Founding 100 acquisition CTA. Any inclusion in the
+commercial contract still requires separate approval.
+
 ### Who it is for
 
 - an owner or accountable operator who wants a clearer picture before choosing an intervention;
 - a business where knowledge, work, systems, and ownership are distributed across people and tools;
 - an owner willing to correct what StrategicAI gets wrong;
-- an owner who has real questions to bring during the 90-day period.
+- an owner who has real questions to Ask Nemo during the 90-day period.
 
 ### Who it is not for
 
@@ -474,11 +338,11 @@ Also state:
 
 **What do I receive?**
 
-You receive a Business Intelligence Portfolio built around your company, with a core set of views and additional views where the business supports them. You also receive the approved 90-day Nemo experience.
+You receive a Business Intelligence Portfolio built around your company, with a core set of views and additional views where the business supports them. You also receive the approved 90-day Ask Nemo experience.
 
 **Is this a chatbot subscription?**
 
-No. StrategicAI first builds an understanding of the business. Nemo is how you work with that understanding.
+No. StrategicAI first builds an understanding of the business. Ask Nemo is how you work with that understanding.
 
 **Do I get every Business View listed?**
 
@@ -494,7 +358,7 @@ Not automatically. Those require separate scope and approval.
 
 **What happens after 90 days?**
 
-You review what the portfolio and Nemo experience helped you understand, then decide whether to continue under the available product or engagement path.
+You review what the portfolio and Ask Nemo experience helped you understand, then decide whether to continue under the available product or engagement path.
 
 **Is the portfolio a diagnosis or implementation plan?**
 
@@ -521,8 +385,8 @@ Never emit `payment_completed` from a button click alone.
   purchase-readiness engine: company context and a visible picture are more
   useful than starting from zero, subject to the evidence and runtime boundary.
 - The offer page completes the purchase decision after that belief work: the
-  prospect can evaluate the proposed Portfolio plus the proposed 90-day Nemo
-  layer against an authorized scope, terms, and risk boundary.
+  prospect can evaluate the proposed Portfolio plus the proposed 90-day Ask
+  Nemo layer against an authorized scope, terms, and risk boundary.
 - The offer page is not expected to perform the entire sale from a cold start,
   and its decision CTA remains inactive while commercial authority is open.
 - Stripe owns payment completion.

@@ -18,20 +18,23 @@ depends_on:
 
 ## Purpose
 
-The homepage is the company-level entry surface. It should make the category
-intelligible, let an owner see StrategicAI perform a bounded version of the
-mechanism, and create a coherent handoff into the Founding 100 path.
+The homepage is the company-level entry surface. It should make an owner
+recognize the business they are living inside, let them see StrategicAI perform
+a bounded version of the mechanism, and create a coherent handoff into the
+Founding 100 path.
 
 The homepage is not the 35-minute conversion presentation. It compresses the
 belief movement and the Golden Proof Thread into a shorter first encounter:
 
 ```text
-PAIN
+HUMAN RECOGNITION
+    -> THE BUSINESS IS MOVING / THE OWNER IS RECONSTRUCTING THE STORY
     -> REFRAME
-    -> 30–60 SECOND VISUAL PROOF
-    -> CATEGORY
-    -> BUSINESS VIEWS
-    -> NEMO
+    -> GOLDEN THREAD
+    -> OPERATIONAL REALITY / OPERATIONAL INTELLIGENCE
+    -> BUSINESS VIEWS — WHAT CAN I SEE?
+    -> ASK NEMO — WHAT CAN I ASK?
+    -> FOUNDER / WHY THIS EXISTS
     -> FOUNDING 100
 ```
 
@@ -56,24 +59,22 @@ replaced or verified with the accepted Golden Proof Thread before public
 release. Customer outcomes, testimonials, case studies, ROI, and public
 artifacts still require separate evidence and permission.
 
-## Audit of the existing homepage
+## Audit of the humanized homepage
 
 The production `/` route is `AlternateHomePage`, rendered inside the existing
 `Shell` with the shared `Navbar` and `Footer`. The older `HomePage` component is
 not the production route.
 
-| Existing surface | Current implementation | Doctrine / conversion finding | Required correction |
+| Surface | Current implementation | Doctrine / conversion finding | Authority position |
 | --- | --- | --- | --- |
-| Hero | “Change with clarity, control, and proof.” with a free Executive Brief CTA | Safe but too broad and still framed as governed change rather than the current category | Lead with how the business actually works and the Operational Intelligence proposition |
-| Problem | Risk beneath change, fragmented context, and disconnected execution | Recognizable, but does not name the highest-conviction acquisition tension: Automation Without Understanding | Start with recurring operating pain and the risk of automating a guess |
-| Proof | Sample Executive Brief image and Mission Control screenshot | A sample modal and a separate legacy product image are not a compressed proof thread | Add a 30–60 second evidence → picture → correction → question sequence using one lineage |
-| Product explanation | “Digital Twin,” Executive Brief, Diagnostic, Roadmap, Mission Control | “Digital Twin” is not the current top-level category; Roadmap / Mission Control lead the visitor downstream too early | Use Operational Reality → Operational Intelligence → Business Views → Nemo → warranted action |
-| Journey | Executive Brief → Diagnostic → Roadmap → Execution | This is a delivery journey, not the current homepage acquisition argument | Move the homepage through pain, reframe, proof, category, views, Nemo, and cohort |
-| Business Views | Not named | The visible expression of Operational Intelligence is missing | Explain views as bounded, inspectable projections of the company picture |
-| Nemo | Not named | The intended interaction layer is absent | Show Nemo as reasoning from available company context, not as a generic chatbot or advisor |
-| CTA | “Build My Executive Brief” repeated | Useful existing entry point, but it is not the only next step and does not connect to Founding 100 | Keep Executive Brief as a low-friction path; add proof and Founding 100 paths with honest boundaries |
-| Audience | Accountable leaders broadly | Good starting audience, but the page does not speak enough to the owner’s recurring operating experience | Use owner language: work, people, systems, handoffs, dependencies, bottlenecks, unknowns, and priorities |
-| Claims | Some copy implies downstream delivery and outcome logic | Existing copy risks collapsing architecture, current runtime, and delivery into one promise | Use direct doctrine language; use intended-experience language where runtime or commercial acceptance remains open |
+| Hero | “Everyone has a piece. You’re still the one putting it together.” | Human recognition is the front door; proof is the primary next step | Preserve the humanized headline, proof CTA, and subordinate Founding 100 path |
+| Recognition | Concrete owner moments around handoffs, interruptions, delays, and unwritten workarounds | People should recognize their own week before seeing product terminology | Keep PEOPLE FIRST / PRODUCT EXPLANATION SECOND |
+| Reframe | Understanding precedes intervention; “Automation Without Understanding” is category contrast | The problem is not a lack of activity; it is an invisible operating picture | Keep actions broader than automation: clarify, fix, notify, investigate, automate when warranted, or leave alone |
+| Proof | Four-part Golden Proof Thread with insertion-ready visual frames | One business/problem/evidence lineage makes the mechanism observable | Preserve `AWAITING_REAL_PROOF` until accepted launch-state capture is cleared |
+| Category | Operational Reality → Operational Intelligence | The category should arrive after recognition and mechanism proof | Preserve the category and keep definitions human-readable |
+| Business Views | Question-oriented inspection surfaces | Views are how the owner sees bounded parts of the picture | Use “What are you trying to understand right now?” rather than a static dashboard catalog |
+| Ask Nemo | Active “Ask Nemo” behavior after the picture is available | The public job is experiential curiosity, not an abstract feature label | Preserve Ask Nemo as behavior; do not make Nemo the product or imply omniscience |
+| Founder / close | Founder bridge followed by Founding 100 exchange | Human origin and cohort rationale complete the recognition-to-action movement | Preserve authentic-media-only posture and the current authorized commercial boundaries |
 
 ## Canonical homepage proposition
 
@@ -96,14 +97,28 @@ The homepage must preserve this hierarchy:
 HOW THE BUSINESS ACTUALLY WORKS
     -> OPERATIONAL REALITY
     -> OPERATIONAL INTELLIGENCE
-    -> BUSINESS VIEWS
-    -> NEMO
+    -> BUSINESS VIEWS / SEE
+    -> ASK NEMO / ASK
     -> CAPABILITIES / AUTOMATION / EXECUTION WHEN WARRANTED
+```
+
+The public value architecture is:
+
+```text
+HOW THE BUSINESS ACTUALLY WORKS
+    ↓
+OPERATIONAL REALITY
+    ↓
+OPERATIONAL INTELLIGENCE
+    ├── BUSINESS VIEWS → SEE
+    └── ASK NEMO → ASK
+    ↓
+ACTION / CAPABILITY WHEN WARRANTED
 ```
 
 ## Exact copy architecture
 
-### 1. Hero — pain has an object
+### 1. Hero — recognition has an owner
 
 **Role:** Recognition and immediate category entry.
 
@@ -113,13 +128,15 @@ HOW THE BUSINESS ACTUALLY WORKS
 
 **Headline:**
 
-> **See how your business actually works.**
+> **Everyone has a piece.**
+>
+> **You’re still the one putting it together.**
 
 **Body:**
 
-> StrategicAI helps you form a credible, inspectable picture of the people,
-> work, systems, decisions, dependencies, and pressure shaping the business—
-> then turn that picture into Operational Intelligence.
+> The answer lives across your people, systems, files, meetings, and memory.
+> StrategicAI turns those pieces into a picture of how the business actually
+> works—one the owner can inspect, correct, and use.
 
 **Primary CTA:**
 
@@ -129,48 +146,55 @@ Destination: `#proof-thread`.
 
 **Secondary CTA:**
 
-> **Build My Executive Brief**
+> **Explore Founding 100**
 
-Destination: existing production signup with source
-`homepage_hero_executive_brief`.
+Destination: `/founding100/offer` with the current Founding 100 attribution
+context.
 
 **Support line:**
 
-> Start with the evidence already inside your organization. No purchase is
-> required to begin the Executive Brief.
+> Start with the evidence already inside the organization. See the proof before
+> deciding what deserves your attention.
 
 **Hero boundary:** Do not promise complete understanding, automatic diagnosis,
-guaranteed improvement, or an active Founding 100 purchase.
+guaranteed improvement, or an active purchase. The primary CTA remains
+proof-oriented: **See the proof** → `#proof-thread`.
 
-### 2. Pain — the business is moving without a shared explanation
+### 2. Recognition — the business is moving and the owner is reconstructing the story
 
 **Role:** Recognition → tension.
 
 **Section label:**
 
-> THE OPERATING PROBLEM
+> YOU KNOW THESE MOMENTS
 
 **Headline:**
 
-> **The work is moving. The explanation is missing.**
+> **The business is moving.**
+>
+> **You’re still reconstructing the story.**
 
 **Body:**
 
-> The same problems keep returning in different forms. One person sees the
-> handoff; another sees the delay. The system holds a fragment. The owner gets
-> the escalation. By the time the pattern is visible, the business is already
-> working around it.
+> A customer asks what happened. Sales has one answer. Operations has another.
+> A system has part of the truth. Someone remembers the exception.
 
 **Recognition points:**
 
-- Everything keeps coming back to the owner.
-- Handoffs break between people, tools, or decisions.
-- Priorities change before ownership and capacity catch up.
-- Important context is spread across systems, files, conversations, and memory.
+- Three people need you to answer: “What happens next?”
+- Sales says it was handed off; Operations says they never got what they needed.
+- The problem was visible Tuesday; you found out Friday.
+- One person knows why the workaround exists; nobody wrote it down.
 
 **Closing line:**
 
-> This is not a request for more activity. It is a request for a better picture.
+> These aren’t random annoyances. They’re clues about how the business actually
+> works.
+
+Keep the governing rule: **PEOPLE FIRST. PRODUCT EXPLANATION SECOND.**
+
+The recognition section should make the owner think, “That is my company,”
+before introducing Operational Reality, Business Views, or Nemo terminology.
 
 ### 3. Reframe — understanding precedes intervention
 
@@ -182,20 +206,30 @@ guaranteed improvement, or an active Founding 100 purchase.
 
 **Headline:**
 
-> **Before you automate the work, understand the system producing it.**
+> **Your business already has an operating model.**
+>
+> **It just may not be visible.**
 
 **Body:**
 
-> If an AI automation system does not understand how your company actually
-> works, it is automating a guess. Automation may still be the right move—but
-> only after the evidence shows what the work is, where it depends on something
-> else, and what the intervention is supposed to change.
+> The real business lives in the relationships between people, work, systems,
+> decisions, exceptions, and history. Before you add another tool—or automate
+> another step—you need to see that picture clearly enough to challenge it.
 
 **Callout:**
 
 > **Automation Without Understanding**
 
-> Start with the picture. Choose the intervention after.
+> Start with the picture. Then decide what deserves action.
+
+The action set remains broader than automation:
+
+- clarify ownership;
+- fix a handoff;
+- investigate;
+- notify someone;
+- automate when the picture supports it;
+- leave it alone.
 
 **Boundary:** This is a category contrast, not a claim about every named
 competitor or a rejection of automation.
@@ -226,15 +260,15 @@ same business / same operating problem / same evidence lineage
     -> a bounded picture forms
     -> disagreement and one unknown remain visible
     -> the owner corrects the picture
-    -> a bounded Business View makes the relationship visible
-    -> Nemo follows one consequential question from that context
+    -> a bounded Business View makes the relationship visible / SEE
+    -> Ask Nemo follows one consequential question from that context / ASK
 ```
 
 **Proof controls:**
 
 - `Start the 45-second proof`
 - `Pause proof`
-- Four direct step controls: `Evidence`, `Picture`, `Correction`, `Question`
+- Four direct step controls: `Evidence`, `Picture`, `Correction`, `Ask Nemo`
 
 **Proof step copy:**
 
@@ -246,13 +280,17 @@ same business / same operating problem / same evidence lineage
    pretending the unknown is known.
 3. **Correction — The owner can say, “No. That’s not how it works.”** The
    accepted picture changes when the owner corrects a relationship or boundary.
-4. **Question — The next question follows the relationship.** Nemo is intended
-   to help the owner reason from the accepted company context rather than start
-   from a blank prompt.
+4. **Ask Nemo — What you can ask next.** Business Views make a bounded part of
+   the picture visible. Ask Nemo lets the owner bring a consequential question
+   to the accepted company context rather than start from a blank prompt.
 
 **Proof close:**
 
 > The value is not a prettier dashboard. It is a more useful place to begin.
+
+The Golden Thread should culminate in the experiential question:
+
+> **What would you Ask Nemo once the business is already in the room?**
 
 **Release requirement:** The final public asset must be a real accepted capture
 or a clearly labeled controlled demonstration. Legacy images may illustrate the
@@ -282,8 +320,8 @@ of the complete launch-state thread.
 
 - **Operational Reality** — the connected reality already present in the company.
 - **Operational Intelligence** — useful understanding formed from that reality.
-- **Business Views** — bounded ways to inspect selected relationships and conditions.
-- **Nemo** — the intended interaction layer for reasoning from available company context.
+- **Business Views** — bounded ways to inspect selected relationships and conditions; the public question is, “What can I see?”
+- **Ask Nemo** — the behavior of bringing a consequential question to the available company context; the public question is, “What can I ask?”
 - **Capabilities** — automation, change, ownership, alerts, investigation, or no change when warranted.
 
 **Close:**
@@ -300,47 +338,52 @@ of the complete launch-state thread.
 
 **Headline:**
 
-> **See the part of the business you need to understand next.**
+> **What are you trying to understand right now?**
 
 **Body:**
 
-> Business Views are bounded, inspectable projections of the company picture.
-They can make selected relationships, dependencies, bottlenecks, unknowns, or
-priorities visible without pretending to own the whole truth.
+> Business Views are question-oriented, bounded, inspectable projections of the
+> company picture. They make selected relationships, dependencies, bottlenecks,
+> unknowns, or priorities visible without pretending to own the whole truth.
 
 **View examples:**
 
-- How work moves
-- Who owns what
-- Where information lives or goes missing
-- Where handoffs break
-- What depends too heavily on the owner
-- What is still unknown or disputed
-- What deserves attention next
+- What still depends on me?
+- Where does work get stuck?
+- Who needs what from whom?
+- What do we still not know?
+- What deserves attention next?
 
 **Boundary line:**
 
 > The starting questions stay consistent. The exact views depend on what the
-> evidence supports.
+> evidence supports; this is not a static dashboard catalog.
 
-### 7. Nemo — reason from company context
+### 7. Ask Nemo — experiential curiosity from company context
 
-**Role:** Explain the interaction layer without collapsing the product into a chatbot.
+**Role:** Let the owner imagine the first consequential question they would ask
+once the business is already in the room. The architecture remains an
+interaction layer, but the public job is experiential curiosity.
 
 **Section label:**
 
-> NEMO
+> ASK NEMO
 
 **Headline:**
 
-> **Nemo gives the owner somewhere real to start.**
+> **What would you Ask Nemo first?**
 
 **Body:**
 
-> Once the company picture is available, Nemo is intended to help you inspect
-> the questions that matter: where work is waiting, what depends on one person,
-> which handoff is fragile, what remains unknown, and what should be looked at
-> next.
+> Once the company picture is available, Ask Nemo gives you somewhere real to
+> start. Bring the question that matters: where work is waiting, what depends
+> on one person, which handoff is fragile, what remains unknown, and what should
+> be looked at next.
+
+**Curiosity line:**
+
+> How much better is AI when you do not spend half the conversation teaching it
+> what world it is operating inside? **Ask Nemo.**
 
 **Question examples:**
 
@@ -350,11 +393,35 @@ priorities visible without pretending to own the whole truth.
 
 **Boundary line:**
 
-> Nemo is not omniscient, automatically authoritative, professionally licensed,
-> or a replacement for accountable leadership. It reasons from the company
-> context that is actually available in the named experience.
+> Ask Nemo is not omniscient, automatically authoritative, professionally
+> licensed, or a replacement for accountable leadership. Nemo reasons from the
+> company context that is actually available in the named experience.
 
-### 8. Founding 100 — make the cohort rationale legible
+### 8. Founder — why I’m building this
+
+**Role:** Create the human bridge between the operating problem and the cohort
+without turning the homepage into a biography.
+
+**Section label:**
+
+> WHY I’M BUILDING THIS
+
+**Bridge:**
+
+> Everybody had a piece of the answer. The owner was still the one putting it
+> together. Then AI made it incredibly easy to automate pieces of a company—and
+> I became convinced we were starting in the middle.
+
+> StrategicAI is my attempt to make how the business actually works visible
+> before we decide what software, people, process, or automation should do next.
+
+**Media boundary:**
+
+Use authentic founder media only when available and approved. No stock founder
+imagery. No generated founder imagery. A real founder note, portrait, or short
+founder video may support this section; it must not become fabricated proof.
+
+### 9. Founding 100 — make the cohort rationale legible
 
 **Role:** Handoff into the early-cohort experience.
 
@@ -364,16 +431,16 @@ priorities visible without pretending to own the whole truth.
 
 **Headline:**
 
-> **Build the intelligence before you decide what to automate.**
+> **If everyone has a piece and you’re still the one putting it together, start
+> here.**
 
 **Body:**
 
-> The Founding 100 are the first businesses helping us build and harden this
-> experience with real use. The exchange is intentionally practical: you bring
-> your company, your evidence, your corrections, and your hard questions; we
-> build a serious body of intelligence about how the business actually works,
-> make useful parts visible through Business Views, and give the authorized
-> cohort experience a real context to work from.
+> We’re opening StrategicAI to the first 100 businesses at `$299`. Bring the
+> real business: messy handoffs, unwritten rules, conflicting perspectives, and
+> hard questions. We’ll build the picture with you, you correct what we get
+> wrong, and during the authorized Founding 100 experience you can Ask Nemo the
+> questions you care about from the context you’ve built.
 
 **Value bridge:**
 
@@ -383,21 +450,33 @@ priorities visible without pretending to own the whole truth.
 
 **CTA:**
 
-> **Review the Founding 100**
+> **Explore Founding 100**
 
 Destination: `/founding100/offer` with the current attribution context.
 
 **Secondary CTA:**
 
-> **Start with My Executive Brief**
+> **See how it works**
 
-Destination: existing production signup with source
-`homepage_founding100_executive_brief`.
+Destination: `/how-it-works`.
 
 **Commercial boundary:** The homepage must not imply an active purchase, price,
 guaranteed Business View bundle, verified 90-day Nemo continuity, outcome,
 scarcity, or public proof permission while the applicable commercial and release
 gates remain open. The offer route itself owns the current checkout state.
+
+## Executive Brief residue classification
+
+- **Historical:** the pre-humanization homepage architecture used Executive Brief
+  as a primary entry and CTA; that architecture is retired.
+- **Portfolio artifact:** Executive Brief may remain as one proposed artifact in
+  the Business Intelligence Portfolio where the offer specification explicitly
+  classifies it that way.
+- **Active acquisition CTA:** none on the current homepage authority. The live
+  primary path is proof → Founding 100; Executive Brief is not the public front
+  door.
+- **Stale removed:** `Build My Executive Brief`, `Start with My Executive
+  Brief`, and their homepage CTA source contracts are not current homepage copy.
 
 ## Visual system preservation
 
@@ -432,21 +511,20 @@ engagement alone:
 | `homepage_business_view_select` | `view_id` |
 | `homepage_nemo_question_select` | `question_id` |
 | `founding100_cta_click` | `source`, `destination`, `commercial_branch_state` |
-| `executive_brief_cta_click` | existing source attribution |
 
 Readouts should separate owner comprehension and continuation from competitor
 reaction. A click does not prove category adoption or runtime capability.
 
 ## Release checklist
 
-- [x] Homepage order is pain → reframe → proof → category → Business Views → Nemo → Founding 100.
+- [x] Homepage order is human recognition → reframe → Golden Thread → category → Business Views / SEE → Ask Nemo / ASK → founder → Founding 100.
 - [x] Existing dark/cyan visual system and shared shell are preserved.
 - [x] “An AI that knows your business” is not the headline or primary promise.
 - [x] Automation Without Understanding is direct but category-focused and not anti-automation.
 - [x] Golden Proof Thread uses one declared business/problem/evidence lineage.
 - [x] Homepage proof controls and insertion-ready placeholder images are live.
-- [x] Business Views and Nemo are visible before Founding 100.
-- [x] Existing Executive Brief path remains available as a lower-friction entry point.
+- [x] Business Views and Ask Nemo are visible before the founder and Founding 100 close.
+- [x] Executive Brief remains classified as a possible portfolio artifact, not the homepage product or acquisition CTA.
 - [ ] Accepted launch-state proof receipt and final capture replace the four visible placeholders.
 - [ ] G-04, G-07, G-08, G-09, legal review, commercial acceptance, and applicable
       product/runtime receipts are closed before final publication.

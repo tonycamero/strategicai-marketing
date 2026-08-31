@@ -74,6 +74,50 @@ be expressed from neutral contrast through direct category attack under the
 existing C0–C4 review rules. The target is a category premise, sequence,
 behavior, or buying assumption—not a named person or company.
 
+## Context-rich AI and Ask Nemo overlay
+
+The existing hierarchy produces two linked buyer curiosities rather than a
+second category:
+
+```text
+SEE THE BUSINESS
+    What does my business actually look like?
+    What will I see that I cannot clearly see today?
+
+REASON FROM THE BUSINESS
+    What could I ask if the AI already had this context?
+    What would that change about how I think, decide, or operate?
+```
+
+The first curiosity is carried by Operational Reality, Operational
+Intelligence, and Business Views. The second is carried by Nemo as an
+interaction layer. The preferred market behavior is **Ask Nemo**: when a
+problem keeps returning, something changes, or a dependency matters, the owner
+can bring the consequential question to Nemo from the company context already
+available in the named experience.
+
+Use this as active language at the right moment:
+
+> **How much better is AI when you do not spend half the conversation teaching
+> it what world it is operating inside? Ask Nemo.**
+
+This is curiosity language, not a quantified performance claim. Do not say
+Nemo is smarter, better at every task, always knows the answer, or acts without
+authorization. The architecture remains:
+
+```text
+StrategicAI → Operational Reality → Operational Intelligence
+    → Business Views / SEE
+    → Nemo / ASK
+    → warranted action
+```
+
+No new belief IDs are required. Deepen B06, B10, and B13: useful intelligence
+is more than stored information; relevant context changes the starting point
+for a consequential question; and the Founding 100 experience is valuable
+because the owner can see the business and discover what they want to Ask Nemo
+from it.
+
 ## Adjudication outcome
 
 The conversion sequence below is the governing design hypothesis for the
@@ -120,7 +164,7 @@ the implementation status that this architecture assumes.
 | `/founding100` post-payment handoff | EXISTS | YES | Payment verification, Formation destination, Terms, Privacy, and support handoff remain unresolved | Keep certainty and expectation-setting copy truthful; connect only to an authorized activation receipt |
 | Formation / onboarding production destination | MISSING | NO | Formation concept/runtime work exists in authority records, but the production destination and runtime handoff are not production-ready | Product and delivery owners must accept the Formation path and evidence boundary |
 | Business Intelligence Portfolio | PARTIAL | NO | Portfolio architecture is draft/proposed; guaranteed core and first vertical are not ratified or runtime-accepted | Ratify the guaranteed core, vertical, delivery process, and acceptance evidence |
-| 90 days with Nemo | PARTIAL | NO | Context continuity, support, entitlement, capacity, and delivery are not commercially/runtime accepted | Define and accept the 90-day experience before using it as a promise |
+| 90 days to Ask Nemo | PARTIAL | NO | Context continuity, support, entitlement, capacity, and delivery are not commercially/runtime accepted | Define and accept the 90-day experience before using it as a promise |
 
 ## A. Prospect starting state
 
