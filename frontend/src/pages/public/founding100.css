@@ -42,6 +42,7 @@
 .founding100-section,
 .founding100-next,
 .founding100-correction,
+.founding100-founder,
 .founding100-support,
 .founding100-footer {
   width: min(1120px, calc(100% - 48px));
@@ -126,6 +127,7 @@
 .founding100-section-heading h2,
 .founding100-views-copy h2,
 .founding100-correction h2,
+.founding100-founder h2,
 .founding100-boundary h2,
 .founding100-support h2 {
   margin: 0;
@@ -276,10 +278,11 @@
 .founding100-view-item svg { color: var(--f100-aqua-deep); }
 
 .founding100-days { padding-bottom: 120px; }
-.founding100-stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 55px; }
+.founding100-stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 55px; }
 .founding100-stage { padding: 24px 24px 27px; border-top: 2px solid var(--f100-aqua-deep); background: rgba(14, 31, 39, 0.62); }
 .founding100-stage-2 { border-color: var(--f100-warm); }
 .founding100-stage-3 { border-color: #b3c49b; }
+.founding100-stage-4 { border-color: var(--f100-aqua); }
 .founding100-stage-number { color: var(--f100-soft); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; }
 .founding100-stage-rule { width: 100%; height: 1px; margin: 46px 0 22px; background: var(--f100-line); }
 .founding100-stage h3 { margin: 0; color: var(--f100-text); font-size: 2.05rem; font-weight: 600; letter-spacing: -0.05em; text-transform: uppercase; }
@@ -292,6 +295,11 @@
 .founding100-correction h2 { font-size: clamp(2.3rem, 4vw, 4rem); }
 .founding100-correction > div:last-child > p:not(.founding100-kicker) { max-width: 660px; margin: 21px 0 0; color: var(--f100-muted); font-size: 1.03rem; line-height: 1.75; }
 .founding100-correction strong { color: var(--f100-text); font-weight: 600; }
+
+.founding100-founder { padding: 76px 56px; border-top: 1px solid rgba(169, 205, 205, 0.13); border-bottom: 1px solid rgba(169, 205, 205, 0.13); }
+.founding100-founder h2 { max-width: 760px; font-size: clamp(2.3rem, 4vw, 4rem); }
+.founding100-founder > p:not(.founding100-kicker) { max-width: 670px; margin: 21px 0 0; color: var(--f100-muted); font-size: 1.03rem; line-height: 1.75; }
+.founding100-founder strong { display: block; margin-top: 21px; color: var(--f100-text); font-weight: 600; }
 
 .founding100-boundary { display: grid; grid-template-columns: 1fr 0.78fr; gap: 90px; align-items: center; }
 .founding100-boundary-note { padding: 26px; border-left: 2px solid var(--f100-warm); background: rgba(52, 49, 37, 0.35); }
@@ -317,6 +325,7 @@
   .founding100-next-grid { grid-template-columns: 1fr; gap: 45px; }
   .founding100-status-card { max-width: 520px; }
   .founding100-building-grid { grid-template-columns: repeat(2, 1fr); }
+  .founding100-stage-grid { grid-template-columns: repeat(2, 1fr); }
   .founding100-portfolio-bridge { grid-template-columns: 1fr; }
   .founding100-views { grid-template-columns: 1fr; gap: 50px; }
   .founding100-boundary { grid-template-columns: 1fr; gap: 40px; }
@@ -328,6 +337,7 @@
   .founding100-section,
   .founding100-next,
   .founding100-correction,
+  .founding100-founder,
   .founding100-support,
   .founding100-footer { width: min(100% - 36px, 1120px); }
   .founding100-topbar { align-items: flex-start; gap: 15px; padding: 21px 0; }
@@ -348,6 +358,7 @@
   .founding100-section-heading h2,
   .founding100-views-copy h2,
   .founding100-correction h2,
+  .founding100-founder h2,
   .founding100-boundary h2,
   .founding100-support h2 { font-size: 2.7rem; }
   .founding100-section-heading > p:last-child,
@@ -372,6 +383,8 @@
   .founding100-questions span { font-size: 0.74rem; }
   .founding100-correction { grid-template-columns: 1fr; gap: 22px; padding: 30px 23px; border-radius: 20px; }
   .founding100-correction > div:last-child > p:not(.founding100-kicker) { font-size: 0.94rem; }
+  .founding100-founder { padding: 44px 23px; }
+  .founding100-founder > p:not(.founding100-kicker) { font-size: 0.94rem; }
   .founding100-boundary-note { padding: 21px; }
   .founding100-support { padding: 76px 0 88px; }
   .founding100-footer { grid-template-columns: 1fr auto; gap: 12px; }

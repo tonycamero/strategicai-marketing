@@ -27,19 +27,19 @@ const seeReasons = [
 const contentCopy = {
   short: {
     context: "short version",
-    title: "StrategicAI Founding 100 | The 5-Minute Version",
-    description: "The five-minute StrategicAI belief-shift for business owners. No signup and no email gate.",
+    title: "StrategicAI Founding 100 | See How the Business Actually Works",
+    description: "See why the same business problems keep returning—and what changes when you can see how the business actually works.",
     path: "/founding100/quick",
-    heading: "You asked for the short version. Here it is.",
-    lede: "About 5 minutes. No signup. No detour.",
+    heading: "If the same problems keep coming back, they may not be separate problems.",
+    lede: "Five minutes. No signup. Here’s the core idea behind seeing how the business actually works before deciding what should change.",
   },
   deep: {
     context: "35-minute walkthrough",
-    title: "StrategicAI Founding 100 | The Full Walkthrough",
-    description: "The full 35-minute StrategicAI walkthrough for owners who want to understand how their business actually works.",
+    title: "StrategicAI Founding 100 | The Full Business Picture",
+    description: "See whether the problems that keep returning are signs that nobody can see how the business works as a whole.",
     path: "/founding100/webinar",
-    heading: "You already know the moment. This is the full walkthrough.",
-    lede: "About 35 minutes. No signup. Start with how the business actually works.",
+    heading: "If everyone has a piece and you’re still the one putting it together, this is the full explanation.",
+    lede: "By the end, you’ll know whether the problems that keep returning are really separate—or signs that nobody can see how the business works as a whole. About 35 minutes. No signup.",
   },
 } as const;
 
@@ -117,7 +117,7 @@ export default function Founding100Content({ kind }: Founding100ContentProps) {
               to={deepPath}
               onClick={() => trackEvent("short_to_deep", { ...attribution, route: copy.path })}
             >
-              Watch the full 35 min <ArrowRight size={17} aria-hidden="true" />
+              Watch the full 35-minute walkthrough <ArrowRight size={17} aria-hidden="true" />
             </Link>
           ) : null}
           <Link
@@ -125,12 +125,12 @@ export default function Founding100Content({ kind }: Founding100ContentProps) {
             to={offerPath}
             onClick={() => trackEvent("content_to_offer", { ...attribution, content_path: kind, route: copy.path })}
           >
-            See Founding 100 <ArrowRight size={17} aria-hidden="true" />
+            Explore Founding 100 <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
 
         <p className="f100-content-principle">
-          Understand how the business actually works. Turn that Operational Reality into Operational Intelligence. Give Nemo somewhere real to start.
+          Start with the business you actually have. See what the picture makes visible, then decide what deserves attention.
         </p>
       </main>
     </Founding100FunnelChrome>

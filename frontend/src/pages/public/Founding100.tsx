@@ -27,35 +27,40 @@ const businessViews = [
 const stages = [
   {
     number: "01",
-    name: "See it",
-    copy: "Build the first real picture. Find gaps. Correct what StrategicAI gets wrong.",
+    name: "Tell us what actually happens",
+    copy: "Start with the people, work, systems, and pressure you already know.",
   },
   {
     number: "02",
-    name: "Challenge it",
-    copy: "Pick problems and pull on them. Follow the trail until the pressure makes sense.",
+    name: "We’ll show you what we heard",
+    copy: "StrategicAI forms the first working picture.",
   },
   {
     number: "03",
-    name: "Change it",
-    copy: "Decide what deserves action, a clearer owner, or a deeper look.",
+    name: "Correct it",
+    copy: "Tell us what is wrong, missing, old, or different from how the work really happens.",
+  },
+  {
+    number: "04",
+    name: "Start asking better questions",
+    copy: "As the picture becomes useful, Business Views and Nemo give you ways to inspect and follow what matters.",
   },
 ];
 
 const questions = [
-  "What still depends too much on me?",
-  "Where can a customer get stuck?",
-  "What would break if we grew 30%?",
-  "Who needs to know when something changes?",
-  "Which problems do we keep fixing instead of solving?",
-  "What am I not seeing?",
+  "What still depends on me?",
+  "Where does this process really break?",
+  "Do we actually need another person?",
+  "What should we understand before we automate?",
+  "What would break first if we grew?",
+  "What changed that nobody connected?",
 ];
 
 export default function Founding100() {
   usePageMeta({
-    title: "StrategicAI Founding 100 | Welcome",
+    title: "StrategicAI Founding 100 — Build the Picture of Your Business",
     description:
-      "Welcome to StrategicAI Founding 100. Build a serious body of intelligence about your company and learn what happens next.",
+      "You’re in. Bring the people, work, systems, exceptions, disagreements, and questions that make your business real.",
     path: "/founding100",
   });
 
@@ -90,11 +95,10 @@ export default function Founding100() {
               <CheckCircle2 size={16} aria-hidden="true" />
               <span>Founding 100 <span aria-hidden="true">·</span> $299 one-time</span>
             </div>
-            <p className="founding100-kicker">Your Business Intelligence Portfolio</p>
             <h1 id="founding100-title">You’re in.</h1>
-            <p className="founding100-hero-lede">You’re about to build a serious body of intelligence about your company.</p>
+            <p className="founding100-hero-lede">Bring the business you actually have.</p>
             <p className="founding100-hero-body">
-              StrategicAI will turn what it learns into useful Business Views—so you can see how work, people, systems, dependencies, bottlenecks, unknowns, and priorities fit together.
+              Not the polished version. Not the process manual. Bring the people, work, systems, exceptions, disagreements, and questions that make the business real. Then we’ll start building the picture together.
             </p>
             <div className="founding100-principle">
               <span className="founding100-principle-line" aria-hidden="true" />
@@ -124,21 +128,25 @@ export default function Founding100() {
         <section className="founding100-next" aria-labelledby="next-title">
           <div className="founding100-section-heading">
             <p className="founding100-kicker">What happens now</p>
-            <h2 id="next-title">The handoff is simple.</h2>
+            <h2 id="next-title">Start with the business you actually have.</h2>
           </div>
           <div className="founding100-next-grid">
             <ol className="founding100-steps">
               <li>
                 <span className="founding100-step-number">01</span>
-                <div><h3>We learn the business.</h3><p>StrategicAI begins building its first picture of your company.</p></div>
+                <div><h3>Tell us what actually happens.</h3><p>Start with the people, work, systems, and pressure you already know.</p></div>
               </li>
               <li>
                 <span className="founding100-step-number">02</span>
-                <div><h3>You correct the picture.</h3><p>You tell us what is right, what is wrong, and what is missing.</p></div>
+                <div><h3>We’ll show you what we heard.</h3><p>StrategicAI forms the first working picture.</p></div>
               </li>
               <li>
                 <span className="founding100-step-number">03</span>
-                <div><h3>Nemo helps you explore it.</h3><p>Over the next 90 days, you use Nemo to inspect, challenge, and understand how the business actually works.</p></div>
+                <div><h3>Correct it.</h3><p>Tell us what is wrong, missing, old, or different from how the work really happens.</p></div>
+              </li>
+              <li>
+                <span className="founding100-step-number">04</span>
+                <div><h3>Start asking better questions.</h3><p>As the picture becomes useful, Business Views and Nemo give you ways to inspect and follow what matters.</p></div>
               </li>
             </ol>
 
@@ -154,9 +162,9 @@ export default function Founding100() {
 
         <section className="founding100-section founding100-building" aria-labelledby="building-title">
           <div className="founding100-section-heading founding100-narrow-heading">
-            <p className="founding100-kicker">Layer 1 · standalone value</p>
+            <p className="founding100-kicker">The picture we build together</p>
             <h2 id="building-title">Your Business Intelligence Portfolio</h2>
-            <p>You are not setting up another chatbot. You are building a useful body of work about your company—something you can inspect, correct, and use before you bring a single question to Nemo.</p>
+            <p>You are not setting up another chatbot. You are building a useful body of work about your company—something you can inspect, correct, and use when the week gets complicated.</p>
           </div>
           <div className="founding100-building-grid">
             {buildingBlocks.map((block, index) => (
@@ -229,6 +237,15 @@ export default function Founding100() {
             <p>StrategicAI will not understand everything perfectly on day one.</p>
             <p>If you see something wrong, say so. <strong>“No, that’s not how it works” is useful information.</strong> Every correction helps build a better picture of the company.</p>
           </div>
+        </section>
+
+        <section className="founding100-founder" aria-labelledby="founder-welcome-title">
+          <p className="founding100-kicker">A note from the founder</p>
+          <h2 id="founder-welcome-title">One request from me: tell us when we’re wrong.</h2>
+          <p>Founding 100 only works if the business you give us is the business you actually have.</p>
+          <p>Don’t make it cleaner for us. Don’t agree with the picture to be polite. Challenge it.</p>
+          <strong>That’s the point.</strong>
+          {/* H04: optional authentic founder video explaining the first-100 exchange. Do not add stock or generated human media. */}
         </section>
 
         <section className="founding100-section founding100-boundary" aria-labelledby="boundary-title">
