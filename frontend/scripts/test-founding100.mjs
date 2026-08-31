@@ -43,7 +43,7 @@ assert.match(contentPage, /short_to_deep/);
 assert.match(contentPage, /content_to_offer/);
 assert.doesNotMatch(contentPage, /type=["']email["']|newsletter|book a call|application form/i);
 
-assert.match(offerPage, /If everyone has a piece and you’re still the one putting it together, start here\./);
+assert.match(offerPage, /What becomes possible when the full picture no longer lives in one head\?/);
 assert.match(offerPage, /\$299/);
 assert.match(offerPage, /Checkout is not ready for release\./);
 assert.match(offerPage, /data-checkout-state=["']not-configured["']/);

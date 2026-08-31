@@ -65,6 +65,36 @@ The canonical company proposition is:
 
 > **StrategicAI is Operational Intelligence built from Operational Reality.**
 
+The shared human problem across the public system is:
+
+> **Why does the full picture of how your business works still live in your
+> head?**
+
+The conversion surfaces answer that problem in sequence:
+
+```text
+HOMEPAGE / WOUND
+    -> Why does the full picture still live in one head?
+HOW IT WORKS / MECHANISM
+    -> Everyone has a piece. StrategicAI helps put the picture together.
+PRODUCT / OUTCOME
+    -> Make what your company knows visible, durable, and usable.
+FOUNDING 100 / POSSIBILITY
+    -> What becomes possible when the full picture no longer lives in one head?
+```
+
+This is a narrative convergence, not a change to product identity or sales
+sequencing authority. The offer still carries the separate `$299`, Portfolio,
+and authorized 90-day Ask Nemo boundaries below.
+
+Once the picture exists, the desired behavior is:
+
+```text
+SEE from it through Business Views
+    -> THINK from it
+    -> ASK NEMO
+```
+
 “An AI that knows your business” is permitted as plain-English explanatory
 shorthand. It is not the primary product promise and must not collapse
 StrategicAI into “an AI.”

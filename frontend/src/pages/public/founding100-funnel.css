@@ -301,7 +301,9 @@
 
 .f100-offer-hero h1 {
   max-width: 680px;
-  font-size: clamp(3.2rem, 6vw, 6rem);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.05;
   overflow-wrap: anywhere;
 }
 
@@ -538,7 +540,6 @@
   .f100-offer-main { padding-top: 0; }
   .f100-offer-hero { min-height: auto; }
   .f100-offer-hero-copy { width: calc(100% - 36px); padding: 64px 0 82px; }
-  .f100-offer-hero h1 { font-size: clamp(3rem, 12vw, 4.6rem); }
   .f100-offer-brain img { transform: scale(1.42); }
   .f100-cohort-block { grid-template-columns: 1fr; gap: 26px; }
   .f100-cohort-block > div + div { padding: 25px 0 0; border-top: 1px solid var(--f100-line); border-left: 0; }
@@ -582,7 +583,6 @@
   .f100-see-reason-heading h2 { font-size: 0.93rem; }
   .f100-see-reason-options button { min-height: 47px; padding: 10px 12px; font-size: 0.82rem; }
   .f100-content-principle { font-size: 0.76rem; }
-  .f100-offer-hero h1 { font-size: 2.8rem; }
   .f100-offer-hero-copy { padding-top: 54px; }
   .f100-offer-section h2,
   .f100-offer-section-heading > h2 { font-size: 2.55rem; }
@@ -590,6 +590,10 @@
   .f100-scope h2,
   .f100-faq h2,
   .f100-offer-close h2 { font-size: 2.3rem; }
+}
+
+@media (min-width: 761px) {
+  .f100-offer-hero h1 { font-size: 4.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

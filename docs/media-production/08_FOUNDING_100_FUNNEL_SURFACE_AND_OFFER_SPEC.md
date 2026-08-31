@@ -216,6 +216,31 @@ Canonical proposition:
 Build Operational Intelligence from how your business actually works.
 ```
 
+The offer is the possibility surface in the public narrative. It follows the
+same human problem as the homepage:
+
+> **Why does the full picture of how your business works still live in your
+> head?**
+
+The offer answers with a bounded possibility rather than an omniscience claim:
+
+> **What becomes possible when the full picture no longer lives in one head?**
+
+The value path remains:
+
+```text
+how the business actually works
+    -> Operational Reality
+    -> Operational Intelligence
+    -> Business Views / SEE
+    -> Ask Nemo / ASK
+    -> action when warranted
+```
+
+The desired progression after understanding is:
+
+> **See from it through Business Views. Think from it. Ask Nemo.**
+
 “Build an AI that knows your business” may be used as supporting plain-English
 translation after the category is established. It must not lead as the primary
 company or offer proposition.
@@ -225,14 +250,24 @@ company or offer proposition.
 Headline:
 
 ```text
-Build a serious body of intelligence about your company.
+What becomes possible when the full picture no longer lives in one head?
 ```
 
 Supporting copy:
 
 ```text
-StrategicAI builds a working understanding of your business and turns it into a Business Intelligence Portfolio you can inspect, correct, and use. Then you get the authorized 90-day experience to Ask Nemo the questions you actually care about, from the company context you have built.
+StrategicAI builds a working understanding of how your business actually works—one you can see through Business Views, inspect, and correct. Then you get the authorized 90-day experience to Ask Nemo the questions you actually care about from the company context you have built.
 ```
+
+Keep the portfolio concrete in the following section: it is a serious body of
+company intelligence, not generic AI access. Keep the curiosity bridge
+prominent in the Ask Nemo section:
+
+> **How much better is AI when you don’t spend half the conversation teaching
+> it what world it is operating inside? Ask Nemo.**
+
+This copy describes the intended experience; it does not guarantee a complete
+picture, a fixed Business View bundle, an outcome, or public customer proof.
 
 Primary CTA:
 

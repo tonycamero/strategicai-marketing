@@ -2,7 +2,7 @@
 id: STRATEGICAI-HOMEPAGE-LAUNCH-STATE
 title: StrategicAI Homepage Launch-State Narrative Architecture
 status: IMPLEMENTED_WITH_PUBLICATION_BOUNDARY
-version: 1.0
+version: 1.1
 created: 2026-08-30
 authority: Homepage narrative and copy architecture only
 depends_on:
@@ -27,15 +27,14 @@ The homepage is not the 35-minute conversion presentation. It compresses the
 belief movement and the Golden Proof Thread into a shorter first encounter:
 
 ```text
-HUMAN RECOGNITION
-    -> THE BUSINESS IS MOVING / THE OWNER IS RECONSTRUCTING THE STORY
-    -> REFRAME
+WOUND
+    -> MECHANISM
     -> GOLDEN THREAD
-    -> OPERATIONAL REALITY / OPERATIONAL INTELLIGENCE
-    -> BUSINESS VIEWS — WHAT CAN I SEE?
-    -> ASK NEMO — WHAT CAN I ASK?
+    -> OUTCOME
+    -> SEE / BUSINESS VIEWS
+    -> ASK / ASK NEMO
     -> FOUNDER / WHY THIS EXISTS
-    -> FOUNDING 100
+    -> POSSIBILITY / FOUNDING 100
 ```
 
 The presentation expands the same logic into a full belief transformation,
@@ -67,7 +66,7 @@ not the production route.
 
 | Surface | Current implementation | Doctrine / conversion finding | Authority position |
 | --- | --- | --- | --- |
-| Hero | “Everyone has a piece. You’re still the one putting it together.” | Human recognition is the front door; proof is the primary next step | Preserve the humanized headline, proof CTA, and subordinate Founding 100 path |
+| Hero | “Why does the full picture of how your business works still live in your head?” | The owner’s recurring reconstruction burden is the front door; proof is the primary next step | Preserve the wound headline, proof CTA, and subordinate Founding 100 path |
 | Recognition | Concrete owner moments around handoffs, interruptions, delays, and unwritten workarounds | People should recognize their own week before seeing product terminology | Keep PEOPLE FIRST / PRODUCT EXPLANATION SECOND |
 | Reframe | Understanding precedes intervention; “Automation Without Understanding” is category contrast | The problem is not a lack of activity; it is an invisible operating picture | Keep actions broader than automation: clarify, fix, notify, investigate, automate when warranted, or leave alone |
 | Proof | Four-part Golden Proof Thread with insertion-ready visual frames | One business/problem/evidence lineage makes the mechanism observable | Preserve `AWAITING_REAL_PROOF` until accepted launch-state capture is cleared |
@@ -81,6 +80,48 @@ not the production route.
 The product statement that governs the page is:
 
 > **StrategicAI is Operational Intelligence built from Operational Reality.**
+
+## Master human problem
+
+The public site should organize the company proposition around the human
+problem before it introduces product terminology:
+
+> **Why does the full picture of how your business works still live in your
+> head?**
+
+The human outcome is:
+
+> **StrategicAI makes the operating picture visible, durable, inspectable, and
+> usable—so understanding the business no longer has to live primarily in one
+> head.**
+
+This is not a claim that the owner is failing or that one system can contain
+the whole truth. It names the recurring burden created when people, systems,
+files, meetings, memory, disagreement, and unknowns remain disconnected.
+
+The downstream value path is:
+
+```text
+WOUND: the full picture lives in one head
+    -> MECHANISM: pieces become an inspectable, correctable picture
+    -> OUTCOME: the picture becomes durable and usable
+    -> SEE: Business Views make bounded relationships visible
+    -> ASK: Ask Nemo reasons from the company context available
+    -> POSSIBILITY: the owner can decide what deserves action with more of the business in view
+```
+
+## Downstream desire
+
+Once the picture exists, the public desire should progress simply:
+
+> **See from it through Business Views.**
+>
+> **Think from it.**
+>
+> **Ask Nemo.**
+
+This keeps Ask Nemo as the next behavior enabled by company context, not as a
+replacement for Operational Intelligence.
 
 Plain-English translation:
 
@@ -116,11 +157,46 @@ OPERATIONAL INTELLIGENCE
 ACTION / CAPABILITY WHEN WARRANTED
 ```
 
+## Cross-surface headline contract
+
+The five public surfaces now carry distinct narrative jobs rather than
+repeating variations of fragmentation:
+
+| Surface | Narrative job | Launch-state H1 | Supporting direction |
+| --- | --- | --- | --- |
+| `/` | Wound | **Why does the full picture of how your business works still live in your head?** | People, systems, files, meetings, and memory each hold part of the answer; StrategicAI makes the operating picture visible, durable, and usable. |
+| `/how-it-works` | Mechanism | **Everyone has a piece. StrategicAI helps put the picture together.** | Ask two people how the work really happens and you may get two different answers; that disagreement and the evidence from systems and work remain inspectable and correctable. |
+| `/product` | Outcome | **Make what your company knows visible, durable, and usable.** | Your company already knows more than any one person can see; StrategicAI turns those pieces into Operational Intelligence you can inspect, correct, and use. |
+| `/partners` | Partner translation | **Your client wants you to fix the process. Three people describe three different processes.** | Establish a shared operating picture before implementation. |
+| `/founding100/offer` | Possibility | **What becomes possible when the full picture no longer lives in one head?** | Build the understanding through Business Views, then Ask Nemo questions from the company context available in the authorized experience. |
+
+The question form is the selected homepage language. The statement form—“The
+full picture of how your business works still lives in your head.”—is retained
+as a future Message Card or pure-text market-language test, not as runtime A/B
+complexity.
+
+## Displaced headline audit
+
+The prior language was searched across public source and active media-production
+docs. It is classified here so strong copy is preserved without allowing
+competing master messages to occupy the same surface role.
+
+| Prior phrase | Decision | Current role |
+| --- | --- | --- |
+| “Everyone has a piece. You’re still the one putting it together.” | Split and reposition | “Everyone has a piece.” now names the homepage recognition/mechanism bridge; the owner burden remains in recognition, founder, and campaign language rather than the homepage H1. |
+| “Ask two people how the work really happens. You may get two different answers.” | Preserve and move | Supporting scenario on `/how-it-works`, where it introduces legitimate disagreement before the evidence-to-picture mechanism. |
+| “Your company already knows more than any one person can see.” | Preserve and move | Supporting copy below the `/product` outcome H1. |
+| “If everyone has a piece and you’re still the one putting it together…” | Retain selectively | Deep Founding 100 content/open-loop language; not the offer H1 or homepage master message. |
+| “What would you ask if AI already understood your business?” | Retire as a primary frame | Ask Nemo now carries the behavior; context-rich AI language may explain it, but this phrasing does not lead a public hero. |
+| “What if your business could explain itself?” | Retire as a primary frame | Superseded by the bounded visible/durable/inspectable/usable operating-picture outcome. |
+| “See how your business actually works.” | Retain as supporting language | Useful CTA/metadata language where it describes the mechanism; it does not compete with the wound, outcome, or possibility H1s. |
+
 ## Exact copy architecture
 
-### 1. Hero — recognition has an owner
+### 1. Hero — name the wound
 
-**Role:** Recognition and immediate category entry.
+**Role:** Name the recurring owner burden in plain language before introducing
+the mechanism or category.
 
 **Kicker:**
 
@@ -128,15 +204,15 @@ ACTION / CAPABILITY WHEN WARRANTED
 
 **Headline:**
 
-> **Everyone has a piece.**
->
-> **You’re still the one putting it together.**
+> **Why does the full picture of how your business works still live in your
+> head?**
 
 **Body:**
 
-> The answer lives across your people, systems, files, meetings, and memory.
-> StrategicAI turns those pieces into a picture of how the business actually
-> works—one the owner can inspect, correct, and use.
+> Your people, systems, files, meetings, and memory each hold part of the
+> answer. StrategicAI makes the full operating picture visible, durable, and
+> usable—so understanding the business no longer has to live primarily in one
+> head.
 
 **Primary CTA:**
 
@@ -153,14 +229,13 @@ context.
 
 **Support line:**
 
-> Start with the evidence already inside the organization. See the proof before
-> deciding what deserves your attention.
+> Start with one real problem. Follow it through the business.
 
 **Hero boundary:** Do not promise complete understanding, automatic diagnosis,
 guaranteed improvement, or an active purchase. The primary CTA remains
 proof-oriented: **See the proof** → `#proof-thread`.
 
-### 2. Recognition — the business is moving and the owner is reconstructing the story
+### 2. Recognition — everyone has a piece
 
 **Role:** Recognition → tension.
 
@@ -170,14 +245,14 @@ proof-oriented: **See the proof** → `#proof-thread`.
 
 **Headline:**
 
-> **The business is moving.**
->
-> **You’re still reconstructing the story.**
+> **Everyone has a piece.**
 
 **Body:**
 
-> A customer asks what happened. Sales has one answer. Operations has another.
-> A system has part of the truth. Someone remembers the exception.
+> The business is moving. You’re still reconstructing the story. Different
+> people see different parts. Systems hold fragments. History lives in
+> conversations and memory. The company collectively knows more than any one
+> person can see.
 
 **Recognition points:**
 
@@ -421,9 +496,10 @@ Use authentic founder media only when available and approved. No stock founder
 imagery. No generated founder imagery. A real founder note, portrait, or short
 founder video may support this section; it must not become fabricated proof.
 
-### 9. Founding 100 — make the cohort rationale legible
+### 9. Founding 100 — make the possibility legible
 
-**Role:** Handoff into the early-cohort experience.
+**Role:** Handoff from a visible, usable operating picture into the possibility
+of building one around the owner’s own company.
 
 **Section label:**
 
@@ -431,8 +507,7 @@ founder video may support this section; it must not become fabricated proof.
 
 **Headline:**
 
-> **If everyone has a piece and you’re still the one putting it together, start
-> here.**
+> **What becomes possible when the full picture no longer lives in one head?**
 
 **Body:**
 
@@ -464,6 +539,21 @@ Destination: `/how-it-works`.
 guaranteed Business View bundle, verified 90-day Nemo continuity, outcome,
 scarcity, or public proof permission while the applicable commercial and release
 gates remain open. The offer route itself owns the current checkout state.
+
+### Headline pressure-test decision
+
+The selected possibility headline is:
+
+> **What becomes possible when the full picture no longer lives in one head?**
+
+Two alternates were considered but are not selected for the current launch:
+
+- **What would you ask if the full picture of your business was already in the room?** — strong
+  curiosity, but less direct about the owner’s transition and not yet anchored
+  to the branded Ask Nemo behavior.
+- **What would you Ask Nemo if the full picture of your business was already there?** —
+  useful after the Ask Nemo section, but too dependent on prior product
+  understanding for the Founding 100 handoff.
 
 ## Executive Brief residue classification
 
@@ -517,7 +607,7 @@ reaction. A click does not prove category adoption or runtime capability.
 
 ## Release checklist
 
-- [x] Homepage order is human recognition → reframe → Golden Thread → category → Business Views / SEE → Ask Nemo / ASK → founder → Founding 100.
+- [x] Homepage order is wound → mechanism → Golden Thread → outcome/category → Business Views / SEE → Ask Nemo / ASK → founder → possibility / Founding 100.
 - [x] Existing dark/cyan visual system and shared shell are preserved.
 - [x] “An AI that knows your business” is not the headline or primary promise.
 - [x] Automation Without Understanding is direct but category-focused and not anti-automation.
