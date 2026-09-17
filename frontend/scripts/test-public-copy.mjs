@@ -21,7 +21,13 @@ for (const file of activePages) {
   sources.set(file, await readFile(`src/pages/public/${file}`, "utf8"));
 }
 
+const appSource = await readFile("src/App.tsx", "utf8");
+const shellSource = await readFile("src/components/Shell.tsx", "utf8");
 const combined = [...sources.values()].join("\n");
+assert.match(appSource, /function ScrollToRoute/);
+assert.match(appSource, /window\.scrollTo\(\{ top: 0, left: 0, behavior: "auto" \}\)/);
+assert.match(appSource, /<ScrollToRoute \/>/);
+assert.doesNotMatch(shellSource, /useLocation|window\.scrollTo/);
 assert.match(sources.get("AlternateHomePage.tsx"), /available evidence into a shared operating picture/);
 assert.match(sources.get("AlternateHomePage.tsx"), /Your systems don’t contain everything your business knows/);
 for (const outcome of ["Executive visibility", "Earlier risk detection", "Board preparation", "Leadership alignment", "Trusted answers", "Decision velocity"]) {
