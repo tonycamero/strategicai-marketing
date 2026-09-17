@@ -13,7 +13,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="max-w-lg text-sm leading-relaxed text-slate-400">
-              StrategicAI helps you understand how the business actually works, then make that understanding useful.
+              StrategicAI brings scattered business knowledge into a shared operating picture you can inspect, question, and use—before you decide what deserves action.
             </p>
           </div>
 
@@ -22,6 +22,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li><Link to="/how-it-works" className="text-slate-500 hover:text-white transition text-sm">How It Works</Link></li>
               <li><Link to="/product" className="text-slate-500 hover:text-white transition text-sm">Product</Link></li>
+              <li><Link to="/pricing" className="text-slate-500 hover:text-white transition text-sm">Ways to Work</Link></li>
               <li><Link to="/partners" className="text-slate-500 hover:text-white transition text-sm">Partners</Link></li>
               <li><Link to="/founding100/offer" className="text-slate-500 hover:text-white transition text-sm">Founding 100</Link></li>
             </ul>
@@ -30,7 +31,7 @@ export function Footer() {
 
         <div className="pt-8 mt-12 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs text-slate-600">
-            Operational Intelligence built from Operational Reality.
+            See how your business actually works. Then decide what deserves action.
           </p>
           <p className="text-xs text-slate-600 italic">© {new Date().getFullYear()} StrategicAI. All rights reserved.</p>
         </div>

@@ -20,7 +20,7 @@ export function Founding100FunnelChrome({ context, children }: Founding100Funnel
         <a className="f100-funnel-wordmark" href="/" aria-label="StrategicAI home">
           <span>Strategic</span>AI
         </a>
-        <p>Operational Intelligence built from Operational Reality.</p>
+        <p>See how your business actually works. Then decide what deserves action.</p>
       </footer>
     </div>
   );

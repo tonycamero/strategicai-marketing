@@ -4,6 +4,7 @@ type PageMeta = {
   title: string;
   description: string;
   path?: string;
+  robots?: string;
 };
 
 function upsertMeta(selector: string, attribute: "name" | "property", key: string, content: string) {
@@ -30,7 +31,7 @@ function upsertCanonical(href: string) {
   element.setAttribute("href", href);
 }
 
-export function usePageMeta({ title, description, path }: PageMeta) {
+export function usePageMeta({ title, description, path, robots }: PageMeta) {
   useEffect(() => {
     const pathname = path ?? window.location.pathname;
     const canonicalUrl = new URL(pathname, window.location.origin).toString();
@@ -45,5 +46,6 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     upsertMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     upsertMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
-  }, [description, path, title]);
+    upsertMeta('meta[name="robots"]', "name", "robots", robots ?? "index, follow");
+  }, [description, path, robots, title]);
 }

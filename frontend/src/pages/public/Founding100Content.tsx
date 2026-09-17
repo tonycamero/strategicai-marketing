@@ -27,21 +27,32 @@ const seeReasons = [
 const contentCopy = {
   short: {
     context: "short version",
-    title: "StrategicAI Founding 100 | See How the Business Actually Works",
-    description: "See why the same business problems keep returning—and what changes when you can see how the business actually works.",
+    title: "StrategicAI Founding 100 | Why Problems Keep Returning",
+    description: "A five-minute explanation of why operating problems keep returning when business context is scattered across people, systems, and memory.",
     path: "/founding100/quick",
     heading: "If the same problems keep coming back, they may not be separate problems.",
-    lede: "Five minutes. No signup. Here’s the core idea behind seeing how the business actually works before deciding what should change.",
+    lede: "Five minutes. No signup. Follow one idea: recurring problems often return because nobody can see the context around them together.",
   },
   deep: {
     context: "35-minute walkthrough",
-    title: "StrategicAI Founding 100 | The Full Business Picture",
-    description: "See whether the problems that keep returning are signs that nobody can see how the business works as a whole.",
+    title: "StrategicAI Founding 100 | Understanding Before Intervention",
+    description: "A 35-minute walkthrough of why understanding, disagreement, correction, Business Views, and Nemo should precede consequential intervention.",
     path: "/founding100/webinar",
-    heading: "If everyone has a piece and you’re still the one putting it together, this is the full explanation.",
-    lede: "By the end, you’ll know whether the problems that keep returning are really separate—or signs that nobody can see how the business works as a whole. About 35 minutes. No signup.",
+    heading: "If everyone has a piece and you’re still the one putting it together, start with understanding.",
+    lede: "A 35-minute explanation of fragmented context, disagreement, correction, Business Views, Nemo, and what warranted action looks like. No signup.",
   },
 } as const;
+
+const webinarChapters = [
+  "Fragmented context",
+  "What an operating picture contains",
+  "Why disagreement matters",
+  "How correction changes the picture",
+  "Business Views",
+  "Nemo",
+  "Warranted action",
+  "Founding 100",
+] as const;
 
 export default function Founding100Content({ kind }: Founding100ContentProps) {
   const copy = contentCopy[kind];
@@ -81,6 +92,13 @@ export default function Founding100Content({ kind }: Founding100ContentProps) {
           <p>{copy.lede}</p>
         </header>
 
+        {kind === "deep" ? (
+          <section className="f100-content-chapters" aria-labelledby="webinar-chapters-title">
+            <h2 id="webinar-chapters-title">What the walkthrough covers</h2>
+            <ol>{webinarChapters.map((chapter, index) => <li key={chapter}><span>{String(index + 1).padStart(2, "0")}</span>{chapter}</li>)}</ol>
+          </section>
+        ) : null}
+
         <section className="f100-media-frame" aria-label={`${copy.context} media`}>
           <Founding100YouTube kind={kind} videoId={videoId} attribution={attribution} />
         </section>
@@ -88,7 +106,7 @@ export default function Founding100Content({ kind }: Founding100ContentProps) {
         {kind === "short" && !reasonDismissed ? (
           <section className="f100-see-reason" aria-labelledby="see-reason-title">
             <div className="f100-see-reason-heading">
-              <h2 id="see-reason-title">What made you hit SEE?</h2>
+              <h2 id="see-reason-title">Which part sounds familiar?</h2>
               <button type="button" onClick={() => setReasonDismissed(true)}>
                 Dismiss <X size={15} aria-hidden="true" />
               </button>
@@ -125,12 +143,12 @@ export default function Founding100Content({ kind }: Founding100ContentProps) {
             to={offerPath}
             onClick={() => trackEvent("content_to_offer", { ...attribution, content_path: kind, route: copy.path })}
           >
-            Explore Founding 100 <ArrowRight size={17} aria-hidden="true" />
+            See Founding 100 <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
 
         <p className="f100-content-principle">
-          Start with the business you actually have. See what the picture makes visible, then decide what deserves attention.
+          {kind === "short" ? "Bring one recurring problem. Start there." : "Understand the business before deciding what deserves action."}
         </p>
       </main>
     </Founding100FunnelChrome>

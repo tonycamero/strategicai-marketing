@@ -22,9 +22,11 @@ export default function IntakeThanks() {
   const ownerEmail = submission?.owner?.email || null;
 
   usePageMeta({
-    title: "StrategicAI Intake | Check Your Email",
+    title: "StrategicAI Intake | Your Perspective Is One Piece",
     description:
-      "Your workspace has been provisioned. Check your email, authenticate with Magic, and continue in the production platform.",
+      "Your perspective is one piece of the picture. Check your email to authenticate and continue the current StrategicAI intake workflow.",
+    path: "/intake/thanks",
+    robots: "noindex, nofollow",
   });
 
   useEffect(() => {
@@ -36,9 +38,12 @@ export default function IntakeThanks() {
       <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/15">
         <span className="text-4xl">✅</span>
       </div>
-      <h1 className="mb-6 text-4xl font-bold md:text-5xl">Check your email to continue</h1>
+      <h1 className="mb-6 text-4xl font-bold md:text-5xl">Your perspective is one piece of the picture.</h1>
       <p className="mb-4 max-w-2xl text-xl leading-relaxed text-slate-400">
-        Your tenant owner workspace has been provisioned. Authenticate yourself with Magic, then continue in the production platform.
+        StrategicAI becomes more useful as the relevant evidence, perspectives, gaps, and corrections come together.
+      </p>
+      <p className="mb-10 max-w-2xl text-lg leading-relaxed text-slate-400">
+        You don’t need to have captured everything for your input to be useful.
       </p>
       <div className="mb-10 max-w-xl rounded-2xl border border-slate-800 bg-slate-900/40 p-6 text-left">
         <h2 className="text-lg font-semibold text-white">Next</h2>

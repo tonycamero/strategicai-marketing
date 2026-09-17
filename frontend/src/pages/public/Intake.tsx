@@ -30,10 +30,12 @@ export default function Intake() {
 
   usePageMeta({
     title: isLeadershipStage
-      ? "StrategicAI Intake | Continue to Leadership Intake"
-      : "StrategicAI Intake | Build Your Executive Brief",
+      ? "StrategicAI Intake | Add Leadership Context"
+      : "StrategicAI Intake | Start with the Operating Problem",
     description:
-      "Provide organization context and leadership input so StrategicAI can build the foundation for your Executive Brief.",
+      "Start with the operating problem that is actually bothering you. Add the people, workarounds, perspectives, and unknowns around it.",
+    path: "/intake",
+    robots: "noindex, nofollow",
   });
 
   useEffect(() => {
@@ -109,14 +111,15 @@ export default function Intake() {
       <main className="mx-auto max-w-3xl px-6 pt-16">
         <div className="mb-12 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">
-            {isLeadershipStage ? "Leadership Intake" : "Executive Brief Intake"}
+            {isLeadershipStage ? "Leadership context" : "Organization context"}
           </p>
           <h1 className={styles.h1}>
-            {isLeadershipStage ? "Continue to Leadership Intake" : "Build Your Executive Brief"}
+            {isLeadershipStage ? "Add the leadership context" : "Start with the operating problem"}
           </h1>
           <p className={styles.p}>
-            StrategicAI uses your organization context, leadership input, and team evidence to
-            create a clear reflection of how the business currently operates.
+            Start with the version of the problem that is actually bothering you. StrategicAI uses
+            the context, perspectives, and evidence around it to form a clearer reflection of how
+            the business currently operates.
           </p>
           <p className="mx-auto max-w-2xl text-sm leading-7 text-slate-500">
             This is not yet a diagnosis. It is the first shared view of the problem.
@@ -126,10 +129,10 @@ export default function Intake() {
         <div className="mb-8 rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
           <h2 className="text-lg font-semibold text-white">What happens next</h2>
           <ol className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
-            <li>1. Provide your organization context.</li>
-            <li>2. Complete the leadership intake.</li>
-            <li>3. Invite the people closest to the work.</li>
-            <li>4. Receive your Executive Brief.</li>
+            <li>1. Describe the problem as it actually appears.</li>
+            <li>2. Include people who may see the work differently.</li>
+            <li>3. Describe workarounds, unknowns, and disagreements.</li>
+            <li>4. Continue into the current Executive Brief workflow.</li>
           </ol>
           {isLeadershipStage && (
             <p className="mt-4 text-xs leading-6 text-slate-500">
@@ -199,7 +202,8 @@ export default function Intake() {
           </div>
 
           <div>
-            <label className={styles.label}>Primary Pains (Select all that apply) *</label>
+            <label className={styles.label}>Who is involved? (Select the parts of the business involved) *</label>
+            <p className="mb-4 text-sm leading-6 text-slate-500">Include people who may see the work differently.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {[
                 { id: "leads", label: "Leads not followed up" },
@@ -233,11 +237,12 @@ export default function Intake() {
           )}
 
           <div>
-            <label className={styles.label}>What&apos;s the #1 thing breaking right now? *</label>
+            <label className={styles.label}>What is the problem you&apos;re trying to understand? *</label>
+            <p className="mb-4 text-sm leading-6 text-slate-500">Start with the version that&apos;s actually bothering you. It does not need to be perfectly framed.</p>
             <textarea
               name="priorityBottleneck"
               className={`${styles.input} h-32 resize-none`}
-              placeholder="Please describe in 2-3 sentences..."
+              placeholder="Describe what is happening, including workarounds—not only the documented process..."
               required
             />
             {formErrors.priorityBottleneck && <p className={styles.error}>{formErrors.priorityBottleneck}</p>}
@@ -249,8 +254,9 @@ export default function Intake() {
               <input type="url" name="website" className={styles.input} placeholder="https://..." />
             </div>
             <div>
-              <label className={styles.label}>Anything else we should know? (Optional)</label>
-              <textarea name="notes" className={`${styles.input} h-24 resize-none`} placeholder="Additional context..." />
+            <label className={styles.label}>What happens today, what are you unsure about, or what do people disagree about? (Optional)</label>
+            <p className="mb-3 text-sm leading-6 text-slate-500">Describe what actually happens, including workarounds—not only the documented process. “I don’t know” is useful here. Unknowns are part of the operating picture. Different perspectives are useful evidence; you do not need to resolve them before submitting.</p>
+            <textarea name="notes" className={`${styles.input} h-32 resize-none`} placeholder="Include the messy version, open questions, and different perspectives..." />
             </div>
           </div>
 
@@ -266,7 +272,7 @@ export default function Intake() {
                 <span className="h-5 w-5 animate-spin rounded-full border-2 border-slate-950/30 border-t-slate-950" />
                 Submitting...
               </span>
-            ) : isLeadershipStage ? "Continue to Executive Brief Foundation" : "Begin Organization Context"}
+            ) : isLeadershipStage ? "Continue with leadership context" : "Begin the shared picture"}
           </button>
 
           <p className="text-center text-xs text-slate-500">

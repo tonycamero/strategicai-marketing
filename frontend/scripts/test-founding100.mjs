@@ -19,31 +19,33 @@ assert.match(routes, /path: ["']\/founding100\/webinar["'][\s\S]*shell: false/);
 assert.match(routes, /path: ["']\/founding100\/offer["'][\s\S]*shell: false/);
 assert.match(page, /You’re in\./);
 assert.match(page, /Bring the business you actually have/);
-assert.match(page, /Business Intelligence Portfolio/);
-assert.match(page, /90 days to Ask Nemo/);
+assert.match(page, /Start with one real problem/);
+assert.match(page, /noindex, nofollow/);
+assert.doesNotMatch(page, /Business Intelligence Portfolio|90 days to Ask Nemo|\$299/);
 assert.match(offerPage, /90 days to Ask Nemo/);
-assert.match(page, /Operational Intelligence built from Operational Reality/);
+assert.doesNotMatch(page, /Operational Intelligence built from Operational Reality/);
 assert.doesNotMatch(page, /Build an AI that knows your business/);
 assert.match(page, /Your next step is almost ready\./);
 assert.match(page, /We’ll email you as soon as your StrategicAI onboarding is ready to begin\./);
 assert.match(page, /data-payment-verification="not-yet-authorized"/);
 assert.match(page, /mailto:\$\{SUPPORT_EMAIL\}/);
 assert.doesNotMatch(page, /\/formation|\/onboarding|session_id|stripe/i);
-assert.match(built, /<title>StrategicAI Founding 100 \| You’re In<\/title>/);
-assert.match(built, /content="You’re in\. Bring the business you actually have/);
+assert.match(built, /<title>StrategicAI Founding 100 \| Start with One Real Problem<\/title>/);
+assert.match(built, /content="You’re in\. Start with one real problem/);
 assert.match(built, /<link rel="canonical" href="https:\/\/strategicai\.app\/founding100"/);
 assert.match(built, /founding100/);
 
 assert.match(contentPage, /If the same problems keep coming back, they may not be separate problems\./);
 assert.match(contentPage, /Five minutes\. No signup\./);
-assert.match(contentPage, /If everyone has a piece and you’re still the one putting it together, this is the full explanation\./);
-assert.match(contentPage, /About 35 minutes\. No signup\./);
-assert.match(contentPage, /What made you hit SEE\?/);
+assert.match(contentPage, /If everyone has a piece and you’re still the one putting it together, start with understanding\./);
+assert.match(contentPage, /A 35-minute explanation of fragmented context/);
+assert.match(contentPage, /Which part sounds familiar\?/);
+assert.match(contentPage, /Bring one recurring problem\. Start there\./);
 assert.match(contentPage, /short_to_deep/);
 assert.match(contentPage, /content_to_offer/);
 assert.doesNotMatch(contentPage, /type=["']email["']|newsletter|book a call|application form/i);
 
-assert.match(offerPage, /What becomes possible when the full picture no longer lives in one head\?/);
+assert.match(offerPage, /If everyone has a piece and you’re still the one putting it together, start here\./);
 assert.match(offerPage, /\$299/);
 assert.match(offerPage, /Checkout is not ready for release\./);
 assert.match(offerPage, /data-checkout-state=["']not-configured["']/);
@@ -77,11 +79,11 @@ for (const event of [
   assert.match(analytics, new RegExp(`"${event}"`));
 }
 
-assert.match(builtQuick, /<title>StrategicAI Founding 100 \| See How the Business Actually Works<\/title>/);
+assert.match(builtQuick, /<title>StrategicAI Founding 100 \| Why Problems Keep Returning<\/title>/);
 assert.match(builtQuick, /canonical" href="https:\/\/strategicai\.app\/founding100\/quick"/);
-assert.match(builtDeep, /<title>StrategicAI Founding 100 \| The Full Business Picture<\/title>/);
+assert.match(builtDeep, /<title>StrategicAI Founding 100 \| Understanding Before Intervention<\/title>/);
 assert.match(builtDeep, /canonical" href="https:\/\/strategicai\.app\/founding100\/webinar"/);
-assert.match(builtOffer, /<title>StrategicAI Founding 100 \| Build the Picture of Your Business<\/title>/);
+assert.match(builtOffer, /<title>StrategicAI Founding 100 \| See What It Includes<\/title>/);
 assert.match(builtOffer, /canonical" href="https:\/\/strategicai\.app\/founding100\/offer"/);
 
 console.log("founding100 funnel and post-payment contract tests passed");

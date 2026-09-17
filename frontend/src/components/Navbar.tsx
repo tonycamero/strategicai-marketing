@@ -26,6 +26,7 @@ export function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           <Link to="/how-it-works" className={navLinkClass}>How It Works</Link>
           <Link to="/product" className={navLinkClass}>Product</Link>
+          <Link to="/pricing" className={navLinkClass}>Ways to Work</Link>
           <Link to="/partners" className={navLinkClass}>Partners</Link>
           <Link
             to="/founding100/offer"
@@ -52,8 +53,9 @@ export function Navbar() {
         <div id="mobile-navigation" className="border-t border-slate-800 bg-slate-950 px-6 pb-6 pt-4 md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             <Link to="/how-it-works" onClick={() => setIsOpen(false)} className={mobileLinkClass}>How It Works</Link>
-            <Link to="/product" className={mobileLinkClass}>Product</Link>
-            <Link to="/partners" className={mobileLinkClass}>Partners</Link>
+            <Link to="/product" onClick={() => setIsOpen(false)} className={mobileLinkClass}>Product</Link>
+            <Link to="/pricing" onClick={() => setIsOpen(false)} className={mobileLinkClass}>Ways to Work</Link>
+            <Link to="/partners" onClick={() => setIsOpen(false)} className={mobileLinkClass}>Partners</Link>
             <Link
               to="/founding100/offer"
               onClick={() => {
