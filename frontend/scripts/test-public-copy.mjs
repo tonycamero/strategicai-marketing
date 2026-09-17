@@ -38,6 +38,7 @@ assert.match(sources.get("Partners.tsx"), /Bring better context into the work be
 assert.match(sources.get("Pricing.tsx"), /Ways to work with StrategicAI/);
 assert.match(sources.get("Founding100Content.tsx"), /Bring one recurring problem\. Start there\./);
 assert.match(sources.get("Founding100Offer.tsx"), /Bring the messy version/);
+assert.match(sources.get("Founding100Offer.tsx"), /f100-offer-value-messy/);
 assert.match(sources.get("Founding100Offer.tsx"), /A good place to start/);
 assert.match(sources.get("Founding100.tsx"), /Start with one real problem/);
 assert.match(sources.get("Founding100.tsx"), /noindex, nofollow/);

@@ -499,6 +499,7 @@
 .f100-offer-close h2 { font-size: clamp(2.35rem, 4.8vw, 4.7rem); }
 
 .f100-offer-value { display: grid; grid-template-columns: 1fr 1px 0.8fr; gap: 58px; align-items: center; }
+.f100-offer-value-messy { grid-template-columns: 1fr 0.8fr; }
 .f100-offer-value > div > p,
 .f100-value-consequence,
 .f100-offer-section-heading > p,
