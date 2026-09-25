@@ -13,7 +13,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="max-w-lg text-sm leading-relaxed text-slate-400">
-              StrategicAI brings scattered business knowledge into a shared operating picture you can inspect, question, and use—before you decide what deserves action.
+              StrategicAI brings available business evidence into a shared operating picture people can inspect and correct—and frontier intelligence can reason against.
             </p>
           </div>
 

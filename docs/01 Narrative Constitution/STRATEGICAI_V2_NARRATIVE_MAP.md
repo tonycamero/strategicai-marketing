@@ -2,8 +2,9 @@
 id: STRATEGICAI-V2-NARRATIVE-MAP
 title: StrategicAI v2 Narrative and Route Map
 status: DRAFT_FOR_APPROVAL
-version: 1.0-draft
+version: 2.1-draft
 created: 2026-09-17
+updated: 2026-09-24
 depends_on:
   - STRATEGICAI-V2-COPY-DECK
   - PUB-001_PUBLIC_WEBSITE_V2
@@ -37,6 +38,17 @@ Intelligence, Business Views, Nemo, and capabilities. The homepage introduces
 the relationship in plain language but does not claim completeness. The offer
 owns commercial terms. The post-purchase route owns activation only.
 
+The cross-site emotional progression is:
+
+> Recognition → Consequence → Possibility → Trust → Intelligence → Continuity
+> → Advantage → Curiosity
+
+The homepage introduces management drag before product explanation. How It
+Works owns bounded continuity and change questions after correction. Product
+owns the frontier-intelligence/organizational-reality distinction and makes
+clear that Nemo is the reasoning interface rather than the durable asset. The
+offer alone owns the 90-day compounding-value treatment.
+
 ## Executive outcome ownership
 
 The homepage owns the public outcome framing. The product page ties the five
@@ -44,14 +56,28 @@ architecture components to intended value connections without promising
 results. These connections remain bounded by the available evidence and the
 authority of the people deciding what happens next.
 
+The causal bridge is persistent operating picture → better organizational
+context → better questions → more trustworthy answers → earlier visibility →
+greater alignment → faster decisions. Outcome cards must explain this
+relationship rather than appear as detached benefit claims.
+
 ## Cross-route invariants
 
 - The picture is always described as a representation formed from available
   evidence.
+- “Frontier models provide intelligence. StrategicAI provides organizational
+  reality.” remains shorthand for making the evidence-bounded representation
+  available to reasoning; it does not redefine Operational Reality.
+- The intelligence layer is not positioned as the durable asset. Accumulated
+  business understanding is the intended durable value.
 - Disagreement and unknowns are never silently collapsed into certainty.
 - Nemo supports reasoning; leadership retains decision authority.
+- Change questions never imply automatic monitoring, updating, detection, or
+  alerting without runtime evidence.
 - Action follows evidence, scope, and authority.
 - Executive outcomes are value framing, not customer proof or guarantees.
+- Compounding value is an offer-only intended consequence of the existing
+  experience, not a new artifact or guaranteed deliverable.
 - Offer terms never appear on general narrative surfaces.
 - Pre-purchase routes never link to `/founding100`.
 - Legacy aliases remain redirects and do not become new narrative surfaces.

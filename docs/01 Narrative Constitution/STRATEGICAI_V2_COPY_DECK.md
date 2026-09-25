@@ -2,8 +2,9 @@
 id: STRATEGICAI-V2-COPY-DECK
 title: StrategicAI v2 Public Copy Deck
 status: DRAFT_FOR_APPROVAL
-version: 1.0-draft
+version: 2.1-draft
 created: 2026-09-17
+updated: 2026-09-24
 depends_on:
   - STRATEGICAI-NARRATIVE-CONSTITUTION-V2
   - STRATEGICAI-NARRATIVE-CONSTITUTION-V2-1-AMENDMENT
@@ -16,12 +17,58 @@ depends_on:
 
 Everyone has a piece. You are still putting the pieces together. StrategicAI
 brings available evidence into a shared operating picture. People closest to
-the work correct it. Nemo helps you interrogate and reason from it. Then
-accountable leaders decide what deserves action.
+the work inspect, dispute, and correct it. Frontier intelligence can reason
+against that context through Nemo. Then accountable leaders decide what
+deserves action.
 
 Operational Reality is the business itself. The shared operating picture is a
 representation of it. Operational Intelligence is usable understanding formed
 from that picture.
+
+Primary distinction:
+
+> StrategicAI gives frontier intelligence a persistent, inspectable,
+> correctable representation of the business's operating reality to reason
+> against.
+
+Plain-language compression:
+
+> Frontier models provide intelligence. StrategicAI provides organizational
+> reality.
+
+“Organizational reality” remains shorthand for the evidence-bounded,
+correctable representation. It must not collapse the constitutional
+distinction between the business and the picture of the business.
+
+The intelligence layer is not the durable asset. The durable value is the
+business understanding beneath it: context that can become more useful through
+evidence, correction, questioning, and change over time.
+
+## Recognition and consequence layer
+
+Use:
+
+> One business. No shared picture.
+
+Then explain the management drag before introducing product architecture:
+
+- executives reconstruct context repeatedly;
+- meetings become reconciliation exercises;
+- teams act from different assumptions;
+- the owner becomes the integration layer;
+- potential risks become visible late;
+- decision reasoning gets lost;
+- AI receives different versions of the company depending on who supplies the
+  context.
+
+The AI contrast is broader than blank chat:
+
+> capable frontier intelligence + incomplete, inconsistent, transient, or
+> stale organizational context = convincing reasoning that may be poorly
+> grounded
+
+StrategicAI's narrative contrast is ungrounded intelligence versus intelligence
+grounded in organizational context people can inspect and correct.
 
 ## Executive outcome layer
 
@@ -40,6 +87,12 @@ The homepage may present this as a scannable executive-outcomes section. The
 product page should connect each product component to one outcome without
 turning the connection into a guarantee.
 
+Use the causal bridge before presenting the outcomes:
+
+> persistent operating picture → better organizational context → better
+> questions → more trustworthy answers → earlier visibility → greater
+> leadership alignment → faster decisions
+
 ## Page jobs and copy direction
 
 ### `/` — Why should I care?
@@ -51,11 +104,19 @@ Use:
 
 > Your people, systems, files, meetings, and memory each hold part of the
 > answer. StrategicAI brings the available evidence into a shared operating
-> picture that people can inspect, challenge, and correct.
+> picture that people can inspect, challenge, and correct—and frontier
+> intelligence can reason against.
 
 Also make explicit:
 
 > Your systems don't contain everything your business knows.
+
+Before product explanation, establish the consequence:
+
+> One business. No shared picture.
+
+Name the cost as management drag rather than treating fragmentation as an
+information-organization problem alone.
 
 Retain:
 
@@ -63,6 +124,11 @@ Retain:
 
 Use “full picture” only as the owner-burden transition. Do not use it as a
 capability or completeness claim. Close toward See Founding 100.
+
+Preserve this progression:
+
+> Recognition → Consequence → Possibility → Trust → Intelligence → Continuity
+> → Advantage → Curiosity
 
 ### `/how-it-works` — What happens to messy information?
 
@@ -82,6 +148,11 @@ Required language:
 Use one clearly labelled illustrative handoff example across Evidence, Picture,
 Correction, and Ask Nemo. It is not a customer result.
 
+After correction, introduce bounded continuity and change intelligence. Public
+copy may ask “What changed?”, “What does that change affect?”, and “What now
+deserves attention?” It must explicitly avoid implying automatic monitoring or
+guaranteed detection.
+
 ### `/product` — What are the parts?
 
 Own the product sequence:
@@ -93,6 +164,10 @@ Define each term without duplicating the process page. State that Operational
 Intelligence begins with available evidence and correction, not with a
 dashboard, blank prompt, or automation.
 
+Explain that highly capable AI may still reason against incomplete,
+inconsistent, transient, or stale context. Position Nemo as a reasoning
+interface over available organizational context, not as the durable asset.
+
 For each component, answer both “what is it?” and “what executive outcome does
 it help create?” Use bounded connections: visibility, earlier risk
 recognition, board preparation, leadership alignment, trusted answers, and
@@ -100,7 +175,20 @@ decision velocity are intended value framing, not guaranteed results.
 
 For Nemo, use the sharper distinction sparingly:
 
-> Most AI begins with your question. Nemo begins with the context behind it.
+> Nemo begins with the company context StrategicAI has made available while
+> keeping the limits of that context in view.
+
+Use a small number of concrete questions where they make the value tangible:
+
+- Where are we actually constrained right now?
+- What changed since last month?
+- What are my leadership team and I seeing differently?
+- What do we believe about this, and what supports it?
+- What are we committed to that no longer matches reality?
+- What should I understand before the next leadership meeting?
+
+Do not present this list as guaranteed query support or an automated monitoring
+feature.
 
 ### `/pricing` — Ways to Work
 
@@ -162,6 +250,19 @@ Retain the recognition-led headline:
 Add **Bring the messy version** and **A good place to start** qualification.
 Keep all approved price, checkout, cohort, entitlement, and 90-day claims here
 only. Add data-trust copy only after policy and runtime approval.
+
+Add the gated compounding-value treatment:
+
+> Over the 90-day Founding 100 experience, Formation, Business Views,
+> available evidence, corrections, Nemo interactions, and changes over time
+> can add context to the business picture.
+
+> The value is not only in the first picture. It can grow as people inspect
+> it, correct it, return with better questions, and add what has changed.
+
+Qualify this as an intended consequence of the existing experience—not a
+separate artifact, guaranteed deliverable, completeness claim, retention
+promise, or automatic-update capability.
 
 ### `/founding100` — What do I do now?
 

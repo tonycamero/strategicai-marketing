@@ -23,22 +23,34 @@ for (const file of activePages) {
 
 const appSource = await readFile("src/App.tsx", "utf8");
 const shellSource = await readFile("src/components/Shell.tsx", "utf8");
+const footerSource = await readFile("src/components/Footer.tsx", "utf8");
 const combined = [...sources.values()].join("\n");
 assert.match(appSource, /function ScrollToRoute/);
 assert.match(appSource, /window\.scrollTo\(\{ top: 0, left: 0, behavior: "auto" \}\)/);
 assert.match(appSource, /<ScrollToRoute \/>/);
 assert.doesNotMatch(shellSource, /useLocation|window\.scrollTo/);
-assert.match(sources.get("AlternateHomePage.tsx"), /available evidence into a shared operating picture/);
+assert.match(sources.get("AlternateHomePage.tsx"), /available evidence into a shared, evolving operating picture/);
 assert.match(sources.get("AlternateHomePage.tsx"), /Your systems don’t contain everything your business knows/);
+assert.match(sources.get("AlternateHomePage.tsx"), /Why does the full picture of how your business works still live in your head\?/);
+assert.match(sources.get("AlternateHomePage.tsx"), /One business\. No shared picture\./);
+assert.match(sources.get("AlternateHomePage.tsx"), /management drag/);
+assert.match(sources.get("AlternateHomePage.tsx"), /Frontier models provide intelligence\. StrategicAI provides organizational reality\./);
+assert.match(sources.get("AlternateHomePage.tsx"), /incomplete, inconsistent, transient, or stale/);
+assert.match(sources.get("AlternateHomePage.tsx"), /What changed since last month\?/);
 for (const outcome of ["Executive visibility", "Earlier risk detection", "Board preparation", "Leadership alignment", "Trusted answers", "Decision velocity"]) {
   assert.match(sources.get("AlternateHomePage.tsx"), new RegExp(outcome));
 }
 assert.match(sources.get("HowItWorks.tsx"), /Different answers are not noise/);
 assert.match(sources.get("HowItWorks.tsx"), /What nobody knows yet belongs in the picture too/);
 assert.match(sources.get("HowItWorks.tsx"), /Illustrative example · not a customer result/);
+assert.match(sources.get("HowItWorks.tsx"), /Change and continuity/);
+assert.match(sources.get("HowItWorks.tsx"), /This does not mean automatic monitoring or guaranteed risk detection/);
 assert.match(sources.get("Product.tsx"), /Operational Reality/);
 assert.match(sources.get("Product.tsx"), /Nemo helps you reason\. Leadership decides\./);
-assert.match(sources.get("Product.tsx"), /Most AI begins with your question\. Nemo begins with the context behind it/);
+assert.match(sources.get("Product.tsx"), /persistent, inspectable, correctable representation/);
+assert.match(sources.get("Product.tsx"), /Frontier models provide intelligence\. StrategicAI provides organizational reality\./);
+assert.match(sources.get("Product.tsx"), /Nemo is not the durable asset/);
+assert.match(sources.get("Product.tsx"), /models reason from the available context; people inspect, dispute, and correct the picture/);
 assert.match(sources.get("Product.tsx"), /Built to be challenged, not blindly trusted/);
 assert.match(sources.get("Partners.tsx"), /Bring better context into the work before implementation begins/);
 assert.match(sources.get("Pricing.tsx"), /Ways to work with StrategicAI/);
@@ -46,6 +58,10 @@ assert.match(sources.get("Founding100Content.tsx"), /Bring one recurring problem
 assert.match(sources.get("Founding100Offer.tsx"), /Bring the messy version/);
 assert.match(sources.get("Founding100Offer.tsx"), /f100-offer-value-messy/);
 assert.match(sources.get("Founding100Offer.tsx"), /A good place to start/);
+assert.match(sources.get("Founding100Offer.tsx"), /What can compound through the experience/);
+assert.match(sources.get("Founding100Offer.tsx"), /The picture can become richer and more useful through use and correction/);
+assert.match(sources.get("Founding100Offer.tsx"), /not a separate artifact, a guarantee of completeness, or a promise that every change is captured automatically/);
+assert.match(sources.get("Founding100Offer.tsx"), /Formation, Business Views, available evidence, corrections, Nemo interactions, and changes over time/);
 assert.match(sources.get("Founding100.tsx"), /Start with one real problem/);
 assert.match(sources.get("Founding100.tsx"), /noindex, nofollow/);
 assert.match(sources.get("Intake.tsx"), /“I don’t know” is useful here/);
@@ -54,8 +70,11 @@ assert.match(sources.get("IntakeThanks.tsx"), /Your perspective is one piece of 
 assert.doesNotMatch(combined, /Build My Executive Brief/);
 assert.doesNotMatch(combined, /Business Intelligence Portfolio/);
 assert.doesNotMatch(combined, /AI Brain|TrustConsole/);
-assert.doesNotMatch(combined.replace(sources.get("Founding100Offer.tsx"), ""), /\$299|90 days/);
+assert.doesNotMatch(combined, /bring your own model|BYOM/i);
+assert.doesNotMatch(combined, /automatically monitors|automatically updates|automatic alerts/i);
+assert.doesNotMatch(combined.replace(sources.get("Founding100Offer.tsx"), ""), /\$299|90(?:\s+days?|[-‑]day)/i);
 assert.doesNotMatch(combined, /to=["']\/founding100["']/);
+assert.match(footerSource, /frontier intelligence can reason against/);
 
 const routes = await readFile("src/routes.tsx", "utf8");
 assert.match(routes, /path: ["']\/intake["'][\s\S]*LegacyRedirect to=["']\/founding100\/offer["']/);
@@ -97,6 +116,9 @@ for (const route of indexable) {
   assert.match(html, /name="twitter:description"/);
   assert.match(html, /name="robots" content="index, follow"/);
 }
+assert.match(getHtml("/"), /frontier intelligence can reason against/);
+assert.match(getHtml("/product"), /organizational reality available as shared, correctable context/);
+assert.match(getHtml("/founding100/offer"), /90-day Founding 100 experience/);
 for (const route of ["/founding100", "/intake", "/intake/thanks", "/login"]) {
   assert.match(getHtml(route), /name="robots" content="noindex, nofollow"/);
 }

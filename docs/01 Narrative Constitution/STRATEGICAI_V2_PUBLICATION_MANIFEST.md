@@ -2,8 +2,9 @@
 id: PUB-001_PUBLIC_WEBSITE_V2
 title: StrategicAI Public Website v2 Publication Manifest
 status: DRAFT_FOR_APPROVAL
-version: 2.0-draft
+version: 2.1-draft
 created: 2026-09-17
+updated: 2026-09-24
 publication_owner: StrategicAI founder and product authority
 primary_audience: AUD-001
 primary_decision: Should I see or enter Founding 100 as the current way to begin?
@@ -19,9 +20,10 @@ depends_on:
 ## Publication job
 
 Help an accountable owner, operator, or partner recognize the cost of
-fragmented operating context, understand the evidence-to-picture-to-question
-method, understand the intended executive outcomes of that sequence, and choose
-whether to review the Founding 100 offer.
+fragmented operating context as management drag, understand the
+evidence-to-picture-to-question method, see how organizational reality can
+ground frontier intelligence, understand the intended executive outcomes of
+that sequence, and choose whether to review the Founding 100 offer.
 
 ## Publication boundaries
 
@@ -31,18 +33,23 @@ by current receipts and approval records. The v2 website must not imply a
 complete or omniscient business model, autonomous authority, a guaranteed
 outcome, or an approved offer where the commercial gate is not open.
 
+Persistence and continuity are narrative doctrine only to the extent supported
+by the named experience. They do not imply automatic monitoring, updating,
+risk detection, alerting, retention, model choice, integrations, or a newly
+named deliverable.
+
 ## Surface decisions
 
 | Surface | Narrative job | Material claim boundary | Required CTA |
 | --- | --- | --- | --- |
-| Homepage | Why care | Shared picture is evidence-formed and correctable | See Founding 100 |
-| How It Works | Explain the mechanism | Illustrative example is not customer proof | See Founding 100 |
-| Product | Define product parts | Architecture is not runtime proof | Explore the product / See Founding 100 |
+| Homepage | Recognition, management drag, and executive consequence | Shared picture is evidence-formed and correctable | See Founding 100 |
+| How It Works | Explain the mechanism and bounded change questions | Illustrative example is not customer proof; no automatic monitoring claim | See Founding 100 |
+| Product | Define product parts and intelligence/context distinction | Architecture and persistence doctrine are not runtime proof | Explore the product / See Founding 100 |
 | Ways to Work | Current entry routing | No old stage ladder or duplicated terms | See what Founding 100 includes |
 | Partners | Better context before implementation | Partner fit does not imply delivery authority | Experience StrategicAI through Founding 100 |
 | Quick | Short problem recognition | Do not teach the whole architecture | See Founding 100 |
 | Webinar | Deep worldview explanation | No autonomous-action promise | See Founding 100 |
-| Founding 100 offer | Commercial consideration | Price, scope, checkout, cohort, and 90-day claims gated here | Join Founding 100 when approved |
+| Founding 100 offer | Commercial consideration and gated compounding value | Price, scope, checkout, cohort, 90-day, and accumulation framing gated here | Join Founding 100 when approved |
 | Post-purchase | Activation | No acquisition or commercial claims | Start with one real problem |
 | Intake | Participation | Preserve backend and auth contracts | Begin the shared picture |
 
@@ -55,6 +62,11 @@ outcome, or an approved offer where the commercial gate is not open.
 - Policy and runtime authority before publishing data-trust answers.
 - Executive outcomes remain explicitly framed as intended value connections,
   not guaranteed results or customer outcomes.
+- Compounding understanding remains an intended consequence of the existing
+  Founding 100 experience, not a separate artifact, deliverable, entitlement,
+  or persistence guarantee.
+- Model independence and bring-your-own-model language do not appear as public
+  product promises.
 - Unique raw HTML title, description, canonical, OG, Twitter, and robots state
   for every route.
 - Build, route, copy, static-render, regression, and accessibility checks pass.

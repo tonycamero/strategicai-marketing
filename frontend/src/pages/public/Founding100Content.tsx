@@ -28,28 +28,29 @@ const contentCopy = {
   short: {
     context: "short version",
     title: "StrategicAI Founding 100 | Why Problems Keep Returning",
-    description: "A five-minute explanation of why operating problems keep returning when business context is scattered across people, systems, and memory.",
+    description: "A five-minute explanation of why fragmented business context creates management drag and makes the same operating problems keep returning.",
     path: "/founding100/quick",
     heading: "If the same problems keep coming back, they may not be separate problems.",
-    lede: "Five minutes. No signup. Follow one idea: recurring problems often return because nobody can see the context around them together.",
+    lede: "Five minutes. No signup. Follow one idea: recurring problems often return because leaders keep reconstructing context that nobody can inspect together.",
   },
   deep: {
     context: "35-minute walkthrough",
     title: "StrategicAI Founding 100 | Understanding Before Intervention",
-    description: "A 35-minute walkthrough of why understanding, disagreement, correction, Business Views, and Nemo should precede consequential intervention.",
+    description: "A 35-minute walkthrough of fragmented context, correction, change over time, Business Views, Nemo, and why shared organizational reality should precede intervention.",
     path: "/founding100/webinar",
     heading: "If everyone has a piece and you’re still the one putting it together, start with understanding.",
-    lede: "A 35-minute explanation of fragmented context, disagreement, correction, Business Views, Nemo, and what warranted action looks like. No signup.",
+    lede: "A 35-minute explanation of fragmented context, management drag, shared organizational context, disagreement, correction, change over time, Nemo, and what warranted action looks like. No signup.",
   },
 } as const;
 
 const webinarChapters = [
-  "Fragmented context",
+  "Fragmented context and management drag",
   "What an operating picture contains",
   "Why disagreement matters",
   "How correction changes the picture",
+  "What changes over time",
   "Business Views",
-  "Nemo",
+  "Nemo and grounded reasoning",
   "Warranted action",
   "Founding 100",
 ] as const;
