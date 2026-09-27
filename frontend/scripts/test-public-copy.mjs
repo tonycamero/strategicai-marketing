@@ -24,6 +24,7 @@ for (const file of activePages) {
 const appSource = await readFile("src/App.tsx", "utf8");
 const shellSource = await readFile("src/components/Shell.tsx", "utf8");
 const footerSource = await readFile("src/components/Footer.tsx", "utf8");
+const goldenProofSource = await readFile("src/lib/goldenProofThread.ts", "utf8");
 const combined = [...sources.values()].join("\n");
 assert.match(appSource, /function ScrollToRoute/);
 assert.match(appSource, /window\.scrollTo\(\{ top: 0, left: 0, behavior: "auto" \}\)/);
@@ -75,6 +76,20 @@ assert.doesNotMatch(combined, /automatically monitors|automatically updates|auto
 assert.doesNotMatch(combined.replace(sources.get("Founding100Offer.tsx"), ""), /\$299|90(?:\s+days?|[-‑]day)/i);
 assert.doesNotMatch(combined, /to=["']\/founding100["']/);
 assert.match(footerSource, /frontier intelligence can reason against/);
+
+const goldenProofAssets = ["evidence", "picture", "correction", "question"];
+assert.doesNotMatch(goldenProofSource, /homepage-proof-.*-placeholder\.svg|PLACEHOLDER IMAGE/);
+assert.match(goldenProofSource, /status: "AWAITING_REAL_PROOF"/);
+assert.match(goldenProofSource, /Illustrative example · not a customer result/);
+for (const asset of goldenProofAssets) {
+  assert.match(goldenProofSource, new RegExp(`/images/homepage-proof-${asset}\\.webp`));
+  const image = await readFile(`public/images/homepage-proof-${asset}.webp`);
+  assert.equal(image.toString("ascii", 0, 4), "RIFF");
+  assert.equal(image.toString("ascii", 8, 12), "WEBP");
+  assert.equal(image.toString("ascii", 12, 16), "VP8 ");
+  assert.equal(image.readUInt16LE(26) & 0x3fff, 1600);
+  assert.equal(image.readUInt16LE(28) & 0x3fff, 1000);
+}
 
 const routes = await readFile("src/routes.tsx", "utf8");
 assert.match(routes, /path: ["']\/intake["'][\s\S]*LegacyRedirect to=["']\/founding100\/offer["']/);

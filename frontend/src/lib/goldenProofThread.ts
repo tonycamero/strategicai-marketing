@@ -60,7 +60,7 @@ export const goldenProofThread: GoldenProofThread = {
   storyTitle: "Follow one handoff from disagreement to a better question.",
   storyIntro:
     "This illustrative example shows the sequence StrategicAI is built for: gather what people know, make the relationships visible, let a human correct the picture, then ask a better question.",
-  actors: ["Sales", "Operations", "Finance"],
+  actors: ["Owner-operator", "Sales", "Operations", "Finance"],
   operatingProblem: "A customer handoff is marked complete, but Operations cannot start the work.",
   frames: [
     {
@@ -71,8 +71,8 @@ export const goldenProofThread: GoldenProofThread = {
       body: "Sales says, “We handed the customer off Tuesday.” Operations says, “We did not have the information needed to start.” Both perspectives are evidence.",
       durationSeconds: 8,
       media: neutralFrameMedia(
-        "/images/homepage-proof-evidence-placeholder.svg",
-        "Illustration of Sales and Operations contributing different pieces of customer handoff context",
+        "/images/homepage-proof-evidence.webp",
+        "Illustrative photograph of an owner listening as Sales and Operations compare conflicting customer handoff evidence",
       ),
     },
     {
@@ -83,8 +83,8 @@ export const goldenProofThread: GoldenProofThread = {
       body: "The handoff exists, but the teams mean different things by “complete.” The missing information and the untracked Finance approval are now visible relationships—not hidden assumptions.",
       durationSeconds: 11,
       media: neutralFrameMedia(
-        "/images/homepage-proof-picture-placeholder.svg",
-        "Illustration of a customer handoff connected to teams, required information, and a Finance dependency",
+        "/images/homepage-proof-picture.webp",
+        "Illustrative photograph of an owner, Sales, Operations, and Finance examining a shared customer handoff sequence",
       ),
     },
     {
@@ -95,8 +95,8 @@ export const goldenProofThread: GoldenProofThread = {
       body: "Operations says, “That’s not the actual dependency. We also need approval from Finance.” The picture becomes more useful because the correction stays visible.",
       durationSeconds: 15,
       media: neutralFrameMedia(
-        "/images/homepage-proof-correction-placeholder.svg",
-        "Illustration of Operations correcting an incomplete customer handoff picture",
+        "/images/homepage-proof-correction.webp",
+        "Illustrative photograph of Operations and Finance correcting a missing approval dependency with the team",
       ),
     },
     {
@@ -107,8 +107,8 @@ export const goldenProofThread: GoldenProofThread = {
       body: "With the available context in view, Nemo can help you reason about where this process depends on information one team does not know another team needs.",
       durationSeconds: 11,
       media: neutralFrameMedia(
-        "/images/homepage-proof-question-placeholder.svg",
-        "Illustration of a question tracing hidden dependencies through company context",
+        "/images/homepage-proof-question.webp",
+        "Illustrative photograph of a leadership team using Nemo in the StrategicAI interface to ask where a dependency appears elsewhere",
       ),
     },
   ],
