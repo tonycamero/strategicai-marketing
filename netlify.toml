@@ -4,6 +4,9 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[context.production.environment]
+  VITE_F100_CALENDAR_URL = "https://calendar.app.google/C7c5rBSzTpBLVaCh9"
+
 [[redirects]]
   from = "/api/intake"
   to = "/.netlify/functions/intake"

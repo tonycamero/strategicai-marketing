@@ -44,6 +44,12 @@ export const strategicFunnelEvents = [
   "offer_view",
   "checkout_click",
   "founding100_offer_faq_opened",
+  "F100_LANDING_VIEW",
+  "F100_APPLICATION_START",
+  "F100_APPLICATION_SUBMIT",
+  "F100_APPLICATION_SUCCESS",
+  "F100_APPLICATION_ERROR",
+  "F100_SCHEDULING_CTA",
 ] as const;
 
 export function trackEvent(event: string, payload: AnalyticsPayload = {}) {

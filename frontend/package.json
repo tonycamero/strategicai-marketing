@@ -7,7 +7,8 @@
     "build": "vite build && node scripts/render-static-routes.mjs",
     "preview": "vite preview",
     "test:founding100": "node scripts/test-founding100.mjs",
-    "test:public-copy": "node scripts/test-public-copy.mjs"
+    "test:public-copy": "node scripts/test-public-copy.mjs",
+    "test:intake": "node scripts/test-founding100-intake.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.0",

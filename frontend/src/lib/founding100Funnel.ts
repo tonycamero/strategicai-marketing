@@ -16,6 +16,7 @@ export type Founding100Attribution = Partial<{
 
 export const FOUNDING100_ATTRIBUTION_EXPIRY = "browser-tab-session";
 export const FOUNDING100_ATTRIBUTION_STORAGE_KEY = "strategicai.founding100.attribution.v1";
+export const FOUNDING100_APPLICATION_STORAGE_KEY = "strategicai.founding100.application.v1";
 
 const parameterAliases: Record<keyof Founding100Attribution, readonly string[]> = {
   message_card_id: ["message_card_id", "mc"],
@@ -178,4 +179,5 @@ export const founding100FunnelConfig = {
   shortYouTubeId: getYouTubeVideoId(import.meta.env.VITE_F100_SHORT_YOUTUBE),
   deepYouTubeId: getYouTubeVideoId(import.meta.env.VITE_F100_DEEP_YOUTUBE),
   checkoutUrl: getHttpsUrl(import.meta.env.VITE_F100_CHECKOUT_URL),
+  calendarUrl: getHttpsUrl(import.meta.env.VITE_F100_CALENDAR_URL),
 } as const;

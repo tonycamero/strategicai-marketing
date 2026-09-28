@@ -10,6 +10,9 @@ import Pricing from "./pages/public/Pricing";
 import Founding100 from "./pages/public/Founding100";
 import Founding100Content from "./pages/public/Founding100Content";
 import Founding100Offer from "./pages/public/Founding100Offer";
+import Founding100Application from "./pages/public/Founding100Application";
+import Founding100Schedule from "./pages/public/Founding100Schedule";
+import Founding100Enroll from "./pages/public/Founding100Enroll";
 import NotFound from "./pages/public/NotFound";
 
 export type AppRoute = {
@@ -65,6 +68,9 @@ export const routes: AppRoute[] = [
   { path: "/founding100/quick", element: <Founding100Content kind="short" />, shell: false },
   { path: "/founding100/webinar", element: <Founding100Content kind="deep" />, shell: false },
   { path: "/founding100/offer", element: <Founding100Offer />, shell: false },
+  { path: "/founding100/apply", element: <Founding100Application />, shell: false },
+  { path: "/founding100/schedule", element: <Founding100Schedule />, shell: false },
+  { path: "/founding100/enroll", element: <Founding100Enroll />, shell: false },
   { path: "/founding100", element: <Founding100 />, shell: false },
 
   /* Authorized activation placeholder and historical product aliases */

@@ -5,18 +5,27 @@ const routes = await readFile("src/routes.tsx", "utf8");
 const page = await readFile("src/pages/public/Founding100.tsx", "utf8");
 const contentPage = await readFile("src/pages/public/Founding100Content.tsx", "utf8");
 const offerPage = await readFile("src/pages/public/Founding100Offer.tsx", "utf8");
+const applicationPage = await readFile("src/pages/public/Founding100Application.tsx", "utf8");
+const schedulePage = await readFile("src/pages/public/Founding100Schedule.tsx", "utf8");
+const enrollPage = await readFile("src/pages/public/Founding100Enroll.tsx", "utf8");
 const funnel = await readFile("src/lib/founding100Funnel.ts", "utf8");
 const analytics = await readFile("src/lib/analytics.ts", "utf8");
 const built = await readFile("dist/founding100/index.html", "utf8");
 const builtQuick = await readFile("dist/founding100/quick/index.html", "utf8");
 const builtDeep = await readFile("dist/founding100/webinar/index.html", "utf8");
 const builtOffer = await readFile("dist/founding100/offer/index.html", "utf8");
+const builtApplication = await readFile("dist/founding100/apply/index.html", "utf8");
+const builtSchedule = await readFile("dist/founding100/schedule/index.html", "utf8");
+const builtEnroll = await readFile("dist/founding100/enroll/index.html", "utf8");
 
 assert.match(routes, /path: ["']\/founding100["']/);
 assert.match(routes, /path: ["']\/founding100["'][\s\S]*shell: false/);
 assert.match(routes, /path: ["']\/founding100\/quick["'][\s\S]*shell: false/);
 assert.match(routes, /path: ["']\/founding100\/webinar["'][\s\S]*shell: false/);
 assert.match(routes, /path: ["']\/founding100\/offer["'][\s\S]*shell: false/);
+assert.match(routes, /path: ["']\/founding100\/apply["'][\s\S]*shell: false/);
+assert.match(routes, /path: ["']\/founding100\/schedule["'][\s\S]*shell: false/);
+assert.match(routes, /path: ["']\/founding100\/enroll["'][\s\S]*shell: false/);
 assert.match(page, /You’re in\./);
 assert.match(page, /Bring the business you actually have/);
 assert.match(page, /Start with one real problem/);
@@ -51,15 +60,30 @@ assert.doesNotMatch(contentPage, /type=["']email["']|newsletter|book a call|appl
 
 assert.match(offerPage, /If everyone has a piece and you’re still the one putting it together, start here\./);
 assert.match(offerPage, /\$299/);
-assert.match(offerPage, /Checkout is not ready for release\./);
-assert.match(offerPage, /data-checkout-state=["']not-configured["']/);
-assert.match(offerPage, /checkout_click/);
+assert.match(offerPage, /Apply for Founding 100/);
+assert.match(offerPage, /founder fit call/);
+assert.doesNotMatch(offerPage, /Checkout is not ready for release\.|data-checkout-state|checkout_click/);
 assert.doesNotMatch(offerPage, /purchase_confirmed|payment_completed/);
 assert.doesNotMatch(offerPage, /type=["']email["']|newsletter|book a call|application form/i);
+
+assert.match(applicationPage, /funnel: "founding100"/);
+assert.match(applicationPage, /\/\.netlify\/functions\/intake/);
+assert.match(applicationPage, /If your business could answer one question clearly today, what would you ask it\?/);
+assert.match(applicationPage, /F100_APPLICATION_(START|SUBMIT|SUCCESS|ERROR)/);
+assert.match(schedulePage, /VITE_F100_CALENDAR_URL/);
+assert.match(schedulePage, /F100_SCHEDULING_CTA/);
+assert.match(schedulePage, /data-calendar-state={calendarUrl \? "configured" : "not-configured"}/);
+assert.match(schedulePage, /calendarUrl \? \(/);
+assert.match(schedulePage, /Google Calendar scheduling is not configured yet/);
+assert.match(schedulePage, /Choose a time/);
+assert.doesNotMatch(schedulePage, /F100_CALL_BOOKED/);
+assert.match(enrollPage, /buildFounding100CheckoutUrl/);
+assert.match(enrollPage, /checkout_click/);
 
 assert.match(funnel, /VITE_F100_SHORT_YOUTUBE/);
 assert.match(funnel, /VITE_F100_DEEP_YOUTUBE/);
 assert.match(funnel, /VITE_F100_CHECKOUT_URL/);
+assert.match(funnel, /calendarUrl: getHttpsUrl\(import\.meta\.env\.VITE_F100_CALENDAR_URL\)/);
 assert.match(funnel, /browser-tab-session/);
 assert.match(funnel, /message_card_id/);
 assert.match(funnel, /post_instance_id/);
@@ -79,6 +103,11 @@ for (const event of [
   "content_to_offer",
   "offer_view",
   "checkout_click",
+  "F100_LANDING_VIEW",
+  "F100_APPLICATION_START",
+  "F100_APPLICATION_SUBMIT",
+  "F100_APPLICATION_SUCCESS",
+  "F100_SCHEDULING_CTA",
 ]) {
   assert.match(analytics, new RegExp(`"${event}"`));
 }
@@ -87,7 +116,13 @@ assert.match(builtQuick, /<title>StrategicAI Founding 100 \| Why Problems Keep R
 assert.match(builtQuick, /canonical" href="https:\/\/strategicai\.app\/founding100\/quick"/);
 assert.match(builtDeep, /<title>StrategicAI Founding 100 \| Understanding Before Intervention<\/title>/);
 assert.match(builtDeep, /canonical" href="https:\/\/strategicai\.app\/founding100\/webinar"/);
-assert.match(builtOffer, /<title>StrategicAI Founding 100 \| See What It Includes<\/title>/);
+assert.match(builtOffer, /<title>StrategicAI Founding 100 \| Apply<\/title>/);
 assert.match(builtOffer, /canonical" href="https:\/\/strategicai\.app\/founding100\/offer"/);
+assert.match(builtApplication, /<title>StrategicAI Founding 100 \| Apply<\/title>/);
+assert.match(builtApplication, /name="robots" content="noindex, nofollow"/);
+assert.match(builtSchedule, /<title>StrategicAI Founding 100 \| Book Your Fit Call<\/title>/);
+assert.match(builtSchedule, /name="robots" content="noindex, nofollow"/);
+assert.match(builtEnroll, /<title>StrategicAI Founding 100 \| Enrollment<\/title>/);
+assert.match(builtEnroll, /name="robots" content="noindex, nofollow"/);
 
 console.log("founding100 funnel and post-payment contract tests passed");

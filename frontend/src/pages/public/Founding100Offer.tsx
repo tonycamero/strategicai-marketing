@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { ArrowRight, Check, LockKeyhole, X } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Founding100FunnelChrome } from "../../components/founding100/Founding100FunnelChrome";
 import { useFounding100Attribution } from "../../hooks/useFounding100Attribution";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { trackEvent } from "../../lib/analytics";
-import { buildFounding100CheckoutUrl, founding100FunnelConfig, type Founding100Attribution } from "../../lib/founding100Funnel";
+import { buildFounding100Path } from "../../lib/founding100Funnel";
 import "./founding100-funnel.css";
 
 const recognitionMoments = [
@@ -67,28 +68,19 @@ const faqs = [
   ["What happens after 90 days?", "You review what the picture and Ask Nemo experience helped you understand, then decide whether to continue under the available product or engagement path."],
 ] as const;
 
-type CheckoutActionProps = { attribution: Founding100Attribution; checkoutUrl?: string; footer?: boolean };
-
-function CheckoutAction({ attribution, checkoutUrl, footer = false }: CheckoutActionProps) {
-  if (!checkoutUrl) {
-    return <div className={footer ? "f100-checkout f100-checkout-footer" : "f100-checkout"} data-checkout-state="not-configured"><button className="f100-button f100-button-purchase" type="button" disabled><LockKeyhole size={17} aria-hidden="true" /> Join Founding 100</button><p>Checkout is not ready for release.</p></div>;
-  }
-
-  return <div className={footer ? "f100-checkout f100-checkout-footer" : "f100-checkout"} data-checkout-state="configured"><a className="f100-button f100-button-purchase" href={checkoutUrl} onClick={() => trackEvent("checkout_click", { ...attribution, route: "/founding100/offer", checkout_provider: "stripe" })}>Join Founding 100 <ArrowRight size={17} aria-hidden="true" /></a><p>Secure checkout through Stripe.</p></div>;
-}
-
 export default function Founding100Offer() {
   const attribution = useFounding100Attribution();
-  const checkoutUrl = founding100FunnelConfig.checkoutUrl ? buildFounding100CheckoutUrl(founding100FunnelConfig.checkoutUrl, attribution) : undefined;
+  const applyPath = buildFounding100Path("/founding100/apply", attribution);
 
-  usePageMeta({ title: "StrategicAI Founding 100 | See What It Includes", description: "Bring the real business, form a shared operating picture, correct it, and use the 90-day Founding 100 experience to make company context more useful through better questions.", path: "/founding100/offer" });
+  usePageMeta({ title: "StrategicAI Founding 100 | Apply", description: "Bring the real business, form a shared operating picture, correct it, and explore whether the founder-assisted Founding 100 cohort fits.", path: "/founding100/offer" });
 
   useEffect(() => {
-    trackEvent("offer_view", { ...attribution, route: "/founding100/offer", checkout_configured: Boolean(checkoutUrl) });
-  }, [attribution, checkoutUrl]);
+    trackEvent("offer_view", { ...attribution, route: "/founding100/offer" });
+    trackEvent("F100_LANDING_VIEW", { ...attribution, route: "/founding100/offer" });
+  }, [attribution]);
 
   return <Founding100FunnelChrome context="offer"><main className="f100-offer-main">
-    <section className="f100-offer-hero" aria-labelledby="f100-offer-title"><div className="f100-offer-hero-copy"><p className="f100-kicker">Founding 100 · Current public entry</p><h1 id="f100-offer-title">If everyone has a piece and you’re still the one putting it together, start here.</h1><p>Founding 100 is for businesses where important context is scattered across people, systems, files, conversations, and memory.</p><p>Bring the real business—the handoffs, exceptions, disagreements, workarounds, and questions you keep having to answer. We’ll build the operating picture with you. You’ll correct what we get wrong. Then you’ll use that context to ask better questions through Nemo.</p><div className="f100-price"><strong>$299</strong><span>one time</span></div><CheckoutAction attribution={attribution} checkoutUrl={checkoutUrl} /></div><div className="f100-offer-brain" aria-hidden="true"><img src="/images/brain-bg.jpg" alt="" /></div></section>
+    <section className="f100-offer-hero" aria-labelledby="f100-offer-title"><div className="f100-offer-hero-copy"><p className="f100-kicker">Founding 100 · Founder-assisted cohort</p><h1 id="f100-offer-title">If everyone has a piece and you’re still the one putting it together, start here.</h1><p>Founding 100 is for businesses where important context is scattered across people, systems, files, conversations, and memory.</p><p>Bring the real business—the handoffs, exceptions, disagreements, workarounds, and questions you keep having to answer. We’ll build the operating picture with you. You’ll correct what we get wrong. Then you’ll use that context to ask better questions through Nemo.</p><div className="f100-price"><strong>$299</strong><span>one time</span></div><p className="f100-hero-call-note">The next step is a short application and a 30-minute founder fit call. Payment follows the conversation, not the landing page.</p><Link className="f100-button f100-button-primary f100-application-cta" to={applyPath}>Apply for Founding 100 <ArrowRight size={17} aria-hidden="true" /></Link></div><div className="f100-offer-brain" aria-hidden="true"><img src="/images/brain-bg.jpg" alt="" /></div></section>
 
     <section className="f100-offer-section f100-cohort-block" aria-labelledby="cohort-title"><div><p className="f100-kicker">The working cohort</p><h2 id="cohort-title">We want real businesses using this—not just watching demos.</h2></div><div><p>You won’t be watching from the sidelines.</p><p>Bring us the real mess.</p><p>Challenge the picture.</p><p>Correct it.</p><p>Ask hard questions.</p><p>Tell us where the experience works and where it doesn’t.</p><p>In exchange, you get Founding 100 economics while helping shape the experience through real use.</p></div></section>
 
@@ -112,7 +104,7 @@ export default function Founding100Offer() {
 
         <section className="f100-boundaries-faq"><div className="f100-scope" aria-labelledby="f100-scope-title"><p className="f100-kicker">Scope stays explicit</p><h2 id="f100-scope-title">Understanding comes before implementation.</h2><p>Founding 100 begins with understanding the business. Custom implementation or specialist work requires separate scope and approval.</p><ul><li>Correction is part of building the intelligence.</li><li>Unknowns, disagreement, and missing information remain visible.</li><li>The picture can become more useful without becoming complete or automatically current.</li><li>The approved 90 days do not guarantee implementation or an outcome.</li><li>Continuation after 90 days is a separate decision.</li></ul></div><div className="f100-faq" aria-labelledby="f100-faq-title"><h2 id="f100-faq-title">Frequently asked questions</h2>{faqs.map(([question, answer]) => <details key={question} onToggle={(event) => { if (event.currentTarget.open) trackEvent("founding100_offer_faq_opened", { ...attribution, question }); }}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>
 
-    <section className="f100-offer-close" aria-labelledby="f100-close-title"><div><h2 id="f100-close-title">Understand your business. Then decide what deserves action.</h2><p>StrategicAI Founding 100 · $299 one time</p></div><CheckoutAction attribution={attribution} checkoutUrl={checkoutUrl} footer /></section>
-    <aside className="f100-release-boundary" aria-label="Release dependencies"><LockKeyhole size={18} aria-hidden="true" /><p>Checkout cannot launch until the approved Stripe destination, Terms, Privacy, and post-payment verification boundary are ready. Formation remains a separate product handoff.</p></aside>
+    <section className="f100-offer-close" aria-labelledby="f100-close-title"><div><h2 id="f100-close-title">Understand your business. Then decide what deserves action.</h2><p>StrategicAI Founding 100 · $299 one time</p></div><Link className="f100-button f100-button-primary" to={applyPath}>Apply for Founding 100 <ArrowRight size={17} aria-hidden="true" /></Link></section>
+    <aside className="f100-release-boundary" aria-label="Enrollment sequence"><p>Founding 100 is deliberately high-touch. The founder fit call is part of the path; accepted participants receive the Stripe enrollment link afterward. Formation remains a separate product handoff.</p></aside>
   </main></Founding100FunnelChrome>;
 }

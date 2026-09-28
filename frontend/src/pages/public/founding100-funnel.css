@@ -560,6 +560,121 @@
 .f100-release-boundary svg { color: var(--f100-warm); }
 .f100-release-boundary p { margin: 0; color: var(--f100-soft); font-size: 0.76rem; line-height: 1.6; }
 
+.f100-hero-call-note {
+  max-width: 560px;
+  margin-top: 18px !important;
+  color: var(--f100-soft) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.55 !important;
+}
+
+.f100-application-cta { margin-top: 20px; }
+
+.f100-application-main,
+.f100-transition-main {
+  position: relative;
+  z-index: 1;
+  width: min(840px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-top: 68px;
+}
+
+.f100-application-heading { max-width: 720px; }
+.f100-application-heading h1,
+.f100-transition-card h1 {
+  margin: 14px 0 0;
+  color: var(--f100-text);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.f100-application-heading > p:last-child,
+.f100-transition-lede {
+  max-width: 680px;
+  margin: 21px 0 0;
+  color: var(--f100-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.f100-application-callout {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 14px;
+  margin-top: 34px;
+  padding: 22px;
+  border: 1px solid rgba(103, 232, 249, 0.3);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.66);
+}
+
+.f100-application-callout > svg { margin-top: 2px; color: var(--f100-aqua); }
+.f100-application-callout strong { color: var(--f100-text); font-size: 0.9rem; }
+.f100-application-callout p { margin: 7px 0 0; color: var(--f100-muted); font-size: 0.88rem; line-height: 1.6; }
+
+.f100-application-form {
+  position: relative;
+  margin-top: 28px;
+  padding: 30px;
+  border: 1px solid var(--f100-line);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.f100-application-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.f100-application-field { margin-top: 22px; }
+.f100-application-grid .f100-application-field { margin-top: 0; }
+.f100-application-field label { display: block; color: var(--f100-text); font-size: 0.84rem; font-weight: 700; line-height: 1.45; }
+.f100-application-field label span { color: var(--f100-soft); font-weight: 400; }
+.f100-application-field label strong { color: var(--f100-aqua); }
+.f100-application-field input,
+.f100-application-field select,
+.f100-application-field textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 9px;
+  padding: 13px 14px;
+  border: 1px solid rgba(71, 85, 105, 0.9);
+  border-radius: 7px;
+  outline: none;
+  color: var(--f100-text);
+  background: rgba(2, 6, 23, 0.75);
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.f100-application-field textarea { min-height: 112px; resize: vertical; }
+.f100-application-field input::placeholder,
+.f100-application-field textarea::placeholder { color: #64748b; }
+.f100-application-field input:focus,
+.f100-application-field select:focus,
+.f100-application-field textarea:focus { border-color: var(--f100-aqua-deep); box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.13); }
+.f100-application-field input[aria-invalid="true"],
+.f100-application-field select[aria-invalid="true"],
+.f100-application-field textarea[aria-invalid="true"] { border-color: #fb7185; }
+.f100-application-error { margin: 7px 0 0; color: #fda4af; font-size: 0.76rem; line-height: 1.4; }
+.f100-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.f100-application-submit-error { margin-top: 24px; padding: 13px 15px; border: 1px solid rgba(251, 113, 133, 0.5); border-radius: 7px; color: #fecdd3; background: rgba(127, 29, 29, 0.22); font-size: 0.84rem; line-height: 1.5; }
+.f100-application-submit-row { display: flex; gap: 20px; align-items: center; justify-content: space-between; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--f100-line); }
+.f100-application-submit-row p { max-width: 360px; margin: 0; color: var(--f100-soft); font-size: 0.78rem; line-height: 1.5; }
+.f100-application-submit-row .f100-button { flex: 0 0 auto; }
+
+.f100-transition-main { width: min(760px, calc(100% - 48px)); padding-top: 100px; }
+.f100-transition-card { padding: 42px; border: 1px solid var(--f100-line); border-radius: 16px; background: rgba(15, 23, 42, 0.68); box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2); }
+.f100-transition-icon { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid var(--f100-line-strong); border-radius: 50%; color: var(--f100-aqua); background: rgba(34, 211, 238, 0.1); }
+.f100-transition-card h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); }
+.f100-transition-expectations { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--f100-line); }
+.f100-transition-expectations h2 { margin: 0; color: var(--f100-text); font-size: 1.05rem; font-weight: 700; }
+.f100-transition-expectations p { margin: 10px 0 0; color: var(--f100-muted); font-size: 0.92rem; line-height: 1.65; }
+.f100-transition-cta { width: min(100%, 330px); margin-top: 30px; box-sizing: border-box; }
+.f100-configuration-warning { display: flex; gap: 10px; align-items: flex-start; width: 100%; box-sizing: border-box; margin-top: 30px; padding: 14px 16px; border: 1px solid rgba(253, 230, 138, 0.4); border-radius: 8px; color: var(--f100-warm); background: rgba(120, 53, 15, 0.16); font-size: 0.82rem; line-height: 1.5; }
+.f100-configuration-warning svg { flex: 0 0 auto; margin-top: 1px; }
+.f100-transition-backlink { display: inline-block; margin-top: 22px; color: var(--f100-soft); font-size: 0.8rem; text-decoration: underline; text-underline-offset: 4px; }
+
 .f100-funnel-page a:focus-visible,
 .f100-funnel-page button:focus-visible,
 .f100-funnel-page summary:focus-visible {
@@ -625,6 +740,14 @@
   .f100-boundaries-faq { grid-template-columns: 1fr; gap: 66px; padding: 67px 0; }
   .f100-offer-close { flex-direction: column; align-items: flex-start; padding: 62px 0; }
   .f100-checkout-footer { width: 100%; flex-basis: auto; }
+  .f100-application-main,
+  .f100-transition-main { width: min(100% - 36px, 840px); padding-top: 52px; }
+  .f100-application-grid { grid-template-columns: 1fr; gap: 0; }
+  .f100-application-form { padding: 22px 18px; }
+  .f100-application-submit-row { align-items: stretch; flex-direction: column; }
+  .f100-application-submit-row .f100-button { width: 100%; }
+  .f100-transition-main { padding-top: 68px; }
+  .f100-transition-card { padding: 28px 22px; }
 }
 
 @media (max-width: 420px) {

@@ -62,6 +62,7 @@ assert.match(sources.get("Founding100Offer.tsx"), /A good place to start/);
 assert.match(sources.get("Founding100Offer.tsx"), /What can compound through the experience/);
 assert.match(sources.get("Founding100Offer.tsx"), /The picture can become richer and more useful through use and correction/);
 assert.match(sources.get("Founding100Offer.tsx"), /not a separate artifact, a guarantee of completeness, or a promise that every change is captured automatically/);
+assert.match(sources.get("Founding100Offer.tsx"), /buildFounding100Path\("\/founding100\/apply"/);
 assert.match(sources.get("Founding100Offer.tsx"), /Formation, Business Views, available evidence, corrections, Nemo interactions, and changes over time/);
 assert.match(sources.get("Founding100.tsx"), /Start with one real problem/);
 assert.match(sources.get("Founding100.tsx"), /noindex, nofollow/);
@@ -106,6 +107,9 @@ const staticRoutes = [
   "founding100/quick",
   "founding100/webinar",
   "founding100/offer",
+  "founding100/apply",
+  "founding100/schedule",
+  "founding100/enroll",
   "founding100",
   "intake",
   "intake/thanks",
@@ -133,13 +137,13 @@ for (const route of indexable) {
 }
 assert.match(getHtml("/"), /frontier intelligence can reason against/);
 assert.match(getHtml("/product"), /organizational reality available as shared, correctable context/);
-assert.match(getHtml("/founding100/offer"), /90-day Founding 100 experience/);
-for (const route of ["/founding100", "/intake", "/intake/thanks", "/login"]) {
+assert.match(getHtml("/founding100/offer"), /founder-assisted Founding 100 cohort fits/);
+for (const route of ["/founding100", "/founding100/apply", "/founding100/schedule", "/founding100/enroll", "/intake", "/intake/thanks", "/login"]) {
   assert.match(getHtml(route), /name="robots" content="noindex, nofollow"/);
 }
 
 const sitemap = await readFile("public/sitemap.xml", "utf8");
 for (const route of indexable) assert.match(sitemap, new RegExp(`<loc>https:\\/\\/strategicai\\.app${route === "/" ? "\\/" : route}</loc>`));
-for (const route of ["/founding100", "/intake", "/intake/thanks", "/login"]) assert.doesNotMatch(sitemap, new RegExp(`<loc>https:\\/\\/strategicai\\.app${route}</loc>`));
+for (const route of ["/founding100", "/founding100/apply", "/founding100/schedule", "/founding100/enroll", "/intake", "/intake/thanks", "/login"]) assert.doesNotMatch(sitemap, new RegExp(`<loc>https:\\/\\/strategicai\\.app${route}</loc>`));
 
 console.log("public v2 copy, route, metadata, and indexing contract tests passed");

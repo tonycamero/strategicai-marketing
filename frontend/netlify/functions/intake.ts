@@ -42,8 +42,13 @@ export const handler: Handler = async (event) => {
             };
         }
 
-        // Server-side validation
-        const requiredFields = ['fullName', 'email', 'phone', 'company', 'role', 'teamSize', 'priorityBottleneck'];
+        const isFounding100 = data.funnel === 'founding100';
+
+        // Server-side validation. F100 applications are leads only; the legacy
+        // intake contract remains unchanged for every other caller.
+        const requiredFields = isFounding100
+            ? ['name', 'email', 'company', 'website', 'teamSizeRange', 'businessDescription', 'currentOperatingDifficulty', 'exactBusinessQuestion']
+            : ['fullName', 'email', 'phone', 'company', 'role', 'teamSize', 'priorityBottleneck'];
         for (const field of requiredFields) {
             if (!data[field]) {
                 return {
@@ -54,36 +59,88 @@ export const handler: Handler = async (event) => {
             }
         }
 
-        const source = 'strategicai-marketing';
-        const offer = 'executive_brief';
-        const marketingSurface = typeof data.source === 'string' && data.source.trim().length > 0
-            ? data.source.trim()
-            : 'executive_brief_intake';
         const platformBaseUrl = process.env.STRATEGICAI_PLATFORM_API_BASE_URL || 'https://go.strategicai.app';
-        const prospectPayload = {
-            source,
-            offer,
-            fullName: data.fullName,
-            email: data.email,
-            phone: data.phone,
-            company: data.company,
-            role: data.role,
-            teamSize: data.teamSize,
-            website: data.website || null,
-            pains: Array.isArray(data.pains) ? data.pains : [],
-            otherPainText: data.otherPainText || null,
-            priorityBottleneck: data.priorityBottleneck,
-            notes: data.notes || null,
-            submittedAt: new Date().toISOString(),
-            metadata: {
-                marketingSurface,
-                stage: data.stage || null,
-                origin: event.headers.origin || null,
-                referer: event.headers.referer || null,
-            },
-        };
+        const submittedAt = new Date().toISOString();
+        let platformPath = '/api/public/prospect-intake';
+        let prospectPayload: Record<string, unknown>;
 
-        const prospectResponse = await fetch(`${platformBaseUrl.replace(/\/$/, '')}/api/public/prospect-intake`, {
+        if (isFounding100) {
+            const teamSizeByRange: Record<string, number> = {
+                '1': 1,
+                '2-5': 2,
+                '6-15': 6,
+                '16-50': 16,
+                '51-100': 51,
+                '100+': 100,
+            };
+            const teamSize = teamSizeByRange[String(data.teamSizeRange)];
+            if (!teamSize) {
+                return {
+                    statusCode: 400,
+                    headers,
+                    body: JSON.stringify({ error: 'Invalid team size range' }),
+                };
+            }
+
+            platformPath = '/api/public/webinar/register';
+            prospectPayload = {
+                name: data.name,
+                email: data.email,
+                company: data.company,
+                role: 'Owner',
+                teamSize,
+                currentCrm: 'Not provided',
+                bottleneck: data.currentOperatingDifficulty,
+                source: 'founding100',
+                metadata: {
+                    source: 'founding100',
+                    offer: 'founding100',
+                    funnel: 'founding100',
+                    intent: 'founding100_application',
+                    website: data.website,
+                    phone: data.phone || null,
+                    teamSizeRange: data.teamSizeRange,
+                    businessDescription: data.businessDescription,
+                    currentOperatingDifficulty: data.currentOperatingDifficulty,
+                    exactBusinessQuestion: data.exactBusinessQuestion,
+                    attribution: data.attribution || {},
+                    submittedAt,
+                    origin: event.headers.origin || null,
+                    referer: event.headers.referer || null,
+                },
+            };
+        } else {
+            const source = 'strategicai-marketing';
+            const offer = 'executive_brief';
+            const marketingSurface = typeof data.source === 'string' && data.source.trim().length > 0
+                ? data.source.trim()
+                : 'executive_brief_intake';
+
+            prospectPayload = {
+                source,
+                offer,
+                fullName: data.fullName,
+                email: data.email,
+                phone: data.phone,
+                company: data.company,
+                role: data.role,
+                teamSize: data.teamSize,
+                website: data.website || null,
+                pains: Array.isArray(data.pains) ? data.pains : [],
+                otherPainText: data.otherPainText || null,
+                priorityBottleneck: data.priorityBottleneck,
+                notes: data.notes || null,
+                submittedAt,
+                metadata: {
+                    marketingSurface,
+                    stage: data.stage || null,
+                    origin: event.headers.origin || null,
+                    referer: event.headers.referer || null,
+                },
+            };
+        }
+
+        const prospectResponse = await fetch(`${platformBaseUrl.replace(/\/$/, '')}${platformPath}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -111,14 +168,16 @@ export const handler: Handler = async (event) => {
             const { error } = await resend.emails.send({
                 from: process.env.FROM_EMAIL as string,
                 to: ['tony@strategicai.app'],
-                subject: `New Intake: ${data.fullName} - ${data.company}`,
+                subject: isFounding100
+                    ? `New Founding 100 application: ${data.name} - ${data.company}`
+                    : `New Intake: ${data.fullName} - ${data.company}`,
                 html: `
                 <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-                    <h1 style="color: #2563eb; font-size: 24px; margin-bottom: 24px;">New Intake Submission</h1>
+                        <h1 style="color: #2563eb; font-size: 24px; margin-bottom: 24px;">${isFounding100 ? 'New Founding 100 Application' : 'New Intake Submission'}</h1>
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">Name:</strong>
-                        <div style="margin-top: 4px; font-size: 16px;">${data.fullName}</div>
+                        <div style="margin-top: 4px; font-size: 16px;">${data.fullName || data.name}</div>
                     </div>
                     
                     <div style="margin-bottom: 16px;">
@@ -128,7 +187,7 @@ export const handler: Handler = async (event) => {
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">Phone:</strong>
-                        <div style="margin-top: 4px; font-size: 16px;">${data.phone}</div>
+                        <div style="margin-top: 4px; font-size: 16px;">${data.phone || 'Not provided'}</div>
                     </div>
                     
                     <div style="margin-bottom: 16px;">
@@ -138,7 +197,7 @@ export const handler: Handler = async (event) => {
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">Role / Team:</strong>
-                        <div style="margin-top: 4px; font-size: 16px;">${data.role} (Team: ${data.teamSize})</div>
+                        <div style="margin-top: 4px; font-size: 16px;">${data.role || 'Owner'} (Team: ${data.teamSizeRange || data.teamSize})</div>
                     </div>
 
                     <div style="margin-bottom: 16px;">
@@ -148,7 +207,7 @@ export const handler: Handler = async (event) => {
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">Primary Pains:</strong>
-                        <div style="margin-top: 4px; font-size: 16px;">${Array.isArray(data.pains) ? data.pains.join(', ') : data.pains}</div>
+                        <div style="margin-top: 4px; font-size: 16px;">${isFounding100 ? 'Founding 100 application' : (Array.isArray(data.pains) ? data.pains.join(', ') : data.pains)}</div>
                     </div>
 
                     ${data.otherPainText ? `
@@ -160,13 +219,19 @@ export const handler: Handler = async (event) => {
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">#1 Thing Breaking:</strong>
-                        <div style="margin-top: 4px; font-size: 16px; padding: 12px; background: #f8fafc; border-left: 4px solid #2563eb;">${data.priorityBottleneck}</div>
+                        <div style="margin-top: 4px; font-size: 16px; padding: 12px; background: #f8fafc; border-left: 4px solid #2563eb;">${data.currentOperatingDifficulty || data.priorityBottleneck}</div>
                     </div>
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">Additional Info:</strong>
-                        <div style="margin-top: 4px; font-size: 16px;">${data.notes || 'None'}</div>
+                        <div style="margin-top: 4px; font-size: 16px;">${data.notes || data.businessDescription || 'None'}</div>
                     </div>
+                    ${isFounding100 ? `
+                    <div style="margin-bottom: 16px;">
+                        <strong style="color: #64748b;">Question they want answered:</strong>
+                        <div style="margin-top: 4px; font-size: 16px; padding: 12px; background: #f8fafc; border-left: 4px solid #2563eb;">${data.exactBusinessQuestion}</div>
+                    </div>
+                    ` : ''}
                 </div>
             `,
             });
@@ -182,7 +247,9 @@ export const handler: Handler = async (event) => {
             statusCode: 200,
             headers,
             body: JSON.stringify({
-                message: 'Workspace provisioned successfully',
+                message: isFounding100
+                    ? 'Application saved successfully'
+                    : 'Workspace provisioned successfully',
                 ...(prospectResult || {}),
             }),
         };
