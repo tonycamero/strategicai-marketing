@@ -59,7 +59,8 @@ assert.match(contentPage, /content_to_offer/);
 assert.doesNotMatch(contentPage, /type=["']email["']|newsletter|book a call|application form/i);
 
 assert.match(offerPage, /If everyone has a piece and you’re still the one putting it together, start here\./);
-assert.match(offerPage, /\$299/);
+assert.match(offerPage, /\$297/);
+assert.doesNotMatch(offerPage, /\$299/);
 assert.match(offerPage, /Apply for Founding 100/);
 assert.match(offerPage, /founder fit call/);
 assert.doesNotMatch(offerPage, /Checkout is not ready for release\.|data-checkout-state|checkout_click/);
@@ -83,6 +84,8 @@ assert.match(schedulePage, /Google Calendar scheduling is not configured yet/);
 assert.match(schedulePage, /Choose a time/);
 assert.doesNotMatch(schedulePage, /F100_CALL_BOOKED/);
 assert.match(enrollPage, /buildFounding100CheckoutUrl/);
+assert.match(enrollPage, /\$297/);
+assert.doesNotMatch(enrollPage, /\$299/);
 assert.match(enrollPage, /checkout_click/);
 
 assert.match(funnel, /VITE_F100_SHORT_YOUTUBE/);

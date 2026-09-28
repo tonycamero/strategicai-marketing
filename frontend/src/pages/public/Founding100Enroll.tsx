@@ -27,7 +27,7 @@ export default function Founding100Enroll() {
           <p className="f100-kicker">Founding 100 · Enrollment</p>
           <h1>Complete enrollment through Stripe.</h1>
           <p className="f100-transition-lede">
-            StrategicAI Founding 100 is $299 one time. Stripe handles the payment details and receipt.
+            StrategicAI Founding 100 is $297 one time. Stripe handles the payment details and receipt.
             After payment, the existing Founding 100 onboarding path remains the next step.
           </p>
 
