@@ -57,7 +57,7 @@ try {
 
   assert.equal(response.statusCode, 200);
   assert.equal(calls.length, 1);
-  assert.equal(calls[0].url, "https://platform.example/api/public/webinar/register");
+  assert.equal(calls[0].url, "https://platform.example/api/public/diagnostic/register");
   assert.doesNotMatch(calls[0].url, /prospect-intake/);
 
   const payload = JSON.parse(calls[0].options.body);

@@ -59,13 +59,15 @@ export const handler: Handler = async (event) => {
             }
         }
 
-        const platformBaseUrl = process.env.STRATEGICAI_PLATFORM_API_BASE_URL || 'https://go.strategicai.app';
+        const platformBaseUrl = process.env.STRATEGICAI_PLATFORM_API_BASE_URL || 'https://api.strategicai.app';
         const submittedAt = new Date().toISOString();
         let platformPath = '/api/public/prospect-intake';
         let prospectPayload: Record<string, unknown>;
 
         if (isFounding100) {
-            platformPath = '/api/public/webinar/register';
+            // The platform mounts the existing webinar controller under the
+            // diagnostic public router. Keep F100 on that lead-only path.
+            platformPath = '/api/public/diagnostic/register';
             prospectPayload = {
                 name: data.name,
                 email: data.email,
