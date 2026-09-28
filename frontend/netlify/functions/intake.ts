@@ -47,7 +47,7 @@ export const handler: Handler = async (event) => {
         // Server-side validation. F100 applications are leads only; the legacy
         // intake contract remains unchanged for every other caller.
         const requiredFields = isFounding100
-            ? ['name', 'email', 'company', 'website', 'teamSizeRange', 'businessDescription', 'currentOperatingDifficulty', 'exactBusinessQuestion']
+            ? ['name', 'email', 'company', 'currentOperatingDifficulty', 'exactBusinessQuestion']
             : ['fullName', 'email', 'phone', 'company', 'role', 'teamSize', 'priorityBottleneck'];
         for (const field of requiredFields) {
             if (!data[field]) {
@@ -65,31 +65,11 @@ export const handler: Handler = async (event) => {
         let prospectPayload: Record<string, unknown>;
 
         if (isFounding100) {
-            const teamSizeByRange: Record<string, number> = {
-                '1': 1,
-                '2-5': 2,
-                '6-15': 6,
-                '16-50': 16,
-                '51-100': 51,
-                '100+': 100,
-            };
-            const teamSize = teamSizeByRange[String(data.teamSizeRange)];
-            if (!teamSize) {
-                return {
-                    statusCode: 400,
-                    headers,
-                    body: JSON.stringify({ error: 'Invalid team size range' }),
-                };
-            }
-
             platformPath = '/api/public/webinar/register';
             prospectPayload = {
                 name: data.name,
                 email: data.email,
                 company: data.company,
-                role: 'Owner',
-                teamSize,
-                currentCrm: 'Not provided',
                 bottleneck: data.currentOperatingDifficulty,
                 source: 'founding100',
                 metadata: {
@@ -97,10 +77,7 @@ export const handler: Handler = async (event) => {
                     offer: 'founding100',
                     funnel: 'founding100',
                     intent: 'founding100_application',
-                    website: data.website,
-                    phone: data.phone || null,
-                    teamSizeRange: data.teamSizeRange,
-                    businessDescription: data.businessDescription,
+                    website: data.website || null,
                     currentOperatingDifficulty: data.currentOperatingDifficulty,
                     exactBusinessQuestion: data.exactBusinessQuestion,
                     attribution: data.attribution || {},
@@ -197,7 +174,7 @@ export const handler: Handler = async (event) => {
                     
                     <div style="margin-bottom: 16px;">
                         <strong style="color: #64748b;">Role / Team:</strong>
-                        <div style="margin-top: 4px; font-size: 16px;">${data.role || 'Owner'} (Team: ${data.teamSizeRange || data.teamSize})</div>
+                        <div style="margin-top: 4px; font-size: 16px;">${isFounding100 ? 'Founding 100 application' : (data.role || 'Owner') + ' (Team: ' + (data.teamSizeRange || data.teamSize) + ')'}</div>
                     </div>
 
                     <div style="margin-bottom: 16px;">

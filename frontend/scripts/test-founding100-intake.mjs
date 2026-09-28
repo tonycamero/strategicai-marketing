@@ -49,10 +49,6 @@ try {
       name: "Tony Founder",
       email: "tony@example.com",
       company: "Example Co",
-      website: "https://example.com",
-      phone: "+1 555 0100",
-      teamSizeRange: "6-15",
-      businessDescription: "We operate a service business.",
       currentOperatingDifficulty: "Important context is scattered.",
       exactBusinessQuestion,
       attribution: { message_card_id: "card-1" },
@@ -69,9 +65,6 @@ try {
     name: "Tony Founder",
     email: "tony@example.com",
     company: "Example Co",
-    role: "Owner",
-    teamSize: 6,
-    currentCrm: "Not provided",
     bottleneck: "Important context is scattered.",
     source: "founding100",
     metadata: {
@@ -79,10 +72,7 @@ try {
       offer: "founding100",
       funnel: "founding100",
       intent: "founding100_application",
-      website: "https://example.com",
-      phone: "+1 555 0100",
-      teamSizeRange: "6-15",
-      businessDescription: "We operate a service business.",
+      website: null,
       currentOperatingDifficulty: "Important context is scattered.",
       exactBusinessQuestion,
       attribution: { message_card_id: "card-1" },
@@ -103,13 +93,14 @@ try {
       email: "large@example.com",
       company: "Large Co",
       website: "https://large.example.com",
-      teamSizeRange: "100+",
-      businessDescription: "A larger business.",
       currentOperatingDifficulty: "The picture is fragmented.",
       exactBusinessQuestion,
     }),
   });
-  assert.equal(JSON.parse(calls[0].options.body).teamSize, 100);
+  const optionalWebsitePayload = JSON.parse(calls[0].options.body);
+  assert.equal(optionalWebsitePayload.metadata.website, "https://large.example.com");
+  assert.equal("teamSize" in optionalWebsitePayload, false);
+  assert.equal("role" in optionalWebsitePayload, false);
 
   calls.length = 0;
   const legacyResponse = await handler({

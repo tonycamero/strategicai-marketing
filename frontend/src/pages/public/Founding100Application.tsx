@@ -17,9 +17,6 @@ type ApplicationValues = {
   email: string;
   company: string;
   website: string;
-  phone: string;
-  teamSizeRange: string;
-  businessDescription: string;
   currentOperatingDifficulty: string;
   exactBusinessQuestion: string;
 };
@@ -31,21 +28,9 @@ const initialValues: ApplicationValues = {
   email: "",
   company: "",
   website: "",
-  phone: "",
-  teamSizeRange: "",
-  businessDescription: "",
   currentOperatingDifficulty: "",
   exactBusinessQuestion: "",
 };
-
-const teamSizeOptions = [
-  { value: "1", label: "Just me" },
-  { value: "2-5", label: "2–5" },
-  { value: "6-15", label: "6–15" },
-  { value: "16-50", label: "16–50" },
-  { value: "51-100", label: "51–100" },
-  { value: "100+", label: "100+" },
-] as const;
 
 function Field({
   label,
@@ -100,9 +85,6 @@ export default function Founding100Application() {
       "name",
       "email",
       "company",
-      "website",
-      "teamSizeRange",
-      "businessDescription",
       "currentOperatingDifficulty",
       "exactBusinessQuestion",
     ];
@@ -185,7 +167,7 @@ export default function Founding100Application() {
       <main className="f100-application-main">
         <header className="f100-application-heading">
           <p className="f100-kicker">Founding 100 · Application</p>
-          <h1>Tell us about the business you actually have.</h1>
+          <h1>Raise your hand. Let’s talk about your business.</h1>
           <p>
             This is a short application, not an enterprise procurement form. We want to understand
             what you are operating, where visibility breaks down, and the question you most want the
@@ -217,23 +199,10 @@ export default function Founding100Application() {
             <Field label="Company / business name" name="company" error={errors.company}>
               <input id="company" name="company" type="text" autoComplete="organization" value={values.company} onChange={(event) => updateValue("company", event.target.value)} aria-invalid={Boolean(errors.company)} aria-describedby={errors.company ? "company-error" : undefined} required />
             </Field>
-            <Field label="Website" name="website" error={errors.website}>
-              <input id="website" name="website" type="url" inputMode="url" placeholder="https://" value={values.website} onChange={(event) => updateValue("website", event.target.value)} aria-invalid={Boolean(errors.website)} aria-describedby={errors.website ? "website-error" : undefined} required />
-            </Field>
-            <Field label="Phone" name="phone" error={errors.phone} optional>
-              <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" value={values.phone} onChange={(event) => updateValue("phone", event.target.value)} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "phone-error" : undefined} />
-            </Field>
-            <Field label="About how many people are involved in operating the business?" name="teamSizeRange" error={errors.teamSizeRange}>
-              <select id="teamSizeRange" name="teamSizeRange" value={values.teamSizeRange} onChange={(event) => updateValue("teamSizeRange", event.target.value)} aria-invalid={Boolean(errors.teamSizeRange)} aria-describedby={errors.teamSizeRange ? "teamSizeRange-error" : undefined} required>
-                <option value="">Choose a range</option>
-                {teamSizeOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-              </select>
+            <Field label="Website" name="website" error={errors.website} optional>
+              <input id="website" name="website" type="url" inputMode="url" placeholder="https://" value={values.website} onChange={(event) => updateValue("website", event.target.value)} aria-invalid={Boolean(errors.website)} aria-describedby={errors.website ? "website-error" : undefined} />
             </Field>
           </div>
-
-          <Field label="What does your business do?" name="businessDescription" error={errors.businessDescription}>
-            <textarea id="businessDescription" name="businessDescription" rows={4} placeholder="Give us the short version. One to three sentences is enough." value={values.businessDescription} onChange={(event) => updateValue("businessDescription", event.target.value)} aria-invalid={Boolean(errors.businessDescription)} aria-describedby={errors.businessDescription ? "businessDescription-error" : undefined} required />
-          </Field>
 
           <Field label="What feels harder than it should in the business right now?" name="currentOperatingDifficulty" error={errors.currentOperatingDifficulty}>
             <textarea id="currentOperatingDifficulty" name="currentOperatingDifficulty" rows={4} value={values.currentOperatingDifficulty} onChange={(event) => updateValue("currentOperatingDifficulty", event.target.value)} aria-invalid={Boolean(errors.currentOperatingDifficulty)} aria-describedby={errors.currentOperatingDifficulty ? "currentOperatingDifficulty-error" : undefined} required />
@@ -246,9 +215,9 @@ export default function Founding100Application() {
           {errors.submit ? <div className="f100-application-submit-error" role="alert">{errors.submit}</div> : null}
 
           <div className="f100-application-submit-row">
-            <p>Your application is saved before scheduling becomes available.</p>
+            <p>Next, choose a 30-minute time with Tony.</p>
             <button className="f100-button f100-button-primary" type="submit" disabled={submitting}>
-              {submitting ? "Saving application…" : "Save application"}
+              {submitting ? "Saving application…" : "Continue to scheduling"}
               {!submitting ? <ArrowRight size={17} aria-hidden="true" /> : null}
             </button>
           </div>

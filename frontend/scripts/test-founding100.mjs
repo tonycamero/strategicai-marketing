@@ -68,7 +68,12 @@ assert.doesNotMatch(offerPage, /type=["']email["']|newsletter|book a call|applic
 
 assert.match(applicationPage, /funnel: "founding100"/);
 assert.match(applicationPage, /\/\.netlify\/functions\/intake/);
+assert.match(applicationPage, /Raise your hand\. Let’s talk about your business\./);
+assert.match(applicationPage, /Field label="Website" name="website" error={errors\.website} optional/);
 assert.match(applicationPage, /If your business could answer one question clearly today, what would you ask it\?/);
+assert.match(applicationPage, /Next, choose a 30-minute time with Tony\./);
+assert.match(applicationPage, /Continue to scheduling/);
+assert.doesNotMatch(applicationPage, /Phone|teamSizeRange|businessDescription|What does your business do\?/);
 assert.match(applicationPage, /F100_APPLICATION_(START|SUBMIT|SUCCESS|ERROR)/);
 assert.match(schedulePage, /VITE_F100_CALENDAR_URL/);
 assert.match(schedulePage, /F100_SCHEDULING_CTA/);
