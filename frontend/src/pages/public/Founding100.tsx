@@ -92,38 +92,26 @@ export default function Founding100() {
 
       <main>
         <section className="founding100-hero" aria-labelledby="founding100-title">
-          <div className="founding100-hero-copy">
-            <div className="founding100-eyebrow founding100-eyebrow-success">
-              <CheckCircle2 size={16} aria-hidden="true" />
-              <span>Founding 100 <span aria-hidden="true">·</span> post-purchase onboarding</span>
-            </div>
-            <h1 id="founding100-title">You’re in.</h1>
-            <p className="founding100-hero-lede">Bring the business you actually have.</p>
-            <p className="founding100-hero-body">
-              Not the polished version. Not the process manual. Bring the people, work, systems, exceptions, disagreements, and questions that make the business real. Then we’ll start building the picture together.
-            </p>
-            <div className="founding100-principle">
-              <span className="founding100-principle-line" aria-hidden="true" />
-              <p><strong>StrategicAI builds the understanding.</strong> Ask Nemo is how you work with it.</p>
-            </div>
+          <div className="absolute inset-0" aria-hidden="true">
+            <div data-hero-heart-background className="absolute inset-0 bg-[length:116%_auto] bg-scroll bg-no-repeat opacity-[0.24] sm:bg-[length:98%_auto] md:bg-fixed md:bg-[length:88%_auto]" style={{ backgroundImage: 'url("/images/hero-heart-final.webp")', backgroundPosition: "calc(50% + 25vw) 50%" }} />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(34,211,238,0.055),transparent_46%),linear-gradient(180deg,rgba(2,6,23,0.34),#020617_96%)]" />
           </div>
-
-          <div className="founding100-hero-visual" aria-hidden="true">
-            <div className="founding100-visual-label">A working picture takes shape</div>
-            <div className="founding100-map">
-              <svg viewBox="0 0 420 300" role="presentation">
-                <path d="M82 78C142 42 164 93 209 112S294 115 336 72" />
-                <path d="M77 218C131 180 166 192 209 156S284 147 337 204" />
-                <path d="M115 72C118 133 155 140 209 147S302 178 325 214" />
-                <path d="M84 214C137 238 164 196 207 154S274 93 338 79" />
-              </svg>
-              <span className="founding100-node founding100-node-a"><i>People</i></span>
-              <span className="founding100-node founding100-node-b"><i>Work</i></span>
-              <span className="founding100-node founding100-node-c"><i>Systems</i></span>
-              <span className="founding100-node founding100-node-d"><i>Decisions</i></span>
-              <span className="founding100-node founding100-node-center"><span>StrategicAI</span></span>
+          <div className="founding100-hero-inner">
+            <div className="founding100-hero-copy">
+              <div className="founding100-eyebrow founding100-eyebrow-success">
+                <CheckCircle2 size={16} aria-hidden="true" />
+                <span>Founding 100 <span aria-hidden="true">·</span> post-purchase onboarding</span>
+              </div>
+              <h1 id="founding100-title">You’re in.</h1>
+              <p className="founding100-hero-lede">Bring the business you actually have.</p>
+              <p className="founding100-hero-body">
+                Not the polished version. Not the process manual. Bring the people, work, systems, exceptions, disagreements, and questions that make the business real. Then we’ll start building the picture together.
+              </p>
+              <div className="founding100-principle">
+                <span className="founding100-principle-line" aria-hidden="true" />
+                <p><strong>StrategicAI builds the understanding.</strong> Ask Nemo is how you work with it.</p>
+              </div>
             </div>
-            <div className="founding100-visual-foot">Built from your company</div>
           </div>
         </section>
 

@@ -77,6 +77,10 @@ assert.match(sources.get("Founding100Offer.tsx"), /not a separate artifact, a gu
 assert.match(sources.get("Founding100Offer.tsx"), /buildFounding100Path\("\/founding100\/apply"/);
 assert.match(sources.get("Founding100Offer.tsx"), /Formation, Business Views, available evidence, corrections, Nemo interactions, and changes over time/);
 assert.match(sources.get("Founding100.tsx"), /Start with one real problem/);
+assert.match(sources.get("Founding100.tsx"), /hero-heart-final\.webp/);
+assert.match(sources.get("Founding100.tsx"), /data-hero-heart-background/);
+assert.match(sources.get("Founding100.tsx"), /md:bg-fixed/);
+assert.match(sources.get("Founding100.tsx"), /opacity-\[0\.24\]/);
 assert.match(sources.get("Founding100.tsx"), /noindex, nofollow/);
 assert.match(sources.get("Intake.tsx"), /“I don’t know” is useful here/);
 assert.match(sources.get("IntakeThanks.tsx"), /Your perspective is one piece of the picture/);

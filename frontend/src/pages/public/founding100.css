@@ -94,11 +94,17 @@
 }
 
 .founding100-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.97fr);
-  gap: 56px;
-  align-items: center;
+  position: relative;
+  width: 100%;
   min-height: 620px;
+  overflow: hidden;
+}
+
+.founding100-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 48px));
+  margin-inline: auto;
   padding: 78px 0 88px;
 }
 
@@ -179,58 +185,6 @@
 .founding100-principle p { margin: 0; }
 .founding100-principle strong { color: var(--f100-text); font-weight: 600; }
 .founding100-principle-line { width: 2px; min-height: 43px; background: var(--f100-aqua-deep); }
-
-.founding100-hero-visual {
-  position: relative;
-  width: 100%;
-  min-width: 0;
-  min-height: 390px;
-  padding: 36px 30px 30px;
-  border: 1px solid var(--f100-line);
-  border-radius: 28px;
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.78), rgba(2, 6, 23, 0.7));
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
-}
-
-.founding100-visual-label,
-.founding100-visual-foot {
-  color: var(--f100-soft);
-  font-size: 0.67rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.founding100-visual-foot { position: absolute; right: 30px; bottom: 28px; color: var(--f100-muted); letter-spacing: 0.08em; text-transform: none; }
-
-.founding100-map { position: relative; width: min(100%, 420px); height: 300px; margin: 18px auto 0; }
-.founding100-map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.founding100-map path { fill: none; stroke: rgba(34, 211, 238, 0.28); stroke-width: 1.2; stroke-dasharray: 3 5; }
-
-.founding100-node {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  width: 62px;
-  height: 62px;
-  border: 1px solid rgba(34, 211, 238, 0.5);
-  border-radius: 50%;
-  color: var(--f100-aqua);
-  background: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 0 0 8px rgba(34, 211, 238, 0.04);
-  font-size: 0.64rem;
-  font-style: normal;
-  font-weight: 700;
-  text-align: center;
-}
-
-.founding100-node i { font-style: normal; }
-.founding100-node-a { top: 26px; left: 9%; }
-.founding100-node-b { top: 47%; left: 2%; }
-.founding100-node-c { top: 30px; right: 7%; }
-.founding100-node-d { right: 3%; bottom: 25px; }
-.founding100-node-center { top: 41%; left: calc(50% - 37px); width: 74px; height: 74px; color: var(--f100-text); border-color: var(--f100-warm); box-shadow: 0 0 0 14px rgba(253, 230, 138, 0.04), 0 0 30px rgba(253, 230, 138, 0.1); }
-.founding100-node-center span { font-size: 0.61rem; }
 
 .founding100-next { padding: 92px 0 105px; border-top: 1px solid var(--f100-line); }
 .founding100-section-heading h2,
@@ -324,8 +278,8 @@
 .founding100-footer > a:last-child { justify-self: end; color: var(--f100-aqua); }
 
 @media (max-width: 900px) {
-  .founding100-hero { grid-template-columns: 1fr; gap: 40px; min-height: auto; padding-top: 66px; }
-  .founding100-hero-visual { max-width: 600px; }
+  .founding100-hero { min-height: auto; }
+  .founding100-hero-inner { padding-top: 66px; }
   .founding100-next-grid { grid-template-columns: 1fr; gap: 45px; }
   .founding100-status-card { max-width: 520px; }
   .founding100-building-grid { grid-template-columns: repeat(2, 1fr); }
@@ -336,7 +290,6 @@
 }
 
 @media (max-width: 600px) {
-  .founding100-hero,
   .founding100-section,
   .founding100-next,
   .founding100-correction,
@@ -344,17 +297,12 @@
   .founding100-support,
   .founding100-footer { width: min(100% - 36px, 1120px); }
   .founding100-contextbar { width: min(100% - 36px, 1120px); padding-top: 13px; font-size: 0.58rem; line-height: 1.45; }
-  .founding100-hero { gap: 37px; padding: 56px 0 74px; }
+  .founding100-hero-inner { width: min(100% - 36px, 1120px); padding: 56px 0 74px; }
   .founding100-eyebrow { margin-bottom: 24px; font-size: 0.63rem; letter-spacing: 0.1em; }
   .founding100-hero h1 { font-size: clamp(3.6rem, 17vw, 5rem); }
   .founding100-hero-lede { margin-top: 22px; font-size: 1.35rem; }
   .founding100-hero-body { font-size: 0.96rem; }
   .founding100-principle { margin-top: 27px; font-size: 0.88rem; }
-  .founding100-hero-visual { min-height: 330px; padding: 25px 17px 20px; border-radius: 21px; }
-  .founding100-map { height: 245px; margin-top: 16px; }
-  .founding100-node { width: 52px; height: 52px; font-size: 0.57rem; }
-  .founding100-node-center { left: calc(50% - 32px); width: 64px; height: 64px; }
-  .founding100-visual-foot { right: 18px; bottom: 19px; font-size: 0.57rem; }
   .founding100-next,
   .founding100-section { padding: 76px 0; }
   .founding100-section-heading h2,
