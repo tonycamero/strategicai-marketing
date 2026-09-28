@@ -25,19 +25,31 @@ const appSource = await readFile("src/App.tsx", "utf8");
 const shellSource = await readFile("src/components/Shell.tsx", "utf8");
 const footerSource = await readFile("src/components/Footer.tsx", "utf8");
 const goldenProofSource = await readFile("src/lib/goldenProofThread.ts", "utf8");
+const funnelStyles = await readFile("src/pages/public/founding100-funnel.css", "utf8");
 const combined = [...sources.values()].join("\n");
 assert.match(appSource, /function ScrollToRoute/);
 assert.match(appSource, /window\.scrollTo\(\{ top: 0, left: 0, behavior: "auto" \}\)/);
 assert.match(appSource, /<ScrollToRoute \/>/);
 assert.doesNotMatch(shellSource, /useLocation|window\.scrollTo/);
-assert.match(sources.get("AlternateHomePage.tsx"), /available evidence into a shared, evolving operating picture/);
+assert.match(sources.get("AlternateHomePage.tsx"), /<p[^>]*>STRUCTURAL INTELLIGENCE<\/p>/);
+assert.match(sources.get("AlternateHomePage.tsx"), /<h1[^>]*>Intelligence is more than cognition<\/h1>/);
+assert.match(sources.get("AlternateHomePage.tsx"), /<h2[^>]*>Your business is not a machine\. It is a living system\.<\/h2>/);
+assert.match(sources.get("AlternateHomePage.tsx"), /StrategicAI brings the reality of that system into view—across people, work, responsibilities, evidence, constraints, and change—so it can be inspected, challenged, corrected, and reasoned against\./);
+assert.match(sources.get("AlternateHomePage.tsx"), /See how StrategicAI turns scattered operating reality into a shared picture\./);
+assert.doesNotMatch(sources.get("AlternateHomePage.tsx"), /Start with one real problem\. Follow it through the business\./);
+assert.match(sources.get("AlternateHomePage.tsx"), /hero-heart-final\.webp/);
+assert.match(sources.get("AlternateHomePage.tsx"), /data-hero-heart-background/);
+assert.match(sources.get("AlternateHomePage.tsx"), /md:bg-fixed/);
+assert.match(sources.get("AlternateHomePage.tsx"), /opacity-\[0\.24\]/);
+assert.doesNotMatch(sources.get("AlternateHomePage.tsx"), /hero-heart-option-|data-hero-heart-selector/);
+assert.doesNotMatch(sources.get("AlternateHomePage.tsx"), /brain-bg/);
 assert.match(sources.get("AlternateHomePage.tsx"), /Your systems don’t contain everything your business knows/);
-assert.match(sources.get("AlternateHomePage.tsx"), /Why does the full picture of how your business works still live in your head\?/);
 assert.match(sources.get("AlternateHomePage.tsx"), /One business\. No shared picture\./);
 assert.match(sources.get("AlternateHomePage.tsx"), /management drag/);
 assert.match(sources.get("AlternateHomePage.tsx"), /Frontier models provide intelligence\. StrategicAI provides organizational reality\./);
 assert.match(sources.get("AlternateHomePage.tsx"), /incomplete, inconsistent, transient, or stale/);
 assert.match(sources.get("AlternateHomePage.tsx"), /What changed since last month\?/);
+assert.match(sources.get("AlternateHomePage.tsx"), /"04", "Reason with Nemo", "Use frontier intelligence to reason from structured context instead of reconstructing the business each time\."/);
 for (const outcome of ["Executive visibility", "Earlier risk detection", "Board preparation", "Leadership alignment", "Trusted answers", "Decision velocity"]) {
   assert.match(sources.get("AlternateHomePage.tsx"), new RegExp(outcome));
 }
@@ -72,6 +84,11 @@ assert.match(sources.get("IntakeThanks.tsx"), /Your perspective is one piece of 
 assert.doesNotMatch(combined, /Build My Executive Brief/);
 assert.doesNotMatch(combined, /Business Intelligence Portfolio/);
 assert.doesNotMatch(combined, /AI Brain|TrustConsole/);
+assert.doesNotMatch(combined, /brain-bg/);
+assert.doesNotMatch(funnelStyles, /brain-bg|f100-offer-brain/);
+for (const file of ["HowItWorks.tsx", "Product.tsx", "Pricing.tsx", "Partners.tsx", "Founding100Offer.tsx"]) {
+  assert.match(sources.get(file), /hero-heart-final\.webp/);
+}
 assert.doesNotMatch(combined, /bring your own model|BYOM/i);
 assert.doesNotMatch(combined, /automatically monitors|automatically updates|automatic alerts/i);
 assert.doesNotMatch(combined.replace(sources.get("Founding100Offer.tsx"), ""), /\$299|90(?:\s+days?|[-‑]day)/i);
@@ -82,6 +99,14 @@ const goldenProofAssets = ["evidence", "picture", "correction", "question"];
 assert.doesNotMatch(goldenProofSource, /homepage-proof-.*-placeholder\.svg|PLACEHOLDER IMAGE/);
 assert.match(goldenProofSource, /status: "AWAITING_REAL_PROOF"/);
 assert.match(goldenProofSource, /Illustrative example · not a customer result/);
+assert.deepEqual([...goldenProofSource.matchAll(/durationSeconds: (\d+)/g)].map((match) => Number(match[1])), [4, 5, 7, 5]);
+assert.match(goldenProofSource, /navLabel: "Reasoning"/);
+assert.doesNotMatch(goldenProofSource, /navLabel: "Ask Nemo"/);
+assert.match(sources.get("AlternateHomePage.tsx"), /new IntersectionObserver/);
+assert.match(sources.get("AlternateHomePage.tsx"), /trigger: "scroll_into_view"/);
+assert.match(sources.get("AlternateHomePage.tsx"), /Replay the 21-second walkthrough/);
+assert.match(sources.get("AlternateHomePage.tsx"), /onMouseEnter=\{\(\) => selectProofStep\(index, "hover"\)\}/);
+assert.match(sources.get("AlternateHomePage.tsx"), /onFocus=\{\(\) => selectProofStep\(index, "focus"\)\}/);
 for (const asset of goldenProofAssets) {
   assert.match(goldenProofSource, new RegExp(`/images/homepage-proof-${asset}\\.webp`));
   const image = await readFile(`public/images/homepage-proof-${asset}.webp`);

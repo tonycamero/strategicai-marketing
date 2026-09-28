@@ -198,7 +198,7 @@
   inset: 0;
   z-index: -1;
   opacity: 0.14;
-  background: url("/images/brain-bg.jpg") center / min(58%, 500px) no-repeat;
+  background: url("/images/hero-heart-final.webp") center / min(58%, 500px) no-repeat;
   mask-image: radial-gradient(circle, black 15%, transparent 72%);
 }
 
@@ -426,7 +426,7 @@
 .f100-button-purchase:hover { background: #f2d5a5; }
 .f100-button-purchase:disabled { color: #869095; border-color: var(--f100-line); background: rgba(126, 143, 148, 0.12); cursor: not-allowed; transform: none; }
 
-.f100-offer-brain {
+.f100-offer-heart {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -435,7 +435,7 @@
   overflow: hidden;
 }
 
-.f100-offer-brain::after {
+.f100-offer-heart::after {
   position: absolute;
   inset: 0;
   content: "";
@@ -444,7 +444,7 @@
     linear-gradient(180deg, rgba(2, 6, 23, 0.35), var(--f100-bg) 80%);
 }
 
-.f100-offer-brain img {
+.f100-offer-heart img {
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -711,7 +711,7 @@
   .f100-offer-main { padding-top: 0; }
   .f100-offer-hero { min-height: auto; }
   .f100-offer-hero-copy { width: calc(100% - 36px); padding: 64px 0 82px; }
-  .f100-offer-brain img { transform: scale(1.42); }
+  .f100-offer-heart img { transform: scale(1.42); }
   .f100-cohort-block { grid-template-columns: 1fr; gap: 26px; }
   .f100-cohort-block > div + div { padding: 25px 0 0; border-top: 1px solid var(--f100-line); border-left: 0; }
   .f100-recognition-grid { grid-template-columns: 1fr; margin-top: 36px; }

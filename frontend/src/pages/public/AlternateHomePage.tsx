@@ -67,10 +67,15 @@ export default function AlternateHomePage() {
   const [activeProofStep, setActiveProofStep] = useState(0);
   const [proofPlaying, setProofPlaying] = useState(false);
   const [proofProgressSeconds, setProofProgressSeconds] = useState(0);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
   const [selectedView, setSelectedView] = useState(businessViews[0].id);
   const [selectedQuestion, setSelectedQuestion] = useState(nemoQuestions[0].id);
+  const proofSectionRef = useRef<HTMLElement | null>(null);
   const proofElapsedRef = useRef(0);
+  const proofCompletionTrackedRef = useRef(false);
+  const proofInteractionRef = useRef(false);
 
   usePageMeta({ title: "StrategicAI | See How Your Business Actually Works", description: "StrategicAI brings available business evidence into a shared, correctable operating picture that people can inspect and frontier intelligence can reason against." });
 
@@ -87,6 +92,28 @@ export default function AlternateHomePage() {
   }, []);
 
   useEffect(() => {
+    const section = proofSectionRef.current;
+    if (!section || reducedMotion || proofInteractionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || proofInteractionRef.current) return;
+        setProofPlaying(true);
+        trackEvent("homepage_proof_start", {
+          proof_thread: "golden-proof-thread",
+          surface_version: "homepage-humanized-v1",
+          trigger: "scroll_into_view",
+        });
+        observer.disconnect();
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [reducedMotion]);
+
+  useEffect(() => {
     if (!proofPlaying || reducedMotion) return;
     const timer = window.setInterval(() => {
       const duration = proofSteps[activeProofStep].durationSeconds;
@@ -96,8 +123,14 @@ export default function AlternateHomePage() {
       if (nextElapsed < duration) return;
 
       if (activeProofStep >= proofSteps.length - 1) {
-        setProofPlaying(false);
-        trackEvent("homepage_proof_complete", { proof_thread: "golden-proof-thread", completed_steps: proofSteps.length });
+        if (!proofCompletionTrackedRef.current) {
+          proofCompletionTrackedRef.current = true;
+          trackEvent("homepage_proof_complete", { proof_thread: "golden-proof-thread", completed_steps: proofSteps.length });
+        }
+        proofElapsedRef.current = 0;
+        setProofProgressSeconds(0);
+        setActiveProofStep(0);
+        trackEvent("homepage_proof_step", { proof_step: proofSteps[0].id, step_index: 0, auto_advanced: true });
         return;
       }
 
@@ -115,14 +148,17 @@ export default function AlternateHomePage() {
   const activeQuestion = useMemo(() => nemoQuestions.find((item) => item.id === selectedQuestion) ?? nemoQuestions[0], [selectedQuestion]);
 
   function startProof() {
+    proofInteractionRef.current = true;
     setActiveProofStep(0);
     proofElapsedRef.current = 0;
+    proofCompletionTrackedRef.current = false;
     setProofProgressSeconds(0);
     setProofPlaying(!reducedMotion);
     trackEvent("homepage_proof_start", { proof_thread: "golden-proof-thread", surface_version: "homepage-humanized-v1" });
   }
 
   function toggleProof() {
+    proofInteractionRef.current = true;
     if (proofPlaying) {
       setProofPlaying(false);
       trackEvent("homepage_proof_pause", { proof_step: activeProof.id, elapsed_step_count: activeProofStep + 1 });
@@ -137,15 +173,18 @@ export default function AlternateHomePage() {
     trackEvent("homepage_proof_start", { proof_thread: "golden-proof-thread", resumed_from: activeProof.id });
   }
 
-  function selectProofStep(index: number) {
+  function selectProofStep(index: number, interaction: "click" | "hover" | "focus" = "click") {
+    if (index === activeProofStep && !proofPlaying) return;
+    proofInteractionRef.current = true;
     setActiveProofStep(index);
     proofElapsedRef.current = 0;
     setProofProgressSeconds(0);
     setProofPlaying(false);
-    trackEvent("homepage_proof_step", { proof_step: proofSteps[index].id, step_index: index, auto_advanced: false });
+    trackEvent("homepage_proof_step", { proof_step: proofSteps[index].id, step_index: index, auto_advanced: false, interaction });
   }
 
   function resetProof() {
+    proofInteractionRef.current = true;
     setActiveProofStep(0);
     proofElapsedRef.current = 0;
     setProofProgressSeconds(0);
@@ -161,14 +200,18 @@ export default function AlternateHomePage() {
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-400/20">
       <main>
         <section className="relative overflow-hidden border-b border-slate-800/70">
-          <div className="absolute inset-0"><img src="/images/brain-bg.jpg" alt="" className="h-full w-full object-cover opacity-10" /><div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.2),transparent_40%),linear-gradient(180deg,rgba(2,6,23,0.35),#020617_80%)]" /></div>
+          <div className="absolute inset-0" aria-hidden="true">
+            <div data-hero-heart-background className="absolute inset-0 bg-[length:116%_auto] bg-scroll bg-no-repeat opacity-[0.24] sm:bg-[length:98%_auto] md:bg-fixed md:bg-[length:88%_auto]" style={{ backgroundImage: 'url("/images/hero-heart-final.webp")', backgroundPosition: "calc(50% + 25vw) 50%" }} />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(34,211,238,0.055),transparent_46%),linear-gradient(180deg,rgba(2,6,23,0.34),#020617_96%)]" />
+          </div>
           <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
             <div className="max-w-4xl">
-              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300/80">How the business actually works</p>
-              <h1 className="max-w-4xl text-[2.5rem] font-semibold leading-[1.05] text-white sm:text-5xl md:text-7xl">Why does the full picture of how your business works still live in your head?</h1>
-              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-2xl md:leading-10">Your people, systems, files, meetings, and memory each hold part of the answer. StrategicAI brings the available evidence into a shared, evolving operating picture that people can inspect, challenge, and correct—and frontier intelligence can reason against.</p>
+              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300/80">STRUCTURAL INTELLIGENCE</p>
+              <h1 className="max-w-4xl text-[2.5rem] font-semibold leading-[1.05] text-white sm:text-5xl md:text-7xl">Intelligence is more than cognition</h1>
+              <h2 className="mt-7 max-w-3xl text-2xl font-medium leading-tight text-slate-100 sm:text-3xl md:text-4xl">Your business is not a machine. It is a living system.</h2>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl md:leading-9">StrategicAI brings the reality of that system into view—across people, work, responsibilities, evidence, constraints, and change—so it can be inspected, challenged, corrected, and reasoned against.</p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"><a href="#proof-thread" className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-300">See the illustrative example <ArrowRight size={17} className="ml-2" aria-hidden="true" /></a><Link to="/founding100/offer" onClick={() => handleFounding100Click("homepage-hero")} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-7 py-4 text-base font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">See Founding 100</Link></div>
-              <p className="mt-6 text-sm font-medium text-slate-400">Start with one real problem. Follow it through the business.</p>
+              <p className="mt-6 text-sm font-medium text-slate-400">See how StrategicAI turns scattered operating reality into a shared picture.</p>
             </div>
           </div>
         </section>
@@ -181,9 +224,9 @@ export default function AlternateHomePage() {
 
         <section className={`${sectionClass} pt-0`} aria-labelledby="reframe-title"><div className="grid items-stretch gap-8 lg:grid-cols-[1.05fr_0.95fr]"><div className={cardClass}><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">The Reframe</p><h2 id="reframe-title" className="text-3xl font-semibold text-white md:text-5xl">Your business already has an operating reality. It just may not be available as shared context.</h2><p className="mt-6 text-lg leading-8 text-slate-300">Operational Reality is the business itself: people, work, systems, decisions, dependencies, exceptions, history, and different perspectives. StrategicAI forms an evidence-bounded representation of that reality—a shared picture multiple people can inspect, dispute, and correct.</p><p className="mt-6 text-lg font-medium leading-8 text-cyan-100">AI makes it easier to change a business quickly. That makes it more important to understand what you are changing first.</p></div><div className="flex flex-col justify-center rounded-3xl border border-amber-200/25 bg-[linear-gradient(145deg,rgba(70,55,30,0.4),rgba(15,23,42,0.86))] p-8 md:p-10"><p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-200/80">The distinction</p><p className="mt-6 text-3xl font-semibold leading-tight text-white md:text-4xl">Frontier models provide intelligence. StrategicAI provides organizational reality.</p><p className="mt-6 text-base leading-7 text-slate-300">A capable model can still reason against incomplete, inconsistent, transient, or stale context. Organizational reality makes frontier intelligence more useful by giving it a picture people can challenge.</p></div></div></section>
 
-        <section id="proof-thread" className={`${sectionClass} scroll-mt-20`} aria-labelledby="proof-thread-title" data-golden-thread-status={goldenProofThread.status}><div className="mb-10 max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">{goldenProofThread.publicLabel}</p><h2 id="proof-thread-title" className="text-3xl font-semibold text-white md:text-5xl">{goldenProofThread.storyTitle}</h2><p className="mt-6 text-lg leading-8 text-slate-400">{goldenProofThread.storyIntro}</p></div><div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]"><div className="space-y-4"><div className="flex items-center justify-between border-b border-slate-800 pb-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500"><span>Golden Proof Thread</span><span>{proofSteps.reduce((total, step) => total + step.durationSeconds, 0)} seconds</span></div><div className="flex flex-wrap gap-2 text-xs text-slate-400"><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">four moves</span><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">context before action</span><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">human correction stays visible</span></div>{proofSteps.map((step, index) => { const active = index === activeProofStep; return <button type="button" key={step.id} onClick={() => selectProofStep(index)} aria-pressed={active} className={`w-full rounded-2xl border p-5 text-left transition ${active ? "border-cyan-400/40 bg-cyan-400/10" : "border-slate-800 bg-slate-900/35 hover:border-slate-700"}`}><div className="flex items-center gap-4"><span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">0{index + 1}</span><span className="text-lg font-semibold text-white">{step.navLabel}</span></div><p className="mt-3 text-sm leading-6 text-slate-400">{step.eyebrow}</p></button>; })}<div className="mt-2" role="progressbar" aria-label="Golden Proof Thread progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(((activeProofStep + proofProgressSeconds / activeProof.durationSeconds) / proofSteps.length) * 100)}><div className="h-1.5 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-cyan-300 transition-[width] duration-200" style={{ width: `${((activeProofStep + proofProgressSeconds / activeProof.durationSeconds) / proofSteps.length) * 100}%` }} /></div><p className="mt-2 text-xs text-slate-500">{proofPlaying ? `Playing ${activeProof.navLabel.toLowerCase()}` : reducedMotion ? "Reduced motion is on. Select a step to inspect it." : "Choose a step, or play the full walkthrough."}</p></div><div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap"><button type="button" onClick={startProof} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"><Play size={15} className="mr-2" aria-hidden="true" /> Play the 45-second walkthrough</button><button type="button" onClick={toggleProof} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">{proofPlaying ? <Pause size={15} className="mr-2" aria-hidden="true" /> : <Play size={15} className="mr-2" aria-hidden="true" />}{proofPlaying ? "Pause walkthrough" : "Start at this step"}</button><button type="button" onClick={resetProof} className="inline-flex items-center justify-center rounded-full border border-slate-800 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-900">Reset</button></div></div><div aria-live="polite"><ProofFrame step={activeProof} onOpenImage={(src) => { setSelectedImage(src); trackEvent("homepage_proof_open", { proof_step: activeProof.id, asset: src }); }} /><div className="mt-6"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">{activeProof.navLabel}</p><h3 className="mt-3 text-2xl font-semibold text-white md:text-3xl">{activeProof.headline}</h3><p className="mt-4 text-base leading-7 text-slate-400">{activeProof.body}</p>{activeProof.correction ? <div className="mt-6 grid gap-3 sm:grid-cols-3" aria-label="Correction sequence"><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Before</p><p className="mt-2 text-sm text-slate-300">{activeProof.correction.before ? activeProof.correction.before.alt : "The current picture"}</p></div><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">Human correction</p><p className="mt-2 text-sm text-slate-300">{activeProof.correction.humanCorrection}</p></div><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">After</p><p className="mt-2 text-sm text-slate-300">{activeProof.correction.after ? activeProof.correction.after.alt : "The corrected picture"}</p></div></div> : null}</div></div></div><p className="mt-10 border-l-2 border-cyan-300/50 pl-5 text-lg font-medium leading-8 text-slate-300">The value is not a prettier dashboard. It is a more useful place to begin.</p></section>
+        <section ref={proofSectionRef} id="proof-thread" className={`${sectionClass} scroll-mt-20`} aria-labelledby="proof-thread-title" data-golden-thread-status={goldenProofThread.status}><div className="mb-10 max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">{goldenProofThread.publicLabel}</p><h2 id="proof-thread-title" className="text-3xl font-semibold text-white md:text-5xl">{goldenProofThread.storyTitle}</h2><p className="mt-6 text-lg leading-8 text-slate-400">{goldenProofThread.storyIntro}</p></div><div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]"><div className="space-y-4"><div className="flex items-center justify-between border-b border-slate-800 pb-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500"><span>Golden Proof Thread</span><span>{proofSteps.reduce((total, step) => total + step.durationSeconds, 0)} seconds</span></div><div className="flex flex-wrap gap-2 text-xs text-slate-400"><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">four moves</span><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">context before action</span><span className="rounded-full border border-slate-800 bg-slate-900/50 px-3 py-2">human correction stays visible</span></div>{proofSteps.map((step, index) => { const active = index === activeProofStep; return <button type="button" key={step.id} onClick={() => selectProofStep(index)} onMouseEnter={() => selectProofStep(index, "hover")} onFocus={() => selectProofStep(index, "focus")} aria-pressed={active} className={`w-full rounded-2xl border p-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${active ? "border-cyan-400/40 bg-cyan-400/10" : "border-slate-800 bg-slate-900/35 hover:border-cyan-400/40 hover:bg-cyan-400/10"}`}><div className="flex items-center gap-4"><span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">0{index + 1}</span><span className="text-lg font-semibold text-white">{step.navLabel}</span></div><p className="mt-3 text-sm leading-6 text-slate-400">{step.eyebrow}</p></button>; })}<div className="mt-2" role="progressbar" aria-label="Golden Proof Thread progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(((activeProofStep + proofProgressSeconds / activeProof.durationSeconds) / proofSteps.length) * 100)}><div className="h-1.5 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-cyan-300 transition-[width] duration-200" style={{ width: `${((activeProofStep + proofProgressSeconds / activeProof.durationSeconds) / proofSteps.length) * 100}%` }} /></div><p className="mt-2 text-xs text-slate-500">{proofPlaying ? `Playing ${activeProof.navLabel.toLowerCase()} · hover, focus, or select a step to pause` : reducedMotion ? "Reduced motion is on. Select a step to inspect it." : "Hover, focus, or select a step to inspect it—or replay the walkthrough."}</p></div><div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap"><button type="button" onClick={startProof} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"><Play size={15} className="mr-2" aria-hidden="true" /> Replay the 21-second walkthrough</button><button type="button" onClick={toggleProof} className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-900">{proofPlaying ? <Pause size={15} className="mr-2" aria-hidden="true" /> : <Play size={15} className="mr-2" aria-hidden="true" />}{proofPlaying ? "Pause walkthrough" : "Start at this step"}</button><button type="button" onClick={resetProof} className="inline-flex items-center justify-center rounded-full border border-slate-800 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-900">Reset</button></div></div><div aria-live="polite"><ProofFrame step={activeProof} onOpenImage={(src) => { proofInteractionRef.current = true; setProofPlaying(false); setSelectedImage(src); trackEvent("homepage_proof_open", { proof_step: activeProof.id, asset: src }); }} /><div className="mt-6"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">{activeProof.navLabel}</p><h3 className="mt-3 text-2xl font-semibold text-white md:text-3xl">{activeProof.headline}</h3><p className="mt-4 text-base leading-7 text-slate-400">{activeProof.body}</p>{activeProof.correction ? <div className="mt-6 grid gap-3 sm:grid-cols-3" aria-label="Correction sequence"><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Before</p><p className="mt-2 text-sm text-slate-300">{activeProof.correction.before ? activeProof.correction.before.alt : "The current picture"}</p></div><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">Human correction</p><p className="mt-2 text-sm text-slate-300">{activeProof.correction.humanCorrection}</p></div><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">After</p><p className="mt-2 text-sm text-slate-300">{activeProof.correction.after ? activeProof.correction.after.alt : "The corrected picture"}</p></div></div> : null}</div></div></div><p className="mt-10 border-l-2 border-cyan-300/50 pl-5 text-lg font-medium leading-8 text-slate-300">The value is not a prettier dashboard. It is a more useful place to begin.</p></section>
 
-        <section className={sectionClass} aria-labelledby="category-title"><div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]"><div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">What this becomes</p><h2 id="category-title" className="text-3xl font-semibold text-white md:text-5xl">When the picture becomes usable, you have Operational Intelligence.</h2><p className="mt-6 text-lg leading-8 text-slate-300">StrategicAI forms Operational Intelligence from the available picture of your Operational Reality: usable understanding that can be inspected, corrected, questioned, and carried into consequential decisions.</p><p className="mt-6 text-lg leading-8 text-slate-400">Nemo and any particular frontier model are the intelligence layer—not the durable value. The value underneath is the business understanding that can become more useful through evidence, correction, and use.</p></div><div className="space-y-3">{[["01", "Operational Reality", "How your business actually works—including where people see it differently."], ["02", "Operational Intelligence", "Useful understanding formed from the available picture."], ["03", "Business Views", "The part of the business you need to inspect right now."], ["04", "Nemo", "A way to reason from available company context instead of reconstructing the business each time."], ["05", "Capabilities", "Action when the evidence, scope, and authority support it."]].map(([number, title, body]) => <div key={number} className="grid grid-cols-[48px_1fr] gap-4 border-b border-slate-800 py-5 first:border-t"><span className="text-sm font-semibold tracking-[0.18em] text-cyan-300/70">{number}</span><div><h3 className="text-lg font-semibold text-white">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{body}</p></div></div>)}</div></div><p className="mt-10 text-xl font-medium text-cyan-200">The order matters: evidence before recommendations, scope before automation.</p></section>
+        <section className={sectionClass} aria-labelledby="category-title"><div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]"><div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">What this becomes</p><h2 id="category-title" className="text-3xl font-semibold text-white md:text-5xl">When the picture becomes usable, you have Operational Intelligence.</h2><p className="mt-6 text-lg leading-8 text-slate-300">StrategicAI forms Operational Intelligence from the available picture of your Operational Reality: usable understanding that can be inspected, corrected, questioned, and carried into consequential decisions.</p><p className="mt-6 text-lg leading-8 text-slate-400">Nemo and any particular frontier model are the intelligence layer—not the durable value. The value underneath is the business understanding that can become more useful through evidence, correction, and use.</p></div><div className="space-y-3">{[["01", "Operational Reality", "How your business actually works—including where people see it differently."], ["02", "Operational Intelligence", "Useful understanding formed from the available picture."], ["03", "Business Views", "The part of the business you need to inspect right now."], ["04", "Reason with Nemo", "Use frontier intelligence to reason from structured context instead of reconstructing the business each time."], ["05", "Capabilities", "Action when the evidence, scope, and authority support it."]].map(([number, title, body]) => <div key={number} className="grid grid-cols-[48px_1fr] gap-4 border-b border-slate-800 py-5 first:border-t"><span className="text-sm font-semibold tracking-[0.18em] text-cyan-300/70">{number}</span><div><h3 className="text-lg font-semibold text-white">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{body}</p></div></div>)}</div></div><p className="mt-10 text-xl font-medium text-cyan-200">The order matters: evidence before recommendations, scope before automation.</p></section>
 
         <section className={`${sectionClass} pt-0`} aria-labelledby="business-views-title"><div className="mb-10 max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300/75">Start with the question</p><h2 id="business-views-title" className="text-3xl font-semibold text-white md:text-5xl">What are you trying to understand right now?</h2><p className="mt-6 text-lg leading-8 text-slate-400">Business Views don’t force every company into the same report. They make the part of the business behind a real owner question visible.</p></div><div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]"><div className="space-y-3">{businessViews.map((view) => { const active = view.id === selectedView; return <button type="button" key={view.id} onClick={() => { setSelectedView(view.id); trackEvent("homepage_business_view_select", { view_id: view.id }); }} aria-pressed={active} className={`flex w-full items-center justify-between rounded-2xl border px-5 py-4 text-left transition ${active ? "border-cyan-400/40 bg-cyan-400/10" : "border-slate-800 bg-slate-900/35 hover:border-slate-700"}`}><span className="text-base font-semibold text-white">{view.label}</span><ArrowRight size={16} className={active ? "text-cyan-200" : "text-slate-600"} aria-hidden="true" /></button>; })}</div><div className={`${cardClass} min-h-[280px]`}><p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">Selected Business View</p><h3 className="mt-5 text-3xl font-semibold text-white">{activeView.label}</h3><p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">{activeView.detail}</p><div className="mt-10 flex items-center gap-3 text-sm text-slate-400"><Check size={16} className="text-cyan-300" aria-hidden="true" /> The important questions stay consistent. The exact views adapt to what the business contains.</div></div></div></section>
 

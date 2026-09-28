@@ -69,10 +69,10 @@ export const goldenProofThread: GoldenProofThread = {
       eyebrow: "Sales and Operations see the handoff differently",
       headline: "Gather the evidence before choosing a fix.",
       body: "Sales says, “We handed the customer off Tuesday.” Operations says, “We did not have the information needed to start.” Both perspectives are evidence.",
-      durationSeconds: 8,
+      durationSeconds: 4,
       media: neutralFrameMedia(
         "/images/homepage-proof-evidence.webp",
-        "Illustrative photograph of an owner listening as Sales and Operations compare conflicting customer handoff evidence",
+        "Illustrative split-screen photograph of four colleagues viewing different evidence within the same StrategicAI operating picture",
       ),
     },
     {
@@ -81,10 +81,10 @@ export const goldenProofThread: GoldenProofThread = {
       eyebrow: "The definition of complete is different",
       headline: "Make the disagreement part of the picture.",
       body: "The handoff exists, but the teams mean different things by “complete.” The missing information and the untracked Finance approval are now visible relationships—not hidden assumptions.",
-      durationSeconds: 11,
+      durationSeconds: 5,
       media: neutralFrameMedia(
         "/images/homepage-proof-picture.webp",
-        "Illustrative photograph of an owner, Sales, Operations, and Finance examining a shared customer handoff sequence",
+        "Illustrative split-screen photograph of four colleagues in separate offices examining the same StrategicAI operating picture",
       ),
     },
     {
@@ -93,22 +93,22 @@ export const goldenProofThread: GoldenProofThread = {
       eyebrow: "Operations corrects the missing dependency",
       headline: "Let the people closest to the work correct it.",
       body: "Operations says, “That’s not the actual dependency. We also need approval from Finance.” The picture becomes more useful because the correction stays visible.",
-      durationSeconds: 15,
+      durationSeconds: 7,
       media: neutralFrameMedia(
         "/images/homepage-proof-correction.webp",
-        "Illustrative photograph of Operations and Finance correcting a missing approval dependency with the team",
+        "Illustrative photograph of Operations correcting a Finance dependency in the StrategicAI operating picture with the team",
       ),
     },
     {
       id: "question",
-      navLabel: "Ask Nemo",
+      navLabel: "Reasoning",
       eyebrow: "A better question follows the picture",
       headline: "Ask where the same dependency appears elsewhere.",
       body: "With the available context in view, Nemo can help you reason about where this process depends on information one team does not know another team needs.",
-      durationSeconds: 11,
+      durationSeconds: 5,
       media: neutralFrameMedia(
         "/images/homepage-proof-question.webp",
-        "Illustrative photograph of a leadership team using Nemo in the StrategicAI interface to ask where a dependency appears elsewhere",
+        "Illustrative photograph of a team using Nemo beside the StrategicAI operating picture to ask where a dependency appears elsewhere",
       ),
     },
   ],
